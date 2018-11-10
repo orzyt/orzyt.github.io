@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>LeetCode Algorithms&#39; Solutions - 扬涛的博客</title>
+    <meta itemprop="name" content="LeetCode Algorithms&#39; Solutions - 扬涛的博客">
+    
+    <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libs/headroom/animate.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/libs/headroom/headroom.min.js"></script>
+    <script src="/libs/headroom/jQuery.headroom.min.js"></script>
+    <script src="/libs/jquery/sort.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?63f226f2212285cc30d6ffa0636da07a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">扬涛的博客</span>
+            </a>
+            <nav id="main-nav">
+                <div>
+                    <ul class="nav navbar-nav">
+                    
+                        <a class="main-nav-link" href="/.">主页</a>
+                    
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    
+                        <a class="main-nav-link" href="/tags">标签</a>
+                    
+                        <a class="main-nav-link" href="/about">关于</a>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                                <li><a href="/study">学习资源汇总</a></li>
+                            
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/img/avatar.png">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <ul class="menu outer">
+            
+                <a class="main-nav-link" href="/.">主页</a>
+            
+                <a class="main-nav-link" href="/archives">归档</a>
+            
+                <a class="main-nav-link" href="/tags">标签</a>
+            
+                <a class="main-nav-link" href="/about">关于</a>
+                           
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    更多 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
+                    
+                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/img/avatar.png">
+            <h2 id="name">郑扬涛</h2>
+            <h3 id="title">废材码农 @ Beihang Univ.</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/orzyt/activities">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                138
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                58
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/orzyt" target="_blank" title="github" class="tooltip">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/orzyt" target="_blank" title="facebook" class="tooltip">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/orzyt" target="_blank" title="weibo" class="tooltip">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class="tooltip">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-leetcode-algorithms-solutions" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+            
+	
+		<img src="../../img/leetcode.png" class="article-banner">
+	
+
+
+
+        
+        
+            <header class="article-header">
+                
+    
+        <p style="color: #F44336; font-size: 110%; float: left;">[置顶] &nbsp</p>
+    
+    
+        
+            <h1 class="article-title" itemprop="name">
+                LeetCode Algorithms&#39; Solutions
+            </h1>
+        
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/leetcode-algorithms-solutions/">
+            <time datetime="2017-12-31T16:00:00.000Z" itemprop="datePublished">2018-01-01</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/LeetCode/">LeetCode</a>, <a class="tag-link" href="/tags/算法/">算法</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                
+                
+                    <hr>
+<blockquote>
+<p>“ <strong>Talk is cheap, show me the code!</strong> ”<br>— <em>Linus Torvalds</em></p>
+</blockquote>
+<ul>
+<li>如果题解中有谬误或疑问的地方，欢迎大家留言交流！<a id="more"></a> 
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">#</th>
+<th>Title</th>
+<th style="text-align:center">Acceptance</th>
+<th style="text-align:center">Difficulty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td><a href="/posts/LeetCode1-Two-Sum/">Two Sum</a></td>
+<td style="text-align:center">36.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td><a href="/posts/LeetCode2-Add-Two-Numbers/">Add Two Numbers</a></td>
+<td style="text-align:center">28.2%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td><a href="/posts/LeetCode7-Reverse-Integer/">Reverse Integer</a></td>
+<td style="text-align:center">24.4%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td><a href="/posts/LeetCode8-String-to-Integer-(atoi)/">String to Integer (atoi)</a></td>
+<td style="text-align:center">13.9%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td><a href="/posts/LeetCode9-Palindrome-Number/">Palindrome Number</a></td>
+<td style="text-align:center">35.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td><a href="/posts/LeetCode13-Roman-to-Integer/">Roman to Integer</a></td>
+<td style="text-align:center">47.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td><a href="/posts/LeetCode20-Valid-Parentheses/">Valid Parentheses</a></td>
+<td style="text-align:center">33.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">21</td>
+<td><a href="/posts/LeetCode21-Merge-Two-Sorted-Lists/">Merge Two Sorted Lists</a></td>
+<td style="text-align:center">39.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">27</td>
+<td><a href="/posts/LeetCode27-Remove-Element/">Remove Element</a></td>
+<td style="text-align:center">40.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">28</td>
+<td><a href="/posts/LeetCode28-Implement-strStr/">Implement strStr()</a></td>
+<td style="text-align:center">28.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">35</td>
+<td><a href="/posts/LeetCode35-Search-Insert-Position/">Search Insert Position</a></td>
+<td style="text-align:center">39.9%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">50</td>
+<td><a href="/posts/LeetCode50-Pow(x,n)/">Pow(x, n)</a></td>
+<td style="text-align:center">26.0%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">53</td>
+<td><a href="/posts/LeetCode53-Maximum-Subarray-Element/">Maximum Subarray</a></td>
+<td style="text-align:center">40.0%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">69</td>
+<td><a href="/posts/LeetCode69-Sqrt(x)/">Sqrt(x)</a></td>
+<td style="text-align:center">28.4%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">70</td>
+<td><a href="/posts/LeetCode70-Climbing-Stairs/">Climbing Stairs</a></td>
+<td style="text-align:center">40.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">83</td>
+<td><a href="/posts/LeetCode83-Remove-Duplicates-from-Sorted-List/">Remove Duplicates from Sorted List</a></td>
+<td style="text-align:center">40.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">84</td>
+<td><a href="/posts/LeetCode84-Largest-Rectangle-in-Histogram/">Largest Rectangle in Histogram</a></td>
+<td style="text-align:center">27.3%</td>
+<td style="text-align:center"><span class="label label-danger round"><p style="display: none;">3</p>Hard</span></td>
+</tr>
+<tr>
+<td style="text-align:center">100</td>
+<td><a href="/posts/LeetCode100-Same-Tree/">Same Tree</a></td>
+<td style="text-align:center">47.2%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">101</td>
+<td><a href="/posts/LeetCode101-Symmetric-Tree/">Symmetric Tree</a></td>
+<td style="text-align:center">39.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">102</td>
+<td><a href="/posts/LeetCode102-Binary-Tree-Level-Order-Traversal/">Binary Tree Level Order Traversal</a></td>
+<td style="text-align:center">41.3%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">104</td>
+<td><a href="/posts/LeetCode104-Maximum-Depth-of-Binary-Tree/">Maximum Depth of Binary Tree</a></td>
+<td style="text-align:center">53.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">107</td>
+<td><a href="/posts/LeetCode107-Binary-Tree-Level-Order-Traversal-II/">Binary Tree Level Order Traversal II</a></td>
+<td style="text-align:center">41.3%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">108</td>
+<td><a href="/posts/LeetCode108-Convert-Sorted-Array-to-Binary-Search-Tree/">Convert Sorted Array to Binary Search Tree</a></td>
+<td style="text-align:center">43.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">112</td>
+<td><a href="/posts/LeetCode112-Path-Sum/">Path Sum</a></td>
+<td style="text-align:center">34.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">118</td>
+<td><a href="/posts/LeetCode118-Pascals-Triangle/">Pascal’s Triangle</a></td>
+<td style="text-align:center">39.4%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">119</td>
+<td><a href="/posts/LeetCode119-Pascals-Triangle-II/">Pascal’s Triangle II</a></td>
+<td style="text-align:center">37.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">121</td>
+<td><a href="/posts/LeetCode121-Best-Time-to-Buy-and-Sell-Stock/">Best Time to Buy and Sell Stock</a></td>
+<td style="text-align:center">42.3%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">122</td>
+<td><a href="/posts/LeetCode122-Best-Time-to-Buy-and-Sell-Stock-II/">Best Time to Buy and Sell Stock II</a></td>
+<td style="text-align:center">47.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">125</td>
+<td><a href="/posts/LeetCode125-Valid-Palindrome/">Valid Palindrome</a></td>
+<td style="text-align:center">26.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">136</td>
+<td><a href="/posts/LeetCode136-Single-Number/">Single Number</a></td>
+<td style="text-align:center">55.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">153</td>
+<td><a href="/posts/LeetCode153-Find-Minimum-in-Rotated-Sorted-Array/">Find Minimum in Rotated Sorted Array</a></td>
+<td style="text-align:center">40.5%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">154</td>
+<td><a href="/posts/LeetCode154-Find-Minimum-in-Rotated-Sorted-Array-II/">Find Minimum in Rotated Sorted Array II</a></td>
+<td style="text-align:center">37.6%</td>
+<td style="text-align:center"><span class="label label-danger round"><p style="display: none;">3</p>Hard</span></td>
+</tr>
+<tr>
+<td style="text-align:center">155</td>
+<td><a href="/posts/LeetCode155-Min-Stack/">Min Stack</a></td>
+<td style="text-align:center">30.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">167</td>
+<td><a href="/posts/LeetCode167-Two-Sum-II-Input-array-is-sorted/">Two Sum II - Input array is sorted</a></td>
+<td style="text-align:center">47.2%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">168</td>
+<td><a href="/posts/LeetCode168-Excel-Sheet-Column-Title/">Excel Sheet Column Title</a></td>
+<td style="text-align:center">26.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">169</td>
+<td><a href="/posts/LeetCode169-Majority-Element/">Majority Element</a></td>
+<td style="text-align:center">47.4%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">171</td>
+<td><a href="/posts/LeetCode171-Excel-Sheet-Column-Number/">Excel Sheet Column Number</a></td>
+<td style="text-align:center">47.9%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">172</td>
+<td><a href="/posts/LeetCode172-Factorial-Trailing-Zeroes/">Factorial Trailing Zeroes</a></td>
+<td style="text-align:center">36.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">189</td>
+<td><a href="/posts/LeetCode189-Rotate-Array/">Rotate Array</a></td>
+<td style="text-align:center">25.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">190</td>
+<td><a href="/posts/LeetCode190-Reverse-Bits/">Reverse Bits</a></td>
+<td style="text-align:center">29.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">191</td>
+<td><a href="/posts/LeetCode191-Number-of-1-Bits/">Number of 1 Bits</a></td>
+<td style="text-align:center">40.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">202</td>
+<td><a href="/posts/LeetCode202-Happy-Number/">Happy Number</a></td>
+<td style="text-align:center">41.2%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">204</td>
+<td><a href="/posts/LeetCode204-Count-Primes/">Count Primes</a></td>
+<td style="text-align:center">26.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">206</td>
+<td><a href="/posts/LeetCode206-Reverse-Linked-List/">Reverse Linked List</a></td>
+<td style="text-align:center">46.3%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">217</td>
+<td><a href="/posts/LeetCode217-Contains-Duplicate/">Contains Duplicate</a></td>
+<td style="text-align:center">46.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">226</td>
+<td><a href="/posts/LeetCode226-Invert-Binary-Tree/">Invert Binary Tree</a></td>
+<td style="text-align:center">52.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">231</td>
+<td><a href="/posts/LeetCode231-Power-of-Two/">Power of Two</a></td>
+<td style="text-align:center">40.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">237</td>
+<td><a href="/posts/LeetCode237-Delete-Node-in-a-Linked-List/">Delete Node in a Linked List</a></td>
+<td style="text-align:center">47.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">242</td>
+<td><a href="/posts/LeetCode242-Valid-Anagram/">Valid Anagram</a></td>
+<td style="text-align:center">47.0%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">258</td>
+<td><a href="/posts/LeetCode258-Add-Digits/">Add Digits</a></td>
+<td style="text-align:center">51.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">263</td>
+<td><a href="/posts/LeetCode263-Ugly-Number/">Ugly Number</a></td>
+<td style="text-align:center">39.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">264</td>
+<td><a href="/posts/LeetCode264-Ugly-Number-II/">Ugly Number II</a></td>
+<td style="text-align:center">33.1%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">268</td>
+<td><a href="/posts/LeetCode268-Missing-Number/">Missing Number</a></td>
+<td style="text-align:center">44.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">278</td>
+<td><a href="/posts/LeetCode278-First-Bad-Version/">First Bad Version</a></td>
+<td style="text-align:center">25.9%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">283</td>
+<td><a href="/posts/LeetCode283-Move-Zeroes/">Move Zeroes</a></td>
+<td style="text-align:center">50.9%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">292</td>
+<td><a href="/posts/LeetCode292-Nim-Game/">Nim Game</a></td>
+<td style="text-align:center">55.3%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">303</td>
+<td><a href="/posts/LeetCode303-Range-Sum-Query-Immutable/">Range Sum Query - Immutable</a></td>
+<td style="text-align:center">31.2%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">307</td>
+<td><a href="/posts/LeetCode307-Range-Sum-Query-Mutable/">Range Sum Query - Mutable</a></td>
+<td style="text-align:center">21.7%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">326</td>
+<td><a href="/posts/LeetCode326-Power-of-Three/">Power of Three</a></td>
+<td style="text-align:center">40.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">338</td>
+<td><a href="/posts/LeetCode338-Counting-Bits/">Counting Bits</a></td>
+<td style="text-align:center">61.9%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">342</td>
+<td><a href="/posts/LeetCode342-Power-of-Four/">Power of Four</a></td>
+<td style="text-align:center">38.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">344</td>
+<td><a href="/posts/LeetCode344-Reverse-String/">Reverse String</a></td>
+<td style="text-align:center">59.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">345</td>
+<td><a href="/posts/LeetCode345-Reverse-Vowels-of-a-String/">Reverse Vowels of a String</a></td>
+<td style="text-align:center">38.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">349</td>
+<td><a href="/posts/LeetCode349-Intersection-of-Two-Arrays/">Intersection of Two Arrays</a></td>
+<td style="text-align:center">47.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">350</td>
+<td><a href="/posts/LeetCode350-Intersection-of-Two-Arrays-II/">Intersection of Two Arrays II</a></td>
+<td style="text-align:center">44.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">367</td>
+<td><a href="/posts/LeetCode367-Valid-Perfect-Square/">Valid Perfect Square</a></td>
+<td style="text-align:center">38.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">371</td>
+<td><a href="/posts/LeetCode371-Sum-of-Two-Integers/">Sum of Two Integers</a></td>
+<td style="text-align:center">51.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">383</td>
+<td><a href="/posts/LeetCode383-Ransom-Note/">Ransom Note</a></td>
+<td style="text-align:center">47.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">387</td>
+<td><a href="/posts/LeetCode387-First-Unique-Character-in-a-String/">First Unique Character in a String</a></td>
+<td style="text-align:center">47.2%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">389</td>
+<td><a href="/posts/LeetCode389-Find-the-Difference/">Find the Difference</a></td>
+<td style="text-align:center">51.0%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">401</td>
+<td><a href="/posts/LeetCode401-Binary-Watch/">Binary Watch</a></td>
+<td style="text-align:center">44.9%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">404</td>
+<td><a href="/posts/LeetCode404-Sum-of-Left-Leaves/">Sum of Left Leaves</a></td>
+<td style="text-align:center">47.4%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">405</td>
+<td><a href="/posts/LeetCode405-Convert-a-Number-to-Hexadecimal/">Convert a Number to Hexadecimal</a></td>
+<td style="text-align:center">41.0%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">409</td>
+<td><a href="/posts/LeetCode409-Longest-Palindrome/">Longest Palindrome</a></td>
+<td style="text-align:center">45.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">412</td>
+<td><a href="/posts/LeetCode412-Fizz-Buzz/">Fizz Buzz</a></td>
+<td style="text-align:center">58.3%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">413</td>
+<td><a href="/posts/LeetCode413-Arithmetic-Slices/">Arithmetic Slices</a></td>
+<td style="text-align:center">54.6%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">414</td>
+<td><a href="/posts/LeetCode414-Third-Maximum-Number/">Third Maximum Number</a></td>
+<td style="text-align:center">28.0%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">415</td>
+<td><a href="/posts/LeetCode415-Add-Strings/">Add Strings</a></td>
+<td style="text-align:center">41.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">419</td>
+<td><a href="/posts/LeetCode419-Battleships-in-a-Board/">Battleships in a Board</a></td>
+<td style="text-align:center">62.5%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">437</td>
+<td><a href="/posts/LeetCode437-Path-Sum-III/">Path Sum III</a></td>
+<td style="text-align:center">40.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">442</td>
+<td><a href="/posts/LeetCode442-Find-All-Duplicates-in-an-Array/">Find All Duplicates in an Array</a></td>
+<td style="text-align:center">56.6%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">447</td>
+<td><a href="/posts/LeetCode447-Number-of-Boomerangs/">Number of Boomerangs</a></td>
+<td style="text-align:center">45.9%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">448</td>
+<td><a href="/posts/LeetCode448-Find-All-Numbers-Disappeared-in-an-Array/">Find All Numbers Disappeared in an Array</a></td>
+<td style="text-align:center">51.3%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">451</td>
+<td><a href="/posts/LeetCode451-Sort-Characters-By-Frequency/">Sort Characters By Frequency</a></td>
+<td style="text-align:center">51.4%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">453</td>
+<td><a href="/posts/LeetCode453-Minimum-Moves-to-Equal-Array-Elements/">Minimum Moves to Equal Array Elements</a></td>
+<td style="text-align:center">47.9%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">455</td>
+<td><a href="/posts/LeetCode455-Assign-Cookies/">Assign Cookies</a></td>
+<td style="text-align:center">47.2%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">459</td>
+<td><a href="/posts/LeetCode459-Repeated-Substring-Pattern/">Repeated Substring Pattern</a></td>
+<td style="text-align:center">38.2%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">461</td>
+<td><a href="/posts/LeetCode461-Hamming-Distance/">Hamming Distance</a></td>
+<td style="text-align:center">69.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">463</td>
+<td><a href="/posts/LeetCode463-Island-Perimeter/">Island Perimeter</a></td>
+<td style="text-align:center">57.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">476</td>
+<td><a href="/posts/LeetCode476-Number-Complement/">Number Complement</a></td>
+<td style="text-align:center">61.0%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">479</td>
+<td><a href="/posts/LeetCode479-Largest-Palindrome-Product/">Largest Palindrome Product</a></td>
+<td style="text-align:center">24.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">485</td>
+<td><a href="/posts/LeetCode485-Max-Consecutive-Ones/">Max Consecutive Ones</a></td>
+<td style="text-align:center">54.0%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">492</td>
+<td><a href="/posts/LeetCode492-Construct-the-Rectangle/">Construct the Rectangle</a></td>
+<td style="text-align:center">48.3%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">496</td>
+<td><a href="/posts/LeetCode496-Next-Greater-Element-I/">Next Greater Element I</a></td>
+<td style="text-align:center">56.6%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">500</td>
+<td><a href="/posts/LeetCode500-Keyboard-Row/">Keyboard Row</a></td>
+<td style="text-align:center">59.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">501</td>
+<td><a href="/posts/LeetCode501-Find-Mode-in-Binary-Search-Tree/">Find Mode in Binary Search Tree</a></td>
+<td style="text-align:center">37.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">504</td>
+<td><a href="/posts/LeetCode504-Base-7/">Base 7</a></td>
+<td style="text-align:center">44.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">506</td>
+<td><a href="/posts/LeetCode506-Relative-Ranks/">Relative Ranks</a></td>
+<td style="text-align:center">46.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">513</td>
+<td><a href="/posts/LeetCode513-Find-Bottom-Left-Tree-Value/">Find Bottom Left Tree Value</a></td>
+<td style="text-align:center">56.1%</td>
+<td style="text-align:center"><span class="label label-warning round"><p style="display: none;">2</p>Medium</span></td>
+</tr>
+<tr>
+<td style="text-align:center">520</td>
+<td><a href="/posts/LeetCode520-Detect-Capital/">Detect Capital</a></td>
+<td style="text-align:center">52.0%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">530</td>
+<td><a href="/posts/LeetCode530-Minimum-Absolute-Difference-in-BST/">Minimum Absolute Difference in BST</a></td>
+<td style="text-align:center">47.2%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">541</td>
+<td><a href="/posts/LeetCode541-Reverse-String-II/">Reverse String II</a></td>
+<td style="text-align:center">43.7%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">543</td>
+<td><a href="/posts/LeetCode543-Diameter-of-Binary-Tree/">Diameter of Binary Tree</a></td>
+<td style="text-align:center">44.9%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">557</td>
+<td><a href="/posts/LeetCode557-Reverse-Words-in-a-String-III/">Reverse Words in a String III</a></td>
+<td style="text-align:center">59.8%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">561</td>
+<td><a href="/posts/LeetCode561-Array-Partition-I/">Array Partition I</a></td>
+<td style="text-align:center">66.5%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">563</td>
+<td><a href="/posts/LeetCode563-Binary-Tree-Tilt/">Binary Tree Tilt</a></td>
+<td style="text-align:center">47.1%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">566</td>
+<td><a href="/posts/LeetCode566-Reshape-the-Matrix/">Reshape the Matrix</a></td>
+<td style="text-align:center">58.2%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">575</td>
+<td><a href="/posts/LeetCode575-Distribute-Candies/">Distribute Candies</a></td>
+<td style="text-align:center">58.4%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">669</td>
+<td><a href="/posts/LeetCode669-Trim-a-Binary-Search-Tree/">Trim a Binary Search Tree</a></td>
+<td style="text-align:center">58.4%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+<tr>
+<td style="text-align:center">671</td>
+<td><a href="/posts/LeetCode671-Second-Minimum-Node-In-a-Binary-Tree/">Second Minimum Node In a Binary Tree</a></td>
+<td style="text-align:center">42.0%</td>
+<td style="text-align:center"><span class="label label-success round"><p style="display: none;">1</p>Easy</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+                
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/leetcode-algorithms-solutions/" data-id="cjobive7o00lru1sim54fhp7d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/leetcode-algorithms-solutions/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/posts/LeetCode155-Min-Stack/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    LeetCode155 Min Stack
+                
+            </div>
+        </a>
+    
+    
+        <a href="/posts/conditional-gan/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">条件生成对抗网络(Conditional GANs)</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="gitalkContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">111</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/ACM/" style="font-size: 13.08px;">ACM</a> <a href="/tags/BFS/" style="font-size: 11.54px;">BFS</a> <a href="/tags/BST/" style="font-size: 11.54px;">BST</a> <a href="/tags/DFS/" style="font-size: 16.92px;">DFS</a> <a href="/tags/DP/" style="font-size: 13.85px;">DP</a> <a href="/tags/GAN/" style="font-size: 10px;">GAN</a> <a href="/tags/Gale-Shapley算法/" style="font-size: 10px;">Gale-Shapley算法</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/Manacher/" style="font-size: 10px;">Manacher</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/SG函数/" style="font-size: 10px;">SG函数</a> <a href="/tags/TensorFlow/" style="font-size: 10.77px;">TensorFlow</a> <a href="/tags/anaconda/" style="font-size: 10px;">anaconda</a> <a href="/tags/cgan/" style="font-size: 10px;">cgan</a> <a href="/tags/conditional-gan/" style="font-size: 10px;">conditional gan</a> <a href="/tags/greedy/" style="font-size: 10px;">greedy</a> <a href="/tags/hands-on-ML/" style="font-size: 11.54px;">hands-on ML</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/pip/" style="font-size: 10px;">pip</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10.77px;">ssh</a> <a href="/tags/tensorboard/" style="font-size: 10px;">tensorboard</a> <a href="/tags/webIDE/" style="font-size: 10px;">webIDE</a> <a href="/tags/二分/" style="font-size: 16.15px;">二分</a> <a href="/tags/二叉搜索树/" style="font-size: 10px;">二叉搜索树</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/位运算/" style="font-size: 17.69px;">位运算</a> <a href="/tags/分治/" style="font-size: 10px;">分治</a> <a href="/tags/单调栈/" style="font-size: 10.77px;">单调栈</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/双指针/" style="font-size: 14.62px;">双指针</a> <a href="/tags/哈希/" style="font-size: 16.15px;">哈希</a> <a href="/tags/哈希表/" style="font-size: 10px;">哈希表</a> <a href="/tags/回文/" style="font-size: 10px;">回文</a> <a href="/tags/字典树/" style="font-size: 10px;">字典树</a> <a href="/tags/字符串/" style="font-size: 19.23px;">字符串</a> <a href="/tags/排序/" style="font-size: 12.31px;">排序</a> <a href="/tags/数学/" style="font-size: 19.23px;">数学</a> <a href="/tags/数组/" style="font-size: 18.46px;">数组</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/机器学习/" style="font-size: 15.38px;">机器学习</a> <a href="/tags/条件生成对抗网络/" style="font-size: 10px;">条件生成对抗网络</a> <a href="/tags/栈/" style="font-size: 11.54px;">栈</a> <a href="/tags/树/" style="font-size: 16.92px;">树</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/牛顿迭代法/" style="font-size: 10px;">牛顿迭代法</a> <a href="/tags/生成对抗网络/" style="font-size: 10px;">生成对抗网络</a> <a href="/tags/端口转发/" style="font-size: 10px;">端口转发</a> <a href="/tags/算法/" style="font-size: 12.31px;">算法</a> <a href="/tags/结对编程/" style="font-size: 10px;">结对编程</a> <a href="/tags/贪心/" style="font-size: 11.54px;">贪心</a> <a href="/tags/软件工程/" style="font-size: 12.31px;">软件工程</a> <a href="/tags/逻辑回归/" style="font-size: 10px;">逻辑回归</a> <a href="/tags/链表/" style="font-size: 13.08px;">链表</a> <a href="/tags/镜像源/" style="font-size: 10px;">镜像源</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode575-Distribute-Candies/" class="title">LeetCode575 Distribute Candies</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T05:21:28.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode566-Reshape-the-Matrix/" class="title">LeetCode566 Reshape the Matrix</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T05:03:19.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode563-Binary-Tree-Tilt/" class="title">LeetCode563 Binary Tree Tilt</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T04:51:07.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode561-Array-Partition-I/" class="title">LeetCode561 Array Partition I</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T04:31:32.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode557-Reverse-Words-in-a-String-III/" class="title">LeetCode557 Reverse Words in a String III</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T04:17:22.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+</aside>
+<div id="toTop" class="fa fa-angle-up"></div>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 orzyt<br>
+            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+        var gitalk = new Gitalk({
+            id: location.pathname,
+            clientID: '3628f46ff8965c297258', 
+            clientSecret: 'da2ef51d9fe687db577e834867d253a697f19a9f',
+            repo: 'comments',
+            owner: 'orzyt',
+            admin: ['orzyt'],
+            distractionFreeMode: false,
+            perPage: 20,
+            createIssueManually: false,
+            language: 'zh-CN', 
+        })
+        gitalk.render('gitalkContainer')
+	</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
+

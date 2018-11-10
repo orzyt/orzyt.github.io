@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>软件工程实践总结 - 扬涛的博客</title>
+    <meta itemprop="name" content="软件工程实践总结 - 扬涛的博客">
+    
+    <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libs/headroom/animate.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/libs/headroom/headroom.min.js"></script>
+    <script src="/libs/headroom/jQuery.headroom.min.js"></script>
+    <script src="/libs/jquery/sort.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?63f226f2212285cc30d6ffa0636da07a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">扬涛的博客</span>
+            </a>
+            <nav id="main-nav">
+                <div>
+                    <ul class="nav navbar-nav">
+                    
+                        <a class="main-nav-link" href="/.">主页</a>
+                    
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    
+                        <a class="main-nav-link" href="/tags">标签</a>
+                    
+                        <a class="main-nav-link" href="/about">关于</a>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                                <li><a href="/study">学习资源汇总</a></li>
+                            
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/img/avatar.png">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <ul class="menu outer">
+            
+                <a class="main-nav-link" href="/.">主页</a>
+            
+                <a class="main-nav-link" href="/archives">归档</a>
+            
+                <a class="main-nav-link" href="/tags">标签</a>
+            
+                <a class="main-nav-link" href="/about">关于</a>
+                           
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    更多 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
+                    
+                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/img/avatar.png">
+            <h2 id="name">郑扬涛</h2>
+            <h3 id="title">废材码农 @ Beihang Univ.</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/orzyt/activities">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                138
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                58
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/orzyt" target="_blank" title="github" class="tooltip">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/orzyt" target="_blank" title="facebook" class="tooltip">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/orzyt" target="_blank" title="weibo" class="tooltip">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class="tooltip">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-software-engineering-summary" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        
+            <h1 class="article-title" itemprop="name">
+                软件工程实践总结
+            </h1>
+        
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/software-engineering-summary/">
+            <time datetime="2016-12-29T16:00:00.000Z" itemprop="datePublished">2016-12-30</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/软件工程/">软件工程</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/软件工程/">软件工程</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                
+                <div id="toc" class="toc-article">
+                    <strong class="toc-title">文章目录</strong>
+                    
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#再回首"><span class="toc-number">1.</span> <span class="toc-text">再回首</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#人月神话"><span class="toc-number">2.</span> <span class="toc-text">人月神话</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#个人建议"><span class="toc-number">3.</span> <span class="toc-text">个人建议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#团队分析"><span class="toc-number">4.</span> <span class="toc-text">团队分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阅读笔记"><span class="toc-number">5.</span> <span class="toc-text">阅读笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学会软工"><span class="toc-number">6.</span> <span class="toc-text">学会软工</span></a></li></ol>
+                    
+
+                </div>
+                
+                
+                    <h2 id="再回首"><a href="#再回首" class="headerlink" title="再回首"></a>再回首</h2><p>1、<strong>对比现在的你和开学初博客开篇的课程目标和期待</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">开学的目标</th>
+<th style="text-align:center">现在的情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">学习软件开发的完整过程</td>
+<td style="text-align:center">经过一个学期理论和实践的学习，在经历过需求分析、系统设计、编码、测试、交付验收等环节以及alpha和beta版本的开发，大体上掌握了软件（web）开发的基本流程。</td>
+</tr>
+<tr>
+<td style="text-align:center">增强团队协作与沟通交流的能力</td>
+<td style="text-align:center">加入了“我说的都队”小组，在强大的pm的带领下，小伙伴们配合得相当默契，团队成员之间有充分的沟通与交流，经常约在活动室一起敲代码。</td>
+</tr>
+<tr>
+<td style="text-align:center">掌握各种开发工具的使用</td>
+<td style="text-align:center">能初步掌握常用的开发工具，详情请见第2点“学习和使用的新软件和新工具”。</td>
+</tr>
+<tr>
+<td style="text-align:center">合理安排时间、项目进度</td>
+<td style="text-align:center">在两个版本的冲刺中，由于pm的合理安排和计划，我们小组仅仅在alpha版本发布前通宵过一次，其他时间基本按照计划走，稳得不行！</td>
+</tr>
+</tbody>
+</table>
+</div>
+<a id="more"></a>
+<p>2、<strong>总结这门课程的实践给你带来的提升：</strong></p>
+<p>（1）学习和使用的新软件</p>
+<ul>
+<li>原型设计工具Axure RP、MockingBot</li>
+<li>Windows下的Markdown书写软件Typora</li>
+<li>分布式版本控制软件git以及托管平台github /coding.net</li>
+<li>Microsoft Visio画流程图、类图</li>
+<li>sublime text编写前端代码</li>
+<li>WAMP搭建本地web服务器</li>
+</ul>
+<p>（2）学习和使用的新工具</p>
+<ul>
+<li>浏览器自带的开发者工具（说实话之前没怎么碰过这个…</li>
+<li>JavaScript单元测试框架——Qunit</li>
+<li>在线思维导图——百度脑图</li>
+<li>阿里巴巴矢量图标库——iconfont</li>
+<li>在线教程网学习前端知识——w3school</li>
+</ul>
+<p>（3）学习和掌握的新语言、新平台</p>
+<ul>
+<li>html、css、JavaScript</li>
+</ul>
+<p>（4）统计一下，你在这门软件工程实践中，完成了多少行的代码</p>
+<ul>
+<li>不到1k行代码。主要原因还是在于中间出去参加了两场ACM比赛，大概有十几天不在学校。所以PM考虑实际情况后，分配给我的编码工作量比较少。</li>
+</ul>
+<p>（5）学习和掌握的新方法</p>
+<ul>
+<li>面向搜索引擎编程</li>
+<li>前端没学过，只好边学边用</li>
+</ul>
+<p>（6）其他的提升</p>
+<ul>
+<li>大学第一次通宵献给软工，竟不觉得困…</li>
+<li>写前端界面，然后强迫症又加深了…</li>
+</ul>
+<h2 id="人月神话"><a href="#人月神话" class="headerlink" title="人月神话"></a>人月神话</h2><p>1、经验总结</p>
+<ul>
+<li>别试图想先学完一个语言，再开始进行编码工作，直接上手才是硬道理</li>
+<li>文档工作不是表面功夫，认真对待对后期将有极大的帮助</li>
+<li>团队成员之间的沟通交流非常重要，特别是前后端的配合</li>
+<li>对pm分配的任务，觉得有疑问的地方要及时提出</li>
+<li>站立式会议时间不长，要充分利用机会进行总结，三省吾身</li>
+<li>项目进度安排要合理，将各个功能点分配好，避免出现熬夜赶工现象</li>
+<li>团队成员聚在活动室一起敲代码，效率绝对比自己一个人敲要高</li>
+</ul>
+<p>2、实例分析</p>
+<p>主要说说沟通交流方面。</p>
+<ul>
+<li>齐民要试验php后台连接cpp编写的分配算法，于是直接跑到他的宿舍去，按照他要求的输出格式对代码进行修改，在有效的沟通交流之下，很快就可以改好了，比在QQ上一来一回的效率高到不知哪里去。</li>
+<li>跟胡总的前后端配合，前端页面写完了，后台要接上来，比如分页什么的有问题了就得找下后台，界面布局有问题了又得找下前端，因此前后端之间的交流是必不可少的！</li>
+<li>某个前端页面出现莫名其妙的bug，最底下有一大片空白的页面，关键是只有这个页面有这个问题，然后用浏览器自带的开发者工具查了半天也没发现，后来直接请教前端大佬，不用一会就解决了。所以有时候多跟经验丰富的同学交流是很有帮助的，会让你少走一些弯路。</li>
+</ul>
+<h2 id="个人建议"><a href="#个人建议" class="headerlink" title="个人建议"></a>个人建议</h2><ul>
+<li>想认真学习软件工程这门课，选栋哥的课准是没错的</li>
+<li>想水的可以考虑出门右转了，这个课注定不适合你…</li>
+<li>万事开头难，不要轻言放弃，既然选择了hard模式，就请坚持下去</li>
+<li>利用空余时间，提前简单了解git和github的使用，不让其成为团队协作的障碍</li>
+<li>多与团队成员沟通交流，不要单打独斗，记住软工是一个team</li>
+<li>要求有较强的自学能力，软工不会教你某一门具体的编程语言</li>
+<li>学会learning by doing，不懂没关系，以做促学</li>
+<li>善用Google、StackOverflow等网站，能解决你开发中面临的大部分问题</li>
+<li>懂得合理安排时间，不要赶在deadline前才临门一脚</li>
+<li>编码不是软工的全部，不要排斥写文档、写博客，用文字记录点滴是有益的</li>
+</ul>
+<h2 id="团队分析"><a href="#团队分析" class="headerlink" title="团队分析"></a>团队分析</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">阶段</th>
+<th style="text-align:center">对应时期</th>
+<th style="text-align:center">主要表现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">萌芽</td>
+<td style="text-align:center">组队</td>
+<td style="text-align:center">虽然小组成员都是来自计2和计3，但是平常也没多少机会接触。所以组好队之后还是有一个熟悉与融合的过程。在此期间，每个人对自己在团队中所担负的职责、角色定位还不是很清楚。</td>
+</tr>
+<tr>
+<td style="text-align:center">磨合</td>
+<td style="text-align:center">选题</td>
+<td style="text-align:center">在组队初期，我们小组的技能点就是往Android开发方向的，就想着在软工实践课能够开发出一款实用有情怀的app。在选题方面，一开始想过做一款为学校部门、社团服务的app，但是团队成员有着自己不同的想法，以致于出现了较大的意见分歧。后来，选题又改成了类似“赏金猎人”的东西。但是再后来，万万没想到，我们接手了导师互选系统的网页端项目。选题一改再改，团队也在此期间得到不断的磨合。</td>
+</tr>
+<tr>
+<td style="text-align:center">规范</td>
+<td style="text-align:center">alpha</td>
+<td style="text-align:center">选题确定，需求确定，等一切都稳定了下来，大家开始慢慢地配合，慢慢明确了自己的角色和职责。开发、讨论、交流也慢慢变得规范起来，都能够遵守相应的规矩。</td>
+</tr>
+<tr>
+<td style="text-align:center">创造</td>
+<td style="text-align:center">beta</td>
+<td style="text-align:center">构建之法中说，达到创造阶段的团队知道为何而战。哈哈，我们的目标一开始就很明确，是为了栋哥的自助餐而战的，因此大家在每个环节都努力做到最好。“高度自治，不需要领导的实时教诲和介入”，确实，PM通过在github上发布121个issues来计划整个项目，给每个人分配任务和功能点，大家都能够自觉主动地去完成。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>综上，我认为我们的团队可以算是达到了<code>创造</code>阶段！</p>
+<h2 id="阅读笔记"><a href="#阅读笔记" class="headerlink" title="阅读笔记"></a>阅读笔记</h2><p><strong>题目</strong>：Open source software development should strive for even greater code maintainability（开源软件的发展需要有更好的代码可维护性）</p>
+<p><strong>大意</strong>：对开源环境下源代码可维护性的研究结果进行探讨</p>
+<p><strong>主旨</strong>：开源软件的发展关键在于软件发布之后的维护</p>
+<p>文章指出，代码维护主要有以下两种：</p>
+<ul>
+<li><p>corrective maintenance：对已经存在的功能进行排错</p>
+</li>
+<li><p>perfective maintenance：为系统添加新的特性</p>
+</li>
+</ul>
+<p>作者通过测量五款开源软件的可维护性指数（Maintainability Index，MI）来评价各个软件的可维护性，MI值越高说明软件的可维护性越好，并得出了以下结论：</p>
+<ul>
+<li>在实现相同功能的情况下，开源软件的代码质量要好于或至少等同于闭源软件的代码质量。</li>
+<li>对于开源软件在不同版本可维护性上的表现（MI值波动明显），同时考虑到20%的代码产生80%的维护问题，因此对开源软件需要做更细致独立的分析。</li>
+<li>随着时间的推移，开源软件的可维护性也会逐渐降低，因此需要考虑预防性维护（preventive maintenance）。</li>
+</ul>
+<blockquote>
+<p>读完论文之后，发现代码的可维护性是十分重要的。回过头来再看自己编写的代码，主要分为三块，C++编写的分配算法，html写的前端界面，JavaScript编写的测试代码，这三部分代码的可维护性应该是逐渐降低的…主要原因还是在于对语言的掌握程度，掌握的不深入不能够灵活运用，很多时候仅仅只是为了完成一个功能而去编写代码，没有考虑到以后的扩展性以及维护性。但是说大泥球吧，应该也还不至于，至少在提出需求变更的时候，还能看得懂一个多月前写的代码，并进行相应的修改和扩展。</p>
+</blockquote>
+<h2 id="学会软工"><a href="#学会软工" class="headerlink" title="学会软工"></a>学会软工</h2><p><strong>1、研发出符合用户需求的软件</strong></p>
+<p>毕设导师互选是每个高校都必须面临的问题，开发此系统是符合潜在的用户需求的。而且该系统以后可能会被用于数计学院的工作中。</p>
+<p><strong>2、通过一系列工具，流程，团队合作，能够在预计的时间内发布 “足够好” 的软件</strong></p>
+<p>我们团队有完整的项目规划，并且定时发布项目的进度。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">时间</th>
+<th style="text-align:center">主题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2016-09-25 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <a href="http://www.cnblogs.com/CSLaker/p/5907123.html" target="_blank" rel="noopener">团队选题报告</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr>
+<td style="text-align:center">2016-10-16</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/5966396.html" target="_blank" rel="noopener">任务计划</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-10-22</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/5986566.html" target="_blank" rel="noopener">需求规格说明书</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-10-29</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6010248.html" target="_blank" rel="noopener">系统设计</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-11-07~18</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6045895.html" target="_blank" rel="noopener">Alpha版本十天冲刺集结令</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-11-19</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6079767.html" target="_blank" rel="noopener">Alpha版本项目测试</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-11-19</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6079668.html" target="_blank" rel="noopener">Alpha版本项目总结</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-11-24</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6099218.html" target="_blank" rel="noopener">Alpha版本之事后诸葛亮</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-12-03</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6129030.html" target="_blank" rel="noopener">Beta版本之冲刺计划及安排</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-12-08~16</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6160236.html" target="_blank" rel="noopener">Beta版本七天冲刺集结令</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-12-19</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6201024.html" target="_blank" rel="noopener">Beta版本项目测试</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-12-19</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6198527.html" target="_blank" rel="noopener">用户试用与调研报告</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2016-12-29</td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/CSLaker/p/6232572.html" target="_blank" rel="noopener">宣传推广方案</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>3、展现软件是可以维护和继续发展的</strong></p>
+<p>github链接:<a href="https://github.com/Tutordistribution/Tutor-distribution" target="_blank" rel="noopener">点我跳转</a><br>仓库里有完整的软件需求说明书等文档，详细的commit记录以及issues，方便维护和继续发展。</p>
+
+                
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/software-engineering-summary/" data-id="cjobive6j00l9u1siubdy3869" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/software-engineering-summary/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/posts/LeetCode1-Two-Sum/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    LeetCode1 Two Sum
+                
+            </div>
+        </a>
+    
+    
+        <a href="/posts/2016-acmicpc-qingdao-summary/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">2016ACM区域赛青岛赛区总结</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="gitalkContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">111</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/ACM/" style="font-size: 13.08px;">ACM</a> <a href="/tags/BFS/" style="font-size: 11.54px;">BFS</a> <a href="/tags/BST/" style="font-size: 11.54px;">BST</a> <a href="/tags/DFS/" style="font-size: 16.92px;">DFS</a> <a href="/tags/DP/" style="font-size: 13.85px;">DP</a> <a href="/tags/GAN/" style="font-size: 10px;">GAN</a> <a href="/tags/Gale-Shapley算法/" style="font-size: 10px;">Gale-Shapley算法</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/LeetCode/" style="font-size: 20px;">LeetCode</a> <a href="/tags/Manacher/" style="font-size: 10px;">Manacher</a> <a href="/tags/Matlab/" style="font-size: 10px;">Matlab</a> <a href="/tags/SG函数/" style="font-size: 10px;">SG函数</a> <a href="/tags/TensorFlow/" style="font-size: 10.77px;">TensorFlow</a> <a href="/tags/anaconda/" style="font-size: 10px;">anaconda</a> <a href="/tags/cgan/" style="font-size: 10px;">cgan</a> <a href="/tags/conditional-gan/" style="font-size: 10px;">conditional gan</a> <a href="/tags/greedy/" style="font-size: 10px;">greedy</a> <a href="/tags/hands-on-ML/" style="font-size: 11.54px;">hands-on ML</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jupyter-notebook/" style="font-size: 10px;">jupyter notebook</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/pip/" style="font-size: 10px;">pip</a> <a href="/tags/scp/" style="font-size: 10px;">scp</a> <a href="/tags/ssh/" style="font-size: 10.77px;">ssh</a> <a href="/tags/tensorboard/" style="font-size: 10px;">tensorboard</a> <a href="/tags/webIDE/" style="font-size: 10px;">webIDE</a> <a href="/tags/二分/" style="font-size: 16.15px;">二分</a> <a href="/tags/二叉搜索树/" style="font-size: 10px;">二叉搜索树</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/位运算/" style="font-size: 17.69px;">位运算</a> <a href="/tags/分治/" style="font-size: 10px;">分治</a> <a href="/tags/单调栈/" style="font-size: 10.77px;">单调栈</a> <a href="/tags/博弈论/" style="font-size: 10px;">博弈论</a> <a href="/tags/双指针/" style="font-size: 14.62px;">双指针</a> <a href="/tags/哈希/" style="font-size: 16.15px;">哈希</a> <a href="/tags/哈希表/" style="font-size: 10px;">哈希表</a> <a href="/tags/回文/" style="font-size: 10px;">回文</a> <a href="/tags/字典树/" style="font-size: 10px;">字典树</a> <a href="/tags/字符串/" style="font-size: 19.23px;">字符串</a> <a href="/tags/排序/" style="font-size: 12.31px;">排序</a> <a href="/tags/数学/" style="font-size: 19.23px;">数学</a> <a href="/tags/数组/" style="font-size: 18.46px;">数组</a> <a href="/tags/数论/" style="font-size: 10px;">数论</a> <a href="/tags/机器学习/" style="font-size: 15.38px;">机器学习</a> <a href="/tags/条件生成对抗网络/" style="font-size: 10px;">条件生成对抗网络</a> <a href="/tags/栈/" style="font-size: 11.54px;">栈</a> <a href="/tags/树/" style="font-size: 16.92px;">树</a> <a href="/tags/树状数组/" style="font-size: 10px;">树状数组</a> <a href="/tags/牛顿迭代法/" style="font-size: 10px;">牛顿迭代法</a> <a href="/tags/生成对抗网络/" style="font-size: 10px;">生成对抗网络</a> <a href="/tags/端口转发/" style="font-size: 10px;">端口转发</a> <a href="/tags/算法/" style="font-size: 12.31px;">算法</a> <a href="/tags/结对编程/" style="font-size: 10px;">结对编程</a> <a href="/tags/贪心/" style="font-size: 11.54px;">贪心</a> <a href="/tags/软件工程/" style="font-size: 12.31px;">软件工程</a> <a href="/tags/逻辑回归/" style="font-size: 10px;">逻辑回归</a> <a href="/tags/链表/" style="font-size: 13.08px;">链表</a> <a href="/tags/镜像源/" style="font-size: 10px;">镜像源</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode575-Distribute-Candies/" class="title">LeetCode575 Distribute Candies</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T05:21:28.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode566-Reshape-the-Matrix/" class="title">LeetCode566 Reshape the Matrix</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T05:03:19.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode563-Binary-Tree-Tilt/" class="title">LeetCode563 Binary Tree Tilt</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T04:51:07.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode561-Array-Partition-I/" class="title">LeetCode561 Array Partition I</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T04:31:32.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-title"><a href="/posts/LeetCode557-Reverse-Words-in-a-String-III/" class="title">LeetCode557 Reverse Words in a String III</a></p>
+                            <p class="item-date"><time datetime="2018-01-14T04:17:22.000Z" itemprop="datePublished">2018-01-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+</aside>
+<div id="toTop" class="fa fa-angle-up"></div>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 orzyt<br>
+            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+        var gitalk = new Gitalk({
+            id: location.pathname,
+            clientID: '3628f46ff8965c297258', 
+            clientSecret: 'da2ef51d9fe687db577e834867d253a697f19a9f',
+            repo: 'comments',
+            owner: 'orzyt',
+            admin: ['orzyt'],
+            distractionFreeMode: false,
+            perPage: 20,
+            createIssueManually: false,
+            language: 'zh-CN', 
+        })
+        gitalk.render('gitalkContainer')
+	</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
+

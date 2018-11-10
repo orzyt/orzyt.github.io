@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /page/
+Sitemap: https://orzyt.cn/sitemap.xml
+Sitemap: https://orzyt.cn/baidusitemap.xml
