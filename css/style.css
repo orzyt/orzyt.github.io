@@ -117,7 +117,7 @@ body,
 }
 body {
   color: #444;
-  background: #f3f3f3;
+  background: #f7f7f7;
   font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
 }
@@ -256,8 +256,9 @@ code {
 .timeline-row .content,
 #toTop {
   background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  border-radius: 1px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05), 0 0 1px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s;
 }
 .article-entry h1,
 .widget h1 {
@@ -1032,7 +1033,7 @@ a.article-title:hover {
   line-height: 1em;
   padding: 6px 15px;
   border-radius: 15px;
-  background: #f3f3f3;
+  background: #f7f7f7;
   color: #999;
   text-shadow: 0 1px #fff;
   text-decoration: none;
@@ -1186,7 +1187,7 @@ a.article-title:hover {
   line-height: 36px;
 }
 .article-share-links {
-  background: #f3f3f3;
+  background: #f7f7f7;
 }
 .article-share-links:before,
 .article-share-links:after {
@@ -1691,7 +1692,7 @@ ol.toc {
   top: 11px;
   left: -16px;
   border: 0px solid transparent;
-  border-right-color: #f3f3f3;
+  border-right-color: #f7f7f7;
 }
 .timeline-row .content:before {
   top: 10px;
