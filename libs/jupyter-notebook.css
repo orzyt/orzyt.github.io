@@ -2969,8 +2969,7 @@ select[multiple].input-lg {
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -5042,6 +5041,14 @@ a.thumbnail.active {
 .alert-danger .alert-link {
   color: #843534;
 }
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
 @keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
@@ -5077,6 +5084,7 @@ a.thumbnail.active {
 }
 .progress.active .progress-bar,
 .progress-bar.active {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
   animation: progress-bar-stripes 2s linear infinite;
 }
 .progress-bar-success {
@@ -5787,10 +5795,14 @@ button.close {
   outline: 0;
 }
 .modal.fade .modal-dialog {
+  -webkit-transform: translate(0, -25%);
   transform: translate(0, -25%);
+  transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .modal-open .modal {
@@ -6146,23 +6158,30 @@ button.close {
 }
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner > .item {
+    transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    -webkit-perspective: 1000px;
     perspective: 1000px;
   }
   .carousel-inner > .item.next,
   .carousel-inner > .item.active.right {
+    -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
     left: 0;
   }
   .carousel-inner > .item.prev,
   .carousel-inner > .item.active.left {
+    -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
     left: 0;
   }
   .carousel-inner > .item.next.left,
   .carousel-inner > .item.prev.right,
   .carousel-inner > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     left: 0;
   }
@@ -6718,34 +6737,52 @@ button.close {
   margin-left: .3em;
 }
 .fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
-@keyframes fa-spin {
+@-webkit-keyframes fa-spin {
   0% {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 :root .fa-rotate-90,
@@ -6753,7 +6790,8 @@ button.close {
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 .fa-stack {
   position: relative;
@@ -8294,6 +8332,7 @@ button.close {
 *
 */
 .modal.fade .modal-dialog {
+  -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 code {
@@ -8338,54 +8377,42 @@ Browsers not listed, including Safari, are supported via the styling under the
 .hbox {
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: horizontal;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: horizontal;
   -moz-box-align: stretch;
   display: box;
   box-orient: horizontal;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: row;
+  align-items: stretch;
 }
 .hbox > * {
   /* Old browsers */
   box-flex: 0;
   /* Modern browsers */
-  -ms-flex: none;
-      flex: none;
+  flex: none;
 }
 .vbox {
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: vertical;
   -moz-box-align: stretch;
   display: box;
   box-orient: vertical;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
 }
 .vbox > * {
   /* Old browsers */
   box-flex: 0;
   /* Modern browsers */
-  -ms-flex: none;
-      flex: none;
+  flex: none;
 }
 .hbox.reverse,
 .vbox.reverse,
@@ -8393,8 +8420,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-direction: reverse;
   /* Modern browsers */
-  -ms-flex-direction: row-reverse;
-      flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 .hbox.box-flex0,
 .vbox.box-flex0,
@@ -8402,8 +8428,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-flex: 0;
   /* Modern browsers */
-  -ms-flex: none;
-      flex: none;
+  flex: none;
   width: auto;
 }
 .hbox.box-flex1,
@@ -8412,8 +8437,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-flex: 1;
   /* Modern browsers */
-  -ms-flex: 1;
-      flex: 1;
+  flex: 1;
 }
 .hbox.box-flex,
 .vbox.box-flex,
@@ -8422,8 +8446,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-flex: 1;
   /* Modern browsers */
-  -ms-flex: 1;
-      flex: 1;
+  flex: 1;
 }
 .hbox.box-flex2,
 .vbox.box-flex2,
@@ -8431,8 +8454,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-flex: 2;
   /* Modern browsers */
-  -ms-flex: 2;
-      flex: 2;
+  flex: 2;
 }
 .box-group1 {
   /*  Deprecated */
@@ -8452,8 +8474,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-pack: start;
   /* Modern browsers */
-  -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
 }
 .hbox.end,
 .vbox.end,
@@ -8461,8 +8482,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-pack: end;
   /* Modern browsers */
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
 }
 .hbox.center,
 .vbox.center,
@@ -8470,8 +8490,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-pack: center;
   /* Modern browsers */
-  -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
 }
 .hbox.baseline,
 .vbox.baseline,
@@ -8479,8 +8498,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-pack: baseline;
   /* Modern browsers */
-  -ms-flex-pack: baseline;
-      justify-content: baseline;
+  justify-content: baseline;
 }
 .hbox.stretch,
 .vbox.stretch,
@@ -8488,8 +8506,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-pack: stretch;
   /* Modern browsers */
-  -ms-flex-pack: stretch;
-      justify-content: stretch;
+  justify-content: stretch;
 }
 .hbox.align-start,
 .vbox.align-start,
@@ -8497,8 +8514,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-align: start;
   /* Modern browsers */
-  -ms-flex-align: start;
-      align-items: flex-start;
+  align-items: flex-start;
 }
 .hbox.align-end,
 .vbox.align-end,
@@ -8506,8 +8522,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-align: end;
   /* Modern browsers */
-  -ms-flex-align: end;
-      align-items: flex-end;
+  align-items: flex-end;
 }
 .hbox.align-center,
 .vbox.align-center,
@@ -8515,8 +8530,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-align: center;
   /* Modern browsers */
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 .hbox.align-baseline,
 .vbox.align-baseline,
@@ -8524,8 +8538,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-align: baseline;
   /* Modern browsers */
-  -ms-flex-align: baseline;
-      align-items: baseline;
+  align-items: baseline;
 }
 .hbox.align-stretch,
 .vbox.align-stretch,
@@ -8533,8 +8546,7 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Old browsers */
   box-align: stretch;
   /* Modern browsers */
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  align-items: stretch;
 }
 div.error {
   margin: 2em;
@@ -8748,28 +8760,22 @@ span#login_widget > .button .badge,
 .modal_stretch .modal-dialog {
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: vertical;
   -moz-box-align: stretch;
   display: box;
   box-orient: vertical;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
   min-height: 80vh;
 }
 .modal_stretch .modal-dialog .modal-body {
   max-height: calc(100vh - 200px);
   overflow: auto;
-  -ms-flex: 1;
-      flex: 1;
+  flex: 1;
 }
 @media (min-width: 768px) {
   .modal .modal-dialog {
@@ -9340,21 +9346,16 @@ ul#new-menu {
 div.cell {
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: vertical;
   -moz-box-align: stretch;
   display: box;
   box-orient: vertical;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
   border-radius: 2px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9440,26 +9441,20 @@ div.inner_cell {
   min-width: 0;
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: vertical;
   -moz-box-align: stretch;
   display: box;
   box-orient: vertical;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
   /* Old browsers */
   box-flex: 1;
   /* Modern browsers */
-  -ms-flex: 1;
-      flex: 1;
+  flex: 1;
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -9479,21 +9474,16 @@ div.unrecognized_cell {
   padding: 5px 5px 5px 0px;
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: horizontal;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: horizontal;
   -moz-box-align: stretch;
   display: box;
   box-orient: horizontal;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: row;
+  align-items: stretch;
 }
 div.unrecognized_cell .inner_cell {
   border-radius: 2px;
@@ -9529,41 +9519,31 @@ div.input {
   page-break-inside: avoid;
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: horizontal;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: horizontal;
   -moz-box-align: stretch;
   display: box;
   box-orient: horizontal;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: row;
+  align-items: stretch;
 }
 @media (max-width: 540px) {
   div.input {
     /* Old browsers */
     display: -webkit-box;
-    -webkit-box-orient: vertical;
     -webkit-box-align: stretch;
     display: -moz-box;
-    -moz-box-orient: vertical;
     -moz-box-align: stretch;
     display: box;
     box-orient: vertical;
     box-align: stretch;
     /* Modern browsers */
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-align: stretch;
-        align-items: stretch;
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
@@ -9780,21 +9760,16 @@ div.output_wrapper {
   position: relative;
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: vertical;
   -moz-box-align: stretch;
   display: box;
   box-orient: vertical;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
   z-index: 1;
 }
 /* class for the output area when it should be height-limited */
@@ -9814,21 +9789,16 @@ div.output_collapsed {
   padding: 0px;
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: vertical;
   -moz-box-align: stretch;
   display: box;
   box-orient: vertical;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
 }
 div.out_prompt_overlay {
   height: 100%;
@@ -9850,21 +9820,16 @@ div.output_area {
   page-break-inside: avoid;
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: horizontal;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: horizontal;
   -moz-box-align: stretch;
   display: box;
   box-orient: horizontal;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: row;
+  align-items: stretch;
 }
 div.output_area .MathJax_Display {
   text-align: left !important;
@@ -9891,41 +9856,31 @@ div.output_area svg.unconfined {
 .output {
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: vertical;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: vertical;
   -moz-box-align: stretch;
   display: box;
   box-orient: vertical;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: column;
+  align-items: stretch;
 }
 @media (max-width: 540px) {
   div.output_area {
     /* Old browsers */
     display: -webkit-box;
-    -webkit-box-orient: vertical;
     -webkit-box-align: stretch;
     display: -moz-box;
-    -moz-box-orient: vertical;
     -moz-box-align: stretch;
     display: box;
     box-orient: vertical;
     box-align: stretch;
     /* Modern browsers */
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-align: stretch;
-        align-items: stretch;
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 div.output_area pre {
@@ -9945,8 +9900,7 @@ div.output_subarea {
   /* Old browsers */
   box-flex: 1;
   /* Modern browsers */
-  -ms-flex: 1;
-      flex: 1;
+  flex: 1;
   max-width: calc(100% - 14ex);
 }
 div.output_scroll div.output_subarea {
@@ -10198,21 +10152,16 @@ div.output_unrecognized a:hover {
 div.text_cell {
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: horizontal;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: horizontal;
   -moz-box-align: stretch;
   display: box;
   box-orient: horizontal;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: row;
+  align-items: stretch;
 }
 @media (max-width: 540px) {
   div.text_cell > div.prompt {
@@ -10399,26 +10348,20 @@ kbd {
   padding-right: 4px;
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: horizontal;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: horizontal;
   -moz-box-align: stretch;
   display: box;
   box-orient: horizontal;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: row;
+  align-items: stretch;
   /* Old browsers */
   box-pack: end;
   /* Modern browsers */
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
   display: -webkit-flex;
 }
 @media print {
@@ -11133,21 +11076,16 @@ div#pager .ui-resizable-handle::after {
 .quickhelp {
   /* Old browsers */
   display: -webkit-box;
-  -webkit-box-orient: horizontal;
   -webkit-box-align: stretch;
   display: -moz-box;
-  -moz-box-orient: horizontal;
   -moz-box-align: stretch;
   display: box;
   box-orient: horizontal;
   box-align: stretch;
   /* Modern browsers */
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  -ms-flex-align: stretch;
-      align-items: stretch;
+  flex-direction: row;
+  align-items: stretch;
   line-height: 1.8em;
 }
 .shortcut_key {
@@ -11161,8 +11099,7 @@ div#pager .ui-resizable-handle::after {
   /* Old browsers */
   box-flex: 1;
   /* Modern browsers */
-  -ms-flex: 1;
-      flex: 1;
+  flex: 1;
 }
 span.save_widget {
   margin-top: 6px;
@@ -11270,6 +11207,22 @@ li.pulse.open > a.dropdown-toggle {
  * have some strange css to have the scroll bar on
  * the left with fix button on the top right of the tooltip
  */
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /*properties of tooltip after "expand"*/
 .bigtooltip {
   overflow: auto;
@@ -11306,7 +11259,9 @@ li.pulse.open > a.dropdown-toggle {
 .ipython_tooltip {
   max-width: 700px;
   /*fade-in animation when inserted*/
+  -webkit-animation: fadeOut 400ms;
   animation: fadeOut 400ms;
+  -webkit-animation: fadeIn 400ms;
   animation: fadeIn 400ms;
   vertical-align: middle;
   background-color: #f7f7f7;

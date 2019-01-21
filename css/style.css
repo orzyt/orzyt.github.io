@@ -127,6 +127,7 @@ a {
 }
 a:visited {
   color: #38b7ea;
+  text-decoration: none;
 }
 code {
   margin: 0 2px;
@@ -258,7 +259,9 @@ code {
   background: #fff;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05), 0 0 1px rgba(0,0,0,0.1);
   border-radius: 4px;
+  transition: opacity 0.3s ease-out 0s, -webkit-transform 0.3s ease-out 0s;
   transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s;
+  transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s, -webkit-transform 0.3s ease-out 0s;
 }
 .article-entry h1,
 .widget h1 {
@@ -1473,8 +1476,7 @@ ol.toc {
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   overflow: hidden;
-  page-break-inside: avoid;
-       break-inside: avoid-column;
+  break-inside: avoid-column;
   padding: 0;
   margin-bottom: 15px;
 }
@@ -1701,6 +1703,7 @@ ol.toc {
   border-right-color: rgba(0,0,0,0.05);
 }
 .timeline-row .content:hover {
+  -webkit-transform: translate(0, -5px);
   transform: translate(0, -5px);
   box-shadow: 0 0.625em 1.75em 0 rgba(0,0,0,0.175);
 }

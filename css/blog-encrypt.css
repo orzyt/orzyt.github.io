@@ -44,7 +44,7 @@
     -ms-flex-order: 100;
     font-size: 18px;
     order: 100;
-    color: #3f4f5b;
+    color: #444;
     -webkit-transform-origin: left bottom;
     transform-origin: left bottom;
     -webkit-transform: translate(10px, 40px);
@@ -54,7 +54,7 @@
     order: 2;
     width: 0;
     height: 2px;
-    background: #658db5;
+    background: #38b7ea;
     transition: all 0.3s;
 }
 .hbe-input-container input:focus {
