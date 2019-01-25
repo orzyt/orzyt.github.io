@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
+    <lastmod>2019-01-25T07:02:26.073Z</lastmod>
+  </url>  <url>
     <loc>https://orzyt.cn/posts/2018-2019-fall-semester-summary/</loc>
-    <lastmod>2019-01-21T05:52:30.513Z</lastmod>
+    <lastmod>2019-01-22T06:49:10.651Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/manacher-algorithm/</loc>
     <lastmod>2018-11-10T11:47:16.931Z</lastmod>
@@ -229,10 +232,10 @@
     <loc>https://orzyt.cn/posts/LeetCode409-Longest-Palindrome/</loc>
     <lastmod>2018-11-10T11:47:16.915Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/LeetCode412-Fizz-Buzz/</loc>
+    <loc>https://orzyt.cn/posts/LeetCode413-Arithmetic-Slices/</loc>
     <lastmod>2018-11-10T11:47:16.915Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/LeetCode413-Arithmetic-Slices/</loc>
+    <loc>https://orzyt.cn/posts/LeetCode412-Fizz-Buzz/</loc>
     <lastmod>2018-11-10T11:47:16.915Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/LeetCode414-Third-Maximum-Number/</loc>
@@ -283,10 +286,10 @@
     <loc>https://orzyt.cn/posts/LeetCode292-Nim-Game/</loc>
     <lastmod>2018-11-10T11:47:16.911Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/LeetCode303-Range-Sum-Query-Immutable/</loc>
+    <loc>https://orzyt.cn/posts/LeetCode307-Range-Sum-Query-Mutable/</loc>
     <lastmod>2018-11-10T11:47:16.911Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/LeetCode307-Range-Sum-Query-Mutable/</loc>
+    <loc>https://orzyt.cn/posts/LeetCode303-Range-Sum-Query-Immutable/</loc>
     <lastmod>2018-11-10T11:47:16.911Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/LeetCode326-Power-of-Three/</loc>
@@ -352,16 +355,16 @@
     <loc>https://orzyt.cn/posts/LeetCode20-Valid-Parentheses/</loc>
     <lastmod>2018-11-10T11:47:16.907Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/LeetCode204-Count-Primes/</loc>
-    <lastmod>2018-11-10T11:47:16.907Z</lastmod>
-  </url>  <url>
     <loc>https://orzyt.cn/posts/LeetCode202-Happy-Number/</loc>
     <lastmod>2018-11-10T11:47:16.907Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/LeetCode206-Reverse-Linked-List/</loc>
+    <loc>https://orzyt.cn/posts/LeetCode204-Count-Primes/</loc>
     <lastmod>2018-11-10T11:47:16.907Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/LeetCode21-Merge-Two-Sorted-Lists/</loc>
+    <lastmod>2018-11-10T11:47:16.907Z</lastmod>
+  </url>  <url>
+    <loc>https://orzyt.cn/posts/LeetCode206-Reverse-Linked-List/</loc>
     <lastmod>2018-11-10T11:47:16.907Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/LeetCode217-Contains-Duplicate/</loc>
@@ -370,10 +373,10 @@
     <loc>https://orzyt.cn/posts/2015-acmicpc-beijing-summary/</loc>
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2016-ccpc-hefei-summary/</loc>
+    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
+    <loc>https://orzyt.cn/posts/2016-ccpc-hefei-summary/</loc>
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/2017-cccc-final-summary/</loc>

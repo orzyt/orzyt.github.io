@@ -1,3 +1,4 @@
+https://orzyt.cn/posts/deep-face-recognition/
 https://orzyt.cn/posts/2018-2019-fall-semester-summary/
 https://orzyt.cn/posts/LeetCode575-Distribute-Candies/
 https://orzyt.cn/posts/LeetCode566-Reshape-the-Matrix/
