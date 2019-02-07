@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/posts/seive-of-prime-numbers/</loc>
+    
+    <lastmod>2019-02-07T15:10:57.582Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
     
-    <lastmod>2019-01-25T07:02:26.073Z</lastmod>
+    <lastmod>2019-02-07T14:56:09.148Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/about/index.html</loc>
+    
+    <lastmod>2019-02-07T14:11:30.665Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://orzyt.cn/posts/2018-2019-fall-semester-summary/</loc>
     
     <lastmod>2019-01-22T06:49:10.651Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/about/index.html</loc>
-    
-    <lastmod>2018-11-10T14:04:22.870Z</lastmod>
     
   </url>
   
@@ -107,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/seive-of-prime-numbers/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.931Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/change-mirrors/</loc>
     
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
@@ -149,7 +149,21 @@
   </url>
   
   <url>
+    <loc>https://orzyt.cn/posts/LeetCode84-Largest-Rectangle-in-Histogram/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/coursera-advice-for-applying-machine-learning/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/LeetCode9-Palindrome-Number/</loc>
     
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
     
@@ -192,20 +206,6 @@
   
   <url>
     <loc>https://orzyt.cn/posts/build-to-win!-summary/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/LeetCode84-Largest-Rectangle-in-Histogram/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/LeetCode9-Palindrome-Number/</loc>
     
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
     
@@ -884,41 +884,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/2017-fjpcpc-summary/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/2017-cccc-final-summary/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/2016-ccpc-hefei-summary/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/2015-acmicpc-beijing-summary/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/LeetCode101-Symmetric-Tree/</loc>
     
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
@@ -968,6 +933,20 @@
   </url>
   
   <url>
+    <loc>https://orzyt.cn/posts/2017-fjpcpc-summary/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/2017-cccc-final-summary/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/LeetCode121-Best-Time-to-Buy-and-Sell-Stock/</loc>
     
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
@@ -997,6 +976,27 @@
   
   <url>
     <loc>https://orzyt.cn/posts/LeetCode1-Two-Sum/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/2016-ccpc-hefei-summary/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.903Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/2015-acmicpc-beijing-summary/</loc>
     
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
     

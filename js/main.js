@@ -92,7 +92,7 @@ console.log(getMultiLine(console_text),'color:#495a80;font-size:16px;font-style:
 $(function() {
     $("#header").headroom({
         tolerance: 3,
-        offset: 50,
+        offset: 5,
         classes: {
             initial: "animated",
             pinned: "slideInDown",

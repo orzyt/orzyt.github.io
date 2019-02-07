@@ -1403,6 +1403,7 @@ ol.toc {
 #comments .gt-container .gt-btn {
   background-color: #38b7ea;
   color: #fff;
+  border: 1px solid #38b7ea;
 }
 #comments .gt-container .gt-link {
   border-bottom: 1px dotted #38b7ea;
