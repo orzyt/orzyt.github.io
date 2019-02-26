@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>David Silver强化学习Lecture1：强化学习简介 - 扬涛的博客</title>
+    <meta itemprop="name" content="David Silver强化学习Lecture1：强化学习简介 - 扬涛的博客">
+    
+    <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libs/headroom/animate.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/libs/headroom/headroom.min.js"></script>
+    <script src="/libs/headroom/jQuery.headroom.min.js"></script>
+    <script src="/libs/jquery/sort.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?63f226f2212285cc30d6ffa0636da07a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">扬涛的博客</span>
+            </a>
+            <nav id="main-nav">
+                <div>
+                    <ul class="nav navbar-nav">
+                    
+                        <a class="main-nav-link" href="/.">主页</a>
+                    
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    
+                        <a class="main-nav-link" href="/tags">标签</a>
+                    
+                        <a class="main-nav-link" href="/about">关于</a>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                                <li><a href="/study">学习资源汇总</a></li>
+                            
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/img/avatar.png">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <ul class="menu outer">
+            
+                <a class="main-nav-link" href="/.">主页</a>
+            
+                <a class="main-nav-link" href="/archives">归档</a>
+            
+                <a class="main-nav-link" href="/tags">标签</a>
+            
+                <a class="main-nav-link" href="/about">关于</a>
+                           
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    更多 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
+                    
+                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/img/avatar.png">
+            <h2 id="name">郑扬涛</h2>
+            <h3 id="title">M.S. Student @ Beihang Univ.</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/orzyt/activities">关注我</a>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/orzyt" target="_blank" title="github" class="tooltip">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/orzyt" target="_blank" title="facebook" class="tooltip">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/orzyt" target="_blank" title="weibo" class="tooltip">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class="tooltip">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-introduction-to-rl" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        
+            <h1 class="article-title" itemprop="name">
+                David Silver强化学习Lecture1：强化学习简介
+            </h1>
+        
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/introduction-to-rl/">
+            <time datetime="2019-02-25T14:56:13.000Z" itemprop="datePublished">2019-02-25</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/强化学习/">强化学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Reinforcement-Learning/">Reinforcement Learning</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                
+                <div id="toc" class="toc-article">
+                    <strong class="toc-title">文章目录</strong>
+                    
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#强化学习的特征"><span class="toc-number">1.</span> <span class="toc-text">强化学习的特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强化学习问题"><span class="toc-number">2.</span> <span class="toc-text">强化学习问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#奖励-Rewards"><span class="toc-number">2.1.</span> <span class="toc-text">奖励(Rewards)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#序贯决策-Sequential-Decision-Making"><span class="toc-number">2.2.</span> <span class="toc-text">序贯决策(Sequential Decision Making)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#智能体和环境-Agent-and-Environment"><span class="toc-number">2.3.</span> <span class="toc-text">智能体和环境(Agent and Environment)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#历史与状态-History-and-State"><span class="toc-number">2.4.</span> <span class="toc-text">历史与状态(History and State)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#环境状态-Environment-State"><span class="toc-number">2.4.1.</span> <span class="toc-text">环境状态(Environment State)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#智能体状态-Agent-State"><span class="toc-number">2.4.2.</span> <span class="toc-text">智能体状态(Agent State)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#信息状态-Information-State"><span class="toc-number">2.4.3.</span> <span class="toc-text">信息状态(Information State)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Rat-Example"><span class="toc-number">2.4.4.</span> <span class="toc-text">Rat Example</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#完全可观测环境-Fully-Observable-Environments"><span class="toc-number">2.4.5.</span> <span class="toc-text">完全可观测环境(Fully Observable Environments)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部分可观测环境-Partially-Observable-Environments"><span class="toc-number">2.4.6.</span> <span class="toc-text">部分可观测环境(Partially Observable Environments)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#智能体的构成"><span class="toc-number">3.</span> <span class="toc-text">智能体的构成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#策略-Policy"><span class="toc-number">3.1.</span> <span class="toc-text">策略(Policy)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值函数-Value-Function"><span class="toc-number">3.2.</span> <span class="toc-text">值函数(Value Function)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型-Model"><span class="toc-number">3.3.</span> <span class="toc-text">模型(Model)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maze-Example"><span class="toc-number">3.4.</span> <span class="toc-text">Maze Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#智能体的分类-Categorizing-RL-agents"><span class="toc-number">3.5.</span> <span class="toc-text">智能体的分类(Categorizing RL agents)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强化学习的问题"><span class="toc-number">4.</span> <span class="toc-text">强化学习的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习与规划-Learning-and-Planning"><span class="toc-number">4.1.</span> <span class="toc-text">学习与规划(Learning and Planning)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#探索和利用-Exploration-and-Exploitation"><span class="toc-number">4.2.</span> <span class="toc-text">探索和利用(Exploration and Exploitation)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预测和控制-Prediction-and-Control"><span class="toc-number">4.3.</span> <span class="toc-text">预测和控制(Prediction and Control)</span></a></li></ol></li></ol>
+                    
+
+                </div>
+                
+                
+                    <hr>
+<p><strong>课件</strong>：<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/intro_RL.pdf" target="_blank" rel="noopener">Lecture 1: Introduction to Reinforcement Learning</a></p>
+<p><strong>视频</strong>：<a href="https://www.bilibili.com/video/av9831889" target="_blank" rel="noopener">David Silver深度强化学习第1课 - 简介 (中文字幕)</a></p>
+<hr>
+<a id="more"></a>
+<h2 id="强化学习的特征"><a href="#强化学习的特征" class="headerlink" title="强化学习的特征"></a>强化学习的特征</h2><p>作为机器学习的一个分支，强化学习主要的特征为:</p>
+<ul>
+<li><p>无监督,仅有奖励信号；</p>
+</li>
+<li><p>反馈有延迟,不是瞬时的;</p>
+</li>
+<li><p>时间是重要的(由于是时序数据,不是独立同分布的);</p>
+</li>
+<li><p>Agent的动作会影响后续得到的数据;</p>
+</li>
+</ul>
+<hr>
+<h2 id="强化学习问题"><a href="#强化学习问题" class="headerlink" title="强化学习问题"></a>强化学习问题</h2><h3 id="奖励-Rewards"><a href="#奖励-Rewards" class="headerlink" title="奖励(Rewards)"></a>奖励(Rewards)</h3><p>奖励 $R_t$ 是一个标量的反馈信号,表示Agent在 $t$ 时刻的表现如何.</p>
+<p><strong>Agent的目标</strong>: 最大化累积奖励(maximise cumulative reward).</p>
+<p>强化学习基于<strong>奖励假设(reward hypothesis)</strong>.</p>
+<blockquote>
+<p><strong>奖励假设(Reward Hypothesis)</strong>:<br>所有强化学习任务的目标都可以被描述为最大化期望累积奖励.</p>
+</blockquote>
+<hr>
+<h3 id="序贯决策-Sequential-Decision-Making"><a href="#序贯决策-Sequential-Decision-Making" class="headerlink" title="序贯决策(Sequential Decision Making)"></a>序贯决策(Sequential Decision Making)</h3><p><strong>目标</strong>: 选择合适的动作最大化将来的累积奖励.</p>
+<ul>
+<li>动作可能会产生长期后果；</li>
+<li>奖励会有延迟性;</li>
+<li>牺牲立即回报可能会获得更多的长期回报.</li>
+</ul>
+<hr>
+<h3 id="智能体和环境-Agent-and-Environment"><a href="#智能体和环境-Agent-and-Environment" class="headerlink" title="智能体和环境(Agent and Environment)"></a>智能体和环境(Agent and Environment)</h3><p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k2ozf0lzj20aq0bxtb1.jpg" alt="Agent和环境" width="35%" height="35%"></p>
+<p>智能体在每个时刻$t$会:</p>
+<ul>
+<li>执行动作(Action)$A_t$;</li>
+<li>接收观测(Observation)$O_t$;</li>
+<li>接收标量奖励(Reward)$R_t$.</li>
+</ul>
+<p>而环境则会:</p>
+<ul>
+<li>接收动作(Action)$A_t$;</li>
+<li>产生观测(Observation)$O_{t+1}$;</li>
+<li>产生标量奖励(Reward)$R_{t+1}$.</li>
+</ul>
+<hr>
+<h3 id="历史与状态-History-and-State"><a href="#历史与状态-History-and-State" class="headerlink" title="历史与状态(History and State)"></a>历史与状态(History and State)</h3><blockquote>
+<p><strong>历史(History):</strong>由一系列观测,动作和奖励构成.</p>
+</blockquote>
+<script type="math/tex; mode=display">
+H_t = O_1, R_1, A_1, \dots, A_{t-1}, O_t, R_t</script><p>下一步将发生什么取决于历史:</p>
+<ul>
+<li>智能体选择的action;</li>
+<li>环境选择的observations/rewards.</li>
+</ul>
+<blockquote>
+<p><strong>状态(State)</strong>:用来决定接下来会发生什么的信息.</p>
+</blockquote>
+<p><strong>状态是历史的函数:</strong></p>
+<script type="math/tex; mode=display">
+S_t = f(H_t)</script><hr>
+<h4 id="环境状态-Environment-State"><a href="#环境状态-Environment-State" class="headerlink" title="环境状态(Environment State)"></a>环境状态(Environment State)</h4><p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k3akygqpj20b20cptb5.jpg" alt="环境状态" width="35%" height="35%"></p>
+<p>环境状态 $S_{t}^{e}$ 是环境的私有表示,通常对于智能体来说该状态不可见.</p>
+<p>即使$S_{t}^{e}$可见,也可能包含不相关信息.</p>
+<hr>
+<h4 id="智能体状态-Agent-State"><a href="#智能体状态-Agent-State" class="headerlink" title="智能体状态(Agent State)"></a>智能体状态(Agent State)</h4><p><img src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k3e8bw4aj20b00cx419.jpg" alt="智能体状态" width="35%" height="35%"></p>
+<p>智能体状态 $S_{t}^{a}$ 是智能体的内部表示,包含其用来决定下一步动作的信息,也是强化学习算法使用的信息.</p>
+<p>可以写成历史的函数: $S_{t}^{a} = f(H_t)$</p>
+<hr>
+<h4 id="信息状态-Information-State"><a href="#信息状态-Information-State" class="headerlink" title="信息状态(Information State)"></a>信息状态(Information State)</h4><p><strong>信息状态(也称为马尔科夫状态)</strong>: 包含历史中所有有用的信息.</p>
+<p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k3nzaa8yj20mn0593ym.jpg" alt="马尔科夫状态定义" width="60%" height="60%"></p>
+<p>马尔科夫状态表明: <strong>未来只与现在有关,而与过去无关.</strong></p>
+<p>其中,<strong>环境状态$S_t^e$</strong>和<strong>历史$H_t$</strong>具有马尔科夫性质.</p>
+<hr>
+<h4 id="Rat-Example"><a href="#Rat-Example" class="headerlink" title="Rat Example"></a>Rat Example</h4><p><img src="https://wx2.sinaimg.cn/large/8662e3cegy1g0k3trc5qxj20ny0doq88.jpg" alt="Rat Example" width="60%" height="60%"></p>
+<ul>
+<li><p>假如个体状态=序列中的后三个事件(不包括电击、获得奶酪，下同),事件序列3的结果会是什么? (答案是：电击)</p>
+</li>
+<li><p>假如个体状态=亮灯、响铃和拉电闸各自事件发生的次数,那么事件序列3的结果又是什么? (答案是：奶酪)</p>
+</li>
+<li><p>假如个体状态=完整的事件序列,那结果又是什么? (答案是：未知)</p>
+</li>
+</ul>
+<hr>
+<h4 id="完全可观测环境-Fully-Observable-Environments"><a href="#完全可观测环境-Fully-Observable-Environments" class="headerlink" title="完全可观测环境(Fully Observable Environments)"></a>完全可观测环境(Fully Observable Environments)</h4><p><strong>完全可观测性(Full observability):</strong> 智能体可以直接观测到环境状态,即</p>
+<script type="math/tex; mode=display">
+O_t = S_t^a = S_t^e</script><ul>
+<li>智能体状态 = 环境状态 = 信息状态</li>
+<li>实际上是马尔科夫决策过程(Markov Decision Process, MDP)</li>
+</ul>
+<hr>
+<h4 id="部分可观测环境-Partially-Observable-Environments"><a href="#部分可观测环境-Partially-Observable-Environments" class="headerlink" title="部分可观测环境(Partially Observable Environments)"></a>部分可观测环境(Partially Observable Environments)</h4><p><strong>部分可观测性(Partial observability):</strong> 智能体不能够直接观测到环境.</p>
+<p>如,机器人不能通过摄像头得知自身的绝对位置.</p>
+<ul>
+<li>智能体状态 $\neq$ 环境状态</li>
+<li>部分可观测马尔科夫决策过程(POMDP)</li>
+</ul>
+<p>此时,智能体必须构建其自身的状态表示 $S_t^a$,比如:</p>
+<ul>
+<li>完全的历史: $S_t^a = H_t$;</li>
+<li>环境状态的置信度: $S _ { t } ^ { a } = \left( \mathbb { P } \left[ S _ { t } ^ { e } = s ^ { 1 } \right] , \ldots , \mathbb { P } \left[ S _ { t } ^ { e } = s ^ { n } \right] \right)$;</li>
+<li>循环神经网络: $S_t^a = \sigma \left(S_{t-1}^{a}W_{s} + O_{t}W_{o}\right)$</li>
+</ul>
+<hr>
+<h2 id="智能体的构成"><a href="#智能体的构成" class="headerlink" title="智能体的构成"></a>智能体的构成</h2><p>智能体主要包含以下几种成分:</p>
+<ul>
+<li><strong>策略(Policy)</strong>: 智能体的行为函数;</li>
+<li><strong>值函数(Value Function)</strong>: 每个state或action的好坏;</li>
+<li><strong>模型(Model)</strong>: 智能体对环境的表示.</li>
+</ul>
+<hr>
+<h3 id="策略-Policy"><a href="#策略-Policy" class="headerlink" title="策略(Policy)"></a>策略(Policy)</h3><ul>
+<li>策略是智能体的行为;</li>
+<li>是<strong>状态</strong>到<strong>动作</strong>的映射;</li>
+<li>确定性策略: $a = \pi(s)$;</li>
+<li>随机性策略: $\pi(a|s) = \mathbb{P} \left[ A_{t} = a | S_{t} = s\right]$</li>
+</ul>
+<hr>
+<h3 id="值函数-Value-Function"><a href="#值函数-Value-Function" class="headerlink" title="值函数(Value Function)"></a>值函数(Value Function)</h3><p>值函数是对于未来奖励的预测.</p>
+<ul>
+<li>用于评价状态的好坏;</li>
+<li>因此可以用来选择动作.</li>
+</ul>
+<script type="math/tex; mode=display">
+v_{\pi}(s) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots | S_{t} = s \right]</script><hr>
+<h3 id="模型-Model"><a href="#模型-Model" class="headerlink" title="模型(Model)"></a>模型(Model)</h3><p>模型用来预测环境接下来会做什么.</p>
+<ul>
+<li>$\mathcal{P}$: 预测下一个状态.<script type="math/tex; mode=display">
+\mathcal{P}_{ss'}^{a} = \mathbb{P} \left[ S_{t+1} = s' | S_{t} = s, A_{t} = a\right]</script></li>
+<li>$\mathcal{R}$: 预测下一个(立即)奖励.<script type="math/tex; mode=display">
+\mathcal{R}_{s}^{a} = \mathbb{E} \left[ R_{t+1} | S_{t} = s, A_{t} = a\right]</script></li>
+</ul>
+<hr>
+<h3 id="Maze-Example"><a href="#Maze-Example" class="headerlink" title="Maze Example"></a>Maze Example</h3><p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k4norup9j20mj092dg5.jpg" alt="Maze Example" width="60%" height="60%"></p>
+<hr>
+<p><strong>策略表示:</strong></p>
+<p>箭头表示每个状态的策略 $\pi(s)$.</p>
+<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0k4u9pdcdj20f10c5q38.jpg" alt="Maze Example: Policy" width="40%" height="40%"></p>
+<hr>
+<p><strong>值函数表示:</strong></p>
+<p>数值表示每个状态的值 $v_{\pi}(s)$.</p>
+<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k4w9vn7wj20f60cct8y.jpg" alt="Maze Example: Value Function" width="40%" height="40%"></p>
+<hr>
+<p><strong>模型表示:</strong></p>
+<p>智能体可能对环境建立内部模型</p>
+<ul>
+<li>网格布局表示转移模型 $\mathcal{P}_{ss’}^{a}$;</li>
+<li>数值表示每个状态的立即奖励 $\mathcal{R}_{s}^{a}$.</li>
+</ul>
+<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0k51h023dj20c109kt8o.jpg" alt="Maze Example: Value Function" width="40%" height="40%"></p>
+<hr>
+<h3 id="智能体的分类-Categorizing-RL-agents"><a href="#智能体的分类-Categorizing-RL-agents" class="headerlink" title="智能体的分类(Categorizing RL agents)"></a>智能体的分类(Categorizing RL agents)</h3><p>按智能体的成分分类:</p>
+<ul>
+<li>基于值函数(Value Based)</li>
+<li>基于策略(Policy Based)</li>
+<li>演员-评论家(Actor Critic)</li>
+</ul>
+<p>或者按有无模型分类:</p>
+<ul>
+<li>无模型(Model Free)</li>
+<li>基于模型(Model Based)</li>
+</ul>
+<p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k55tidg0j20f30eaab9.jpg" alt="智能体分类" width="40%" height="40%"></p>
+<hr>
+<h2 id="强化学习的问题"><a href="#强化学习的问题" class="headerlink" title="强化学习的问题"></a>强化学习的问题</h2><h3 id="学习与规划-Learning-and-Planning"><a href="#学习与规划-Learning-and-Planning" class="headerlink" title="学习与规划(Learning and Planning)"></a>学习与规划(Learning and Planning)</h3><p><strong>强化学习</strong></p>
+<ul>
+<li>环境的初始状态未知;</li>
+<li>智能体与环境进行交互;</li>
+<li>智能体提升其策略.</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0k5dprnn4j20p80ejn0q.jpg" alt="学习" width="60%" height="60%"></p>
+<p><strong>规划</strong></p>
+<ul>
+<li>环境的模型已知;</li>
+<li>智能体通过模型进行计算,无须与外部进行交互;</li>
+<li>智能体提升其策略</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k5eleerwj20ok0df0u3.jpg" alt="规划" width="60%" height="60%"></p>
+<hr>
+<h3 id="探索和利用-Exploration-and-Exploitation"><a href="#探索和利用-Exploration-and-Exploitation" class="headerlink" title="探索和利用(Exploration and Exploitation)"></a>探索和利用(Exploration and Exploitation)</h3><p>强化学习是一种试错(trial-and-error)学习.</p>
+<p>智能体需要从与环境的交互中找到一种好的策略,同时不损失过多的奖励.</p>
+<ul>
+<li><strong>探索(Exploration):</strong> 从环境中寻找更多信息;</li>
+<li><strong>利用(Exploitation):</strong> 利用已知信息使奖励最大化.</li>
+</ul>
+<p>探索和利用同等重要,即使根据已有信息选择出的最优动作可以得到不错的奖励,不妨尝试全新的动作对环境进行探索,也许可以得到更好的结果.</p>
+<hr>
+<h3 id="预测和控制-Prediction-and-Control"><a href="#预测和控制-Prediction-and-Control" class="headerlink" title="预测和控制(Prediction and Control)"></a>预测和控制(Prediction and Control)</h3><ul>
+<li><strong>预测(Prediction):</strong> 对未来进行评估.</li>
+</ul>
+<p><img src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k5ryo676j20nz0ds0tn.jpg" alt="Gridworld Example: Prediction" width="60%" height="60%"></p>
+<hr>
+<ul>
+<li><strong>控制(Control):</strong> 最优化未来的结果.</li>
+</ul>
+<p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k5r6vdmgj20nv0eot9w.jpg" alt="Gridworld Example: Control" width="60%" height="60%"></p>
+
+                
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/introduction-to-rl/" data-id="cjslol36e001c3isinmdevpf5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/introduction-to-rl/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/posts/leetcode661-image-smoother/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">LeetCode661 Image Smoother</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="gitalkContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/强化学习/">强化学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文笔记/">论文笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://chenshen.xyz">陈燊(XMU)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.ruphi.cn">进阶者(NetEase)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.hrwhisper.me">细语呢喃(UCAS)</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+<div id="toTop" class="fa fa-angle-up"></div>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 orzyt<br>
+            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+        var gitalk = new Gitalk({
+            id: location.pathname,
+            clientID: '3628f46ff8965c297258', 
+            clientSecret: 'da2ef51d9fe687db577e834867d253a697f19a9f',
+            repo: 'comments',
+            owner: 'orzyt',
+            admin: ['orzyt'],
+            distractionFreeMode: false,
+            perPage: 20,
+            createIssueManually: false,
+            language: 'zh-CN', 
+        })
+        gitalk.render('gitalkContainer')
+	</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+    <!-- page.__post !== true --><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
+

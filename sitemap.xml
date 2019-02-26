@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/posts/introduction-to-rl/</loc>
+    
+    <lastmod>2019-02-26T13:43:51.431Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
+    
+    <lastmod>2019-02-26T11:20:51.367Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/leetcode575-distribute-candies/</loc>
     
     <lastmod>2019-02-08T10:26:00.494Z</lastmod>
@@ -16,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode563-binary-tree-tilt/</loc>
+    <loc>https://orzyt.cn/posts/leetcode104-maximum-depth-of-binary-tree/</loc>
     
     <lastmod>2019-02-08T10:26:00.486Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode104-maximum-depth-of-binary-tree/</loc>
+    <loc>https://orzyt.cn/posts/leetcode563-binary-tree-tilt/</loc>
     
     <lastmod>2019-02-08T10:26:00.486Z</lastmod>
     
@@ -33,6 +47,20 @@
     <loc>https://orzyt.cn/posts/leetcode342-power-of-four/</loc>
     
     <lastmod>2019-02-08T10:26:00.478Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/leetcode171-excel-sheet-column-number/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.474Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/leetcode264-ugly-number-ii/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.474Z</lastmod>
     
   </url>
   
@@ -51,30 +79,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode264-ugly-number-ii/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.474Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/leetcode204-count-primes/</loc>
     
     <lastmod>2019-02-08T10:26:00.474Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/leetcode171-excel-sheet-column-number/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.474Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/leetcode102-binary-tree-level-order-traversal/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.470Z</lastmod>
     
   </url>
   
@@ -86,9 +93,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode83-remove-duplicates-from-sorted-list/</loc>
+    <loc>https://orzyt.cn/posts/leetcode102-binary-tree-level-order-traversal/</loc>
     
-    <lastmod>2019-02-08T10:26:00.458Z</lastmod>
+    <lastmod>2019-02-08T10:26:00.470Z</lastmod>
     
   </url>
   
@@ -100,9 +107,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode451-sort-characters-by-frequency/</loc>
+    <loc>https://orzyt.cn/posts/leetcode83-remove-duplicates-from-sorted-list/</loc>
     
-    <lastmod>2019-02-08T10:26:00.450Z</lastmod>
+    <lastmod>2019-02-08T10:26:00.458Z</lastmod>
     
   </url>
   
@@ -114,9 +121,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode112-path-sum/</loc>
+    <loc>https://orzyt.cn/posts/leetcode451-sort-characters-by-frequency/</loc>
     
-    <lastmod>2019-02-08T10:26:00.446Z</lastmod>
+    <lastmod>2019-02-08T10:26:00.450Z</lastmod>
     
   </url>
   
@@ -128,14 +135,21 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode155-min-stack/</loc>
+    <loc>https://orzyt.cn/posts/leetcode112-path-sum/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.446Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/leetcode70-climbing-stairs/</loc>
     
     <lastmod>2019-02-08T10:26:00.438Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode70-climbing-stairs/</loc>
+    <loc>https://orzyt.cn/posts/leetcode155-min-stack/</loc>
     
     <lastmod>2019-02-08T10:26:00.438Z</lastmod>
     
@@ -177,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode442-find-all-duplicates-in-an-array/</loc>
+    <loc>https://orzyt.cn/posts/leetcode258-add-digits/</loc>
     
     <lastmod>2019-02-08T10:26:00.414Z</lastmod>
     
@@ -191,21 +205,21 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode258-add-digits/</loc>
+    <loc>https://orzyt.cn/posts/leetcode442-find-all-duplicates-in-an-array/</loc>
     
     <lastmod>2019-02-08T10:26:00.414Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode561-array-partition-i/</loc>
+    <loc>https://orzyt.cn/posts/leetcode108-convert-sorted-array-to-binary-search-tree/</loc>
     
     <lastmod>2019-02-08T10:26:00.398Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode108-convert-sorted-array-to-binary-search-tree/</loc>
+    <loc>https://orzyt.cn/posts/leetcode561-array-partition-i/</loc>
     
     <lastmod>2019-02-08T10:26:00.398Z</lastmod>
     
@@ -219,13 +233,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode350-intersection-of-two-arrays-ii/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.382Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/leetcode401-binary-watch/</loc>
     
     <lastmod>2019-02-08T10:26:00.382Z</lastmod>
@@ -233,9 +240,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode101-symmetric-tree/</loc>
+    <loc>https://orzyt.cn/posts/leetcode350-intersection-of-two-arrays-ii/</loc>
     
-    <lastmod>2019-02-08T10:26:00.366Z</lastmod>
+    <lastmod>2019-02-08T10:26:00.382Z</lastmod>
     
   </url>
   
@@ -247,9 +254,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode437-path-sum-iii/</loc>
+    <loc>https://orzyt.cn/posts/leetcode101-symmetric-tree/</loc>
     
-    <lastmod>2019-02-08T10:26:00.362Z</lastmod>
+    <lastmod>2019-02-08T10:26:00.366Z</lastmod>
     
   </url>
   
@@ -261,7 +268,21 @@
   </url>
   
   <url>
+    <loc>https://orzyt.cn/posts/leetcode437-path-sum-iii/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.362Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/leetcode541-reverse-string-ii/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.358Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/leetcode461-hamming-distance/</loc>
     
     <lastmod>2019-02-08T10:26:00.358Z</lastmod>
     
@@ -282,21 +303,7 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode461-hamming-distance/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.358Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/leetcode20-valid-parentheses/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.350Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/leetcode27-remove-element/</loc>
     
     <lastmod>2019-02-08T10:26:00.350Z</lastmod>
     
@@ -310,14 +317,21 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode35-search-insert-position/</loc>
+    <loc>https://orzyt.cn/posts/leetcode27-remove-element/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.350Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/leetcode206-reverse-linked-list/</loc>
     
     <lastmod>2019-02-08T10:26:00.310Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode206-reverse-linked-list/</loc>
+    <loc>https://orzyt.cn/posts/leetcode35-search-insert-position/</loc>
     
     <lastmod>2019-02-08T10:26:00.310Z</lastmod>
     
@@ -338,14 +352,14 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode153-find-minimum-in-rotated-sorted-array/</loc>
+    <loc>https://orzyt.cn/posts/leetcode476-number-complement/</loc>
     
     <lastmod>2019-02-08T10:26:00.294Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode476-number-complement/</loc>
+    <loc>https://orzyt.cn/posts/leetcode153-find-minimum-in-rotated-sorted-array/</loc>
     
     <lastmod>2019-02-08T10:26:00.294Z</lastmod>
     
@@ -366,6 +380,13 @@
   </url>
   
   <url>
+    <loc>https://orzyt.cn/posts/leetcode383-ransom-note/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.278Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/leetcode557-reverse-words-in-a-string-iii/</loc>
     
     <lastmod>2019-02-08T10:26:00.278Z</lastmod>
@@ -374,13 +395,6 @@
   
   <url>
     <loc>https://orzyt.cn/posts/leetcode202-happy-number/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.278Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/leetcode383-ransom-note/</loc>
     
     <lastmod>2019-02-08T10:26:00.278Z</lastmod>
     
@@ -408,6 +422,13 @@
   </url>
   
   <url>
+    <loc>https://orzyt.cn/posts/leetcode448-find-all-numbers-disappeared-in-an-array/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.250Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/leetcode415-add-strings/</loc>
     
     <lastmod>2019-02-08T10:26:00.250Z</lastmod>
@@ -422,13 +443,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode448-find-all-numbers-disappeared-in-an-array/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.250Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/leetcode463-island-perimeter/</loc>
     
     <lastmod>2019-02-08T10:26:00.246Z</lastmod>
@@ -436,14 +450,14 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode242-valid-anagram/</loc>
+    <loc>https://orzyt.cn/posts/leetcode389-find-the-difference/</loc>
     
     <lastmod>2019-02-08T10:26:00.238Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode389-find-the-difference/</loc>
+    <loc>https://orzyt.cn/posts/leetcode242-valid-anagram/</loc>
     
     <lastmod>2019-02-08T10:26:00.238Z</lastmod>
     
@@ -478,7 +492,21 @@
   </url>
   
   <url>
+    <loc>https://orzyt.cn/posts/leetcode453-minimum-moves-to-equal-array-elements/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.210Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/leetcode345-reverse-vowels-of-a-string/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.210Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/leetcode387-first-unique-character-in-a-string/</loc>
     
     <lastmod>2019-02-08T10:26:00.210Z</lastmod>
     
@@ -493,20 +521,6 @@
   
   <url>
     <loc>https://orzyt.cn/posts/leetcode520-detect-capital/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.210Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/leetcode387-first-unique-character-in-a-string/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.210Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/leetcode453-minimum-moves-to-equal-array-elements/</loc>
     
     <lastmod>2019-02-08T10:26:00.210Z</lastmod>
     
@@ -541,14 +555,14 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode292-nim-game/</loc>
+    <loc>https://orzyt.cn/posts/leetcode412-fizz-buzz/</loc>
     
     <lastmod>2019-02-08T10:26:00.186Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode412-fizz-buzz/</loc>
+    <loc>https://orzyt.cn/posts/leetcode292-nim-game/</loc>
     
     <lastmod>2019-02-08T10:26:00.186Z</lastmod>
     
@@ -562,13 +576,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode191-number-of-1-bits/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.170Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/leetcode118-pascals-triangle/</loc>
     
     <lastmod>2019-02-08T10:26:00.170Z</lastmod>
@@ -577,6 +584,13 @@
   
   <url>
     <loc>https://orzyt.cn/posts/leetcode283-move-zeroes/</loc>
+    
+    <lastmod>2019-02-08T10:26:00.170Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/leetcode191-number-of-1-bits/</loc>
     
     <lastmod>2019-02-08T10:26:00.170Z</lastmod>
     
@@ -674,14 +688,14 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode9-palindrome-number/</loc>
+    <loc>https://orzyt.cn/posts/leetcode122-best-time-to-buy-and-sell-stock-ii/</loc>
     
     <lastmod>2019-02-08T10:26:00.054Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode122-best-time-to-buy-and-sell-stock-ii/</loc>
+    <loc>https://orzyt.cn/posts/leetcode9-palindrome-number/</loc>
     
     <lastmod>2019-02-08T10:26:00.054Z</lastmod>
     
@@ -730,13 +744,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode154-find-minimum-in-rotated-sorted-array-ii/</loc>
-    
-    <lastmod>2019-02-08T10:26:00.014Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/leetcode404-sum-of-left-leaves/</loc>
     
     <lastmod>2019-02-08T10:26:00.014Z</lastmod>
@@ -744,9 +751,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode307-range-sum-query-mutable/</loc>
+    <loc>https://orzyt.cn/posts/leetcode154-find-minimum-in-rotated-sorted-array-ii/</loc>
     
-    <lastmod>2019-02-08T10:26:00.010Z</lastmod>
+    <lastmod>2019-02-08T10:26:00.014Z</lastmod>
     
   </url>
   
@@ -765,9 +772,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode654-maximum-binary-tree/</loc>
+    <loc>https://orzyt.cn/posts/leetcode307-range-sum-query-mutable/</loc>
     
-    <lastmod>2019-02-08T10:25:59.990Z</lastmod>
+    <lastmod>2019-02-08T10:26:00.010Z</lastmod>
     
   </url>
   
@@ -779,9 +786,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode637-average-of-levels-in-binary-tree/</loc>
+    <loc>https://orzyt.cn/posts/leetcode654-maximum-binary-tree/</loc>
     
-    <lastmod>2019-02-08T10:25:59.974Z</lastmod>
+    <lastmod>2019-02-08T10:25:59.990Z</lastmod>
     
   </url>
   
@@ -793,14 +800,21 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode661-image-smoother/</loc>
+    <loc>https://orzyt.cn/posts/leetcode637-average-of-levels-in-binary-tree/</loc>
+    
+    <lastmod>2019-02-08T10:25:59.974Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/leetcode617-merge-two-binary-trees/</loc>
     
     <lastmod>2019-02-08T10:25:59.958Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/leetcode617-merge-two-binary-trees/</loc>
+    <loc>https://orzyt.cn/posts/leetcode661-image-smoother/</loc>
     
     <lastmod>2019-02-08T10:25:59.958Z</lastmod>
     
@@ -849,13 +863,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
-    
-    <lastmod>2019-02-07T14:56:09.148Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/about/index.html</loc>
     
     <lastmod>2019-02-07T14:11:30.665Z</lastmod>
@@ -884,13 +891,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/ssh-port-forwarding/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.931Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/ssh-login/</loc>
     
     <lastmod>2018-11-10T11:47:16.931Z</lastmod>
@@ -898,7 +898,28 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/use-tensorflow-to-implement-logistic-regression/</loc>
+    <loc>https://orzyt.cn/posts/trie-summary/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/manacher-algorithm/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/pair-programming-tutor-distribution/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/software-engineering-summary/</loc>
     
     <lastmod>2018-11-10T11:47:16.931Z</lastmod>
     
@@ -919,35 +940,21 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/software-engineering-summary/</loc>
+    <loc>https://orzyt.cn/posts/use-tensorflow-to-implement-logistic-regression/</loc>
     
     <lastmod>2018-11-10T11:47:16.931Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/pair-programming-tutor-distribution/</loc>
+    <loc>https://orzyt.cn/posts/ssh-port-forwarding/</loc>
     
     <lastmod>2018-11-10T11:47:16.931Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/manacher-algorithm/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.931Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/trie-summary/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.931Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/change-mirrors/</loc>
+    <loc>https://orzyt.cn/posts/hands-on-ml-the-machine-learning-landscape/</loc>
     
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
     
@@ -955,6 +962,13 @@
   
   <url>
     <loc>https://orzyt.cn/posts/conditional-gan/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/</loc>
     
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
     
@@ -975,21 +989,7 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/hands-on-ml-the-machine-learning-landscape/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/coursera-advice-for-applying-machine-learning/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/coursera-neural-networks-model/</loc>
+    <loc>https://orzyt.cn/posts/learning-by-doing-notes/</loc>
     
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
     
@@ -1003,21 +1003,7 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/learning-by-doing-notes/</loc>
+    <loc>https://orzyt.cn/posts/coursera-neural-networks-model/</loc>
     
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
     
@@ -1025,6 +1011,27 @@
   
   <url>
     <loc>https://orzyt.cn/posts/build-to-win!-summary/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/change-mirrors/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/coursera-advice-for-applying-machine-learning/</loc>
+    
+    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/</loc>
     
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
     
@@ -1045,7 +1052,7 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
+    <loc>https://orzyt.cn/posts/2015-acmicpc-beijing-summary/</loc>
     
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
     
@@ -1059,7 +1066,7 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/2015-acmicpc-beijing-summary/</loc>
+    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
     
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
     
