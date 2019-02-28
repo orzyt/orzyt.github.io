@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://orzyt.cn/posts/svm/</loc>
+    <lastmod>2019-02-28T11:38:06.625Z</lastmod>
+  </url>  <url>
+    <loc>https://orzyt.cn/posts/ssh-login/</loc>
+    <lastmod>2019-02-28T11:11:29.583Z</lastmod>
+  </url>  <url>
+    <loc>https://orzyt.cn/posts/ssh-port-forwarding/</loc>
+    <lastmod>2019-02-28T11:11:15.375Z</lastmod>
+  </url>  <url>
     <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
     <lastmod>2019-02-28T04:59:26.781Z</lastmod>
   </url>  <url>
@@ -382,12 +391,6 @@
     <loc>https://orzyt.cn/posts/matlab-tutorial/</loc>
     <lastmod>2018-11-10T11:47:16.931Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/ssh-login/</loc>
-    <lastmod>2018-11-10T11:47:16.931Z</lastmod>
-  </url>  <url>
-    <loc>https://orzyt.cn/posts/ssh-port-forwarding/</loc>
-    <lastmod>2018-11-10T11:47:16.931Z</lastmod>
-  </url>  <url>
     <loc>https://orzyt.cn/posts/trie-summary/</loc>
     <lastmod>2018-11-10T11:47:16.931Z</lastmod>
   </url>  <url>
@@ -418,13 +421,13 @@
     <loc>https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/</loc>
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/</loc>
-    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
-  </url>  <url>
     <loc>https://orzyt.cn/posts/coursera-logistic-regression-and-regularization/</loc>
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/coursera-neural-networks-model/</loc>
+    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
+  </url>  <url>
+    <loc>https://orzyt.cn/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/</loc>
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/generative-adversarial-nets/</loc>

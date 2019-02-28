@@ -11,6 +11,7 @@ https://orzyt.cn/posts/leetcode599-minimum-index-sum-of-two-lists/
 https://orzyt.cn/posts/leetcode38-count-and-say/
 https://orzyt.cn/posts/deep-face-recognition/
 https://orzyt.cn/posts/2018-2019-fall-semester-summary/
+https://orzyt.cn/posts/svm/
 https://orzyt.cn/posts/leetcode575-distribute-candies/
 https://orzyt.cn/posts/leetcode566-reshape-the-matrix/
 https://orzyt.cn/posts/leetcode563-binary-tree-tilt/
@@ -58,8 +59,8 @@ https://orzyt.cn/posts/leetcode154-find-minimum-in-rotated-sorted-array-ii/
 https://orzyt.cn/posts/leetcode153-find-minimum-in-rotated-sorted-array/
 https://orzyt.cn/posts/leetcode102-binary-tree-level-order-traversal/
 https://orzyt.cn/posts/leetcode112-path-sum/
-https://orzyt.cn/posts/leetcode118-pascals-triangle/
 https://orzyt.cn/posts/leetcode119-pascals-triangle-ii/
+https://orzyt.cn/posts/leetcode118-pascals-triangle/
 https://orzyt.cn/posts/leetcode125-valid-palindrome/
 https://orzyt.cn/posts/leetcode107-binary-tree-level-order-traversal-ii/
 https://orzyt.cn/posts/leetcode108-convert-sorted-array-to-binary-search-tree/
