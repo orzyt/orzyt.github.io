@@ -16,11 +16,13 @@
     <link rel="icon" href="/favicon.ico">
     
 
+    <link rel="stylesheet" href="/libs/jupyter-notebook.css">
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/libs/open-sans/styles.css">
     <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
     <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/libs/headroom/animate.css">
+    
 
     <link rel="stylesheet" href="/css/style.css">
 
@@ -251,7 +253,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/leetcode-algorithms-solutions/" data-id="cjslol36n001r3isiaxl4fqou" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/leetcode-algorithms-solutions/" data-id="cjso5zcsx001w4usibnsh12xr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -329,6 +331,143 @@ var _hmt = _hmt || [];
 
 
 
+    <article id="post-markov-decision-processes" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/markov-decision-processes/">David Silver强化学习Lecture2：马尔可夫决策过程</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/markov-decision-processes/">
+            <time datetime="2019-02-27T07:38:18.000Z" itemprop="datePublished">2019-02-27</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/强化学习/">强化学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/强化学习/">强化学习</a>, <a class="tag-link" href="/tags/马尔可夫决策过程/">马尔可夫决策过程</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                <p><hr>
+</p><p><strong>课件</strong>：<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/MDP.pdf" target="_blank" rel="noopener">Lecture 2: Markov Decision Processes</a></p>
+<p><strong>视频</strong>：<a href="https://www.bilibili.com/video/av9833386" target="_blank" rel="noopener">David Silver深度强化学习第2课 - 简介 (中文字幕)</a></p>
+<hr><p></p>
+                <p class="article-more-link" style="float: right;">
+                    <a href="/posts/markov-decision-processes/">查看更多</a>
+                </p>
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/markov-decision-processes/" data-id="cjso5zcz200ct4usixuq4x1qw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/markov-decision-processes/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-introduction-to-rl" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
@@ -362,7 +501,7 @@ var _hmt = _hmt || [];
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Reinforcement-Learning/">Reinforcement Learning</a>
+        <a class="tag-link" href="/tags/强化学习/">强化学习</a>
     </div>
 
                     </div>
@@ -388,7 +527,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/introduction-to-rl/" data-id="cjslol36e001c3isinmdevpf5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/introduction-to-rl/" data-id="cjso5zcst001q4usi4uedr4p0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -526,7 +665,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/deep-face-recognition/" data-id="cjslol367000y3isiyn2ujaie" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/deep-face-recognition/" data-id="cjso5zcsm001e4usih9embhvd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -660,7 +799,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/2018-2019-fall-semester-summary/" data-id="cjslol35v000e3isie0jnlpx7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/2018-2019-fall-semester-summary/" data-id="cjso5zcs6000g4usigorgjwlf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -729,142 +868,6 @@ var _hmt = _hmt || [];
             
     
         <a href="https://orzyt.cn/posts/2018-2019-fall-semester-summary/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-ssh-port-forwarding" class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/ssh-port-forwarding/">ssh本地端口转发的应用</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/ssh-port-forwarding/">
-            <time datetime="2018-01-13T07:34:17.000Z" itemprop="datePublished">2018-01-13</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/教程/">教程</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/jupyter-notebook/">jupyter notebook</a>, <a class="tag-link" href="/tags/ssh/">ssh</a>, <a class="tag-link" href="/tags/tensorboard/">tensorboard</a>, <a class="tag-link" href="/tags/端口转发/">端口转发</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            
-                <p><hr>
-</p><p>SSH有三种端口转发模式，<strong>本地端口转发(Local Port Forwarding)</strong>，<strong>远程端口转发(Remote Port Forwarding)</strong>以及<strong>动态端口转发(Dynamic Port Forwarding)</strong>。本文只简单介绍<strong>本地端口转发</strong>，用于实现本机访问远程服务器上的<code>jupyter notebook</code>、<code>TensorBoard</code>等服务。</p>
-<h2 id="什么是本地端口转发？"><a href="#什么是本地端口转发？" class="headerlink" title="什么是本地端口转发？"></a>什么是本地端口转发？</h2><p>所谓本地端口转发，就是<strong>将发送到本地端口的请求，转发到目标端口</strong>。这样，就可以通过访问本地端口，来访问目标端口的服务。</p><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/ssh-port-forwarding/">查看更多</a>
-                </p>
-            
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/ssh-port-forwarding/" data-id="cjslol3cu00d03isig61fg7vv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/ssh-port-forwarding/#comments" class="article-comment-link">评论</a>
     
 
         </footer>

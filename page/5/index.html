@@ -16,11 +16,13 @@
     <link rel="icon" href="/favicon.ico">
     
 
+    <link rel="stylesheet" href="/libs/jupyter-notebook.css">
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/libs/open-sans/styles.css">
     <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
     <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/libs/headroom/animate.css">
+    
 
     <link rel="stylesheet" href="/css/style.css">
 
@@ -178,6 +180,150 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-coursera-linear-regression-with-multiple-variables-and-polynomial-regression" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/">Coursera Machine Learning 多元线性回归和多项式回归</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/">
+            <time datetime="2017-01-27T16:00:00.000Z" itemprop="datePublished">2017-01-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/机器学习/">机器学习</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                <p></p><h2 id="多变量线性回归"><a href="#多变量线性回归" class="headerlink" title="多变量线性回归"></a>多变量线性回归</h2><h3 id="多特征"><a href="#多特征" class="headerlink" title="多特征"></a>多特征</h3><ul>
+<li><p>$x^{(i)}$ ：第i个训练数据</p>
+</li>
+<li><p>$x_j^{(i)}$ ：第$i$个数据的第$j$个特征</p>
+</li>
+<li><p>$m$ ：训练集大小</p>
+</li>
+<li><p>$n$ ：特征数量</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">\begin{align*}h_\theta (x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_3 + \cdots + \theta_n x_n \newline =\begin{bmatrix}\theta_0 \hspace{2em} \theta_1 \hspace{2em} ... \hspace{2em} \theta_n\end{bmatrix}\begin{bmatrix}x_0 \newline x_1 \newline \vdots \newline x_n\end{bmatrix}= \theta^T x\end{align*}</script><p>若对整个数据集进行运算，有：$h_\theta(X) = X \theta$</p><p></p>
+                <p class="article-more-link" style="float: right;">
+                    <a href="/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/">查看更多</a>
+                </p>
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/" data-id="cjso5zcsd000v4usi48yeflyn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-coursera-linear-regression-with-one-variable-and-gradient-descent" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
@@ -237,7 +383,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/" data-id="cjslol36c001a3isi8la0tip2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/" data-id="cjso5zcsf000y4usicabpgxpv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -371,7 +517,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/learning-by-doing-notes/" data-id="cjslol36k001p3isifru1v957" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/learning-by-doing-notes/" data-id="cjso5zcsr001n4usitd3g5ze6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -533,7 +679,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/software-engineering-summary/" data-id="cjslol3cq00ct3isis6ldw08a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/software-engineering-summary/" data-id="cjso5zcz900d84usi63dd7s3g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -668,7 +814,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/" data-id="cjslol35m00073isixje2h28g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/" data-id="cjso5zcrj00014usi8zoxycgx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -737,141 +883,6 @@ var _hmt = _hmt || [];
             
     
         <a href="https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-2016-ccpc-hefei-summary" class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/2016-ccpc-hefei-summary/">2016中国大学生程序设计竞赛总结</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/2016-ccpc-hefei-summary/">
-            <time datetime="2016-10-29T13:22:00.000Z" itemprop="datePublished">2016-10-29</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/随笔/">随笔</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/ACM/">ACM</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            
-                <p></p><p>　　最近事情比较多，所以这份比赛总结姗姗来迟。趁今晚有空，总结之。</p>
-<p><img src="https://tuchuang001.com/images/2017/09/03/v2-0bb75c83026f90507717f269d3babb5b_r.jpg" alt="2016CCPC·安徽"></p><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/2016-ccpc-hefei-summary/">查看更多</a>
-                </p>
-            
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/2016-ccpc-hefei-summary/" data-id="cjslol35t000d3isi6ulh8h0x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/2016-ccpc-hefei-summary/#comments" class="article-comment-link">评论</a>
     
 
         </footer>
