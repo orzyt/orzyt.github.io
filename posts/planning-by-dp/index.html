@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>David Silver强化学习Lecture3：动态规划 - 扬涛的博客</title>
+    <meta itemprop="name" content="David Silver强化学习Lecture3：动态规划 - 扬涛的博客">
+    
+    <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/jupyter-notebook.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libs/headroom/animate.css">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/libs/headroom/headroom.min.js"></script>
+    <script src="/libs/headroom/jQuery.headroom.min.js"></script>
+    <script src="/libs/jquery/sort.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?63f226f2212285cc30d6ffa0636da07a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">扬涛的博客</span>
+            </a>
+            <nav id="main-nav">
+                <div>
+                    <ul class="nav navbar-nav">
+                    
+                        <a class="main-nav-link" href="/.">主页</a>
+                    
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    
+                        <a class="main-nav-link" href="/tags">标签</a>
+                    
+                        <a class="main-nav-link" href="/about">关于</a>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                                <li><a href="/study">学习资源汇总</a></li>
+                            
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/img/avatar.png">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <ul class="menu outer">
+            
+                <a class="main-nav-link" href="/.">主页</a>
+            
+                <a class="main-nav-link" href="/archives">归档</a>
+            
+                <a class="main-nav-link" href="/tags">标签</a>
+            
+                <a class="main-nav-link" href="/about">关于</a>
+                           
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    更多 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
+                    
+                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/img/avatar.png">
+            <h2 id="name">郑扬涛</h2>
+            <h3 id="title">M.S. Student @ Beihang Univ.</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/orzyt/activities">关注我</a>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/orzyt" target="_blank" title="github" class="tooltip">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/orzyt" target="_blank" title="facebook" class="tooltip">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/orzyt" target="_blank" title="weibo" class="tooltip">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class="tooltip">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-planning-by-dp" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        
+            <h1 class="article-title" itemprop="name">
+                David Silver强化学习Lecture3：动态规划
+            </h1>
+        
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/planning-by-dp/">
+            <time datetime="2019-03-01T06:10:25.000Z" itemprop="datePublished">2019-03-01</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/强化学习/">强化学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/动态规划/">动态规划</a>, <a class="tag-link" href="/tags/强化学习/">强化学习</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                
+                <div id="toc" class="toc-article">
+                    <strong class="toc-title">文章目录</strong>
+                    
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划"><span class="toc-number">1.</span> <span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动态规划的性质"><span class="toc-number">1.1.</span> <span class="toc-text">动态规划的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用动态规划进行Planning"><span class="toc-number">1.2.</span> <span class="toc-text">用动态规划进行Planning</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#策略评估"><span class="toc-number">2.</span> <span class="toc-text">策略评估</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#策略改进"><span class="toc-number">3.</span> <span class="toc-text">策略改进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#策略迭代"><span class="toc-number">4.</span> <span class="toc-text">策略迭代</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#策略迭代-1"><span class="toc-number">4.1.</span> <span class="toc-text">策略迭代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#策略迭代的扩展"><span class="toc-number">4.2.</span> <span class="toc-text">策略迭代的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#改良策略迭代"><span class="toc-number">4.2.1.</span> <span class="toc-text">改良策略迭代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#广义策略迭代"><span class="toc-number">4.2.2.</span> <span class="toc-text">广义策略迭代</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#值迭代"><span class="toc-number">5.</span> <span class="toc-text">值迭代</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#最优性原则"><span class="toc-number">5.1.</span> <span class="toc-text">最优性原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#确定性值迭代"><span class="toc-number">5.2.</span> <span class="toc-text">确定性值迭代</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同步动态规划算法总结"><span class="toc-number">6.</span> <span class="toc-text">同步动态规划算法总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态规划的扩展"><span class="toc-number">7.</span> <span class="toc-text">动态规划的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#异步动态规划"><span class="toc-number">7.1.</span> <span class="toc-text">异步动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#就地动态规划"><span class="toc-number">7.1.1.</span> <span class="toc-text">就地动态规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优先扫描"><span class="toc-number">7.1.2.</span> <span class="toc-text">优先扫描</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实时动态规划"><span class="toc-number">7.1.3.</span> <span class="toc-text">实时动态规划</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全宽和采样备份"><span class="toc-number">7.2.</span> <span class="toc-text">全宽和采样备份</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#全宽备份"><span class="toc-number">7.2.1.</span> <span class="toc-text">全宽备份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#采样备份"><span class="toc-number">7.2.2.</span> <span class="toc-text">采样备份</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#压缩映射"><span class="toc-number">8.</span> <span class="toc-text">压缩映射</span></a></li></ol>
+                    
+
+                </div>
+                
+                
+                    <hr>
+<p><strong>课件</strong>：<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/DP.pdf" target="_blank" rel="noopener">Lecture 3: Planning by Dynamic Programming</a></p>
+<p><strong>视频</strong>：<a href="https://www.bilibili.com/video/av9930653" target="_blank" rel="noopener">David Silver强化学习第3课 - 动态规划(中文字幕)</a></p>
+<hr>
+<a id="more"></a>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><ul>
+<li><p><strong>动态(Dynamic)</strong>: 问题中的时序部分</p>
+</li>
+<li><p><strong>规划(Planning)</strong>: 对问题进行优化</p>
+</li>
+</ul>
+<p>动态规划将问题分解为子问题, 从子问题的解中得到原始问题的解.</p>
+<hr>
+<h3 id="动态规划的性质"><a href="#动态规划的性质" class="headerlink" title="动态规划的性质"></a>动态规划的性质</h3><ul>
+<li><p><strong>最优子结构(Optimal substructure)</strong></p>
+<ul>
+<li>应用最优性原则(Principle of optimality)</li>
+<li>最优解可以从子问题的最优解中得到</li>
+</ul>
+</li>
+<li><p><strong>重叠子问题(Overlapping subproblems)</strong></p>
+<ul>
+<li>相同的子问题出现多次</li>
+<li>问题的解可以被缓存和复用</li>
+</ul>
+</li>
+</ul>
+<p>马尔可夫决策过程满足上面两种性质:</p>
+<blockquote>
+<p><em>贝尔曼方程</em> 给出了问题的递归分解表示, <em>值函数</em> 存储和复用了问题的解.</p>
+<script type="math/tex; mode=display">v_{\pi}(s) = \sum \limits_{a \in \mathcal{A}} \pi(a|s) (\mathcal{R}_s^a + \gamma \sum \limits_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^{a}v_{\pi}(s'))</script></blockquote>
+<hr>
+<h3 id="用动态规划进行Planning"><a href="#用动态规划进行Planning" class="headerlink" title="用动态规划进行Planning"></a>用动态规划进行Planning</h3><p>动态规划假设我们知道MDP的所有知识, 包括状态、行为、转移矩阵、奖励甚至策略等.</p>
+<p>对于<strong>预测(Prediction)</strong>问题: </p>
+<ul>
+<li><p>输入: </p>
+<ul>
+<li>MDP $&lt;\mathcal{S}, \mathcal{A}, \mathcal{P}, \mathcal{R}, \gamma&gt;$ 和 策略 $\pi$</li>
+<li>MRP $&lt;\mathcal{S}, \mathcal{P}^{\pi}, \mathcal{R}^{\pi}, \gamma&gt;$</li>
+</ul>
+</li>
+<li><p>输出: 值函数 $v_{\pi}$</p>
+</li>
+</ul>
+<p>对于<strong>控制(Control)</strong>问题:</p>
+<ul>
+<li><p>输入:</p>
+<ul>
+<li>MDP $&lt;\mathcal{S}, \mathcal{A}, \mathcal{P}, \mathcal{R}, \gamma&gt;$</li>
+</ul>
+</li>
+<li><p>输出:</p>
+<ul>
+<li>最优值函数 $v_{*}$</li>
+<li>最优策略 $\pi_{*}$</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="策略评估"><a href="#策略评估" class="headerlink" title="策略评估"></a>策略评估</h2><blockquote>
+<p>问题: 评估一个给定的策略 $\pi$<br>求解: 对贝尔曼期望方程进行迭代, $v_1 \to v_2 \to \dots \to v_{\pi}$</p>
+</blockquote>
+<p>通常使用<strong>同步备份(synchronous backups)</strong>方法:</p>
+<p>对于第 $k+1$ 次迭代, 所有状态 $s$ 在第 $k+1$ 时刻的价值 $v_{k+1}(s)$ 用 $v_k(s’)$ 进行更新, 其中 $s’$ 是 $s$ 的后继状态.</p>
+<p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0nb9rn3v4j20ar06eq31.jpg" alt="迭代策略评估" width="30%" height="30%"></p>
+<script type="math/tex; mode=display">
+\begin{aligned} 
+v _ { k + 1 } ( s ) & = \sum _ { a \in \mathcal { A } } \pi ( a | s ) \left( \mathcal { R } _ { s } ^ { a } + \gamma \sum _ { s ^ { \prime } \in \mathcal { S } } \mathcal { P } _ { s s ^ { \prime } } ^ { a } v _ { k } \left( s ^ { \prime } \right) \right) \\
+\mathbf { v } ^ { k + 1 } & = \mathcal { R } ^ { \pi } + \gamma \mathcal { P } ^ { \pi } \mathbf { v } ^ { k } 
+\end{aligned}</script><hr>
+<p><strong>迭代策略评估算法</strong>:</p>
+<p>迭代策略评估算法用来估计 $V \approx v_{\pi}$.</p>
+<p>这里使用<code>in-place</code>版本, 即只保留一份 $v$ 数组, 没有新旧之分. </p>
+<p>通常来说, 该方法也能收敛到 $v_{\pi}$, 而且收敛速度可能更快.</p>
+<p>终止条件: $\max \limits_ { s \in \mathcal{S} } \left| v _ { k + 1 } ( s ) - v _ { k } ( s ) \right|$ 小于给定的误差 $\Delta$</p>
+<p><img src="https://ws1.sinaimg.cn/large/8662e3cegy1g0nj071hc6j20km08hq3t.jpg" alt="迭代策略评估伪代码" width="60%" height="60%"></p>
+<hr>
+<p>例子: <strong>Small Gridworld</strong> <a href="https://github.com/orzyt/reinforcement-learning-an-introduction/blob/master/chapter04/grid_world.py" target="_blank" rel="noopener">[代码]</a></p>
+<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0nbvkvvotj20k00dkdgx.jpg" alt="Small Gridworld" width="50%" height="50%"></p>
+<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0nc5gkmd8j20e30lkwgd.jpg" alt="Small Gridworld Solution" width="50%" height="50%"></p>
+<hr>
+<h2 id="策略改进"><a href="#策略改进" class="headerlink" title="策略改进"></a>策略改进</h2><p>让我们考虑一个<strong>确定性策略</strong>(即对于一个状态来说, 其采取的动作是确定的, 而不是考虑每个动作的概率) $a = \pi(s)$.</p>
+<blockquote>
+<p>我们可以通过贪心选择来改进策略 $\pi$:</p>
+<script type="math/tex; mode=display">
+\pi ^ { \prime } ( s ) = \underset { a \in \mathcal { A } } { \operatorname { argmax } } q _ { \pi } ( s , a )</script></blockquote>
+<p>即状态 $s$ 的新策略为令动作值函数 $q_{\pi}(s, a)$ 取得最大值的动作.</p>
+<p>相应地, 动作值函数 $q _ { \pi } \left( s , \pi ^ { \prime } ( s ) \right)$ 得到了改进:</p>
+<script type="math/tex; mode=display">
+q _ { \pi } \left( s , \pi ^ { \prime } ( s ) \right) = \max _ { a \in \mathcal { A } } q _ { \pi } ( s , a ) \geq q _ { \pi } ( s , \pi ( s ) ) = v _ { \pi } ( s ) \\
+{\scriptsize 由于是确定性策略, 才会有 v_{\pi}(s) = q_{\pi}(s, \pi(s))}
+\tag{1}</script><p>注: 确定性策略下的动作值函数 $q_{\pi}(s, a)$ 为:</p>
+<script type="math/tex; mode=display">
+\begin{aligned} q _ { \pi } ( s , a ) & = \mathbb { E } \left[ R _ { t + 1 } + \gamma v _ { \pi } \left( S _ { t + 1 } \right) | S _ { t } = s , A _ { t } = a \right] \\ & = \sum _ { s ^ { \prime } , r } p \left( s ^ { \prime } , r | s , a \right) \left[ r + \gamma v _ { \pi } \left( s ^ { \prime } \right) \right] \end{aligned}
+\tag{2}</script><p>从而, 值函数 $v _ { \pi ^ { \prime } } ( s )$ 也得到了改进:</p>
+<script type="math/tex; mode=display">
+\begin{aligned} 
+v_\pi(s) & \le q_\pi(s,\pi^{'}(s)) {\scriptsize //公式(1)} \\ 
+&={\Bbb E}[R_{t+1} + \gamma v_\pi(S_{t+1})|S_t=s, A_t=\pi^{'}(s)] {\scriptsize //公式(2)} \\
+&={\Bbb E}_{\pi'}[R_{t+1}+\gamma v_\pi(S_{t+1})|S_t=s]\  {\scriptsize //注意外层是在新策略 \pi^{'} 下求期望} \\   
+& \le {\Bbb E}_{\pi'}[R_{t+1}+\gamma q_\pi(S_{t+1},\pi'(S_{t+1}))|S_t=s] {\scriptsize //对状态S_{t+1}使用公式(1)} \\  
+&= {\Bbb E}_{\pi'}[R_{t+1}+\gamma {\Bbb E}_{\pi'}\left[ R_{t+2}+\gamma v_{\pi}\left( S_{t+2}\right) | S_{t+1}, A_{t+1}=\pi^{'}(S_{t+1}) \right] | S_t=s]\\ 
+&= {\Bbb E}_{\pi'}[R_{t+1}+\gamma R_{t+2}+\gamma^2 v_{\pi}\left( S_{t+2} \right)|S_t=s] {\scriptsize //去掉括号内的期望} \\ 
+& \le {\Bbb E}_{\pi'}[R_{t+1}+\gamma R_{t+2}+\gamma ^2 q_\pi(S_{t+2},\pi'(S_{t+2}))|S_t=s] {\scriptsize //对状态S_{t+2}使用公式(1)} \\  
+&= {\Bbb E}_{\pi'}[R_{t+1}+\gamma R_{t+2}+\gamma^2 {\Bbb E}_{\pi'}\left( R_{t+3}+\gamma v_{\pi}\left( S_{t+3} \right) \right)|S_t=s]\\  
+&= {\Bbb E}_{\pi'}[R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\gamma^3 v_{\pi}\left( S_{t+3} \right)|S_t=s]\\  
+& \vdots \\
+& \le {\Bbb E}_{\pi'}[R_{t+1}+\gamma R_{t+2}+\gamma^2 R_{t+3}+\gamma^3 R_{t+4} + \dots |S_t=s]\\ 
+&=v_{\pi^{'}}(s) \\ 
+\end{aligned}</script><p>当改进停止时, 有如下等式:</p>
+<script type="math/tex; mode=display">
+q _ { \pi } \left( s , \pi ^ { \prime } ( s ) \right) = \max _ { a \in \mathcal { A } } q _ { \pi } ( s , a ) = q _ { \pi } ( s , \pi ( s ) ) = v _ { \pi } ( s )
+\tag{3}</script><p>可以说, 此时公式(3)满足了贝尔曼最优方程:</p>
+<script type="math/tex; mode=display">
+v _ { \pi } ( s ) = \max _ { a \in \mathcal { A } } q _ { \pi } ( s , a )</script><p>从而, 对所有状态 $s$ 来说, 有$v_{\pi}(s) = v_{*}(s)$, 即策略 $\pi$ 改进到了最优策略.</p>
+<hr>
+<h2 id="策略迭代"><a href="#策略迭代" class="headerlink" title="策略迭代"></a>策略迭代</h2><h3 id="策略迭代-1"><a href="#策略迭代-1" class="headerlink" title="策略迭代"></a>策略迭代</h3><p>给定一个策略 $\pi$, 我们可以首先对策略进行评估, 然后根据值函数 $v_{\pi}$ 进行贪心地改进策略.</p>
+<script type="math/tex; mode=display">
+\pi _ { 0 } \stackrel { \mathrm { E } } { \longrightarrow } v _ { \pi _ { 0 } } \stackrel { \mathrm { I } } { \longrightarrow } \pi _ { 1 } \stackrel { \mathrm { E } } { \longrightarrow } v _ { \pi _ { 1 } } \stackrel { \mathrm { I } } { \longrightarrow } \pi _ { 2 } \stackrel { \mathrm { E } } { \longrightarrow } \cdots \stackrel { \mathrm { I } } { \longrightarrow } \pi _ { * } \stackrel { \mathrm { E } } { \longrightarrow } v _ { * }</script><p>其中, $\stackrel { \mathrm { E } } { \longrightarrow }$ 表示策略评估, $\stackrel { \mathrm { I } } { \longrightarrow }$ 表示策略改进. </p>
+<ul>
+<li><p><strong>评估(Evaluate):</strong></p>
+<script type="math/tex; mode=display">
+v _ { \pi } ( s ) = \mathbb { E } \left[ R _ { t + 1 } + \gamma R _ { t + 2 } + \ldots | S _ { t } = s \right]</script></li>
+<li><p><strong>改进(Improve):</strong></p>
+<script type="math/tex; mode=display">
+\pi^{'} = \text{greedy}(v_{\pi})</script></li>
+</ul>
+<p>由于每个策略都比前一个策略更优, 同时一个有限状态的马尔可夫决策过程(finite MDP)仅有有限个策略, 因此该过程一定能够在有限次的迭代中收敛到最优策略 $\pi_{*}$ 和最优值函数 $v_{*}$.</p>
+<hr>
+<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0ncddk93hj20ni0cc0uq.jpg" alt="策略迭代" width="50%" height="50%"></p>
+<hr>
+<p><strong>策略迭代算法:</strong></p>
+<p>策略迭代算法分为: <strong>初始化</strong>, <strong>策略评估</strong> 以及 <strong>策略改进</strong> 三部分.</p>
+<p>其中, 策略改进部分的终止条件为: <strong>是否所有状态的策略不再发生变化</strong>.</p>
+<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0njmn8jy5j20kq0e3760.jpg" alt="策略迭代算法" width="60%" height="60%"></p>
+<hr>
+<p>例子: <strong>Jack’s Car Rental</strong> <a href="https://github.com/orzyt/reinforcement-learning-an-introduction/blob/master/chapter04/car_rental.py" target="_blank" rel="noopener">[代码]</a>  (<em>先占个坑 , 等有时间把这个例子详细写下</em>)</p>
+<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0ncjvapk8j20ke0ebn32.jpg" alt="Jack’s Car Rental" width="50%" height="50%"></p>
+<p>策略迭代求解结果:</p>
+<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0nclbnxl1j20jw0dgtam.jpg" alt="Jack’s Car Rental Solution" width="50%" height="50%"></p>
+<p>图中纵坐标是位置 $1$ 的汽车数量, 横坐标是位置 $2$ 的汽车数量, 该问题共有 $21 \times 21$ 个状态. </p>
+<p>图中的等高线将状态划分为不同的区域, 区域内的数值代表相应的策略(正数代表从位置 $1$ 移往位置 $2$ 的汽车数量, 负数则往反方向移动).</p>
+<hr>
+<h3 id="策略迭代的扩展"><a href="#策略迭代的扩展" class="headerlink" title="策略迭代的扩展"></a>策略迭代的扩展</h3><h4 id="改良策略迭代"><a href="#改良策略迭代" class="headerlink" title="改良策略迭代"></a>改良策略迭代</h4><p>策略评估并不需要真正的收敛到 $v_{\pi}$. (比如在 <code>Small Gridworld</code>例子中, 迭代 $k=3$次 即可以得到最优策略.)</p>
+<p>为此我们可以引进终止条件, 如:</p>
+<ul>
+<li>值函数的 $\epsilon$ -收敛</li>
+<li>简单地迭代 $k$ 次便停止策略评估</li>
+</ul>
+<p>或者每次迭代(即 $k=1$ )都对策略进行更新改进, 这种情况等价于<strong>值迭代(value iteration)</strong>.</p>
+<hr>
+<h4 id="广义策略迭代"><a href="#广义策略迭代" class="headerlink" title="广义策略迭代"></a>广义策略迭代</h4><p><strong>广义策略迭代</strong>(Generalized Policy iteration，GPI)指代让策略评估(policy-evaluation)和策略改进(policyimprovement)过程进行交互的一般概念, 其不依赖于两个过程的粒度(granularity)和其他细节.</p>
+<p>几乎所有强化学习方法都可以很好地被描述为GPI. 也就是说, 它们都具有可辨识的策略与值函数. 其中, 策略 $\pi$ 通过相应的值函数 $v$ 进行改进, 而值函数 $V$ 总是趋向策略 $\pi$ 的值函数 $v^{\pi}$. 如下图所示,</p>
+<p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0nik26512j206y0a5dfz.jpg" alt="广义策略迭代" width="20%" height="20%"></p>
+<hr>
+<h2 id="值迭代"><a href="#值迭代" class="headerlink" title="值迭代"></a>值迭代</h2><p>策略迭代的一个缺点是它的每次迭代都涉及策略评估, 这本身就是一个需要对状态集进行多次扫描的耗时迭代计算. </p>
+<p>而在值迭代的过程中, 并没有出现显式的策略, 并且中间过程的值函数可能也不和任何策略对应.</p>
+<hr>
+<h3 id="最优性原则"><a href="#最优性原则" class="headerlink" title="最优性原则"></a>最优性原则</h3><p>一个最优策略可以被分解为两部分:</p>
+<ul>
+<li>当前状态的最优动作 $A_{*}$</li>
+<li>后继状态 $S^{\prime}$ 的最优策略</li>
+</ul>
+<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0nk02i8apj20mi06v75b.jpg" alt="最优性原则" width="60%" height="60%"></p>
+<p>该原则的意思是说, 一个策略 $\pi(a|s)$ 在状态 $s$ 取到最优值函数 $v_{\pi}(s) = v_{*}(s)$ <strong>当且仅当</strong> 对于所有从状态 $s$ 出发可到达的状态 $s^{\prime}$, 策略 $\pi$ 也能够在状态 $s^{\prime}$ 取到最优值函数.</p>
+<hr>
+<h3 id="确定性值迭代"><a href="#确定性值迭代" class="headerlink" title="确定性值迭代"></a>确定性值迭代</h3><p>如果我们已经知道子问题的最优解 $v_{*}(s^{\prime})$, 那么状态 $s$ 的最优解可以通过向前看(lookahead)一步得到, 这称为<strong>值迭代(Value Iteration)</strong>:</p>
+<script type="math/tex; mode=display">
+v_{*}(s) \gets \max \limits_{a \in \mathcal{A}} \left( \mathcal{R}_{s}^{a} + \gamma \sum \limits_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^{a} v_{*}(s') \right)</script><hr>
+<p><strong>值迭代算法:</strong></p>
+<p>值迭代算法和策略迭代算法一样, 是用来估计最优策略 $\pi_{*}$ 的, 它将策略评估和策略改进有效地结合在了一起.</p>
+<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0nkt7xfz0j20kn09k0ts.jpg" alt="值迭代算法" width="60%" height="60%"></p>
+<hr>
+<h2 id="同步动态规划算法总结"><a href="#同步动态规划算法总结" class="headerlink" title="同步动态规划算法总结"></a>同步动态规划算法总结</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">问题</th>
+<th style="text-align:center">贝尔曼方程</th>
+<th style="text-align:center">算法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">预测(Prediction)</td>
+<td style="text-align:center">贝尔曼期望方程</td>
+<td style="text-align:center">迭代策略评估</td>
+</tr>
+<tr>
+<td style="text-align:center">控制(Control)</td>
+<td style="text-align:center">贝尔曼期望方程 + 贪心策略改进</td>
+<td style="text-align:center">策略迭代</td>
+</tr>
+<tr>
+<td style="text-align:center">控制(Control)</td>
+<td style="text-align:center">贝尔曼最优方程</td>
+<td style="text-align:center">值迭代</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>对于有 $m$ 个动作和 $n$ 个状态 的MDP来说, 每次迭代的时间复杂度如下:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数</th>
+<th style="text-align:center">复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$v_{\pi}(s)$ or $v_{*}(s)$</td>
+<td style="text-align:center">$\mathcal{O}(mn^2)$</td>
+</tr>
+<tr>
+<td style="text-align:center">$q_{\pi}(s, a)$ or $q_{*}(s, a)$</td>
+<td style="text-align:center">$\mathcal{O}(m^2n^2)$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="动态规划的扩展"><a href="#动态规划的扩展" class="headerlink" title="动态规划的扩展"></a>动态规划的扩展</h2><h3 id="异步动态规划"><a href="#异步动态规划" class="headerlink" title="异步动态规划"></a>异步动态规划</h3><p>同步DP算法的主要缺点是每次迭代都需要对整个状态集进行扫描, 这对于状态数非常多的MDP来说耗费巨大. 而异步DP算法则将所有的状态独立地,以任意顺序进行备份, 并且每个状态的更新次数不一, 这可以显著地减少计算量.</p>
+<p>为了保证算法的正确收敛, 异步动态规划算法必须保证<strong>所有状态都能够持续地被更新</strong>(continue to update the values of all the states), 也就是说在任何时刻任何状态都有可能被更新, 而不能忽略某个状态.</p>
+<p>异步DP算法主要有三种简单的思想:</p>
+<ul>
+<li>就地动态规划(<em>In-place</em> dynamic programming)</li>
+<li>优先扫描(<em>Prioritised sweeping</em>)</li>
+<li>实时动态规划(<em>Real-time</em> dynamic programming)</li>
+</ul>
+<hr>
+<h4 id="就地动态规划"><a href="#就地动态规划" class="headerlink" title="就地动态规划"></a>就地动态规划</h4><p>同步DP保留值函数的两个备份, $v_{new}$ 和 $v_{old}$</p>
+<script type="math/tex; mode=display">
+{\color{red} {v_{new}(s)}} \gets \max \limits_{a \in \mathcal{A}} \left( \mathcal{R}_{s}^{a} + \gamma \sum \limits_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^{a} {\color{red} {v_{old}(s')}} \right)</script><p>就地值迭代只保留值函数的一个备份.</p>
+<script type="math/tex; mode=display">
+{\color{red} {v(s)}} \gets \max \limits_{a \in \mathcal{A}} \left( \mathcal{R}_{s}^{a} + \gamma \sum \limits_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^{a} {\color{red} {v(s')}} \right)</script><hr>
+<h4 id="优先扫描"><a href="#优先扫描" class="headerlink" title="优先扫描"></a>优先扫描</h4><p>使用贝尔曼误差的大小来进行状态的选择:</p>
+<script type="math/tex; mode=display">
+\left| \max _ { a \in \mathcal { A } } \left( \mathcal { R } _ { s } ^ { a } + \gamma \sum _ { s ^ { \prime } \in \mathcal { S } } \mathcal { P } _ { s s ^ { \prime } } ^ { a } v \left( s ^ { \prime } \right) \right) - v ( s ) \right|</script><ul>
+<li><p>仅备份有最大贝尔曼误差的状态</p>
+</li>
+<li><p>在每次备份后, 需要更新受到影响的状态(即备份状态的前驱状态)的贝尔曼误差</p>
+</li>
+<li><p>可以使用优先队列进行实现</p>
+</li>
+</ul>
+<hr>
+<h4 id="实时动态规划"><a href="#实时动态规划" class="headerlink" title="实时动态规划"></a>实时动态规划</h4><ul>
+<li>思想: <strong>只使用和Agent相关的状态</strong></li>
+<li>使用Agent的经验来进行状态的选择</li>
+<li>在每个时间步 $S_t, A_t, R_{t+1}$ 对状态 $S_t$ 进行备份</li>
+</ul>
+<script type="math/tex; mode=display">
+{\color{red} {v \left( S _ { t } \right)}} \gets \max _ { a \in \mathcal { A } } \left( \mathcal { R } _ { {\color{red}{S _ { t }}} } ^ { a } + \gamma \sum _ { s ^ { \prime } \in \mathcal { S } } \mathcal { P } _ { {\color{red} {S _ { t }}} s ^ { \prime }}  ^ { a } {\color{red} {v \left( s ^ { \prime } \right)}} \right)</script><hr>
+<h3 id="全宽和采样备份"><a href="#全宽和采样备份" class="headerlink" title="全宽和采样备份"></a>全宽和采样备份</h3><h4 id="全宽备份"><a href="#全宽备份" class="headerlink" title="全宽备份"></a>全宽备份</h4><ul>
+<li><p>DP使用<strong>全宽备份</strong>(<em>full-width</em> backups)</p>
+</li>
+<li><p>对于每次备份(不管同步还是异步)</p>
+<ul>
+<li>每个后继状态和动作都会被考虑进去</li>
+<li>需要知道MDP转移矩阵和奖励函数</li>
+</ul>
+</li>
+<li><p>对于大规模DP问题会遇到维数灾难</p>
+</li>
+<li><p>进行一次备份都太奢侈了</p>
+</li>
+</ul>
+<hr>
+<h4 id="采样备份"><a href="#采样备份" class="headerlink" title="采样备份"></a>采样备份</h4><p><strong>采样备份(Sample Backups)</strong>使用采样的奖励和采样的转移 $&lt; S , A , R , S ^ { \prime } &gt;$ 来替代奖励函数 $\mathcal{R}$ 和 转移矩阵 $\mathcal{P}$. </p>
+<p>采样备份的优点:</p>
+<ul>
+<li><strong>Model-free</strong>: 不需要知道MDP的先验知识</li>
+<li>通过采样<strong>缓解维数灾难</strong></li>
+<li><strong>备份代价成为常量</strong>, 独立于状态数 $n = |\mathcal{S}|$</li>
+</ul>
+<hr>
+<h2 id="压缩映射"><a href="#压缩映射" class="headerlink" title="压缩映射"></a>压缩映射</h2><p>关于上面的种种算法, 我们可能会有如下疑问:</p>
+<ul>
+<li>值迭代是否会收敛到 $v_{*}$ ?</li>
+<li>迭代策略评估是否会收敛到 $v_{\pi}$ ?</li>
+<li>策略迭代是否会收敛到 $v_{*}$ ?</li>
+<li>解唯一吗 ?</li>
+<li>算法收敛速度有多快 ?</li>
+</ul>
+<p>为了解决这些问题, 需要引入压缩映射(contraction mapping)理论.<br>可以参考: <a href="https://zhuanlan.zhihu.com/p/39279611" target="_blank" rel="noopener">如何证明迭代式策略评价、值迭代和策略迭代的收敛性？</a></p>
+<hr>
+<p>(关于压缩映射理论有时间再补充, 先到这里吧…)</p>
+
+                
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/planning-by-dp/" data-id="cjsq4zwn700nlpssi6hm1031f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/planning-by-dp/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/posts/markov-decision-processes/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">David Silver强化学习Lecture2：马尔可夫决策过程</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="gitalkContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/强化学习/">强化学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文笔记/">论文笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://chenshen.xyz">陈燊(XMU)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.ruphi.cn">进阶者(NetEase)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.hrwhisper.me">细语呢喃(UCAS)</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+<div id="toTop" class="fa fa-angle-up"></div>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 orzyt<br>
+            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+        var gitalk = new Gitalk({
+            id: location.pathname,
+            clientID: '3628f46ff8965c297258', 
+            clientSecret: 'da2ef51d9fe687db577e834867d253a697f19a9f',
+            repo: 'comments',
+            owner: 'orzyt',
+            admin: ['orzyt'],
+            distractionFreeMode: false,
+            perPage: 20,
+            createIssueManually: false,
+            language: 'zh-CN', 
+        })
+        gitalk.render('gitalkContainer')
+	</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+    <!-- page.__post !== true --><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
+

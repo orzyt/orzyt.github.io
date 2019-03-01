@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/posts/planning-by-dp/</loc>
+    
+    <lastmod>2019-03-01T14:09:34.728Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
+    
+    <lastmod>2019-03-01T06:11:25.343Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/svm/</loc>
     
     <lastmod>2019-02-28T11:38:06.625Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>https://orzyt.cn/study/index.html</loc>
     
     <lastmod>2019-02-28T06:30:38.238Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
-    
-    <lastmod>2019-02-28T04:59:26.781Z</lastmod>
     
   </url>
   
