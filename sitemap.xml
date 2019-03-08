@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://orzyt.cn/posts/planning-by-dp/</loc>
+    <loc>https://orzyt.cn/posts/introduction-to-rl/</loc>
     
-    <lastmod>2019-03-01T14:09:34.728Z</lastmod>
+    <lastmod>2019-03-08T13:40:47.760Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
     
-    <lastmod>2019-03-01T06:11:25.343Z</lastmod>
+    <lastmod>2019-03-08T13:36:24.253Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/planning-by-dp/</loc>
+    
+    <lastmod>2019-03-08T13:34:20.557Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/tic-tac-toe/</loc>
+    
+    <lastmod>2019-03-08T13:29:43.661Z</lastmod>
     
   </url>
   
@@ -40,13 +54,6 @@
     <loc>https://orzyt.cn/study/index.html</loc>
     
     <lastmod>2019-02-28T06:30:38.238Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/introduction-to-rl/</loc>
-    
-    <lastmod>2019-02-27T11:03:59.961Z</lastmod>
     
   </url>
   

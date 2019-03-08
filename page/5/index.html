@@ -180,6 +180,190 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-manacher-algorithm" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/manacher-algorithm/">Manacher算法</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/manacher-algorithm/">
+            <time datetime="2015-10-26T16:00:00.000Z" itemprop="datePublished">2015-10-27</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/算法与数据结构/">算法与数据结构</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Manacher/">Manacher</a>, <a class="tag-link" href="/tags/回文/">回文</a>, <a class="tag-link" href="/tags/字符串/">字符串</a>, <a class="tag-link" href="/tags/算法/">算法</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                <p></p><p>首先用一个非常巧妙的方式，将所有可能的奇数/偶数长度的回文子串都转换成了奇数长度：在每个字符的两边都插入一个特殊的符号。比如 abba 变成 <code>#a#b#b#a#</code>， aba变成 <code>#a#b#a#</code>。为了进一步减少编码的复杂度，可以在字符串的开始加入另一个特殊字符，这样就不用特殊处理越界问题，比如 $#a#b#a#。</p>
+<p>下面以字符串 <code>12212321</code> 为例，经过上一步，变成了 s =  <code>$#1#2#2#1#2#3#2#1#</code> ;<br>然后用一个数组  p[i] 来记录以字符 S[i] 为中心的最长回文子串向左/右扩张的长度（包括 s[i] ），比如  s[i]  和  p[i]  的对应关系：  </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>s[i]</th>
+<th>#</th>
+<th>1</th>
+<th>#</th>
+<th>2</th>
+<th>#</th>
+<th>2</th>
+<th>#</th>
+<th>1</th>
+<th>#</th>
+<th>2</th>
+<th>#</th>
+<th>3</th>
+<th>#</th>
+<th>2</th>
+<th>#</th>
+<th>1</th>
+<th>#</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p[i]</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>5</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>6</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>(从上表可以看出，p[i]-1 正好是原字符串中回文串的总长度）</strong></p><p></p>
+                <p class="article-more-link" style="float: right;">
+                    <a href="/posts/manacher-algorithm/">查看更多</a>
+                </p>
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/manacher-algorithm/" data-id="cjt040exc00c490si3h82qmhk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/manacher-algorithm/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-trie-summary" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
@@ -237,7 +421,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/trie-summary/" data-id="cjsq4zwjh00cupssivh2esajx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/trie-summary/" data-id="cjt040exm00cm90sidnjdit7x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -371,7 +555,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/seive-of-prime-numbers/" data-id="cjsq4zwjc00ckpssipqtpromv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/seive-of-prime-numbers/" data-id="cjt040exk00cj90sihvdpoq1b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

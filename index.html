@@ -253,7 +253,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/leetcode-algorithms-solutions/" data-id="cjsq4zwo100ogpssi1l1da20f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/leetcode-algorithms-solutions/" data-id="cjt040f5600od90sibslvjuem" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -331,6 +331,142 @@ var _hmt = _hmt || [];
 
 
 
+    <article id="post-tic-tac-toe" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/tic-tac-toe/">强化学习实践（一）：Tic-Tac-Toe</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/tic-tac-toe/">
+            <time datetime="2019-03-08T10:55:54.000Z" itemprop="datePublished">2019-03-08</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/强化学习/">强化学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/强化学习/">强化学习</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                <p><hr>
+</p><p>为了对强化学习的基本概念有一个直观的认识,《Reinforcement Learning: An Introduction》第一章给出了一个简单的例子：<code>Tic-Tac-Toe</code>游戏.</p>
+<h2 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h2><p>游戏的规则很简单, 两位玩家在 <code>3x3</code> 的棋盘上轮流下棋, 一位打 <code>X</code>, 另一位打 <code>O</code>, 若棋盘的任意一行、任意一列、正反对角线上有三个相同的棋, 则执该棋的玩家获胜. 若棋盘下满仍没有决出胜负, 则平局.</p><p></p>
+                <p class="article-more-link" style="float: right;">
+                    <a href="/posts/tic-tac-toe/">查看更多</a>
+                </p>
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/tic-tac-toe/" data-id="cjt040f1j00nm90sipbn5ar94" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/tic-tac-toe/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-planning-by-dp" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
@@ -340,7 +476,7 @@ var _hmt = _hmt || [];
     
     
         <h1 itemprop="name">
-            <a class="article-title" href="/posts/planning-by-dp/">David Silver强化学习Lecture3：动态规划</a>
+            <a class="article-title" href="/posts/planning-by-dp/">强化学习（三）：动态规划</a>
         </h1>
     
 
@@ -375,8 +511,9 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
             
                 <p><hr>
-</p><p><strong>课件</strong>：<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/DP.pdf" target="_blank" rel="noopener">Lecture 3: Planning by Dynamic Programming</a></p>
-<p><strong>视频</strong>：<a href="https://www.bilibili.com/video/av9930653" target="_blank" rel="noopener">David Silver强化学习第3课 - 动态规划(中文字幕)</a></p>
+</p><p>在上一篇文章 <a href="https://orzyt.cn/posts/markov-decision-processes/">强化学习（二）：马尔可夫决策过程</a> 中, 我们介绍用来对强化学习问题进行建模的马尔可夫决策过程(Markov Decision Processes, MDPs). </p>
+<p>由于MDPs的贝尔曼最优方程没有封闭解, 因此一般采用迭代的方法对其进行求解. </p>
+<p>本文将介绍使用<strong>动态规划(Dynamic Programming)</strong>算法来求解MDPs.</p>
 <hr><p></p>
                 <p class="article-more-link" style="float: right;">
                     <a href="/posts/planning-by-dp/">查看更多</a>
@@ -390,7 +527,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/planning-by-dp/" data-id="cjsq4zwn700nlpssi6hm1031f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/planning-by-dp/" data-id="cjt040f5a00oh90sik6mlrqpv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -477,7 +614,7 @@ var _hmt = _hmt || [];
     
     
         <h1 itemprop="name">
-            <a class="article-title" href="/posts/markov-decision-processes/">David Silver强化学习Lecture2：马尔可夫决策过程</a>
+            <a class="article-title" href="/posts/markov-decision-processes/">强化学习（二）：马尔可夫决策过程</a>
         </h1>
     
 
@@ -512,8 +649,8 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
             
                 <p><hr>
-</p><p><strong>课件</strong>：<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/MDP.pdf" target="_blank" rel="noopener">Lecture 2: Markov Decision Processes</a></p>
-<p><strong>视频</strong>：<a href="https://www.bilibili.com/video/av9833386" target="_blank" rel="noopener">David Silver强化学习第2课 - 马尔科夫决策过程(中文字幕)</a></p>
+</p><p>在上一篇文章 <a href="https://orzyt.cn/posts/introduction-to-rl">强化学习（一）：强化学习简介</a> 中, 我们介绍了强化学习的一些基本概念.</p>
+<p>本文将介绍用来对强化学习问题进行建模的<strong>马尔可夫决策过程(Markov Decision Processes, MDPs)</strong>.</p>
 <hr><p></p>
                 <p class="article-more-link" style="float: right;">
                     <a href="/posts/markov-decision-processes/">查看更多</a>
@@ -527,7 +664,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/markov-decision-processes/" data-id="cjsq4zwo300oipssivfjgz41b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/markov-decision-processes/" data-id="cjt040f5800of90siep6nm4yl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -614,7 +751,7 @@ var _hmt = _hmt || [];
     
     
         <h1 itemprop="name">
-            <a class="article-title" href="/posts/introduction-to-rl/">David Silver强化学习Lecture1：强化学习简介</a>
+            <a class="article-title" href="/posts/introduction-to-rl/">强化学习（一）：强化学习简介</a>
         </h1>
     
 
@@ -649,8 +786,7 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
             
                 <p><hr>
-</p><p><strong>课件</strong>：<a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/intro_RL.pdf" target="_blank" rel="noopener">Lecture 1: Introduction to Reinforcement Learning</a></p>
-<p><strong>视频</strong>：<a href="https://www.bilibili.com/video/av9831889" target="_blank" rel="noopener">David Silver深度强化学习第1课 - 简介 (中文字幕)</a></p>
+</p><p>本文主要介绍强化学习中的一些基本概念.</p>
 <hr><p></p>
                 <p class="article-more-link" style="float: right;">
                     <a href="/posts/introduction-to-rl/">查看更多</a>
@@ -664,7 +800,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/introduction-to-rl/" data-id="cjsq4zwn300njpssiqyj0aqwk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/introduction-to-rl/" data-id="cjt040f1f00nh90sihldtaw8x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -802,7 +938,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/deep-face-recognition/" data-id="cjsq4zwny00ocpssiuho68l9q" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/deep-face-recognition/" data-id="cjt040f5300o990sizio9vh4x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -936,7 +1072,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/2018-2019-fall-semester-summary/" data-id="cjsq4zwbu000epssi1xo1qj0g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/2018-2019-fall-semester-summary/" data-id="cjt040er2000e90si7rsnl6ci" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1068,7 +1204,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/svm/" data-id="cjsq4zwje00cnpssip6slvuy2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/svm/" data-id="cjt040exn00cq90simu9v1vww" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1137,141 +1273,6 @@ var _hmt = _hmt || [];
             
     
         <a href="https://orzyt.cn/posts/svm/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-ssh-port-forwarding" class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/ssh-port-forwarding/">ssh本地端口转发的应用</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/ssh-port-forwarding/">
-            <time datetime="2018-01-13T07:34:17.000Z" itemprop="datePublished">2018-01-13</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/教程/">教程</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/jupyter-notebook/">jupyter notebook</a>, <a class="tag-link" href="/tags/ssh/">ssh</a>, <a class="tag-link" href="/tags/tensorboard/">tensorboard</a>, <a class="tag-link" href="/tags/端口转发/">端口转发</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            
-                <p><hr>
-</p><p>SSH有三种端口转发模式，<strong>本地端口转发(Local Port Forwarding)</strong>，<strong>远程端口转发(Remote Port Forwarding)</strong>以及<strong>动态端口转发(Dynamic Port Forwarding)</strong>。本文只简单介绍<strong>本地端口转发</strong>，用于实现本机访问远程服务器上的<code>jupyter notebook</code>、<code>TensorBoard</code>等服务。</p><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/ssh-port-forwarding/">查看更多</a>
-                </p>
-            
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/ssh-port-forwarding/" data-id="cjsq4zwjb00cgpssiy9bm6ffr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/ssh-port-forwarding/#comments" class="article-comment-link">评论</a>
     
 
         </footer>

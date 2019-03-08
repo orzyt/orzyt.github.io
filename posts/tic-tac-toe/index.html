@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>强化学习实践（一）：Tic-Tac-Toe - 扬涛的博客</title>
+    <meta itemprop="name" content="强化学习实践（一）：Tic-Tac-Toe - 扬涛的博客">
+    
+    <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/jupyter-notebook.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libs/headroom/animate.css">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/libs/headroom/headroom.min.js"></script>
+    <script src="/libs/headroom/jQuery.headroom.min.js"></script>
+    <script src="/libs/jquery/sort.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?63f226f2212285cc30d6ffa0636da07a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">扬涛的博客</span>
+            </a>
+            <nav id="main-nav">
+                <div>
+                    <ul class="nav navbar-nav">
+                    
+                        <a class="main-nav-link" href="/.">主页</a>
+                    
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    
+                        <a class="main-nav-link" href="/tags">标签</a>
+                    
+                        <a class="main-nav-link" href="/about">关于</a>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                                <li><a href="/study">学习资源汇总</a></li>
+                            
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/img/avatar.png">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <ul class="menu outer">
+            
+                <a class="main-nav-link" href="/.">主页</a>
+            
+                <a class="main-nav-link" href="/archives">归档</a>
+            
+                <a class="main-nav-link" href="/tags">标签</a>
+            
+                <a class="main-nav-link" href="/about">关于</a>
+                           
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    更多 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
+                    
+                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/img/avatar.png">
+            <h2 id="name">郑扬涛</h2>
+            <h3 id="title">M.S. Student @ Beihang Univ.</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/orzyt/activities">关注我</a>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/orzyt" target="_blank" title="github" class="tooltip">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/orzyt" target="_blank" title="facebook" class="tooltip">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/orzyt" target="_blank" title="weibo" class="tooltip">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class="tooltip">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-tic-tac-toe" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        
+            <h1 class="article-title" itemprop="name">
+                强化学习实践（一）：Tic-Tac-Toe
+            </h1>
+        
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/tic-tac-toe/">
+            <time datetime="2019-03-08T10:55:54.000Z" itemprop="datePublished">2019-03-08</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/强化学习/">强化学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/强化学习/">强化学习</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                
+                <div id="toc" class="toc-article">
+                    <strong class="toc-title">文章目录</strong>
+                    
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#游戏规则"><span class="toc-number">1.</span> <span class="toc-text">游戏规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态"><span class="toc-number">2.</span> <span class="toc-text">状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AgentPlayer相关"><span class="toc-number">3.</span> <span class="toc-text">AgentPlayer相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#奖励"><span class="toc-number">3.1.</span> <span class="toc-text">奖励</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值函数迭代"><span class="toc-number">3.2.</span> <span class="toc-text">值函数迭代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动作"><span class="toc-number">3.3.</span> <span class="toc-text">动作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HumanPlayer相关"><span class="toc-number">4.</span> <span class="toc-text">HumanPlayer相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Agent训练"><span class="toc-number">5.</span> <span class="toc-text">Agent训练</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Agent对弈"><span class="toc-number">6.</span> <span class="toc-text">Agent对弈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Human-v-s-Agent"><span class="toc-number">7.</span> <span class="toc-text">Human v.s. Agent</span></a></li></ol>
+                    
+
+                </div>
+                
+                
+                    <hr>
+<p>为了对强化学习的基本概念有一个直观的认识,《Reinforcement Learning: An Introduction》第一章给出了一个简单的例子：<code>Tic-Tac-Toe</code>游戏.</p>
+<h2 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h2><p>游戏的规则很简单, 两位玩家在 <code>3x3</code> 的棋盘上轮流下棋, 一位打 <code>X</code>, 另一位打 <code>O</code>, 若棋盘的任意一行、任意一列、正反对角线上有三个相同的棋, 则执该棋的玩家获胜. 若棋盘下满仍没有决出胜负, 则平局.</p>
+<a id="more"></a>
+<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0vltwtubvj20bb0b574c.jpg" alt="Tic-Tac-Toe示例" width="25%" height="25%"></p>
+<hr>
+<p>我们尝试使用强化学习的方法来训练一个Agent, 使其能够在该游戏上表现出色(即Agent在任何情况下都不会输, 最多平局).</p>
+<p>由于没有外部经验, 因此我们需要同时训练两个Agent进行上万轮的对弈来寻找最优策略.</p>
+<p><strong>注:下面的代码只给出部分关键实现过程, 完整代码见:<a href="https://github.com/orzyt/reinforcement-learning-an-introduction/blob/master/chapter01/tic_tac_toe.py" target="_blank" rel="noopener">tic_tac_toe.py</a>.</strong> </p>
+<p><strong>版权归 <a href="https://github.com/ShangtongZhang" target="_blank" rel="noopener">@Shangtong Zhang</a> 等人所有, 仅添加中文注释便于理解.</strong></p>
+<hr>
+<h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><p>强化学习一个重要的概念就是——<strong>状态(State)</strong>. </p>
+<p>状态是指Agent在一个特定时刻从环境中所感知的信号. </p>
+<p>在<code>Tic-Tac-Toe</code>游戏中, 状态即为 <code>3*3</code> 棋盘的布局. </p>
+<p>定义一个<code>State类</code>用来表示状态.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">State</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''状态初始化</span></span><br><span class="line"><span class="string">        棋盘使用 n * n 的数组进行表示</span></span><br><span class="line"><span class="string">        棋盘中的数字: 1代表先手, -1代表后手下, 0代表该位置无棋子</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 该状态的数组表示</span></span><br><span class="line">        self.data = np.zeros((BOARD_ROWS, BOARD_COLS))</span><br><span class="line">        <span class="comment"># 该状态下的胜利者</span></span><br><span class="line">        self.winner = <span class="keyword">None</span></span><br><span class="line">        <span class="comment"># 该状态的哈希值表示</span></span><br><span class="line">        self.state_hash = <span class="keyword">None</span></span><br><span class="line">        <span class="comment"># 该状态是否为终结状态</span></span><br><span class="line">        self.end = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">hash</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''计算状态的哈希值表示</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Returns</span></span><br><span class="line"><span class="string">        -------</span></span><br><span class="line"><span class="string">        int</span></span><br><span class="line"><span class="string">            状态的哈希值表示</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">      <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_end</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''判断当前状态是否为终结状态.</span></span><br><span class="line"><span class="string">        如果为终结状态, 同时判断胜利者是谁</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        Returns</span></span><br><span class="line"><span class="string">        -------</span></span><br><span class="line"><span class="string">        bool</span></span><br><span class="line"><span class="string">            当前状态是否为终结状态</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">next_state</span><span class="params">(self, i, j, symbol)</span>:</span></span><br><span class="line">        <span class="string">'''计算当前状态的后继状态</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        Parameters</span></span><br><span class="line"><span class="string">        ----------</span></span><br><span class="line"><span class="string">        i : int</span></span><br><span class="line"><span class="string">            下一步动作的行坐标</span></span><br><span class="line"><span class="string">        j : int</span></span><br><span class="line"><span class="string">            下一步动作的列坐标</span></span><br><span class="line"><span class="string">        symbol : int</span></span><br><span class="line"><span class="string">            动作的执行者(1代表先手, -1代表后手)</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        Returns</span></span><br><span class="line"><span class="string">        -------</span></span><br><span class="line"><span class="string">        State</span></span><br><span class="line"><span class="string">            下一步棋盘的状态</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_state</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''打印状态信息</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>根据游戏规则我们知道, 每个格子仅有三种状态, 即先手(1), 后手(-1), 空(0), 那么该游戏的状态数上限仅有 $3^9=19683$ 个.</p>
+<p>因此, 我们可以预处理出所有合法的棋盘状态, 供后面强化学习算法使用.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">all_states = get_all_states()</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="AgentPlayer相关"><a href="#AgentPlayer相关" class="headerlink" title="AgentPlayer相关"></a>AgentPlayer相关</h2><p>定义一个<code>AgentPlayer类</code>用来表示强化学习中和环境进行交互的智能体.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AgentPlayer</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, step_size=<span class="number">0.1</span>, epsilon=<span class="number">0.1</span>)</span>:</span></span><br><span class="line">        <span class="string">'''Agent初始化</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        Parameters</span></span><br><span class="line"><span class="string">        ----------</span></span><br><span class="line"><span class="string">        step_size : float, optional</span></span><br><span class="line"><span class="string">            更新步长</span></span><br><span class="line"><span class="string">        epsilon : float, optional</span></span><br><span class="line"><span class="string">            探索概率</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 值函数</span></span><br><span class="line">        self.value = dict()</span><br><span class="line">        <span class="comment"># 值函数更新步长</span></span><br><span class="line">        self.step_size = step_size</span><br><span class="line">        <span class="comment"># Agent探索概率</span></span><br><span class="line">        self.epsilon = epsilon</span><br><span class="line">        <span class="comment"># Agent在一轮游戏中经历的所有状态</span></span><br><span class="line">        self.states = []</span><br><span class="line">        <span class="comment"># 记录每个状态是否采取贪心策略</span></span><br><span class="line">        self.greedy = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reset</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''重置Agent的状态, 开启新一轮游戏</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_state</span><span class="params">(self, state)</span>:</span></span><br><span class="line">        <span class="string">'''将当前棋盘状态加到Agent的状态列表</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        Parameters</span></span><br><span class="line"><span class="string">        ----------</span></span><br><span class="line"><span class="string">        state : State</span></span><br><span class="line"><span class="string">            当前棋盘的状态</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_symbol</span><span class="params">(self, symbol)</span>:</span></span><br><span class="line">        <span class="string">'''根据先后手, 初始化Agent的值函数</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        Parameters</span></span><br><span class="line"><span class="string">        ----------</span></span><br><span class="line"><span class="string">        symbol : int</span></span><br><span class="line"><span class="string">            先手还是后手</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backup</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''值函数迭代</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''根据状态采取动作</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        Returns</span></span><br><span class="line"><span class="string">        -------</span></span><br><span class="line"><span class="string">        list</span></span><br><span class="line"><span class="string">            采取的动作</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_policy</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''保存策略</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">load_policy</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">'''加载策略</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>在AgentPlayer类中, 我们重点关注 <code>set_symbol</code>, <code>backup</code>, <code>act</code> 三个函数.</p>
+<h3 id="奖励"><a href="#奖励" class="headerlink" title="奖励"></a>奖励</h3><p>Agent每次与环境进行交互的时候, 都会得到一个反馈信号称之为<strong>奖励(Reward)</strong>. </p>
+<p>Agent的目标是<strong>最大化游戏过程中的奖励总和</strong>.</p>
+<p>在 <code>Tic-Tac-Toe</code> 游戏中, 由于只有在游戏结束的时候才知道胜负, 故没有给出每一步显式的奖励, 而是直接评估状态的<strong>值函数(Value Function)</strong>.</p>
+<p>根据我们的先验知识, 可以对不同的状态设置不同的初始值函数.</p>
+<p>对于导致游戏结束的终结状态, 可分为胜利/平局/失败三种情况, 相应的值函数为1.0/0.5/0.0.</p>
+<p>而对于非终结状态, 可以简单地将状态的值函数设为0.5, 代表无法判断胜负.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_symbol</span><span class="params">(self, symbol)</span>:</span></span><br><span class="line">    <span class="string">'''根据先后手, 初始化Agent的值函数</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Parameters</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    symbol : int</span></span><br><span class="line"><span class="string">        先手还是后手</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">    self.symbol = symbol</span><br><span class="line">    <span class="keyword">for</span> state_hash <span class="keyword">in</span> all_states.keys():</span><br><span class="line">        (state, is_end) = all_states[state_hash]</span><br><span class="line">        <span class="keyword">if</span> is_end: <span class="comment"># 终结状态</span></span><br><span class="line">            <span class="keyword">if</span> state.winner == self.symbol: <span class="comment"># 获胜</span></span><br><span class="line">                self.value[state_hash] = <span class="number">1.0</span></span><br><span class="line">            <span class="keyword">elif</span> state.winner == <span class="number">0</span>: <span class="comment"># 平局</span></span><br><span class="line">                self.value[state_hash] = <span class="number">0.5</span></span><br><span class="line">            <span class="keyword">else</span>: <span class="comment"># 失败</span></span><br><span class="line">                self.value[state_hash] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">else</span>: <span class="comment"># 非终结状态</span></span><br><span class="line">            self.value[state_hash] = <span class="number">0.5</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="值函数迭代"><a href="#值函数迭代" class="headerlink" title="值函数迭代"></a>值函数迭代</h3><p>使用<strong>时序差分学习(Temporal-Difference Learning)</strong>方法进行值函数的更新:</p>
+<script type="math/tex; mode=display">
+V \left( S _ { t } \right) \leftarrow V \left( S _ { t } \right) + \alpha \left[ V \left( S _ { t + 1 } \right) - V \left( S _ { t } \right) \right]</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">backup</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">'''值函数迭代</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#　获取状态的哈希值表示</span></span><br><span class="line">    self.states = [state.hash() <span class="keyword">for</span> state <span class="keyword">in</span> self.states]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 逆序遍历所有的状态, 并进行值函数的更新</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> reversed(range(len(self.states) - <span class="number">1</span>)):</span><br><span class="line">        state = self.states[i]  </span><br><span class="line">        <span class="comment"># TD误差 = V(s_&#123;t + 1&#125;) - V(s_&#123;t&#125;)</span></span><br><span class="line">        td_error = self.greedy[i] * (self.value[self.states[i + <span class="number">1</span>]] - self.value[state])</span><br><span class="line">        <span class="comment"># TD-Learning(时序差分学习)更新公式</span></span><br><span class="line">        self.value[state] += self.step_size * td_error</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h3><p>采用 $\epsilon$-greedy 的贪心策略选择动作, 即有 $1 - \epsilon$ 的概率选择后继状态值函数最大的动作, 有 $\epsilon$ 概率进行随机选择动作.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="string">'''根据状态采取动作</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Returns</span></span><br><span class="line"><span class="string">    -------</span></span><br><span class="line"><span class="string">    list</span></span><br><span class="line"><span class="string">        采取的动作</span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取当前状态</span></span><br><span class="line">    state = self.states[<span class="number">-1</span>]</span><br><span class="line">    <span class="comment"># 下一步所有可能的状态</span></span><br><span class="line">    next_states = []</span><br><span class="line">    <span class="comment"># 下一步所有可能的位置</span></span><br><span class="line">    next_positions = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(BOARD_ROWS):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(BOARD_COLS):</span><br><span class="line">            <span class="comment"># 当前棋盘位置上无棋子</span></span><br><span class="line">            <span class="keyword">if</span> state.data[i, j] == <span class="number">0</span>:</span><br><span class="line">                <span class="comment"># 可行的位置</span></span><br><span class="line">                next_positions.append([i, j])</span><br><span class="line">                <span class="comment"># 可行的状态</span></span><br><span class="line">                next_states.append(state.next_state(i, j, self.symbol).hash())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 有epsilon概率采取随机动作</span></span><br><span class="line">    <span class="keyword">if</span> np.random.rand() &lt; self.epsilon:</span><br><span class="line">        action = next_positions[np.random.randint(len(next_positions))]</span><br><span class="line">        action.append(self.symbol)</span><br><span class="line">        self.greedy[<span class="number">-1</span>] = <span class="keyword">False</span></span><br><span class="line">        <span class="keyword">return</span> action</span><br><span class="line"></span><br><span class="line">    values = []</span><br><span class="line">    <span class="comment"># 遍历下一步所有可能的状态和位置</span></span><br><span class="line">    <span class="keyword">for</span> state_hash, pos <span class="keyword">in</span> zip(next_states, next_positions):</span><br><span class="line">        <span class="comment"># 获取对应状态的值函数</span></span><br><span class="line">        values.append((self.value[state_hash], pos))</span><br><span class="line">    <span class="comment"># 如果有多个状态的值函数相同,且都是最高的,shuffle则起到在这些状态中随机选择的作用</span></span><br><span class="line">    np.random.shuffle(values)</span><br><span class="line">    <span class="comment"># 按值函数从大到小排序</span></span><br><span class="line">    values.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>], reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="comment"># 选取最优动作</span></span><br><span class="line">    action = values[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line">    action.append(self.symbol)</span><br><span class="line">    <span class="keyword">return</span> action</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="HumanPlayer相关"><a href="#HumanPlayer相关" class="headerlink" title="HumanPlayer相关"></a>HumanPlayer相关</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">HumanPlayer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, **kwargs)</span>:</span></span><br><span class="line">        self.symbol = <span class="keyword">None</span></span><br><span class="line">        self.keys = [<span class="string">'q'</span>, <span class="string">'w'</span>, <span class="string">'e'</span>, <span class="string">'a'</span>, <span class="string">'s'</span>, <span class="string">'d'</span>, <span class="string">'z'</span>, <span class="string">'x'</span>, <span class="string">'c'</span>]</span><br><span class="line">        self.state = <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reset</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_state</span><span class="params">(self, state)</span>:</span></span><br><span class="line">        self.state = state</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_symbol</span><span class="params">(self, symbol)</span>:</span></span><br><span class="line">        self.symbol = symbol</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backup</span><span class="params">(self, _)</span>:</span></span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">act</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.state.print_state()</span><br><span class="line">        key = input(<span class="string">"Input your position:"</span>)</span><br><span class="line">        data = self.keys.index(key)</span><br><span class="line">        i = data // int(BOARD_COLS)</span><br><span class="line">        j = data % BOARD_COLS</span><br><span class="line">        <span class="keyword">return</span> [i, j, self.symbol]</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Agent训练"><a href="#Agent训练" class="headerlink" title="Agent训练"></a>Agent训练</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">(epochs, print_every_n=<span class="number">500</span>)</span>:</span></span><br><span class="line">    <span class="string">'''对Agent进行训练</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Parameters</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    epochs : int</span></span><br><span class="line"><span class="string">        训练轮数</span></span><br><span class="line"><span class="string">    print_every_n : int, optional</span></span><br><span class="line"><span class="string">        每多少轮输出训练信息</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定义两个Agent</span></span><br><span class="line">    player1 = AgentPlayer(epsilon=<span class="number">0.01</span>)</span><br><span class="line">    player2 = AgentPlayer(epsilon=<span class="number">0.01</span>)</span><br><span class="line">    <span class="comment"># 定义判决器</span></span><br><span class="line">    game = Game(player1, player2)</span><br><span class="line">    <span class="comment"># 先手赢的次数</span></span><br><span class="line">    player1_win = <span class="number">0.0</span></span><br><span class="line">    <span class="comment"># 后手赢的次数</span></span><br><span class="line">    player2_win = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, epochs + <span class="number">1</span>):</span><br><span class="line">        <span class="comment"># 新的一轮游戏</span></span><br><span class="line">        game.reset()</span><br><span class="line">        winner = game.play(print_state=<span class="keyword">False</span>)</span><br><span class="line">        <span class="keyword">if</span> winner == <span class="number">1</span>:</span><br><span class="line">            player1_win += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> winner == <span class="number">-1</span>:</span><br><span class="line">            player2_win += <span class="number">1</span></span><br><span class="line">        <span class="comment"># 打印各自的胜率</span></span><br><span class="line">        <span class="keyword">if</span> i % print_every_n == <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">'Epoch %d, player 1 winrate: %.02f, player 2 winrate: %.02f'</span> % (i, player1_win / i, player2_win / i))</span><br><span class="line">        <span class="comment"># 在每轮游戏结束后,对Agent进行学习</span></span><br><span class="line">        player1.backup()</span><br><span class="line">        player2.backup()</span><br><span class="line">    <span class="comment"># 保存训练好的策略</span></span><br><span class="line">    player1.save_policy()</span><br><span class="line">    player2.save_policy()</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Agent对弈"><a href="#Agent对弈" class="headerlink" title="Agent对弈"></a>Agent对弈</h2><p>经过充分的训练后, 两个Agent对弈的胜率应该都为0%. 即任何局面都只能打成平手, 没有一方可以胜过另一方.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">compete</span><span class="params">(turns)</span>:</span></span><br><span class="line">    <span class="string">'''将训练好的两个Agent进行对弈</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Parameters</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    turns : int</span></span><br><span class="line"><span class="string">        对弈轮数</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 对弈的时候不进行动作的探索, 故epsilon设为0.</span></span><br><span class="line">    player1 = AgentPlayer(epsilon=<span class="number">0</span>)</span><br><span class="line">    player2 = AgentPlayer(epsilon=<span class="number">0</span>)</span><br><span class="line">    game = Game(player1, player2)</span><br><span class="line">    player1.load_policy()</span><br><span class="line">    player2.load_policy()</span><br><span class="line">    player1_win = <span class="number">0.0</span></span><br><span class="line">    player2_win = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">0</span>, turns):</span><br><span class="line">        game.reset()</span><br><span class="line">        winner = game.play()</span><br><span class="line">        <span class="keyword">if</span> winner == <span class="number">1</span>:</span><br><span class="line">            player1_win += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> winner == <span class="number">-1</span>:</span><br><span class="line">            player2_win += <span class="number">1</span></span><br><span class="line">    print(<span class="string">'%d turns, player 1 win %.02f, player 2 win %.02f'</span> % (turns, player1_win / turns, player2_win / turns))</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Human-v-s-Agent"><a href="#Human-v-s-Agent" class="headerlink" title="Human v.s. Agent"></a>Human v.s. Agent</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">play</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">'''人类玩家和Agent进行对弈</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    '''</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        player1 = HumanPlayer()</span><br><span class="line">        player2 = AgentPlayer(epsilon=<span class="number">0</span>)</span><br><span class="line">        game = Game(player1, player2)</span><br><span class="line">        player2.load_policy()</span><br><span class="line">        winner = game.play()</span><br><span class="line">        <span class="keyword">if</span> winner == player2.symbol:</span><br><span class="line">            print(<span class="string">"失败!"</span>)</span><br><span class="line">        <span class="keyword">elif</span> winner == player1.symbol:</span><br><span class="line">            print(<span class="string">"胜利!"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"平局!"</span>)</span><br></pre></td></tr></table></figure>
+                
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/tic-tac-toe/" data-id="cjt040f1j00nm90sipbn5ar94" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/tic-tac-toe/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/posts/planning-by-dp/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">强化学习（三）：动态规划</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="gitalkContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/强化学习/">强化学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文笔记/">论文笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://chenshen.xyz">陈燊(XMU)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.ruphi.cn">进阶者(NetEase)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.hrwhisper.me">细语呢喃(UCAS)</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+<div id="toTop" class="fa fa-angle-up"></div>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 orzyt<br>
+            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+        var gitalk = new Gitalk({
+            id: location.pathname,
+            clientID: '3628f46ff8965c297258', 
+            clientSecret: 'da2ef51d9fe687db577e834867d253a697f19a9f',
+            repo: 'comments',
+            owner: 'orzyt',
+            admin: ['orzyt'],
+            distractionFreeMode: false,
+            perPage: 20,
+            createIssueManually: false,
+            language: 'zh-CN', 
+        })
+        gitalk.render('gitalkContainer')
+	</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+    <!-- page.__post !== true --><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
+
