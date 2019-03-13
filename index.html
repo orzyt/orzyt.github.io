@@ -253,7 +253,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/leetcode-algorithms-solutions/" data-id="cjt040f5600od90sibslvjuem" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/leetcode-algorithms-solutions/" data-id="cjt7cxfys00oj4vsig553vrvr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -331,6 +331,141 @@ var _hmt = _hmt || [];
 
 
 
+    <article id="post-gridworld" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/posts/gridworld/">强化学习实践（二）：Gridworld</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/gridworld/">
+            <time datetime="2019-03-13T11:31:33.000Z" itemprop="datePublished">2019-03-13</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/强化学习/">强化学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/强化学习/">强化学习</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                <p><hr>
+</p><p>《Reinforcement Learning: An Introduction》在第三章中给出了一个简单的例子:<code>Gridworld</code>, 以帮助我们理解<code>finite MDPs</code>, 同时也求解了该问题的<strong>贝尔曼期望方程</strong>和<strong>贝尔曼最优方程</strong>. 本文简要说明如何进行编程求解.</p><p></p>
+                <p class="article-more-link" style="float: right;">
+                    <a href="/posts/gridworld/">查看更多</a>
+                </p>
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/gridworld/" data-id="cjt7cxfmm001c4vsi0arg0j92" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/gridworld/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-tic-tac-toe" class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         
@@ -389,7 +524,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/tic-tac-toe/" data-id="cjt040f1j00nm90sipbn5ar94" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/tic-tac-toe/" data-id="cjt7cxfxy00nx4vsi0vb6pgr0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -513,8 +648,7 @@ var _hmt = _hmt || [];
                 <p><hr>
 </p><p>在上一篇文章 <a href="https://orzyt.cn/posts/markov-decision-processes/">强化学习（二）：马尔可夫决策过程</a> 中, 我们介绍用来对强化学习问题进行建模的马尔可夫决策过程(Markov Decision Processes, MDPs). </p>
 <p>由于MDPs的贝尔曼最优方程没有封闭解, 因此一般采用迭代的方法对其进行求解. </p>
-<p>本文将介绍使用<strong>动态规划(Dynamic Programming)</strong>算法来求解MDPs.</p>
-<hr><p></p>
+<p>本文将介绍使用<strong>动态规划(Dynamic Programming)</strong>算法来求解MDPs.</p><p></p>
                 <p class="article-more-link" style="float: right;">
                     <a href="/posts/planning-by-dp/">查看更多</a>
                 </p>
@@ -527,7 +661,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/planning-by-dp/" data-id="cjt040f5a00oh90sik6mlrqpv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/planning-by-dp/" data-id="cjt7cxfyz00or4vsic9l4eqn0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -650,8 +784,7 @@ var _hmt = _hmt || [];
             
                 <p><hr>
 </p><p>在上一篇文章 <a href="https://orzyt.cn/posts/introduction-to-rl">强化学习（一）：强化学习简介</a> 中, 我们介绍了强化学习的一些基本概念.</p>
-<p>本文将介绍用来对强化学习问题进行建模的<strong>马尔可夫决策过程(Markov Decision Processes, MDPs)</strong>.</p>
-<hr><p></p>
+<p>本文将介绍用来对强化学习问题进行建模的<strong>马尔可夫决策过程(Markov Decision Processes, MDPs)</strong>.</p><p></p>
                 <p class="article-more-link" style="float: right;">
                     <a href="/posts/markov-decision-processes/">查看更多</a>
                 </p>
@@ -664,7 +797,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/markov-decision-processes/" data-id="cjt040f5800of90siep6nm4yl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/markov-decision-processes/" data-id="cjt7cxfyv00ol4vsitb1fzlma" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -786,8 +919,7 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
             
                 <p><hr>
-</p><p>本文主要介绍强化学习中的一些基本概念.</p>
-<hr><p></p>
+</p><p>本文主要介绍强化学习中的一些基本概念.</p><p></p>
                 <p class="article-more-link" style="float: right;">
                     <a href="/posts/introduction-to-rl/">查看更多</a>
                 </p>
@@ -800,7 +932,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/introduction-to-rl/" data-id="cjt040f1f00nh90sihldtaw8x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/introduction-to-rl/" data-id="cjt7cxfxt00nq4vsio959wu01" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -938,7 +1070,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/deep-face-recognition/" data-id="cjt040f5300o990sizio9vh4x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/deep-face-recognition/" data-id="cjt7cxfyp00of4vsiykyjfure" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1072,7 +1204,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/2018-2019-fall-semester-summary/" data-id="cjt040er2000e90si7rsnl6ci" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/2018-2019-fall-semester-summary/" data-id="cjt7cxfm2000e4vsir5696tuq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1141,138 +1273,6 @@ var _hmt = _hmt || [];
             
     
         <a href="https://orzyt.cn/posts/2018-2019-fall-semester-summary/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-svm" class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/posts/svm/">浅谈支持向量机的推导</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/posts/svm/">
-            <time datetime="2018-12-19T16:00:00.000Z" itemprop="datePublished">2018-12-20</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/机器学习/">机器学习</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/SVM/">SVM</a>, <a class="tag-link" href="/tags/支持向量机/">支持向量机</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            
-                
-                
-            
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/svm/" data-id="cjt040exn00cq90simu9v1vww" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/svm/#comments" class="article-comment-link">评论</a>
     
 
         </footer>

@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/posts/gridworld/</loc>
+    
+    <lastmod>2019-03-13T14:11:50.480Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/introduction-to-rl/</loc>
     
-    <lastmod>2019-03-08T13:40:47.760Z</lastmod>
+    <lastmod>2019-03-13T12:07:23.473Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
     
-    <lastmod>2019-03-08T13:36:24.253Z</lastmod>
+    <lastmod>2019-03-13T12:07:14.581Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://orzyt.cn/posts/planning-by-dp/</loc>
     
-    <lastmod>2019-03-08T13:34:20.557Z</lastmod>
+    <lastmod>2019-03-13T12:07:10.945Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/svm/</loc>
+    
+    <lastmod>2019-03-13T11:40:08.825Z</lastmod>
     
   </url>
   
@@ -26,13 +40,6 @@
     <loc>https://orzyt.cn/posts/tic-tac-toe/</loc>
     
     <lastmod>2019-03-08T13:29:43.661Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/svm/</loc>
-    
-    <lastmod>2019-02-28T11:38:06.625Z</lastmod>
     
   </url>
   
