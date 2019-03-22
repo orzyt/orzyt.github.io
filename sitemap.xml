@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
+    
+    <lastmod>2019-03-22T09:01:15.809Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
+    
+    <lastmod>2019-03-22T09:00:27.217Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/gridworld/</loc>
     
-    <lastmod>2019-03-13T14:11:50.480Z</lastmod>
+    <lastmod>2019-03-14T10:56:41.040Z</lastmod>
     
   </url>
   
@@ -61,13 +75,6 @@
     <loc>https://orzyt.cn/study/index.html</loc>
     
     <lastmod>2019-02-28T06:30:38.238Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
-    
-    <lastmod>2019-02-26T11:20:51.367Z</lastmod>
     
   </url>
   

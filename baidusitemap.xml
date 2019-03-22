@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
+    <lastmod>2019-03-22T09:01:15.809Z</lastmod>
+  </url>  <url>
+    <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
+    <lastmod>2019-03-22T09:00:27.217Z</lastmod>
+  </url>  <url>
     <loc>https://orzyt.cn/posts/gridworld/</loc>
-    <lastmod>2019-03-13T14:11:50.480Z</lastmod>
+    <lastmod>2019-03-14T10:56:41.040Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/introduction-to-rl/</loc>
     <lastmod>2019-03-13T12:07:23.473Z</lastmod>
@@ -24,9 +30,6 @@
   </url>  <url>
     <loc>https://orzyt.cn/posts/ssh-port-forwarding/</loc>
     <lastmod>2019-02-28T11:11:15.375Z</lastmod>
-  </url>  <url>
-    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
-    <lastmod>2019-02-26T11:20:51.367Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/leetcode575-distribute-candies/</loc>
     <lastmod>2019-02-08T10:26:00.494Z</lastmod>
@@ -415,10 +418,10 @@
     <loc>https://orzyt.cn/posts/pair-programming-tutor-distribution/</loc>
     <lastmod>2018-11-10T11:47:16.931Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/build-to-win!-summary/</loc>
+    <loc>https://orzyt.cn/posts/change-mirrors/</loc>
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/change-mirrors/</loc>
+    <loc>https://orzyt.cn/posts/build-to-win!-summary/</loc>
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/conditional-gan/</loc>
@@ -451,19 +454,19 @@
     <loc>https://orzyt.cn/posts/hands-on-ml-up-and-running-tensorflow/</loc>
     <lastmod>2018-11-10T11:47:16.927Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2015-acmicpc-beijing-summary/</loc>
+    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
+    <loc>https://orzyt.cn/posts/2015-acmicpc-beijing-summary/</loc>
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/2016-ccpc-hefei-summary/</loc>
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2017-cccc-final-summary/</loc>
+    <loc>https://orzyt.cn/posts/2017-fjpcpc-summary/</loc>
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2017-fjpcpc-summary/</loc>
+    <loc>https://orzyt.cn/posts/2017-cccc-final-summary/</loc>
     <lastmod>2018-11-10T11:47:16.903Z</lastmod>
   </url>
 </urlset>

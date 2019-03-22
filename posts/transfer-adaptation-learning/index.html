@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>【论文笔记】迁移自适应学习综述 - 扬涛的博客</title>
+    <meta itemprop="name" content="【论文笔记】迁移自适应学习综述 - 扬涛的博客">
+    
+    <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/jupyter-notebook.css">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/libs/headroom/animate.css">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/libs/headroom/headroom.min.js"></script>
+    <script src="/libs/headroom/jQuery.headroom.min.js"></script>
+    <script src="/libs/jquery/sort.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?63f226f2212285cc30d6ffa0636da07a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">扬涛的博客</span>
+            </a>
+            <nav id="main-nav">
+                <div>
+                    <ul class="nav navbar-nav">
+                    
+                        <a class="main-nav-link" href="/.">主页</a>
+                    
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    
+                        <a class="main-nav-link" href="/tags">标签</a>
+                    
+                        <a class="main-nav-link" href="/about">关于</a>
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                                <li><a href="/study">学习资源汇总</a></li>
+                            
+                        </ul>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/img/avatar.png">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <ul class="menu outer">
+            
+                <a class="main-nav-link" href="/.">主页</a>
+            
+                <a class="main-nav-link" href="/archives">归档</a>
+            
+                <a class="main-nav-link" href="/tags">标签</a>
+            
+                <a class="main-nav-link" href="/about">关于</a>
+                           
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    更多 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
+                    
+                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/img/avatar.png">
+            <h2 id="name">郑扬涛</h2>
+            <h3 id="title">M.S. Student @ Beihang Univ.</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/orzyt/activities">关注我</a>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/orzyt" target="_blank" title="github" class="tooltip">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/orzyt" target="_blank" title="facebook" class="tooltip">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/orzyt" target="_blank" title="weibo" class="tooltip">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss" class="tooltip">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-transfer-adaptation-learning" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        
+            <h1 class="article-title" itemprop="name">
+                【论文笔记】迁移自适应学习综述
+            </h1>
+        
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/transfer-adaptation-learning/">
+            <time datetime="2019-03-20T14:44:46.000Z" itemprop="datePublished">2019-03-20</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/迁移学习/">迁移学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/迁移学习/">迁移学习</a>, <a class="tag-link" href="/tags/领域自适应/">领域自适应</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                
+                <div id="toc" class="toc-article">
+                    <strong class="toc-title">文章目录</strong>
+                    
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例权重调整自适应-Instance-Re-weighting-Adaptation"><span class="toc-number">2.</span> <span class="toc-text">实例权重调整自适应(Instance Re-weighting Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于直觉的权重调整-Intuitive-Weighting"><span class="toc-number">2.1.</span> <span class="toc-text">基于直觉的权重调整(Intuitive Weighting)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于核映射的权重调整-Kernel-Mapping-Based-Weighting"><span class="toc-number">2.2.</span> <span class="toc-text">基于核映射的权重调整(Kernel Mapping Based Weighting)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分布匹配-Distribution-Matching"><span class="toc-number">2.2.1.</span> <span class="toc-text">分布匹配(Distribution Matching)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#样本选择-Sample-Selection"><span class="toc-number">2.2.2.</span> <span class="toc-text">样本选择(Sample Selection)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协同训练-Co-training-Based-Weighting"><span class="toc-number">2.3.</span> <span class="toc-text">协同训练(Co-training Based Weighting)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特征自适应-Feature-Adaptation"><span class="toc-number">3.</span> <span class="toc-text">特征自适应(Feature Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征子空间-Feature-Subspace-Based"><span class="toc-number">3.1.</span> <span class="toc-text">基于特征子空间(Feature Subspace-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征变换-Feature-Transformation-Based"><span class="toc-number">3.2.</span> <span class="toc-text">基于特征变换(Feature Transformation-Based)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基于投影-Projection-Based"><span class="toc-number">3.2.1.</span> <span class="toc-text">基于投影(Projection-Based)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基于度量-Metric-Based"><span class="toc-number">3.2.2.</span> <span class="toc-text">基于度量(Metric-Based)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基于增强-Augmentation-Based"><span class="toc-number">3.2.3.</span> <span class="toc-text">基于增强(Augmentation-Based)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征重构-Feature-Reconstruction-Based"><span class="toc-number">3.3.</span> <span class="toc-text">基于特征重构(Feature Reconstruction-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征编码-Feature-Coding-Based"><span class="toc-number">3.4.</span> <span class="toc-text">基于特征编码(Feature Coding-Based)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类器自适应-Classifier-Adaptation"><span class="toc-number">4.</span> <span class="toc-text">分类器自适应(Classifier Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于核分类器-Kernel-Classifier-Based"><span class="toc-number">4.1.</span> <span class="toc-text">基于核分类器(Kernel Classifier-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于流形正则项-Manifold-Regularizer-Based"><span class="toc-number">4.2.</span> <span class="toc-text">基于流形正则项(Manifold Regularizer-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于贝叶斯分类器-Bayesian-Classifier-Based"><span class="toc-number">4.3.</span> <span class="toc-text">基于贝叶斯分类器(Bayesian Classifier-Based)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深度网络自适应-Deep-Network-Adaptation"><span class="toc-number">5.</span> <span class="toc-text">深度网络自适应(Deep Network Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于边缘分布对齐-Marginal-Alignment-Based"><span class="toc-number">5.1.</span> <span class="toc-text">基于边缘分布对齐(Marginal Alignment-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于条件分布对齐-Conditional-Alignment-Based"><span class="toc-number">5.2.</span> <span class="toc-text">基于条件分布对齐(Conditional Alignment-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于自动编码器-Autoencoder-Based"><span class="toc-number">5.3.</span> <span class="toc-text">基于自动编码器(Autoencoder-Based)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对抗式自适应-Adversarial-Adaptation"><span class="toc-number">6.</span> <span class="toc-text">对抗式自适应(Adversarial Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于梯度转换-Gradient-Reversal-Based"><span class="toc-number">6.1.</span> <span class="toc-text">基于梯度转换(Gradient Reversal-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于Minimax优化-Minimax-Optimization-Based"><span class="toc-number">6.2.</span> <span class="toc-text">基于Minimax优化(Minimax Optimization-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于生成对抗网络-Generative-Adversarial-Net-Based"><span class="toc-number">6.3.</span> <span class="toc-text">基于生成对抗网络(Generative Adversarial Net-Based)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基准数据集"><span class="toc-number">7.</span> <span class="toc-text">基准数据集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">8.</span> <span class="toc-text">参考文献</span></a></li></ol>
+                    
+
+                </div>
+                
+                
+                    <hr>
+<p><strong>论文题目</strong>：《Transfer Adaptation Learning: A Decade Survey》</p>
+<p><strong>论文作者</strong>：Lei Zhang</p>
+<p><strong>论文链接</strong>：<a href="http://cn.arxiv.org/pdf/1903.04687.pdf" target="_blank" rel="noopener">http://cn.arxiv.org/pdf/1903.04687.pdf</a></p>
+<a id="more"></a>
+<hr>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>在很多实际的情况中, <strong>源域(source domain)</strong>和<strong>目标域(target domain)</strong>之间存在：</p>
+<ul>
+<li><strong>分布不匹配(distribution mismatch)</strong></li>
+<li><strong>领域偏移(domain shift)</strong></li>
+</ul>
+<p><strong>独立同分布(independent identical distribution, i.i.d)</strong>的假设不再满足!</p>
+<ul>
+<li><p><strong>迁移学习(transfer learning)</strong>假设源域与目标域拥有不同的<strong>联合概率分布</strong> </p>
+<script type="math/tex; mode=display">
+P(X_{source}, Y_{source}) \neq P(X_{target}, Y_{target})</script></li>
+<li><p><strong>领域自适应(domain adaptation)</strong>假设源域与目标域拥有不同的<strong>边缘概率分布</strong>, 但拥有相同的<strong>条件概率分布</strong></p>
+<script type="math/tex; mode=display">
+P(X_{source}) \neq P(X_{target}), P(Y_{source} | X_{source}) = P(Y_{target} | X_{target})</script></li>
+</ul>
+<hr>
+<h2 id="实例权重调整自适应-Instance-Re-weighting-Adaptation"><a href="#实例权重调整自适应-Instance-Re-weighting-Adaptation" class="headerlink" title="实例权重调整自适应(Instance Re-weighting Adaptation)"></a>实例权重调整自适应(Instance Re-weighting Adaptation)</h2><p>当训练集和测试集来自不同分布时, 这通常被称为<strong>采样选择偏差(sample selection bias)</strong>或者<strong>协方差偏移(covariant shift)</strong>. </p>
+<p>实例权重调整方法旨在<strong>通过非参数方式对跨域特征分布匹配直接推断出重采样的权重</strong>. </p>
+<h3 id="基于直觉的权重调整-Intuitive-Weighting"><a href="#基于直觉的权重调整-Intuitive-Weighting" class="headerlink" title="基于直觉的权重调整(Intuitive Weighting)"></a>基于直觉的权重调整(Intuitive Weighting)</h3><p>直接对原始数据进行权重调整. </p>
+<p>首次提出于NLP领域<sup><a href="#fn_1" id="reffn_1">1</a></sup>, 主要的方法有著名的<code>TrAdaBoost</code><sup><a href="#fn_2" id="reffn_2">2</a></sup>.</p>
+<h3 id="基于核映射的权重调整-Kernel-Mapping-Based-Weighting"><a href="#基于核映射的权重调整-Kernel-Mapping-Based-Weighting" class="headerlink" title="基于核映射的权重调整(Kernel Mapping Based Weighting)"></a>基于核映射的权重调整(Kernel Mapping Based Weighting)</h3><p>将原始数据映射到高维空间(如,再生核希尔伯特空间RKHS)中进行权重调整.</p>
+<h4 id="分布匹配-Distribution-Matching"><a href="#分布匹配-Distribution-Matching" class="headerlink" title="分布匹配(Distribution Matching)"></a>分布匹配(Distribution Matching)</h4><p>主要思想是<strong>通过重新采样源数据的权重来匹配再生核希尔伯特空间中源数据和目标数据之间的均值</strong>. </p>
+<p>主要有两种非参数统计量来衡量分布差异:</p>
+<ul>
+<li><strong>核均值匹配(kernel mean matching, KMM)</strong></li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+{\min \limits_{\beta}\left\|E_{x^{\prime} \sim P_{r}^{\prime}}\left[\Phi\left(x^{\prime}\right)\right]-E_{x \sim P_{r}}[\beta(x) \Phi(x)]\right\|} \\
+{\text {s.t.} \quad \beta(x) \geq 0, E_{x \sim P_{r}}[\beta(x)]=1}
+\end{array}</script><p>Huang等人<sup><a href="#fn_3" id="reffn_3">3</a></sup>首次提出通过调整源样本的$\beta$权重系数, 使得带权源样本和目标样本的KMM最小.</p>
+<ul>
+<li><strong>最大均值差异(maximum mean discrepancy, MMD)</strong><sup><a href="#fn_4" id="reffn_4">4</a></sup><sup><a href="#fn_5" id="reffn_5">5</a></sup></li>
+</ul>
+<script type="math/tex; mode=display">
+d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}{M} \sum_{i=1}^{M} \phi\left(x_{i}^{s}\right)-\frac{1}{N} \sum_{j=1}^{N} \phi\left(x_{j}^{t}\right)\right\|_{\mathcal{H}}^{2}</script><p><code>weighted MMD</code><sup><a href="#fn_6" id="reffn_6">6</a></sup>方法考虑了类别权重偏差.</p>
+<h4 id="样本选择-Sample-Selection"><a href="#样本选择-Sample-Selection" class="headerlink" title="样本选择(Sample Selection)"></a>样本选择(Sample Selection)</h4><p>主要方法有基于k-means聚类的<code>KMapWeighted</code><sup><a href="#fn_7" id="reffn_7">7</a></sup>, 基于MMD和$\ell_{2,1}$-norm的<code>TJM</code><sup><a href="#fn_8" id="reffn_8">8</a></sup>等.</p>
+<h3 id="协同训练-Co-training-Based-Weighting"><a href="#协同训练-Co-training-Based-Weighting" class="headerlink" title="协同训练(Co-training Based Weighting)"></a>协同训练(Co-training Based Weighting)</h3><p>主要思想是假设数据集被表征为两个不同的视角, 使两个分类器独立地从每个视角中进行学习.</p>
+<p>主要方法有<code>CODA</code><sup><a href="#fn_9" id="reffn_9">9</a></sup>, 以及基于GAN的<code>RANN</code><sup><a href="#fn_10" id="reffn_10">10</a></sup>等.</p>
+<hr>
+<h2 id="特征自适应-Feature-Adaptation"><a href="#特征自适应-Feature-Adaptation" class="headerlink" title="特征自适应(Feature Adaptation)"></a>特征自适应(Feature Adaptation)</h2><p>特征自适应方法旨在<strong>寻找多源数据(multiple sources)的共同特征表示</strong>.</p>
+<h3 id="基于特征子空间-Feature-Subspace-Based"><a href="#基于特征子空间-Feature-Subspace-Based" class="headerlink" title="基于特征子空间(Feature Subspace-Based)"></a>基于特征子空间(Feature Subspace-Based)</h3><p>该方法假设<strong>数据可以被低维线性子空间进行表示, 即低维的格拉斯曼流形(Grassmann manifold)被嵌入到高维数据中</strong>. </p>
+<p>通常用PCA方法来构造该流形, 使得源域和目标域可以看成流形上的两个点, 并得到两者的测地线距离(geodesic flow).</p>
+<ul>
+<li><p>基于流形的方法有<code>SGF</code><sup><a href="#fn_11" id="reffn_11">11</a></sup>和<code>GFK</code><sup><a href="#fn_12" id="reffn_12">12</a></sup></p>
+</li>
+<li><p>基于子空间对齐的方法有<code>SA</code><sup><a href="#fn_13" id="reffn_13">13</a></sup>,<code>SDA</code><sup><a href="#fn_14" id="reffn_14">14</a></sup>和<code>GTH</code><sup><a href="#fn_15" id="reffn_15">15</a></sup></p>
+</li>
+</ul>
+<h3 id="基于特征变换-Feature-Transformation-Based"><a href="#基于特征变换-Feature-Transformation-Based" class="headerlink" title="基于特征变换(Feature Transformation-Based)"></a>基于特征变换(Feature Transformation-Based)</h3><p>特征变换方法旨在<strong>学习变换或投影矩阵,使得源域和目标域中的数据在某种分布度量准则下更接近</strong>.</p>
+<h4 id="基于投影-Projection-Based"><a href="#基于投影-Projection-Based" class="headerlink" title="基于投影(Projection-Based)"></a>基于投影(Projection-Based)</h4><p>该方法通过减少不同域之间的边缘分布和条件分布差异, 求解出最优的投影矩阵.</p>
+<p>主要方法有:</p>
+<ul>
+<li><p>基于边缘分布MMD的<code>TCA</code><sup><a href="#fn_16" id="reffn_16">16</a></sup>, 条件分布MMD的<code>JDA</code><sup><a href="#fn_17" id="reffn_17">17</a></sup></p>
+</li>
+<li><p>基于布拉格曼散度(Bregman divergence)的<code>TSL</code><sup><a href="#fn_18" id="reffn_18">18</a></sup></p>
+</li>
+<li><p>基于希尔伯特-施密特独立性(Hilbert-Schmidt Independence Criterion)<sup><a href="#fn_19" id="reffn_19">19</a></sup></p>
+</li>
+</ul>
+<h4 id="基于度量-Metric-Based"><a href="#基于度量-Metric-Based" class="headerlink" title="基于度量(Metric-Based)"></a>基于度量(Metric-Based)</h4><p>该方法通过在带标签的源域中学习一个好的距离度量, 使得其能够应用于相关但不同的目标域中.</p>
+<p>主要方法有:</p>
+<ul>
+<li><p>基于一阶统计量的<code>RTML</code><sup><a href="#fn_20" id="reffn_20">20</a></sup></p>
+</li>
+<li><p>基于二阶统计量的<code>CORAL</code><sup><a href="#fn_21" id="reffn_21">21</a></sup></p>
+</li>
+</ul>
+<h4 id="基于增强-Augmentation-Based"><a href="#基于增强-Augmentation-Based" class="headerlink" title="基于增强(Augmentation-Based)"></a>基于增强(Augmentation-Based)</h4><p>该方法假设数据的特征被分为三种类型:公共特征/源域特征/目标域特征.</p>
+<p>主要方法有:</p>
+<ul>
+<li>基于零填充(Zero Padding)的<code>EasyAdapt(EA)</code><sup><a href="#fn_22" id="reffn_22">22</a></sup></li>
+<li>基于生成式模型(Generative Model)<sup><a href="#fn_23" id="reffn_23">23</a></sup></li>
+</ul>
+<h3 id="基于特征重构-Feature-Reconstruction-Based"><a href="#基于特征重构-Feature-Reconstruction-Based" class="headerlink" title="基于特征重构(Feature Reconstruction-Based)"></a>基于特征重构(Feature Reconstruction-Based)</h3><p>主要方法有:</p>
+<ul>
+<li>低秩重构(Low-rank Reconstruction)<sup><a href="#fn_24" id="reffn_24">24</a></sup></li>
+<li>稀疏重构(Sparse Reconstruction)<sup><a href="#fn_25" id="reffn_25">25</a></sup></li>
+</ul>
+<h3 id="基于特征编码-Feature-Coding-Based"><a href="#基于特征编码-Feature-Coding-Based" class="headerlink" title="基于特征编码(Feature Coding-Based)"></a>基于特征编码(Feature Coding-Based)</h3><p>主要方法有:</p>
+<ul>
+<li>共享域字典(Domain-shared dictionary)<sup><a href="#fn_26" id="reffn_26">26</a></sup></li>
+<li>指定域字典(Domain-specific dictionary)<sup><a href="#fn_27" id="reffn_27">27</a></sup></li>
+</ul>
+<hr>
+<h2 id="分类器自适应-Classifier-Adaptation"><a href="#分类器自适应-Classifier-Adaptation" class="headerlink" title="分类器自适应(Classifier Adaptation)"></a>分类器自适应(Classifier Adaptation)</h2><p>分类器自适应旨在<strong>利用源域中带标签数据和目标域中少量带标签数据学习一个通用的分类器</strong>.</p>
+<h3 id="基于核分类器-Kernel-Classifier-Based"><a href="#基于核分类器-Kernel-Classifier-Based" class="headerlink" title="基于核分类器(Kernel Classifier-Based)"></a>基于核分类器(Kernel Classifier-Based)</h3><p>主要方法有:</p>
+<ul>
+<li><p>自适应支持向量机(adaptive support vector machine, ASVM)<sup><a href="#fn_28" id="reffn_28">28</a></sup></p>
+</li>
+<li><p>基于多核学习(multiple kernel learning, MKL)的域迁移分类器<sup><a href="#fn_29" id="reffn_29">29</a></sup></p>
+</li>
+</ul>
+<h3 id="基于流形正则项-Manifold-Regularizer-Based"><a href="#基于流形正则项-Manifold-Regularizer-Based" class="headerlink" title="基于流形正则项(Manifold Regularizer-Based)"></a>基于流形正则项(Manifold Regularizer-Based)</h3><p>主要方法有<code>ARTL</code><sup><a href="#fn_30" id="reffn_30">30</a></sup>,<code>DMM</code><sup><a href="#fn_31" id="reffn_31">31</a></sup>,<code>MEDA</code><sup><a href="#fn_32" id="reffn_32">32</a></sup>等.</p>
+<h3 id="基于贝叶斯分类器-Bayesian-Classifier-Based"><a href="#基于贝叶斯分类器-Bayesian-Classifier-Based" class="headerlink" title="基于贝叶斯分类器(Bayesian Classifier-Based)"></a>基于贝叶斯分类器(Bayesian Classifier-Based)</h3><p>主要方法有核贝叶斯迁移学习<code>KBTL</code><sup><a href="#fn_33" id="reffn_33">33</a></sup>等.</p>
+<hr>
+<h2 id="深度网络自适应-Deep-Network-Adaptation"><a href="#深度网络自适应-Deep-Network-Adaptation" class="headerlink" title="深度网络自适应(Deep Network Adaptation)"></a>深度网络自适应(Deep Network Adaptation)</h2><p>2014年, Yosinski等人<sup><a href="#fn_34" id="reffn_34">34</a></sup>讨论了深度神经网络中不同层特征的可迁移特性. </p>
+<h3 id="基于边缘分布对齐-Marginal-Alignment-Based"><a href="#基于边缘分布对齐-Marginal-Alignment-Based" class="headerlink" title="基于边缘分布对齐(Marginal Alignment-Based)"></a>基于边缘分布对齐(Marginal Alignment-Based)</h3><p>主要方法有:</p>
+<ul>
+<li>深度域混淆<code>DDC</code><sup><a href="#fn_35" id="reffn_35">35</a></sup></li>
+<li>深度自适应网络<code>DAN</code><sup><a href="#fn_36" id="reffn_36">36</a></sup></li>
+<li>联合自适应网络<code>JAN</code><sup><a href="#fn_37" id="reffn_37">37</a></sup>, 同时提出了<code>Joint MMD</code>准则</li>
+</ul>
+<h3 id="基于条件分布对齐-Conditional-Alignment-Based"><a href="#基于条件分布对齐-Conditional-Alignment-Based" class="headerlink" title="基于条件分布对齐(Conditional Alignment-Based)"></a>基于条件分布对齐(Conditional Alignment-Based)</h3><p>主要方法有深度迁移网络<code>DTN</code><sup><a href="#fn_38" id="reffn_38">38</a></sup></p>
+<h3 id="基于自动编码器-Autoencoder-Based"><a href="#基于自动编码器-Autoencoder-Based" class="headerlink" title="基于自动编码器(Autoencoder-Based)"></a>基于自动编码器(Autoencoder-Based)</h3><p>主要方法有边缘堆叠式降噪自动编码器<code>mSDA</code><sup><a href="#fn_39" id="reffn_39">39</a></sup></p>
+<hr>
+<h2 id="对抗式自适应-Adversarial-Adaptation"><a href="#对抗式自适应-Adversarial-Adaptation" class="headerlink" title="对抗式自适应(Adversarial Adaptation)"></a>对抗式自适应(Adversarial Adaptation)</h2><p>通过对抗目标(如,域判别器)来减少域间差异.</p>
+<h3 id="基于梯度转换-Gradient-Reversal-Based"><a href="#基于梯度转换-Gradient-Reversal-Based" class="headerlink" title="基于梯度转换(Gradient Reversal-Based)"></a>基于梯度转换(Gradient Reversal-Based)</h3><p>Ganin等人<sup><a href="#fn_40" id="reffn_40">40</a></sup>首次提出可以通过添加一个简单的<strong>梯度转换层(gradient reversal layer, GRL)</strong>来实现领域自适应.</p>
+<h3 id="基于Minimax优化-Minimax-Optimization-Based"><a href="#基于Minimax优化-Minimax-Optimization-Based" class="headerlink" title="基于Minimax优化(Minimax Optimization-Based)"></a>基于Minimax优化(Minimax Optimization-Based)</h3><p>Ajakan等人<sup><a href="#fn_41" id="reffn_41">41</a></sup>首次结合分类损失和对抗目标, 提出了<code>DANN</code>方法.</p>
+<p>其它方法还有:</p>
+<ul>
+<li><p>对抗判别领域自适应<code>ADDA</code><sup><a href="#fn_42" id="reffn_42">42</a></sup></p>
+</li>
+<li><p>条件领域对抗网络<code>CDAN</code><sup><a href="#fn_43" id="reffn_43">43</a></sup></p>
+</li>
+<li><p>最大分类器差异<code>MCD</code><sup><a href="#fn_44" id="reffn_44">44</a></sup></p>
+</li>
+</ul>
+<h3 id="基于生成对抗网络-Generative-Adversarial-Net-Based"><a href="#基于生成对抗网络-Generative-Adversarial-Net-Based" class="headerlink" title="基于生成对抗网络(Generative Adversarial Net-Based)"></a>基于生成对抗网络(Generative Adversarial Net-Based)</h3><p>主要方法有:</p>
+<ul>
+<li><p><code>CyCADA</code><sup><a href="#fn_45" id="reffn_45">45</a></sup></p>
+</li>
+<li><p><code>Duplex GAN</code><sup><a href="#fn_46" id="reffn_46">46</a></sup></p>
+</li>
+<li><p>…</p>
+</li>
+</ul>
+<h2 id="基准数据集"><a href="#基准数据集" class="headerlink" title="基准数据集"></a>基准数据集</h2><ul>
+<li>Office-31 (3DA) </li>
+<li>Office+Caltech-10 (4DA)</li>
+<li>MNIST+USPS</li>
+<li>Multi-PIE</li>
+<li>COIL-20</li>
+<li>MSRC+VOC2007</li>
+<li>IVLSC</li>
+<li>Cross-dataset Testbed</li>
+<li>Office Home<sup><font color="red">NEW</font></sup></li>
+<li>ImageCLEF</li>
+<li>P-A-C-S<sup><font color="red">NEW</font></sup></li>
+</ul>
+<hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote id="fn_1">
+<sup>1</sup>. J. Jiang and C. Zhai, <strong>Instance weighting for domain adaptation in nlp</strong>, in ACL, 2007, pp. 264–271.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. W. Dai, Q. Yang, G. R. Xue, and Y. Yu, <strong>Boosting for transfer learning</strong>, in ICML, 2007, pp. 193–200.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. J. Huang, A. Smola, A. Gretton, K. Borgwardt, and B. Scholkopf, <strong>Correcting sample selection bias by unlabeled data</strong>, in NIPS, 2007, pp. 1–8.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_4">
+<sup>4</sup>. A. Gretton, K. Borgwardt, M. Rasch, B. Schoelkopf, and A. Smola, <strong>A kernel method for the two-sample-problem</strong>, in NIPS, 2006.<a href="#reffn_4" title="Jump back to footnote [4] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_5">
+<sup>5</sup>. A. Gretton, K. Borgwardt, M. Rasch, B. Scholkopf, and A. Smola, <strong>A kernel two-sample test</strong>, Journal of Machine Learning Research, pp. 723–773, 2012<a href="#reffn_5" title="Jump back to footnote [5] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_6">
+<sup>6</sup>. H. Yan, Y. Ding, P. Li, Q. Wang, Y. Xu, and W. Zuo, <strong>Mind the class weight bias: Weighted maximum mean discrepancy for unsupervised domain adaptation</strong>, in CVPR, 2017, pp. 2272–2281<a href="#reffn_6" title="Jump back to footnote [6] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_7">
+<sup>7</sup>. E. H. Zhong, W. Fan, J. Peng, K. Zhang, J. Ren, D. S. Turaga, and O. Verscheure, <strong>Cross domain distribution adaptation via kernel mapping</strong>, in ACM SIGKDD, 2009, pp. 1027–1036.<a href="#reffn_7" title="Jump back to footnote [7] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_8">
+<sup>8</sup>. M. Long, J. Wang, G. Ding, J. Sun, and P. S. Yu, <strong>Transfer joint matching for unsupervised domain adaptation</strong>, in CVPR, 2014, pp. 1410–1417.<a href="#reffn_8" title="Jump back to footnote [8] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_9">
+<sup>9</sup>. M. Chen, K. Q. Weinberger, and J. C. Blitzer, <strong>Co-training for domain adaptation</strong>, in NIPS, 2011.<a href="#reffn_9" title="Jump back to footnote [9] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_10">
+<sup>10</sup>. Q. Chen, Y. Liu, Z. Wang, I. Wassell, and K. Chetty, <strong>Re-weighted adversarial adaptation network for unsupervised domain adaptation</strong>, in CVPR, 2018, pp. 7976–7985.<a href="#reffn_10" title="Jump back to footnote [10] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_11">
+<sup>11</sup>. R. Gopalan, R. Li, and R. Chellappa, <strong>Domain adaptation for object recognition: An unsupervised approach</strong>, in ICCV, 2011, pp. 999–1006<a href="#reffn_11" title="Jump back to footnote [11] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_12">
+<sup>12</sup>. B. Gong, Y. Shi, F. Sha, and K. Grauman, <strong>Geodesic flow kernel for unsupervised domain adaptation</strong>, in CVPR, 2012, pp. 2066–2073<a href="#reffn_12" title="Jump back to footnote [12] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_13">
+<sup>13</sup>. B. Fernando, A. Habrard, M. Sebban, and T. Tuytelaars, <strong>Unsupervised visual domain adaptation using subspace alignment</strong>, in ICCV, 2013, pp. 2960–2967.<a href="#reffn_13" title="Jump back to footnote [13] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_14">
+<sup>14</sup>. B. Sun and K. Saenko, <strong>Subspace distribution alignment for unsupervised domain adaptation</strong>, in BMVC, 2015, pp. 24.1–24.10.<a href="#reffn_14" title="Jump back to footnote [14] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_15">
+<sup>15</sup>. J. Liu and L. Zhang, <strong>Optimal projection guided transfer hashing for image retrieval</strong>, in AAAI, 2018.<a href="#reffn_15" title="Jump back to footnote [15] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_16">
+<sup>16</sup>. S. J. Pan, I. W. Tsang, J. T. Kwok, and Q. Yang, <strong>Domain adaptation via transfer component analysis</strong>, IEEE Trans. Neural Networks, vol. 22, no. 2, p. 199, 2011<a href="#reffn_16" title="Jump back to footnote [16] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_17">
+<sup>17</sup>.  M. Long, J. Wang, G. Ding, J. Sun, and P. S. Yu, <strong>Transfer feature learning with joint distribution adaptation</strong>, in ICCV, 2014, pp. 2200–2207.<a href="#reffn_17" title="Jump back to footnote [17] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_18">
+<sup>18</sup>. S. Si, D. Tao, and B. Geng, <strong>Bregman divergence-based regularization for transfer subspace learning</strong>, IEEE Trans. Knowledge and Data Engineering, vol. 22, no. 7, pp. 929–942, 2010.<a href="#reffn_18" title="Jump back to footnote [18] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_19">
+<sup>19</sup>. A. Gretton, O. Bousquet, A. Smola, and B. Scholkopf, <strong>Measuring statistical dependence with hilbert-schmidt norms</strong>, in ALT, 2005.<a href="#reffn_19" title="Jump back to footnote [19] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_20">
+<sup>20</sup>. Z. Ding and Y. Fu, <strong>Robust transfer metric learning for image classification</strong>, IEEE Trans. Image Processing, vol. 26, no. 2, p. 660670, 2017.<a href="#reffn_20" title="Jump back to footnote [20] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_21">
+<sup>21</sup>. B. Sun, J. Feng, and K. Saenko, <strong>Return of frustratingly easy domain adaptation</strong>, in AAAI, 2016, pp. 153–171.<a href="#reffn_21" title="Jump back to footnote [21] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_22">
+<sup>22</sup>. H. Daume III, <strong>Frustratingly easy domain adaptation</strong>, in arXiv,2009.<a href="#reffn_22" title="Jump back to footnote [22] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_23">
+<sup>23</sup>. R. Volpi, P. Morerio, S. Savarese, and V. Murino, <strong>Adversarial feature augmentation for unsupervised domain adaptation</strong>, in CVPR, 2018, pp. 5495–5504.<a href="#reffn_23" title="Jump back to footnote [23] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_24">
+<sup>24</sup>. I. H. Jhuo, D. Liu, D. T. Lee, and S. F. Chang, <strong>Robust visual domain adaptation with low-rank reconstruction</strong>, in CVPR, 2012, pp. 2168–2175.<a href="#reffn_24" title="Jump back to footnote [24] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_25">
+<sup>25</sup>. L. Zhang, W. Zuo, and D. Zhang, <strong>Lsdt: Latent sparse domain transfer learning for visual adaptation</strong>, IEEE Trans. Image Processing, vol. 25, no. 3, pp. 1177–1191, 2016.<a href="#reffn_25" title="Jump back to footnote [25] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_26">
+<sup>26</sup>. S. Shekhar, V. Patel, H. Nguyen, and R. Chellappa, <strong>Generalized domain-adaptive dictionaries</strong>, in CVPR, 2013, pp. 361–368.<a href="#reffn_26" title="Jump back to footnote [26] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_27">
+<sup>27</sup>. F. Zhu and L. Shao, <strong>Weakly-supervised cross-domain dictionary learning for visual recognition</strong>, International Journal of Computer Vision, vol. 109, no. 1-2, pp. 42–59, 2014.<a href="#reffn_27" title="Jump back to footnote [27] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_28">
+<sup>28</sup>. J. Yang, R. Yan, and A. G. Hauptmann, <strong>Cross-domain video concept detection using adaptive svms</strong>, in ACM MM, 2007, pp. 188–197.<a href="#reffn_28" title="Jump back to footnote [28] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_29">
+<sup>29</sup>.  L. Duan, I. Tsang, D. Xu, and S. Maybank, <strong>Domain transfer svm for video concept detection</strong>, in CVPR, 2009<a href="#reffn_29" title="Jump back to footnote [29] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_30">
+<sup>30</sup>. M. Long, J. Wang, G. Ding, S. Pan, and P. Yu, <strong>Adaptation regularization: a general framework for transfer learning</strong>, IEEE Trans. Knowledge and Data Engineering, vol. 26, no. 5, p. 10761089, 2014.<a href="#reffn_30" title="Jump back to footnote [30] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_31">
+<sup>31</sup>. Y. Cao, M. Long, and J. Wang, <strong>Unsupervised domain adaptation with distribution matching machines</strong>, in AAAI, 2018<a href="#reffn_31" title="Jump back to footnote [31] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_32">
+<sup>32</sup>. J. Wang, W. Feng, Y. Chen, H. Yu, M. Huang, and P. S. Yu, <strong>Visual domain adaptation with manifold embedded distribution alignment</strong>, 2018.<a href="#reffn_32" title="Jump back to footnote [32] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_33">
+<sup>33</sup>. M. Gonen and A. Margolin, <strong>Kernelized bayesian transfer learning</strong>, in AAAI, 2014, pp. 1831–1839.<a href="#reffn_33" title="Jump back to footnote [33] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_34">
+<sup>34</sup>.  J. Yosinski, J. Clune, Y. Bengio, and H. Lipson, <strong>How transferable are features in deep neural networks</strong>, in NIPS, 2014.<a href="#reffn_34" title="Jump back to footnote [34] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_35">
+<sup>35</sup>. E. Tzeng, J. Hoffman, N. Zhang, K. Saenko, and T. Darrell, <strong>Deep domain confusion: Maximizing for domain invariance</strong>, arXiv, 2014<a href="#reffn_35" title="Jump back to footnote [35] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_36">
+<sup>36</sup>.  M. Long, Y. Cao, J. Wang, and M. I. Jordan, <strong>Learning transferable features with deep adaptation networks</strong>, in ICML, 2015, pp. 97–105.<a href="#reffn_36" title="Jump back to footnote [36] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_37">
+<sup>37</sup>. M. Long, H. Zhu, J. Wang, and M. Jordan, <strong>Deep transfer learning with joint adaptation networks</strong>, in ICML, 2017.<a href="#reffn_37" title="Jump back to footnote [37] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_38">
+<sup>38</sup>. X. Zhang, F. Yu, S. Wang, and S. Chang, <strong>Deep transfer network: Unsupervised domain adaptation</strong>, in arXiv, 2015.<a href="#reffn_38" title="Jump back to footnote [38] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_39">
+<sup>39</sup>. M. Chen, Z. Xu, K. Weinberger, and F. Sha, <strong>Marginalized denoising autoencoders for domain adaptation</strong>, in ICML, 2012<a href="#reffn_39" title="Jump back to footnote [39] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_40">
+<sup>40</sup>. Y. Ganin and V. Lempitsky, <strong>Unsupervised domain adaptation by backpropagation</strong>, in arXiv, 2015.<a href="#reffn_40" title="Jump back to footnote [40] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_41">
+<sup>41</sup>. H. Ajakan, P. Germain, H. Larochelle, F. Laviolette, and M. Marchand, <strong>Domain-adversarial neural network</strong>, in arXiv, 2015<a href="#reffn_41" title="Jump back to footnote [41] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_42">
+<sup>42</sup>. E. Tzeng, J. Hoffman, K. Saenko, and T. Darrell, <strong>Adversarial discriminative domain adaptation</strong>, in CVPR, 2017, pp. 7167–7176<a href="#reffn_42" title="Jump back to footnote [42] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_43">
+<sup>43</sup>. M. Long, Z. Cao, J. Wang, and M. I. Jordan, <strong>Conditional adversarial domain adaptation</strong>, in NIPS, 2018.<a href="#reffn_43" title="Jump back to footnote [43] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_44">
+<sup>44</sup>. K. Saito, K. Watanabe, Y. Ushiku, and T. Harada, <strong>Maximum classifier discrepancy for unsupervised domain adaptation</strong>, in CVPR, 2018, pp. 3723–3732.<a href="#reffn_44" title="Jump back to footnote [44] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_45">
+<sup>45</sup>. J. Hoffman, E. Tzeng, T. Park, and J. Zhu, <strong>Cycada: Cycleconsistent adversarial domain adaptation</strong>, in ICML, 2018.<a href="#reffn_45" title="Jump back to footnote [45] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_46">
+<sup>46</sup>. L. Hu, M. Kan, S. Shan, and X. Chen, <strong>Duplex generative adversarial network for unsupervised domain adaptation</strong>, in CVPR, 2018, pp. 1498–1507.<a href="#reffn_46" title="Jump back to footnote [46] in the text."> &#8617;</a>
+</blockquote>
+
+                
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/transfer-adaptation-learning/" data-id="cjtju5goi00nzeisipow2swn7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/transfer-adaptation-learning/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/posts/gridworld/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">强化学习实践（二）：Gridworld</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="gitalkContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/强化学习/">强化学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文笔记/">论文笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/迁移学习/">迁移学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://chenshen.xyz">陈燊(XMU)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.ruphi.cn">进阶者(NetEase)</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.hrwhisper.me">细语呢喃(UCAS)</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+<div id="toTop" class="fa fa-angle-up"></div>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 orzyt<br>
+            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+        var gitalk = new Gitalk({
+            id: location.pathname,
+            clientID: '3628f46ff8965c297258', 
+            clientSecret: 'da2ef51d9fe687db577e834867d253a697f19a9f',
+            repo: 'comments',
+            owner: 'orzyt',
+            admin: ['orzyt'],
+            distractionFreeMode: false,
+            perPage: 20,
+            createIssueManually: false,
+            language: 'zh-CN', 
+        })
+        gitalk.render('gitalkContainer')
+	</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+    <!-- page.__post !== true --><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
+
