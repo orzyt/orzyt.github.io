@@ -925,7 +925,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-entry a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .article-entry ul,
 .article-entry ol,
