@@ -225,15 +225,6 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
             
                 
-                <div id="toc" class="toc-article">
-                    <strong class="toc-title">文章目录</strong>
-                    
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例权重调整自适应-Instance-Re-weighting-Adaptation"><span class="toc-number">2.</span> <span class="toc-text">实例权重调整自适应(Instance Re-weighting Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于直觉的权重调整-Intuitive-Weighting"><span class="toc-number">2.1.</span> <span class="toc-text">基于直觉的权重调整(Intuitive Weighting)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于核映射的权重调整-Kernel-Mapping-Based-Weighting"><span class="toc-number">2.2.</span> <span class="toc-text">基于核映射的权重调整(Kernel Mapping Based Weighting)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分布匹配-Distribution-Matching"><span class="toc-number">2.2.1.</span> <span class="toc-text">分布匹配(Distribution Matching)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#样本选择-Sample-Selection"><span class="toc-number">2.2.2.</span> <span class="toc-text">样本选择(Sample Selection)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协同训练-Co-training-Based-Weighting"><span class="toc-number">2.3.</span> <span class="toc-text">协同训练(Co-training Based Weighting)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特征自适应-Feature-Adaptation"><span class="toc-number">3.</span> <span class="toc-text">特征自适应(Feature Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征子空间-Feature-Subspace-Based"><span class="toc-number">3.1.</span> <span class="toc-text">基于特征子空间(Feature Subspace-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征变换-Feature-Transformation-Based"><span class="toc-number">3.2.</span> <span class="toc-text">基于特征变换(Feature Transformation-Based)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基于投影-Projection-Based"><span class="toc-number">3.2.1.</span> <span class="toc-text">基于投影(Projection-Based)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基于度量-Metric-Based"><span class="toc-number">3.2.2.</span> <span class="toc-text">基于度量(Metric-Based)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基于增强-Augmentation-Based"><span class="toc-number">3.2.3.</span> <span class="toc-text">基于增强(Augmentation-Based)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征重构-Feature-Reconstruction-Based"><span class="toc-number">3.3.</span> <span class="toc-text">基于特征重构(Feature Reconstruction-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征编码-Feature-Coding-Based"><span class="toc-number">3.4.</span> <span class="toc-text">基于特征编码(Feature Coding-Based)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类器自适应-Classifier-Adaptation"><span class="toc-number">4.</span> <span class="toc-text">分类器自适应(Classifier Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于核分类器-Kernel-Classifier-Based"><span class="toc-number">4.1.</span> <span class="toc-text">基于核分类器(Kernel Classifier-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于流形正则项-Manifold-Regularizer-Based"><span class="toc-number">4.2.</span> <span class="toc-text">基于流形正则项(Manifold Regularizer-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于贝叶斯分类器-Bayesian-Classifier-Based"><span class="toc-number">4.3.</span> <span class="toc-text">基于贝叶斯分类器(Bayesian Classifier-Based)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深度网络自适应-Deep-Network-Adaptation"><span class="toc-number">5.</span> <span class="toc-text">深度网络自适应(Deep Network Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于边缘分布对齐-Marginal-Alignment-Based"><span class="toc-number">5.1.</span> <span class="toc-text">基于边缘分布对齐(Marginal Alignment-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于条件分布对齐-Conditional-Alignment-Based"><span class="toc-number">5.2.</span> <span class="toc-text">基于条件分布对齐(Conditional Alignment-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于自动编码器-Autoencoder-Based"><span class="toc-number">5.3.</span> <span class="toc-text">基于自动编码器(Autoencoder-Based)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对抗式自适应-Adversarial-Adaptation"><span class="toc-number">6.</span> <span class="toc-text">对抗式自适应(Adversarial Adaptation)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于梯度转换-Gradient-Reversal-Based"><span class="toc-number">6.1.</span> <span class="toc-text">基于梯度转换(Gradient Reversal-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于Minimax优化-Minimax-Optimization-Based"><span class="toc-number">6.2.</span> <span class="toc-text">基于Minimax优化(Minimax Optimization-Based)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于生成对抗网络-Generative-Adversarial-Net-Based"><span class="toc-number">6.3.</span> <span class="toc-text">基于生成对抗网络(Generative Adversarial Net-Based)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基准数据集"><span class="toc-number">7.</span> <span class="toc-text">基准数据集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">8.</span> <span class="toc-text">参考文献</span></a></li></ol>
-                    
-
-                </div>
-                
-                
                     <hr>
 <p><strong>论文题目</strong>：《Transfer Adaptation Learning: A Decade Survey》</p>
 <p><strong>论文作者</strong>：Lei Zhang</p>
@@ -255,12 +246,12 @@ P(X_{source}, Y_{source}) \neq P(X_{target}, Y_{target})</script></li>
 P(X_{source}) \neq P(X_{target}), P(Y_{source} | X_{source}) = P(Y_{target} | X_{target})</script></li>
 </ul>
 <hr>
-<h2 id="实例权重调整自适应-Instance-Re-weighting-Adaptation"><a href="#实例权重调整自适应-Instance-Re-weighting-Adaptation" class="headerlink" title="实例权重调整自适应(Instance Re-weighting Adaptation)"></a>实例权重调整自适应(Instance Re-weighting Adaptation)</h2><p>当训练集和测试集来自不同分布时, 这通常被称为<strong>采样选择偏差(sample selection bias)</strong>或者<strong>协方差偏移(covariant shift)</strong>. </p>
+<h2 id="实例权重调整自适应"><a href="#实例权重调整自适应" class="headerlink" title="实例权重调整自适应"></a>实例权重调整自适应</h2><p>当训练集和测试集来自不同分布时, 这通常被称为<strong>采样选择偏差(sample selection bias)</strong>或者<strong>协方差偏移(covariant shift)</strong>. </p>
 <p>实例权重调整方法旨在<strong>通过非参数方式对跨域特征分布匹配直接推断出重采样的权重</strong>. </p>
-<h3 id="基于直觉的权重调整-Intuitive-Weighting"><a href="#基于直觉的权重调整-Intuitive-Weighting" class="headerlink" title="基于直觉的权重调整(Intuitive Weighting)"></a>基于直觉的权重调整(Intuitive Weighting)</h3><p>直接对原始数据进行权重调整. </p>
+<h3 id="基于直觉的权重调整"><a href="#基于直觉的权重调整" class="headerlink" title="基于直觉的权重调整"></a>基于直觉的权重调整</h3><p>直接对原始数据进行权重调整. </p>
 <p>首次提出于NLP领域<sup><a href="#fn_1" id="reffn_1">1</a></sup>, 主要的方法有著名的<code>TrAdaBoost</code><sup><a href="#fn_2" id="reffn_2">2</a></sup>.</p>
-<h3 id="基于核映射的权重调整-Kernel-Mapping-Based-Weighting"><a href="#基于核映射的权重调整-Kernel-Mapping-Based-Weighting" class="headerlink" title="基于核映射的权重调整(Kernel Mapping Based Weighting)"></a>基于核映射的权重调整(Kernel Mapping Based Weighting)</h3><p>将原始数据映射到高维空间(如,再生核希尔伯特空间RKHS)中进行权重调整.</p>
-<h4 id="分布匹配-Distribution-Matching"><a href="#分布匹配-Distribution-Matching" class="headerlink" title="分布匹配(Distribution Matching)"></a>分布匹配(Distribution Matching)</h4><p>主要思想是<strong>通过重新采样源数据的权重来匹配再生核希尔伯特空间中源数据和目标数据之间的均值</strong>. </p>
+<h3 id="基于核映射的权重调整"><a href="#基于核映射的权重调整" class="headerlink" title="基于核映射的权重调整"></a>基于核映射的权重调整</h3><p>将原始数据映射到高维空间(如,再生核希尔伯特空间RKHS)中进行权重调整.</p>
+<h4 id="分布匹配"><a href="#分布匹配" class="headerlink" title="分布匹配"></a>分布匹配</h4><p>主要思想是<strong>通过重新采样源数据的权重来匹配再生核希尔伯特空间中源数据和目标数据之间的均值</strong>. </p>
 <p>主要有两种非参数统计量来衡量分布差异:</p>
 <ul>
 <li><strong>核均值匹配(kernel mean matching, KMM)</strong></li>
@@ -275,12 +266,12 @@ P(X_{source}) \neq P(X_{target}), P(Y_{source} | X_{source}) = P(Y_{target} | X_
 </ul>
 <script type="math/tex; mode=display">
 d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}{M} \sum_{i=1}^{M} \phi\left(x_{i}^{s}\right)-\frac{1}{N} \sum_{j=1}^{N} \phi\left(x_{j}^{t}\right)\right\|_{\mathcal{H}}^{2}</script><p><code>weighted MMD</code><sup><a href="#fn_6" id="reffn_6">6</a></sup>方法考虑了类别权重偏差.</p>
-<h4 id="样本选择-Sample-Selection"><a href="#样本选择-Sample-Selection" class="headerlink" title="样本选择(Sample Selection)"></a>样本选择(Sample Selection)</h4><p>主要方法有基于k-means聚类的<code>KMapWeighted</code><sup><a href="#fn_7" id="reffn_7">7</a></sup>, 基于MMD和$\ell_{2,1}$-norm的<code>TJM</code><sup><a href="#fn_8" id="reffn_8">8</a></sup>等.</p>
-<h3 id="协同训练-Co-training-Based-Weighting"><a href="#协同训练-Co-training-Based-Weighting" class="headerlink" title="协同训练(Co-training Based Weighting)"></a>协同训练(Co-training Based Weighting)</h3><p>主要思想是假设数据集被表征为两个不同的视角, 使两个分类器独立地从每个视角中进行学习.</p>
+<h4 id="样本选择"><a href="#样本选择" class="headerlink" title="样本选择"></a>样本选择</h4><p>主要方法有基于k-means聚类的<code>KMapWeighted</code><sup><a href="#fn_7" id="reffn_7">7</a></sup>, 基于MMD和$\ell_{2,1}$-norm的<code>TJM</code><sup><a href="#fn_8" id="reffn_8">8</a></sup>等.</p>
+<h3 id="协同训练"><a href="#协同训练" class="headerlink" title="协同训练"></a>协同训练</h3><p>主要思想是假设数据集被表征为两个不同的视角, 使两个分类器独立地从每个视角中进行学习.</p>
 <p>主要方法有<code>CODA</code><sup><a href="#fn_9" id="reffn_9">9</a></sup>, 以及基于GAN的<code>RANN</code><sup><a href="#fn_10" id="reffn_10">10</a></sup>等.</p>
 <hr>
-<h2 id="特征自适应-Feature-Adaptation"><a href="#特征自适应-Feature-Adaptation" class="headerlink" title="特征自适应(Feature Adaptation)"></a>特征自适应(Feature Adaptation)</h2><p>特征自适应方法旨在<strong>寻找多源数据(multiple sources)的共同特征表示</strong>.</p>
-<h3 id="基于特征子空间-Feature-Subspace-Based"><a href="#基于特征子空间-Feature-Subspace-Based" class="headerlink" title="基于特征子空间(Feature Subspace-Based)"></a>基于特征子空间(Feature Subspace-Based)</h3><p>该方法假设<strong>数据可以被低维线性子空间进行表示, 即低维的格拉斯曼流形(Grassmann manifold)被嵌入到高维数据中</strong>. </p>
+<h2 id="特征自适应"><a href="#特征自适应" class="headerlink" title="特征自适应"></a>特征自适应</h2><p>特征自适应方法旨在<strong>寻找多源数据(multiple sources)的共同特征表示</strong>.</p>
+<h3 id="基于特征子空间"><a href="#基于特征子空间" class="headerlink" title="基于特征子空间"></a>基于特征子空间</h3><p>该方法假设<strong>数据可以被低维线性子空间进行表示, 即低维的格拉斯曼流形(Grassmann manifold)被嵌入到高维数据中</strong>. </p>
 <p>通常用PCA方法来构造该流形, 使得源域和目标域可以看成流形上的两个点, 并得到两者的测地线距离(geodesic flow).</p>
 <ul>
 <li><p>基于流形的方法有<code>SGF</code><sup><a href="#fn_11" id="reffn_11">11</a></sup>和<code>GFK</code><sup><a href="#fn_12" id="reffn_12">12</a></sup></p>
@@ -288,8 +279,8 @@ d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}
 <li><p>基于子空间对齐的方法有<code>SA</code><sup><a href="#fn_13" id="reffn_13">13</a></sup>,<code>SDA</code><sup><a href="#fn_14" id="reffn_14">14</a></sup>和<code>GTH</code><sup><a href="#fn_15" id="reffn_15">15</a></sup></p>
 </li>
 </ul>
-<h3 id="基于特征变换-Feature-Transformation-Based"><a href="#基于特征变换-Feature-Transformation-Based" class="headerlink" title="基于特征变换(Feature Transformation-Based)"></a>基于特征变换(Feature Transformation-Based)</h3><p>特征变换方法旨在<strong>学习变换或投影矩阵,使得源域和目标域中的数据在某种分布度量准则下更接近</strong>.</p>
-<h4 id="基于投影-Projection-Based"><a href="#基于投影-Projection-Based" class="headerlink" title="基于投影(Projection-Based)"></a>基于投影(Projection-Based)</h4><p>该方法通过减少不同域之间的边缘分布和条件分布差异, 求解出最优的投影矩阵.</p>
+<h3 id="基于特征变换"><a href="#基于特征变换" class="headerlink" title="基于特征变换"></a>基于特征变换</h3><p>特征变换方法旨在<strong>学习变换或投影矩阵,使得源域和目标域中的数据在某种分布度量准则下更接近</strong>.</p>
+<h4 id="基于投影"><a href="#基于投影" class="headerlink" title="基于投影"></a>基于投影</h4><p>该方法通过减少不同域之间的边缘分布和条件分布差异, 求解出最优的投影矩阵.</p>
 <p>主要方法有:</p>
 <ul>
 <li><p>基于边缘分布MMD的<code>TCA</code><sup><a href="#fn_16" id="reffn_16">16</a></sup>, 条件分布MMD的<code>JDA</code><sup><a href="#fn_17" id="reffn_17">17</a></sup></p>
@@ -299,7 +290,7 @@ d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}
 <li><p>基于希尔伯特-施密特独立性(Hilbert-Schmidt Independence Criterion)<sup><a href="#fn_19" id="reffn_19">19</a></sup></p>
 </li>
 </ul>
-<h4 id="基于度量-Metric-Based"><a href="#基于度量-Metric-Based" class="headerlink" title="基于度量(Metric-Based)"></a>基于度量(Metric-Based)</h4><p>该方法通过在带标签的源域中学习一个好的距离度量, 使得其能够应用于相关但不同的目标域中.</p>
+<h4 id="基于度量"><a href="#基于度量" class="headerlink" title="基于度量"></a>基于度量</h4><p>该方法通过在带标签的源域中学习一个好的距离度量, 使得其能够应用于相关但不同的目标域中.</p>
 <p>主要方法有:</p>
 <ul>
 <li><p>基于一阶统计量的<code>RTML</code><sup><a href="#fn_20" id="reffn_20">20</a></sup></p>
@@ -307,47 +298,47 @@ d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}
 <li><p>基于二阶统计量的<code>CORAL</code><sup><a href="#fn_21" id="reffn_21">21</a></sup></p>
 </li>
 </ul>
-<h4 id="基于增强-Augmentation-Based"><a href="#基于增强-Augmentation-Based" class="headerlink" title="基于增强(Augmentation-Based)"></a>基于增强(Augmentation-Based)</h4><p>该方法假设数据的特征被分为三种类型:公共特征/源域特征/目标域特征.</p>
+<h4 id="基于增强"><a href="#基于增强" class="headerlink" title="基于增强"></a>基于增强</h4><p>该方法假设数据的特征被分为三种类型:公共特征/源域特征/目标域特征.</p>
 <p>主要方法有:</p>
 <ul>
 <li>基于零填充(Zero Padding)的<code>EasyAdapt(EA)</code><sup><a href="#fn_22" id="reffn_22">22</a></sup></li>
 <li>基于生成式模型(Generative Model)<sup><a href="#fn_23" id="reffn_23">23</a></sup></li>
 </ul>
-<h3 id="基于特征重构-Feature-Reconstruction-Based"><a href="#基于特征重构-Feature-Reconstruction-Based" class="headerlink" title="基于特征重构(Feature Reconstruction-Based)"></a>基于特征重构(Feature Reconstruction-Based)</h3><p>主要方法有:</p>
+<h3 id="基于特征重构"><a href="#基于特征重构" class="headerlink" title="基于特征重构"></a>基于特征重构</h3><p>主要方法有:</p>
 <ul>
 <li>低秩重构(Low-rank Reconstruction)<sup><a href="#fn_24" id="reffn_24">24</a></sup></li>
 <li>稀疏重构(Sparse Reconstruction)<sup><a href="#fn_25" id="reffn_25">25</a></sup></li>
 </ul>
-<h3 id="基于特征编码-Feature-Coding-Based"><a href="#基于特征编码-Feature-Coding-Based" class="headerlink" title="基于特征编码(Feature Coding-Based)"></a>基于特征编码(Feature Coding-Based)</h3><p>主要方法有:</p>
+<h3 id="基于特征编码"><a href="#基于特征编码" class="headerlink" title="基于特征编码"></a>基于特征编码</h3><p>主要方法有:</p>
 <ul>
 <li>共享域字典(Domain-shared dictionary)<sup><a href="#fn_26" id="reffn_26">26</a></sup></li>
 <li>指定域字典(Domain-specific dictionary)<sup><a href="#fn_27" id="reffn_27">27</a></sup></li>
 </ul>
 <hr>
-<h2 id="分类器自适应-Classifier-Adaptation"><a href="#分类器自适应-Classifier-Adaptation" class="headerlink" title="分类器自适应(Classifier Adaptation)"></a>分类器自适应(Classifier Adaptation)</h2><p>分类器自适应旨在<strong>利用源域中带标签数据和目标域中少量带标签数据学习一个通用的分类器</strong>.</p>
-<h3 id="基于核分类器-Kernel-Classifier-Based"><a href="#基于核分类器-Kernel-Classifier-Based" class="headerlink" title="基于核分类器(Kernel Classifier-Based)"></a>基于核分类器(Kernel Classifier-Based)</h3><p>主要方法有:</p>
+<h2 id="分类器自适应"><a href="#分类器自适应" class="headerlink" title="分类器自适应"></a>分类器自适应</h2><p>分类器自适应旨在<strong>利用源域中带标签数据和目标域中少量带标签数据学习一个通用的分类器</strong>.</p>
+<h3 id="基于核分类器"><a href="#基于核分类器" class="headerlink" title="基于核分类器"></a>基于核分类器</h3><p>主要方法有:</p>
 <ul>
 <li><p>自适应支持向量机(adaptive support vector machine, ASVM)<sup><a href="#fn_28" id="reffn_28">28</a></sup></p>
 </li>
 <li><p>基于多核学习(multiple kernel learning, MKL)的域迁移分类器<sup><a href="#fn_29" id="reffn_29">29</a></sup></p>
 </li>
 </ul>
-<h3 id="基于流形正则项-Manifold-Regularizer-Based"><a href="#基于流形正则项-Manifold-Regularizer-Based" class="headerlink" title="基于流形正则项(Manifold Regularizer-Based)"></a>基于流形正则项(Manifold Regularizer-Based)</h3><p>主要方法有<code>ARTL</code><sup><a href="#fn_30" id="reffn_30">30</a></sup>,<code>DMM</code><sup><a href="#fn_31" id="reffn_31">31</a></sup>,<code>MEDA</code><sup><a href="#fn_32" id="reffn_32">32</a></sup>等.</p>
-<h3 id="基于贝叶斯分类器-Bayesian-Classifier-Based"><a href="#基于贝叶斯分类器-Bayesian-Classifier-Based" class="headerlink" title="基于贝叶斯分类器(Bayesian Classifier-Based)"></a>基于贝叶斯分类器(Bayesian Classifier-Based)</h3><p>主要方法有核贝叶斯迁移学习<code>KBTL</code><sup><a href="#fn_33" id="reffn_33">33</a></sup>等.</p>
+<h3 id="基于流形正则项"><a href="#基于流形正则项" class="headerlink" title="基于流形正则项"></a>基于流形正则项</h3><p>主要方法有<code>ARTL</code><sup><a href="#fn_30" id="reffn_30">30</a></sup>,<code>DMM</code><sup><a href="#fn_31" id="reffn_31">31</a></sup>,<code>MEDA</code><sup><a href="#fn_32" id="reffn_32">32</a></sup>等.</p>
+<h3 id="基于贝叶斯分类器"><a href="#基于贝叶斯分类器" class="headerlink" title="基于贝叶斯分类器"></a>基于贝叶斯分类器</h3><p>主要方法有核贝叶斯迁移学习<code>KBTL</code><sup><a href="#fn_33" id="reffn_33">33</a></sup>等.</p>
 <hr>
-<h2 id="深度网络自适应-Deep-Network-Adaptation"><a href="#深度网络自适应-Deep-Network-Adaptation" class="headerlink" title="深度网络自适应(Deep Network Adaptation)"></a>深度网络自适应(Deep Network Adaptation)</h2><p>2014年, Yosinski等人<sup><a href="#fn_34" id="reffn_34">34</a></sup>讨论了深度神经网络中不同层特征的可迁移特性. </p>
-<h3 id="基于边缘分布对齐-Marginal-Alignment-Based"><a href="#基于边缘分布对齐-Marginal-Alignment-Based" class="headerlink" title="基于边缘分布对齐(Marginal Alignment-Based)"></a>基于边缘分布对齐(Marginal Alignment-Based)</h3><p>主要方法有:</p>
+<h2 id="深度网络自适应"><a href="#深度网络自适应" class="headerlink" title="深度网络自适应"></a>深度网络自适应</h2><p>2014年, Yosinski等人<sup><a href="#fn_34" id="reffn_34">34</a></sup>讨论了深度神经网络中不同层特征的可迁移特性. </p>
+<h3 id="基于边缘分布对齐"><a href="#基于边缘分布对齐" class="headerlink" title="基于边缘分布对齐"></a>基于边缘分布对齐</h3><p>主要方法有:</p>
 <ul>
 <li>深度域混淆<code>DDC</code><sup><a href="#fn_35" id="reffn_35">35</a></sup></li>
 <li>深度自适应网络<code>DAN</code><sup><a href="#fn_36" id="reffn_36">36</a></sup></li>
 <li>联合自适应网络<code>JAN</code><sup><a href="#fn_37" id="reffn_37">37</a></sup>, 同时提出了<code>Joint MMD</code>准则</li>
 </ul>
-<h3 id="基于条件分布对齐-Conditional-Alignment-Based"><a href="#基于条件分布对齐-Conditional-Alignment-Based" class="headerlink" title="基于条件分布对齐(Conditional Alignment-Based)"></a>基于条件分布对齐(Conditional Alignment-Based)</h3><p>主要方法有深度迁移网络<code>DTN</code><sup><a href="#fn_38" id="reffn_38">38</a></sup></p>
-<h3 id="基于自动编码器-Autoencoder-Based"><a href="#基于自动编码器-Autoencoder-Based" class="headerlink" title="基于自动编码器(Autoencoder-Based)"></a>基于自动编码器(Autoencoder-Based)</h3><p>主要方法有边缘堆叠式降噪自动编码器<code>mSDA</code><sup><a href="#fn_39" id="reffn_39">39</a></sup></p>
+<h3 id="基于条件分布对齐"><a href="#基于条件分布对齐" class="headerlink" title="基于条件分布对齐"></a>基于条件分布对齐</h3><p>主要方法有深度迁移网络<code>DTN</code><sup><a href="#fn_38" id="reffn_38">38</a></sup></p>
+<h3 id="基于自动编码器"><a href="#基于自动编码器" class="headerlink" title="基于自动编码器"></a>基于自动编码器</h3><p>主要方法有边缘堆叠式降噪自动编码器<code>mSDA</code><sup><a href="#fn_39" id="reffn_39">39</a></sup></p>
 <hr>
-<h2 id="对抗式自适应-Adversarial-Adaptation"><a href="#对抗式自适应-Adversarial-Adaptation" class="headerlink" title="对抗式自适应(Adversarial Adaptation)"></a>对抗式自适应(Adversarial Adaptation)</h2><p>通过对抗目标(如,域判别器)来减少域间差异.</p>
-<h3 id="基于梯度转换-Gradient-Reversal-Based"><a href="#基于梯度转换-Gradient-Reversal-Based" class="headerlink" title="基于梯度转换(Gradient Reversal-Based)"></a>基于梯度转换(Gradient Reversal-Based)</h3><p>Ganin等人<sup><a href="#fn_40" id="reffn_40">40</a></sup>首次提出可以通过添加一个简单的<strong>梯度转换层(gradient reversal layer, GRL)</strong>来实现领域自适应.</p>
-<h3 id="基于Minimax优化-Minimax-Optimization-Based"><a href="#基于Minimax优化-Minimax-Optimization-Based" class="headerlink" title="基于Minimax优化(Minimax Optimization-Based)"></a>基于Minimax优化(Minimax Optimization-Based)</h3><p>Ajakan等人<sup><a href="#fn_41" id="reffn_41">41</a></sup>首次结合分类损失和对抗目标, 提出了<code>DANN</code>方法.</p>
+<h2 id="对抗式自适应"><a href="#对抗式自适应" class="headerlink" title="对抗式自适应"></a>对抗式自适应</h2><p>通过对抗目标(如,域判别器)来减少域间差异.</p>
+<h3 id="基于梯度转换"><a href="#基于梯度转换" class="headerlink" title="基于梯度转换"></a>基于梯度转换</h3><p>Ganin等人<sup><a href="#fn_40" id="reffn_40">40</a></sup>首次提出可以通过添加一个简单的<strong>梯度转换层(gradient reversal layer, GRL)</strong>来实现领域自适应.</p>
+<h3 id="基于Minimax优化"><a href="#基于Minimax优化" class="headerlink" title="基于Minimax优化"></a>基于Minimax优化</h3><p>Ajakan等人<sup><a href="#fn_41" id="reffn_41">41</a></sup>首次结合分类损失和对抗目标, 提出了<code>DANN</code>方法.</p>
 <p>其它方法还有:</p>
 <ul>
 <li><p>对抗判别领域自适应<code>ADDA</code><sup><a href="#fn_42" id="reffn_42">42</a></sup></p>
@@ -357,7 +348,7 @@ d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}
 <li><p>最大分类器差异<code>MCD</code><sup><a href="#fn_44" id="reffn_44">44</a></sup></p>
 </li>
 </ul>
-<h3 id="基于生成对抗网络-Generative-Adversarial-Net-Based"><a href="#基于生成对抗网络-Generative-Adversarial-Net-Based" class="headerlink" title="基于生成对抗网络(Generative Adversarial Net-Based)"></a>基于生成对抗网络(Generative Adversarial Net-Based)</h3><p>主要方法有:</p>
+<h3 id="基于生成对抗网络"><a href="#基于生成对抗网络" class="headerlink" title="基于生成对抗网络"></a>基于生成对抗网络</h3><p>主要方法有:</p>
 <ul>
 <li><p><code>CyCADA</code><sup><a href="#fn_45" id="reffn_45">45</a></sup></p>
 </li>
@@ -529,7 +520,7 @@ d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/transfer-adaptation-learning/" data-id="cjtllb8hu00o5idsitdur86d7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/transfer-adaptation-learning/" data-id="cjtmq42fx00o3qvsi8q1niwew" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -632,35 +623,19 @@ d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}
 <aside id="sidebar">
    
         
+    
+        
+
     <div class="widget-wrap">
-        <h3 class="widget-title">分类</h3>
+        <h3 class="widget-title"><i class="fa fa-folder-open" style="color: #888;font-size: 14px;margin-right: 10px;"></i>分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/强化学习/">强化学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文笔记/">论文笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/迁移学习/">迁移学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">120</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/强化学习/">强化学习</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文笔记/">论文笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/迁移学习/">迁移学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">6</span></li></ul>
         </div>
     </div>
 
+
     
         
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a href="https://chenshen.xyz">陈燊(XMU)</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://www.ruphi.cn">进阶者(NetEase)</a>
-                    </li>
-                
-                    <li>
-                        <a href="https://www.hrwhisper.me">细语呢喃(UCAS)</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
 
 
     
