@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/about/index.html</loc>
+    
+    <lastmod>2019-03-25T08:08:16.965Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/study/index.html</loc>
     
     <lastmod>2019-03-25T05:42:52.671Z</lastmod>
@@ -922,13 +929,6 @@
     <loc>https://orzyt.cn/posts/seive-of-prime-numbers/</loc>
     
     <lastmod>2019-02-07T15:10:57.582Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/about/index.html</loc>
-    
-    <lastmod>2019-02-07T14:11:30.665Z</lastmod>
     
   </url>
   
