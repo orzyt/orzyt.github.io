@@ -89,7 +89,7 @@ var console_text = function() {  
 }
 console.log(getMultiLine(console_text),'color:#495a80;font-size:16px;font-style:italic','color:#495a80;font-size:16px;font-style:italic');
 
-$(function() {
+/*$(function() {
     $("#header").headroom({
         tolerance: 3,
         offset: 5,
@@ -99,6 +99,7 @@ $(function() {
             unpinned: "slideOutUp"
         }
     });
+*/
 /*    if (window.screen.width >= 1200) {
         $("#profile").headroom({
             tolerance: 3,
@@ -119,7 +120,7 @@ $(function() {
             }
         });
     }*/
-})
+//})
 
 
 $(document).ready(function() 

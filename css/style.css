@@ -179,26 +179,16 @@ code {
 }
 #container > .outer {
   margin-bottom: 30px;
-}
-@media screen and (max-width: 559px) {
-  #container > .outer {
-    margin-top: 112px;
-  }
-}
-@media screen and (min-width: 560px) and (max-width: 799px) {
-  #container > .outer {
-    margin-top: 112px;
-  }
-}
-@media screen and (min-width: 800px) and (max-width: 1199px) {
-  #container > .outer {
-    margin-top: 64px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  #container > .outer {
-    margin-top: 64px;
-  }
+/*
+        @media mq-mini
+            margin-top: header-height + header-sub-height
+        @media mq-mobile
+            margin-top: header-height + header-sub-height
+        @media mq-tablet
+            margin-top: header-height
+        @media mq-normal
+            margin-top: header-height
+        */
 }
 @media screen and (min-width: 1200px) {
   #main {
@@ -365,7 +355,7 @@ code {
 }
 #header {
   background: #fff;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
