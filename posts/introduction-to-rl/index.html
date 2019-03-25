@@ -71,21 +71,11 @@ var _hmt = _hmt || [];
                     
                         <a class="main-nav-link" href="/archives">归档</a>
                     
-                        <a class="main-nav-link" href="/tags">标签</a>
+                        <a class="main-nav-link" href="/study">资源</a>
                     
                         <a class="main-nav-link" href="/about">关于</a>
                     
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            更多 
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            
-                                <li><a href="/study">学习资源汇总</a></li>
-                            
-                        </ul>
-                    </li>
+                    
                     </ul>
                 </div>
             </nav>
@@ -109,21 +99,11 @@ var _hmt = _hmt || [];
             
                 <a class="main-nav-link" href="/archives">归档</a>
             
-                <a class="main-nav-link" href="/tags">标签</a>
+                <a class="main-nav-link" href="/study">资源</a>
             
                 <a class="main-nav-link" href="/about">关于</a>
-                           
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    更多 
-                    <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
-                    
-                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
-                    
-                </ul>
-            </li>
+            
+            
         </ul>
     </div>
 </header>
@@ -154,8 +134,8 @@ var _hmt = _hmt || [];
                     </td>
                     
                     <td>
-                        <a href="https://www.facebook.com/orzyt" target="_blank" title="facebook">
-                            <i class="fa fa-facebook"></i>
+                        <a href="https://www.linkedin.com/in/orzyt" target="_blank" title="linkedin">
+                            <i class="fa fa-linkedin"></i>
                         </a>
                     </td>
                     
@@ -434,7 +414,7 @@ v_{\pi}(s) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/introduction-to-rl/" data-id="cjtmq42ft00nyqvsivgeisa76" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/introduction-to-rl/" data-id="cjtnzac8b00nveasi8umk6wq6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -546,16 +526,15 @@ v_{\pi}(s) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}
 <aside id="sidebar">
    
         
+<div class="toc-article" id="toc">
+    <h3 class="widget-title" style="font-size:14px;"><i class="fa fa-list-alt" style="color: #888;font-size: 14px;margin-right: 10px;"></i>文章目录</h3>
+    <div class="widget-toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#强化学习的特征"><span class="toc-number">1.</span> <span class="toc-text">强化学习的特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强化学习的概念"><span class="toc-number">2.</span> <span class="toc-text">强化学习的概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#奖励"><span class="toc-number">2.1.</span> <span class="toc-text">奖励</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#序贯决策"><span class="toc-number">2.2.</span> <span class="toc-text">序贯决策</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#智能体和环境"><span class="toc-number">2.3.</span> <span class="toc-text">智能体和环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#历史与状态"><span class="toc-number">2.4.</span> <span class="toc-text">历史与状态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#环境状态"><span class="toc-number">2.4.1.</span> <span class="toc-text">环境状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#智能体状态"><span class="toc-number">2.4.2.</span> <span class="toc-text">智能体状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#信息状态"><span class="toc-number">2.4.3.</span> <span class="toc-text">信息状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Rat-Example"><span class="toc-number">2.4.4.</span> <span class="toc-text">Rat Example</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#完全可观测环境"><span class="toc-number">2.4.5.</span> <span class="toc-text">完全可观测环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部分可观测环境"><span class="toc-number">2.4.6.</span> <span class="toc-text">部分可观测环境</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#智能体的构成"><span class="toc-number">3.</span> <span class="toc-text">智能体的构成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#策略"><span class="toc-number">3.1.</span> <span class="toc-text">策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#值函数"><span class="toc-number">3.2.</span> <span class="toc-text">值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型"><span class="toc-number">3.3.</span> <span class="toc-text">模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maze-Example"><span class="toc-number">3.4.</span> <span class="toc-text">Maze Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#智能体的分类"><span class="toc-number">3.5.</span> <span class="toc-text">智能体的分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#强化学习的问题"><span class="toc-number">4.</span> <span class="toc-text">强化学习的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#学习与规划"><span class="toc-number">4.1.</span> <span class="toc-text">学习与规划</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#探索和利用"><span class="toc-number">4.2.</span> <span class="toc-text">探索和利用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预测和控制"><span class="toc-number">4.3.</span> <span class="toc-text">预测和控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+</div>
+
     
         
-
-    <div class="widget-wrap">
-        <h3 class="widget-title"><i class="fa fa-folder-open" style="color: #888;font-size: 14px;margin-right: 10px;"></i>分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">120</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/强化学习/">强化学习</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文笔记/">论文笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/迁移学习/">迁移学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">6</span></li></ul>
-        </div>
-    </div>
-
 
     
         

@@ -71,21 +71,11 @@ var _hmt = _hmt || [];
                     
                         <a class="main-nav-link" href="/archives">归档</a>
                     
-                        <a class="main-nav-link" href="/tags">标签</a>
+                        <a class="main-nav-link" href="/study">资源</a>
                     
                         <a class="main-nav-link" href="/about">关于</a>
                     
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            更多 
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            
-                                <li><a href="/study">学习资源汇总</a></li>
-                            
-                        </ul>
-                    </li>
+                    
                     </ul>
                 </div>
             </nav>
@@ -109,21 +99,11 @@ var _hmt = _hmt || [];
             
                 <a class="main-nav-link" href="/archives">归档</a>
             
-                <a class="main-nav-link" href="/tags">标签</a>
+                <a class="main-nav-link" href="/study">资源</a>
             
                 <a class="main-nav-link" href="/about">关于</a>
-                           
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    更多 
-                    <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
-                    
-                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
-                    
-                </ul>
-            </li>
+            
+            
         </ul>
     </div>
 </header>
@@ -154,8 +134,8 @@ var _hmt = _hmt || [];
                     </td>
                     
                     <td>
-                        <a href="https://www.facebook.com/orzyt" target="_blank" title="facebook">
-                            <i class="fa fa-facebook"></i>
+                        <a href="https://www.linkedin.com/in/orzyt" target="_blank" title="linkedin">
+                            <i class="fa fa-linkedin"></i>
                         </a>
                     </td>
                     
@@ -520,7 +500,7 @@ d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/transfer-adaptation-learning/" data-id="cjtmq42fx00o3qvsi8q1niwew" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/transfer-adaptation-learning/" data-id="cjtnzac8m00o5easi2ztytb9i" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -623,16 +603,15 @@ d_{\mathcal{H}}^{2}\left(\mathcal{D}_{s}, \mathcal{D}_{t}\right)=\left\|\frac{1}
 <aside id="sidebar">
    
         
+<div class="toc-article" id="toc">
+    <h3 class="widget-title" style="font-size:14px;"><i class="fa fa-list-alt" style="color: #888;font-size: 14px;margin-right: 10px;"></i>文章目录</h3>
+    <div class="widget-toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例权重调整自适应"><span class="toc-number">2.</span> <span class="toc-text">实例权重调整自适应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于直觉的权重调整"><span class="toc-number">2.1.</span> <span class="toc-text">基于直觉的权重调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于核映射的权重调整"><span class="toc-number">2.2.</span> <span class="toc-text">基于核映射的权重调整</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分布匹配"><span class="toc-number">2.2.1.</span> <span class="toc-text">分布匹配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#样本选择"><span class="toc-number">2.2.2.</span> <span class="toc-text">样本选择</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协同训练"><span class="toc-number">2.3.</span> <span class="toc-text">协同训练</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特征自适应"><span class="toc-number">3.</span> <span class="toc-text">特征自适应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征子空间"><span class="toc-number">3.1.</span> <span class="toc-text">基于特征子空间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征变换"><span class="toc-number">3.2.</span> <span class="toc-text">基于特征变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基于投影"><span class="toc-number">3.2.1.</span> <span class="toc-text">基于投影</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基于度量"><span class="toc-number">3.2.2.</span> <span class="toc-text">基于度量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基于增强"><span class="toc-number">3.2.3.</span> <span class="toc-text">基于增强</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征重构"><span class="toc-number">3.3.</span> <span class="toc-text">基于特征重构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于特征编码"><span class="toc-number">3.4.</span> <span class="toc-text">基于特征编码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分类器自适应"><span class="toc-number">4.</span> <span class="toc-text">分类器自适应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于核分类器"><span class="toc-number">4.1.</span> <span class="toc-text">基于核分类器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于流形正则项"><span class="toc-number">4.2.</span> <span class="toc-text">基于流形正则项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于贝叶斯分类器"><span class="toc-number">4.3.</span> <span class="toc-text">基于贝叶斯分类器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深度网络自适应"><span class="toc-number">5.</span> <span class="toc-text">深度网络自适应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于边缘分布对齐"><span class="toc-number">5.1.</span> <span class="toc-text">基于边缘分布对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于条件分布对齐"><span class="toc-number">5.2.</span> <span class="toc-text">基于条件分布对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于自动编码器"><span class="toc-number">5.3.</span> <span class="toc-text">基于自动编码器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对抗式自适应"><span class="toc-number">6.</span> <span class="toc-text">对抗式自适应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于梯度转换"><span class="toc-number">6.1.</span> <span class="toc-text">基于梯度转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于Minimax优化"><span class="toc-number">6.2.</span> <span class="toc-text">基于Minimax优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于生成对抗网络"><span class="toc-number">6.3.</span> <span class="toc-text">基于生成对抗网络</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基准数据集"><span class="toc-number">7.</span> <span class="toc-text">基准数据集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">8.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
     
         
-
-    <div class="widget-wrap">
-        <h3 class="widget-title"><i class="fa fa-folder-open" style="color: #888;font-size: 14px;margin-right: 10px;"></i>分类</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">120</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TensorFlow/">TensorFlow</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/强化学习/">强化学习</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/机器学习/">机器学习</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/深度学习/">深度学习</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法与数据结构/">算法与数据结构</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/论文笔记/">论文笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/软件工程/">软件工程</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/迁移学习/">迁移学习</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">6</span></li></ul>
-        </div>
-    </div>
-
 
     
         
