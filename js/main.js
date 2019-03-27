@@ -11,29 +11,29 @@
             }
 
             // 对于已经包含在链接内的图片不适用lightGallery
-            if ($(this).parent().prop("tagName") !== 'A') {
-                $(this).wrap('<a href="' + ($(this).attr("data-imgbig") ? $(this).attr("data-imgbig") : this.src) + '" title="' + this.alt + '" class="gallery-item"></a>');
-            }
+            // if ($(this).parent().prop("tagName") !== 'A') {
+            //     $(this).wrap('<a href="' + ($(this).attr("data-imgbig") ? $(this).attr("data-imgbig") : this.src) + '" title="' + this.alt + '" class="gallery-item"></a>');
+            // }
         });
     });
      
-    if (typeof lightGallery != 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        $('.article-entry').each(function(i, entry) {
-            lightGallery(entry, options);
-        });
-        lightGallery($('.article-gallery')[0], options);
-    }
-    if (!!$.prototype.justifiedGallery) {  // if justifiedGallery method is defined
-        var options = {
-            rowHeight: 140,
-            margins: 4,
-            lastRow: 'justify'
-        };
-        $('.justified-gallery').justifiedGallery(options);
-    }
+    // if (typeof lightGallery != 'undefined') {
+    //     var options = {
+    //         selector: '.gallery-item'
+    //     };
+    //     $('.article-entry').each(function(i, entry) {
+    //         lightGallery(entry, options);
+    //     });
+    //     lightGallery($('.article-gallery')[0], options);
+    // }
+    // if (!!$.prototype.justifiedGallery) {  // if justifiedGallery method is defined
+    //     var options = {
+    //         rowHeight: 140,
+    //         margins: 4,
+    //         lastRow: 'justify'
+    //     };
+    //     $('.justified-gallery').justifiedGallery(options);
+    // }
 
     // Profile card
     $(document).on('click', function () {
