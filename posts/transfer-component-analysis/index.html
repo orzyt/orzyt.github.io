@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>【论文笔记】Domain Adaptation via Transfer Component Analysis - 扬涛的博客</title>
+    <meta itemprop="name" content="【论文笔记】Domain Adaptation via Transfer Component Analysis - 扬涛的博客">
+    
+    <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="/libs/headroom/animate.css">-->
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="/libs/headroom/headroom.min.js"></script>-->
+    <!--<script src="/libs/headroom/jQuery.headroom.min.js"></script>-->
+    <script src="/libs/jquery/sort.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?63f226f2212285cc30d6ffa0636da07a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+    
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">扬涛的博客</span>
+            </a>
+            <nav id="main-nav">
+                <div>
+                    <ul class="nav navbar-nav">
+                    
+                        <a class="main-nav-link" href="/.">主页</a>
+                    
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    
+                        <a class="main-nav-link" href="/books">阅读</a>
+                    
+                        <a class="main-nav-link" href="/about">关于</a>
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                                <li><a href="/study">学习资源汇总</a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    </ul>
+                </div>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/img/avatar.png">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <ul class="menu outer">
+            
+                <a class="main-nav-link" href="/.">主页</a>
+            
+                <a class="main-nav-link" href="/archives">归档</a>
+            
+                <a class="main-nav-link" href="/books">阅读</a>
+            
+                <a class="main-nav-link" href="/about">关于</a>
+            
+                           
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    更多 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
+                    
+                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/img/avatar.png">
+            <h2 id="name">郑扬涛</h2>
+            <h3 id="title">M.S. Student @ Beihang Univ.</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/orzyt/activities">关注我</a>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/orzyt" target="_blank" title="github">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.linkedin.com/in/orzyt" target="_blank" title="linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/orzyt" target="_blank" title="weibo">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+            
+            <section id="main"><article id="post-transfer-component-analysis" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        
+            <h1 class="article-title" itemprop="name">
+                【论文笔记】Domain Adaptation via Transfer Component Analysis
+            </h1>
+        
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/transfer-component-analysis/">
+            <time datetime="2019-03-26T12:34:13.000Z" itemprop="datePublished">2019-03-26</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/论文笔记/">论文笔记</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/迁移学习/">迁移学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/迁移学习/">迁移学习</a>, <a class="tag-link" href="/tags/迁移成分分析/">迁移成分分析</a>, <a class="tag-link" href="/tags/领域自适应/">领域自适应</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                
+                    <hr>
+<p><strong>论文题目</strong>：《Domain Adaptation via Transfer Component Analysis》</p>
+<p><strong>论文作者</strong>：Sinno Jialin Pan, Ivor W. Tsang, James T. Kwok and Qiang Yang</p>
+<p><strong>论文链接</strong>：<a href="https://www.cse.ust.hk/~qyang/Docs/2009/TCA.pdf" target="_blank" rel="noopener">https://www.cse.ust.hk/~qyang/Docs/2009/TCA.pdf</a></p>
+<p><strong>会议期刊</strong>：IJCAI 2009 / IEEE Transactions on Neural Networks 2010</p>
+<a id="more"></a>
+<hr>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>领域自适应(Domain Adaptation)</strong>的一个主要问题是如何减少源域和目标域之间的差异. </p>
+<p>一个好的特征表示应该尽可能地减少域间分布差异, 同时保持原始数据重要的特性(如几何/统计特性等). </p>
+<p>本文提出一个新的特征提取方式, 叫做<code>迁移成分分析</code>(transfer component analysis, TCA). </p>
+<p>TCA学习所有域的公共迁移成分(即<strong>不会引起域间分布变化</strong>及<strong>保持原始数据固有结构</strong>的成分), 使得不同域在投影后的子空间中分布差异减少.</p>
+<hr>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><h3 id="问题设定"><a href="#问题设定" class="headerlink" title="问题设定"></a>问题设定</h3><p>源域(source domain)中有带标签数据 $\mathcal{D}_{S}$, 目标域(target domain)中只有大量无标签数据 $\mathcal{D}_{T}$. </p>
+<ul>
+<li><p>$\mathcal{D}_{S}=\left\{\left(x_{S_{1}}, y_{S_{1}}\right), \ldots,\left(x_{S_{n}}, y_{S_{n}}\right)\right\}$, $x_{S_{i}} \in \mathcal{X}$ 为输入数据, $y_{S_{i}} \in \mathcal{Y}$为对应的标签. </p>
+</li>
+<li><p>$\mathcal{D}_{T}=\left\{x_{T_{1}}, \ldots, x_{T_{n_{2}}}\right\}$, $x_{T_{i}} \in \mathcal{X}$.</p>
+</li>
+<li><p>$\mathcal{P(X_{S})}$ 和 $\mathcal{Q(X_{T})}$ 分别为 $X_S$ 和 $X_T$ 的边缘分布. </p>
+</li>
+</ul>
+<p><strong>设定:</strong> 边缘分布不同 $\mathcal{P} \ne \mathcal{Q}$, 但类条件概率分布相同 $P(Y_{S} | X_{S}) = P(Y_{T} | X_{T})$.</p>
+<p><strong>任务:</strong> 在目标域中预测输入数据 $x_{T_{i}}$ 对应的标签 $y_{T_{i}}$.</p>
+<h3 id="最大均值差异"><a href="#最大均值差异" class="headerlink" title="最大均值差异"></a>最大均值差异</h3><p>我们知道, 存在很多准则可以度量不同分布之间的差异, 如, <code>KL散度</code>等.</p>
+<p>但这些方法通常都需要对分布的概率密度进行估计, 因而是参数化的方法. 为了避免引入额外的参数, 我们希望寻找一种非参数化的方法来度量分布的差异.</p>
+<p>在2006年, Borgwardt等人<sup><a href="#fn_1" id="reffn_1">1</a></sup>提出了一种基于<em>再生核希尔伯特空间(Reproducing Kernel Hilbert Space, RKHS)</em>的分布度量准则 <strong>最大均值差异(Maximum Mean Discrepancy, MMD)</strong>.</p>
+<p>令 $X = \{ x_1, \cdots, x_{n1}\}$ 和 $Y = \{ y_1, \cdots, y_{n2}\}$ 为两个分布 $\mathcal{P}$ 和 $\mathcal{Q}$ 的随机变量集合, 根据MMD的定义, 两个分布的经验估计距离为:</p>
+<script type="math/tex; mode=display">
+\operatorname{Dist}(\mathrm{X}, \mathrm{Y})=\left\|\frac{1}{n_{1}} \sum_{i=1}^{n_{1}} \phi\left(x_{i}\right)-\frac{1}{n_{2}} \sum_{i=1}^{n_{2}} \phi\left(y_{i}\right)\right\|_{\mathcal{H}}
+
+\tag{1}</script><p>其中, $\mathcal{H}$ 是再生核希尔伯特空间, $\phi : \mathcal{X} \to \mathcal{H}$ 为核函数映射.</p>
+<hr>
+<h2 id="迁移成分分析"><a href="#迁移成分分析" class="headerlink" title="迁移成分分析"></a>迁移成分分析</h2><p>令 $\phi : \mathcal{X} \to \mathcal{H}$ 为非线性映射, $X^{\prime}_{S} = \{ x^{\prime}_{S_{i}} \} = \{ \phi(x_{S_{i}}) \}$, $X^{\prime}_{T} = \{ x^{\prime}_{T_{i}} \} = \{ \phi(x_{T_{i}}) \}$, $X^{\prime} = X^{\prime}_{S} \cup X^{\prime}_{T}$ 分别为源域/目标域/结合域映射后的数据. </p>
+<p>我们希望找到这样一个映射, 使得映射后的数据分布一致, 即 $\mathcal{P^{\prime}}(X^{\prime}_{S}) = \mathcal{Q^{\prime}}(X^{\prime}_{T})$.</p>
+<p>根据MMD的定义, 我们可以通过<strong>度量两个域之间的经验均值的距离平方</strong>作为分布的距离.</p>
+<script type="math/tex; mode=display">
+\operatorname{Dist}\left(X_{S}^{\prime}, X_{T}^{\prime}\right)=\left\|\frac{1}{n_{1}} \sum_{i=1}^{n_{1}} \phi\left(x_{S_{i}}\right)-\frac{1}{n_{2}} \sum_{i=1}^{n_{2}} \phi\left(x_{T_{i}}\right)\right\|_{\mathcal{H}}^{2}
+
+\tag{2}</script><p>通过最小化公式$(2)$, 我们可以找到想要的非线性映射 $\phi$.</p>
+<p>然而, 对公式$(2)$直接优化是十分困难的, 通常会陷入局部极值点. 因此, 必须另辟蹊径.</p>
+<h3 id="核学习"><a href="#核学习" class="headerlink" title="核学习"></a>核学习</h3><p>为了避免显式地直接寻找非线性变换 $\phi$, Pan等人<sup><a href="#fn_2" id="reffn_2">2</a></sup>将该问题转化为<strong>核学习</strong>(kernel learning)问题.</p>
+<p>通过利用核技巧 $k(x_i, x_j) = \phi(x_i)^{\prime}\phi(x_j)$, 公式$(2)$中两个域之间的经验均值距离可以被写为:</p>
+<script type="math/tex; mode=display">
+\begin{aligned} 
+\operatorname{Dist}\left(X_{S}^{\prime}, X_{T}^{\prime}\right) &= \frac{1}{n^{2}_{1}} \sum_{i=1}^{n_1} \sum_{j=1}^{n_1} k\left(x_{S_i}, x_{S_j}\right)+\frac{1}{n^{2}_{2}} \sum_{i=1}^{n_2} \sum_{j=1}^{n_2} k\left(x_{T_i}, x_{T_j}\right)-\frac{2}{n_1 n_2} \sum_{i=1}^{n_1} \sum_{j=1}^{n_2} k\left(x_{S_i}, x_{T_j}\right) \\
+&= \operatorname{tr}(K L) \\
+
+\end{aligned}
+\tag{3}</script><p>其中,</p>
+<script type="math/tex; mode=display">
+K=\left[ \begin{array}{ll}{K_{S, S}} & {K_{S, T}} \\ {K_{T, S}} & {K_{T, T}}\end{array}\right]
+
+\tag{4}</script><p>为 $(n_1 + n_2) \times (n_1 + n_2)$ 大小的核矩阵, $K_{S,S}$, $K_{T,T}$, $K_{S,T}$ 分别为由 $k$ 定义在源域/目标域/跨域的核矩阵.</p>
+<p>$L = [ L_{ij} ] \succeq 0$ 为半正定矩阵, 其中</p>
+<script type="math/tex; mode=display">
+l_{i j}=\left\{\begin{array}{ll}{\frac{1}{n_{1}^{2}}} & {x_{i}, x_{j} \in \mathcal{D}_{s}} \\ {\frac{1}{n_{2}^{2}}} & {x_{i}, x_{j} \in \mathcal{D}_{t}} \\ {-\frac{1}{n_{1} n_{2}}} & {\text { otherwise }}\end{array}\right.
+
+\tag{5}</script><p>在直推学习的设置下(直推学习即<strong>假设未标记的数据就是最终要用来测试的数据, 学习的目的即为在这些数据上取得最佳泛化能力</strong>), 核函数 $k(\cdot, \cdot)$ 可以通过求解核矩阵 $K$ 替代. </p>
+<p>Pan等人<sup><a href="#fn_2" id="reffn_2">2</a></sup>将核矩阵学习问题形式化为<strong>半定规划</strong>(semi-definite program, SDP)问题. 然后, 对学习到的核矩阵使用PCA方法得到跨域的低维隐空间.</p>
+<h3 id="参数化核映射"><a href="#参数化核映射" class="headerlink" title="参数化核映射"></a>参数化核映射</h3><p>MMDE<sup><a href="#fn_2" id="reffn_2">2</a></sup>的方法存在如下局限性:</p>
+<ul>
+<li>它是直推式的, 不能泛化到未见的样本中</li>
+<li>公式$(3)$中的$K$需要是半正定的, 且求解SDP问题十分耗时</li>
+<li>为了构造低维表示, 需要对$K$进行PCA处理, 这会损失$K$中的信息</li>
+</ul>
+<p>本文提出一种基于核特征提取来寻找非线性映射 $\phi$ 的高效方法.</p>
+<ul>
+<li>避免求解SDP问题, 减轻计算负担</li>
+<li>学习到的核函数$k$可以泛化到未见的样本</li>
+<li>利用显式的低秩表示得到统一的核学习方法</li>
+</ul>
+<p>首先, 公式$(4)$中的核矩阵 $K$ 可以被分解为 $K = (KK^{-1/2})(K^{-1/2}K)$, 这通常称为<strong>经验核映射</strong>(empirical kernel map)<sup><a href="#fn_3" id="reffn_3">3</a></sup>. </p>
+<blockquote>
+<p><font color="blue">★注:</font> 这个分解可由矩阵的特征分解得到, 即令 $K = Q^{-1}\Lambda Q$ 代入.<br>至于为什么要对核矩阵 $K$ 进行分解, 可以这样理解, 核矩阵给出的是映射后数据的内积, 即 $K_{ij} = k(x_i, x_j)$, 但我们只想知道映射后的数据 $\phi(x)$ 该怎么办? 便可以将矩阵分解成 $K=A^TA$ 的形式, 使得 $A = [ \phi(x_1), \cdots, \phi(x_{n_1 + n_2}) ]$, 即 $A$ 中的每个元素都是映射后的数据.<br>在上述的分解中, $A$ 即为 $K^{-1/2}K$. 注意到 $K$ 为对称半正定矩阵, 因此 $A^T = (K^{-1/2}K)^T = KK^{-1/2}$.</p>
+</blockquote>
+<p>考虑使用 $(n_1 + n_2) \times m$ 维的矩阵 $\widetilde{W}$ 将特征变化到 $m$ 维空间 (通常 $m \ll n_1 + n_2$), 则得到的核矩阵为:</p>
+<script type="math/tex; mode=display">
+\widetilde{K} = (KK^{-1/2}\widetilde{W})(\widetilde{W}^TK^{-1/2}K) = KWW^TK
+
+\tag{6}</script><p>其中, $W = K^{-1/2}\widetilde{W} \in \mathbb{R}^{(n_1 + n_2) \times m}$. 特别地, 任意两个数据 $x_i$ 和 $x_j$ 的核函数为:</p>
+<script type="math/tex; mode=display">
+\tilde{k}(x_i, x_j) = k^{T}_{x_i}WW^Tk_{x_j}
+
+\tag{7}</script><p>其中, $k_x = [ k(x_1, x), \cdots, k(x_{n_1 + n_2}, x)]^T \in \mathbb{R}^{n_1 + n_2}$. 因此, 公式$(7)$中的核函数给出了未见样本的参数化核估计表示.</p>
+<p>此外, 根据公式$(6)$中$\widetilde{K}$的定义, 两个域之间的经验均值距离可重新写为:</p>
+<script type="math/tex; mode=display">
+\begin{aligned} 
+\operatorname{Dist}\left(X_{S}^{\prime}, X_{T}^{\prime}\right) &=\operatorname{tr}\left(\left(K W W^{\top} K\right) L\right) \\ 
+&=\operatorname{tr}\left(W^{\top} K L K W\right) \\
+& {\scriptsize //利用迹循环性质:tr(ABC)=tr(BCA)=tr(CAB)}
+\end{aligned}
+
+\tag{8}</script><h3 id="迁移成分提取"><a href="#迁移成分提取" class="headerlink" title="迁移成分提取"></a>迁移成分提取</h3><p>在最小化公式$(8)$的时候, 通常需要加一个正则项 $tr(W^TW)$ (即矩阵二范数 $\Vert W \Vert_{2}$)来控制参数 $W$ 的复杂度.</p>
+<p>从而, 领域自适应的核学习问题可变为:</p>
+<script type="math/tex; mode=display">
+\begin{array}{cl}
+{\min \limits_{W}} & {\operatorname{tr}\left(W^{\top} W\right)+\mu \operatorname{tr}\left(W^{\top} K L K W\right)} \\
+{\text { s.t. }} & {W^{\top} K H K W=I}
+\end{array}
+
+\tag{9}</script><p>其中, $\mu$ 为权衡参数, $I \in \mathbb{R}^{m \times m}$ 为单位阵, $H = I_{n_1 + n_2} - \frac{1}{n_1 + n_2} \mathrm{1}\mathrm{1}^T$ 为<strong>中心矩阵</strong>(centering matrix), $\mathrm{1} \in \mathbb{R}^{n_1 + n_2}$ 为全1列向量, $I_{n_1 + n_2} \in \mathbb{R}^{(n_1 + n_2) \times (n_1 + n_)}$ 为单位阵.</p>
+<blockquote>
+<p><font color="blue">★注:</font> 添加 $W^{\top} K H K W=I$ 限制条件一方面是为了<strong>避免平凡解</strong>(即$W = 0$), 另一方面是为了<strong>保持数据的散度</strong>($W^{\top} K H K W$为投影后数据$W^{\top} K$的散度矩阵), 即前面简介中所说的保持原始数据固有结构.</p>
+</blockquote>
+<p>尽管公式$(9)$为非凸优化问题, 但其可以转化为迹优化问题:</p>
+<script type="math/tex; mode=display">
+\min _{W} \operatorname{tr}\left(\left(W^{\top} K H K W\right)^{\dagger} W^{\top}(I+\mu K L K) W\right)
+
+\tag{10}</script><p>或者</p>
+<script type="math/tex; mode=display">
+\max _{W} \operatorname{tr}\left(\left(W^{\top}(I+\mu K L K) W\right)^{-1} W^{\top} K H K W\right)
+
+\tag{11}</script><p>上述转化可由拉格朗日乘子法得到, 具体证明略…</p>
+<p>类似于核Fisher判别, <strong>公式$(11)$中 $W$ 的解为 $(I + \mu KLK)^{-1}KHK$ 的前 $m$ 个特征值对应的特征向量</strong>. </p>
+<p>因此, 本文提出的方法命名为<strong>迁移成分分析</strong>(Transfer Component Analysis, TCA).</p>
+<hr>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><h3 id="toy-dataset"><a href="#toy-dataset" class="headerlink" title="toy dataset"></a>toy dataset</h3><p><img src="https://wx3.sinaimg.cn/large/8662e3cegy1g1hftr8fffj216z0e8dk4.jpg" alt="(左) toy dataset   (中) PCA   (右) TCA" width="100%" height="100%"></p>
+<h3 id="跨域WiFi定位"><a href="#跨域WiFi定位" class="headerlink" title="跨域WiFi定位"></a>跨域WiFi定位</h3><p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g1hf7xqzy5j217g0digpo.jpg" width="100%" height="100%"></p>
+<h3 id="跨域文本分类"><a href="#跨域文本分类" class="headerlink" title="跨域文本分类"></a>跨域文本分类</h3><p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g1hf9nurmyj216f0kewj1.jpg" width="100%" height="100%"></p>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>via: <a href="https://github.com/jindongwang/transferlearning/tree/master/code/traditional/TCA" target="_blank" rel="noopener">jindongwang/transferlearning</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># encoding=utf-8</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">    Created on 21:29 2018/11/12 </span></span><br><span class="line"><span class="string">    @author: Jindong Wang</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> scipy.io</span><br><span class="line"><span class="keyword">import</span> scipy.linalg</span><br><span class="line"><span class="keyword">import</span> sklearn.metrics</span><br><span class="line"><span class="keyword">import</span> sklearn.neighbors</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">kernel</span><span class="params">(ker, X, X2, gamma)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> ker <span class="keyword">or</span> ker == <span class="string">'primal'</span>:</span><br><span class="line">        <span class="keyword">return</span> X</span><br><span class="line">    <span class="keyword">elif</span> ker == <span class="string">'linear'</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> X2:</span><br><span class="line">            K = np.dot(X.T, X)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            K = np.dot(X.T, X2)</span><br><span class="line">    <span class="keyword">elif</span> ker == <span class="string">'rbf'</span>:</span><br><span class="line">        n1sq = np.sum(X ** <span class="number">2</span>, axis=<span class="number">0</span>)</span><br><span class="line">        n1 = X.shape[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> X2:</span><br><span class="line">            D = (np.ones((n1, <span class="number">1</span>)) * n1sq).T + \</span><br><span class="line">            np.ones((n1, <span class="number">1</span>)) * n1sq - <span class="number">2</span> * np.dot(X.T, X)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            n2sq = np.sum(X2 ** <span class="number">2</span>, axis=<span class="number">0</span>)</span><br><span class="line">            n2 = X2.shape[<span class="number">1</span>]</span><br><span class="line">            D = (np.ones((n2, <span class="number">1</span>)) * n1sq).T + \</span><br><span class="line">            np.ones((n1, <span class="number">1</span>)) * n2sq - <span class="number">2</span> * np.dot(X.T, X)</span><br><span class="line">        K = np.exp(-gamma * D)</span><br><span class="line">    <span class="keyword">elif</span> ker == <span class="string">'sam'</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> X2:</span><br><span class="line">            D = np.dot(X.T, X)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            D = np.dot(X.T, X2)</span><br><span class="line">        K = np.exp(-gamma * np.arccos(D) ** <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> K</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TCA</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, kernel_type=<span class="string">'primal'</span>, dim=<span class="number">30</span>, lamb=<span class="number">1</span>, gamma=<span class="number">1</span>)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        Init func</span></span><br><span class="line"><span class="string">        :param kernel_type: kernel, values: 'primal' | 'linear' | 'rbf' | 'sam'</span></span><br><span class="line"><span class="string">        :param dim: dimension after transfer</span></span><br><span class="line"><span class="string">        :param lamb: lambda value in equation</span></span><br><span class="line"><span class="string">        :param gamma: kernel bandwidth for rbf kernel</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        self.kernel_type = kernel_type</span><br><span class="line">        self.dim = dim</span><br><span class="line">        self.lamb = lamb</span><br><span class="line">        self.gamma = gamma</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fit</span><span class="params">(self, Xs, Xt)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        Transform Xs and Xt</span></span><br><span class="line"><span class="string">        :param Xs: ns * n_feature, source feature</span></span><br><span class="line"><span class="string">        :param Xt: nt * n_feature, target feature</span></span><br><span class="line"><span class="string">        :return: Xs_new and Xt_new after TCA</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        X = np.hstack((Xs.T, Xt.T))</span><br><span class="line">        X /= np.linalg.norm(X, axis=<span class="number">0</span>)</span><br><span class="line">        m, n = X.shape</span><br><span class="line">        ns, nt = len(Xs), len(Xt)</span><br><span class="line">        e = np.vstack((<span class="number">1</span> / ns * np.ones((ns, <span class="number">1</span>)), <span class="number">-1</span> / nt * np.ones((nt, <span class="number">1</span>))))</span><br><span class="line">        M = e * e.T</span><br><span class="line">        M = M / np.linalg.norm(M, <span class="string">'fro'</span>)</span><br><span class="line">        H = np.eye(n) - <span class="number">1</span> / n * np.ones((n, n))</span><br><span class="line">        K = kernel(self.kernel_type, X, <span class="keyword">None</span>, gamma=self.gamma)</span><br><span class="line">        n_eye = m <span class="keyword">if</span> self.kernel_type == <span class="string">'primal'</span> <span class="keyword">else</span> n</span><br><span class="line">        a, b = np.linalg.multi_dot([K, M, K.T]) + self.lamb * \</span><br><span class="line">               np.eye(n_eye), np.linalg.multi_dot([K, H, K.T])</span><br><span class="line">        w, V = scipy.linalg.eig(a, b)</span><br><span class="line">        ind = np.argsort(w)</span><br><span class="line">        A = V[:, ind[:self.dim]]</span><br><span class="line">        Z = np.dot(A.T, K)</span><br><span class="line">        Z /= np.linalg.norm(Z, axis=<span class="number">0</span>)</span><br><span class="line">        Xs_new, Xt_new = Z[:, :ns].T, Z[:, ns:].T</span><br><span class="line">        <span class="keyword">return</span> Xs_new, Xt_new</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fit_predict</span><span class="params">(self, Xs, Ys, Xt, Yt)</span>:</span></span><br><span class="line">        <span class="string">'''</span></span><br><span class="line"><span class="string">        Transform Xs and Xt, then make predictions on target using 1NN</span></span><br><span class="line"><span class="string">        :param Xs: ns * n_feature, source feature</span></span><br><span class="line"><span class="string">        :param Ys: ns * 1, source label</span></span><br><span class="line"><span class="string">        :param Xt: nt * n_feature, target feature</span></span><br><span class="line"><span class="string">        :param Yt: nt * 1, target label</span></span><br><span class="line"><span class="string">        :return: Accuracy and predicted_labels on the target domain</span></span><br><span class="line"><span class="string">        '''</span></span><br><span class="line">        Xs_new, Xt_new = self.fit(Xs, Xt)</span><br><span class="line">        clf = sklearn.neighbors.KNeighborsClassifier(n_neighbors=<span class="number">1</span>)</span><br><span class="line">        clf.fit(Xs_new, Ys.ravel())</span><br><span class="line">        y_pred = clf.predict(Xt_new)</span><br><span class="line">        acc = sklearn.metrics.accuracy_score(Yt, y_pred)</span><br><span class="line">        <span class="keyword">return</span> acc, y_pred</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    domains = [<span class="string">'caltech.mat'</span>, <span class="string">'amazon.mat'</span>, <span class="string">'webcam.mat'</span>, <span class="string">'dslr.mat'</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">            <span class="keyword">if</span> i != j:</span><br><span class="line">                src, tar = <span class="string">'data/'</span> + domains[i], <span class="string">'data/'</span> + domains[j]</span><br><span class="line">                src_domain, tar_domain = scipy.io.loadmat(src), scipy.io.loadmat(tar)</span><br><span class="line">                Xs, Ys, Xt, Yt = src_domain[<span class="string">'feas'</span>], src_domain[<span class="string">'label'</span>], \</span><br><span class="line">                                 tar_domain[<span class="string">'feas'</span>], tar_domain[<span class="string">'label'</span>]</span><br><span class="line">                tca = TCA(kernel_type=<span class="string">'primal'</span>, dim=<span class="number">30</span>, lamb=<span class="number">1</span>, gamma=<span class="number">1</span>)</span><br><span class="line">                acc, ypre = tca.fit_predict(Xs, Ys, Xt, Yt)</span><br><span class="line">                print(acc)</span><br></pre></td></tr></table></figure>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote id="fn_1">
+<sup>1</sup>. Karsten M. Borgwardt, Arthur Gretton, Malte J. Rasch, Hans-Peter Kriegel, Bernhard Scholkopf, and Alexander J. Smola. <strong>Integrating structured biological data by kernel maximum mean discrepancy</strong>. In ISMB, pages 49–57, Fortaleza, Brazil, 2006<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. Sinno Jialin Pan, James T. Kwok, and Qiang Yang. <strong>Transfer learning via dimensionality reduction</strong>. In Proceedings of AAAI, pages 677–682, Chicago, Illinois, USA, 2008.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. Bernhard Scholkopf, Alexander Smola, and Klaus-Robert Muller. <strong>Nonlinear component analysis as a kernel eigenvalue problem</strong>. Neural Computation, 10(5):1299–1319,1998.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+
+                
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/transfer-component-analysis/" data-id="cjtr5oshb00mi2isitficwtb6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/transfer-component-analysis/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/posts/transfer-adaptation-learning/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">【论文笔记】迁移自适应学习综述</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="gitalkContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+<div class="toc-article" id="toc">
+    <h3 class="widget-title" style="font-size:14px;"><i class="fa fa-list-alt" style="color: #888;font-size: 14px;margin-right: 10px;"></i>文章目录</h3>
+    <div class="widget-toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预备知识"><span class="toc-number">2.</span> <span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题设定"><span class="toc-number">2.1.</span> <span class="toc-text">问题设定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最大均值差异"><span class="toc-number">2.2.</span> <span class="toc-text">最大均值差异</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#迁移成分分析"><span class="toc-number">3.</span> <span class="toc-text">迁移成分分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#核学习"><span class="toc-number">3.1.</span> <span class="toc-text">核学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数化核映射"><span class="toc-number">3.2.</span> <span class="toc-text">参数化核映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迁移成分提取"><span class="toc-number">3.3.</span> <span class="toc-text">迁移成分提取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验结果"><span class="toc-number">4.</span> <span class="toc-text">实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#toy-dataset"><span class="toc-number">4.1.</span> <span class="toc-text">toy dataset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域WiFi定位"><span class="toc-number">4.2.</span> <span class="toc-text">跨域WiFi定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域文本分类"><span class="toc-number">4.3.</span> <span class="toc-text">跨域文本分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
+    </div>
+</div>
+
+    
+        
+
+    
+        
+
+
+    
+</aside>
+<div id="toTop" class="fa fa-angle-up"></div>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 orzyt<br>
+            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+        var gitalk = new Gitalk({
+            id: location.pathname,
+            clientID: '3628f46ff8965c297258', 
+            clientSecret: 'da2ef51d9fe687db577e834867d253a697f19a9f',
+            repo: 'comments',
+            owner: 'orzyt',
+            admin: ['orzyt'],
+            distractionFreeMode: false,
+            perPage: 20,
+            createIssueManually: false,
+            language: 'zh-CN', 
+        })
+        gitalk.render('gitalkContainer')
+	</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+    <!-- page.__post !== true --><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
+
