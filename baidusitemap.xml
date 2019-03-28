@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://orzyt.cn/posts/deep-domain-confusion/</loc>
+    <lastmod>2019-03-28</lastmod>
+  </url>  <url>
     <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
-    <lastmod>2019-03-27</lastmod>
+    <lastmod>2019-03-28</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
     <lastmod>2019-03-25</lastmod>
@@ -424,10 +427,10 @@
     <loc>https://orzyt.cn/posts/build-to-win!-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/conditional-gan/</loc>
+    <loc>https://orzyt.cn/posts/change-mirrors/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/change-mirrors/</loc>
+    <loc>https://orzyt.cn/posts/conditional-gan/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/coursera-advice-for-applying-machine-learning/</loc>

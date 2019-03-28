@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>【论文笔记】深度域混淆 - 扬涛的博客</title>
+    <meta itemprop="name" content="【论文笔记】深度域混淆 - 扬涛的博客">
+    <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/libs/jquery/sort.js"></script>
+    
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?63f226f2212285cc30d6ffa0636da07a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">扬涛的博客</span>
+            </a>
+            <nav id="main-nav">
+                <div>
+                    <ul class="nav navbar-nav">
+                    
+                        <a class="main-nav-link" href="/.">主页</a>
+                    
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    
+                        <a class="main-nav-link" href="/books">阅读</a>
+                    
+                        <a class="main-nav-link" href="/about">关于</a>
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                                <li><a href="/study">学习资源汇总</a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    </ul>
+                </div>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/img/avatar.png">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <ul class="menu outer">
+            
+                <a class="main-nav-link" href="/.">主页</a>
+            
+                <a class="main-nav-link" href="/archives">归档</a>
+            
+                <a class="main-nav-link" href="/books">阅读</a>
+            
+                <a class="main-nav-link" href="/about">关于</a>
+            
+                           
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    更多 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
+                    
+                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/img/avatar.png">
+            <h2 id="name">郑扬涛</h2>
+            <h3 id="title">M.S. Student @ Beihang Univ.</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/orzyt/activities">关注我</a>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/orzyt" target="_blank" title="github">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.linkedin.com/in/orzyt" target="_blank" title="linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/orzyt" target="_blank" title="weibo">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+            
+            <section id="main"><article id="post-deep-domain-confusion" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+    
+        
+            <h1 class="article-title" itemprop="name">
+                【论文笔记】深度域混淆
+            </h1>
+        
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/posts/deep-domain-confusion/">
+            <time datetime="2019-03-28T06:46:01.000Z" itemprop="datePublished">2019-03-28</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/论文笔记/">论文笔记</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/迁移学习/">迁移学习</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/深度域混淆/">深度域混淆</a>, <a class="tag-link" href="/tags/迁移学习/">迁移学习</a>, <a class="tag-link" href="/tags/领域自适应/">领域自适应</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                
+                    <hr>
+<p><strong>论文题目</strong>：Deep Domain Confusion: Maximizing for Domain Invariance</p>
+<p><strong>论文作者</strong>：Eric Tzeng, Judy Hoffman, Ning Zhang, Kate Saenko, Trevor Darrell</p>
+<p><strong>会议期刊</strong>：arxiv 2014</p>
+<a id="more"></a>
+<hr>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本文提出了一种新的卷积神经网络结构, 引入了<strong>自适应层</strong>(adaptation layer)和<strong>域混淆</strong>(domain confusion)损失函数, 从而可以学习到域不变(domain invariant)的特征表示.</p>
+<p>同时, 本文指出域混淆度量可以用来进行模型的选择, 即确定自适应层的维度及其在CNN中的位置.</p>
+<hr>
+<h2 id="基于CNN的域不变表示"><a href="#基于CNN的域不变表示" class="headerlink" title="基于CNN的域不变表示"></a>基于CNN的域不变表示</h2><div align="center"><img src="https://wx3.sinaimg.cn/large/8662e3cely1g1ikol7jozj20nz0ffgns.jpg" width="50%" height="50%"></div>
+
+<p>一个直观的想法是: <strong>学习可以最小化源域和目标域之间分布差异的特征表示, 使得可以在带标签的源域数据上训练分类器, 并直接应用在目标域的数据中.</strong></p>
+<p>为此, 作者考虑使用<strong>最大均值差异</strong>(Maximum Mean Discrepancy, MMD)作为分布距离的度量. </p>
+<script type="math/tex; mode=display">
+MMD(X_S, X_T) = \left\Vert \frac{1}{|X_S|} \sum \limits_{x_s \in X_S} \phi(x_s) - \frac{1}{|X_T|} \sum \limits_{x_t \in X_T} \phi(x_t) \right\Vert
+\tag{1}</script><h3 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h3><p>最终的目标函数为:</p>
+<script type="math/tex; mode=display">
+\mathcal{L} = \mathcal{L}_{C}(X_L, y) + \lambda MMD^2(X_S, X_T)
+\tag{2}</script><p>其中, $\mathcal{L}_{C}(X_L, y)$ 为带标签数据的分类损失, $MMD$ 为源域与目标域之间的分布差异, $\lambda$ 为权衡参数.</p>
+<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><div align="center"><img src="https://wx1.sinaimg.cn/large/8662e3cely1g1im7vuuzaj20g50hbgmj.jpg" alt="网络结构" width="40%" height="“40%”"></div>
+
+<p>本文所使用的网络基于<code>AlexNet</code>修改而来, 使用两个<strong>共享权重</strong>的CNN, 并在全连接层<code>fc7</code>之后添加了自适应层. 经过<code>fine-tuning</code>后, 作者认为自适应层可以同时学习到<strong>具有判别性</strong>且<strong>具有域不变性</strong>的特征表示.</p>
+<hr>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>本文采用<code>Office</code>数据集, 包含三个域: <code>Amazon</code>,<code>DSLR</code>和<code>Webcam</code>.</p>
+<p>迁移任务: <code>Amazon-&gt;Webcam</code>, <code>DSLR-&gt;Webcam</code>, <code>Webcam-&gt;DSLR</code></p>
+<h3 id="自适应层的位置"><a href="#自适应层的位置" class="headerlink" title="自适应层的位置"></a>自适应层的位置</h3><div align="center"><img src="https://wx3.sinaimg.cn/large/8662e3cely1g1imw2hsyvj20if0emdgw.jpg" width="40%" height="40%"></div>
+
+<p>作者测试了将自适应层放置在不同的全连接层后面, 根据MMD准则, 发现放置在<code>fc7</code>后效果最好.</p>
+<h3 id="自适应层的维度"><a href="#自适应层的维度" class="headerlink" title="自适应层的维度"></a>自适应层的维度</h3><div align="center"><img src="https://wx1.sinaimg.cn/large/8662e3cely1g1imx3kkifj20io0ekab8.jpg" width="40%" height="40%"></div>
+
+<p>同时, 作者也测试了不同的自适应层维度, 根据MMD准则, 选择了<code>256</code>维.</p>
+<h3 id="迁移效果"><a href="#迁移效果" class="headerlink" title="迁移效果"></a>迁移效果</h3><div align="center"><img src="https://ws4.sinaimg.cn/large/8662e3cely1g1in4274mpj20dd05imxh.jpg" alt="有监督条件下的多分类精度" width="50%" height="50%"></div>
+
+<div align="center"><img src="https://ws3.sinaimg.cn/large/8662e3cely1g1in55orc2j20dk05ot91.jpg" alt="无监督条件下的多分类精度" width="50%" height="50%"></div>
+
+<h3 id="正则化效果"><a href="#正则化效果" class="headerlink" title="正则化效果"></a>正则化效果</h3><div align="center"><img src="https://wx2.sinaimg.cn/large/8662e3cely1g1in768my6j20ii0b53yx.jpg" alt="有无正则化的测试精度" width="50%" height="50%"></div>
+                
+            
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://orzyt.cn/posts/deep-domain-confusion/" data-id="cjtsg5dzd001adosid5xyrar9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://orzyt.cn/posts/deep-domain-confusion/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/posts/transfer-component-analysis/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">【论文笔记】迁移成分分析</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+<div id="gitalkContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+<div class="toc-article" id="toc">
+    <h3 class="widget-title" style="font-size:14px;"><i class="fa fa-list-alt" style="color: #888;font-size: 14px;margin-right: 10px;"></i>文章目录</h3>
+    <div class="widget-toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于CNN的域不变表示"><span class="toc-number">2.</span> <span class="toc-text">基于CNN的域不变表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#目标函数"><span class="toc-number">2.1.</span> <span class="toc-text">目标函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网络结构"><span class="toc-number">2.2.</span> <span class="toc-text">网络结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验结果"><span class="toc-number">3.</span> <span class="toc-text">实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自适应层的位置"><span class="toc-number">3.1.</span> <span class="toc-text">自适应层的位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自适应层的维度"><span class="toc-number">3.2.</span> <span class="toc-text">自适应层的维度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迁移效果"><span class="toc-number">3.3.</span> <span class="toc-text">迁移效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则化效果"><span class="toc-number">3.4.</span> <span class="toc-text">正则化效果</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+    
+        
+
+    
+        
+
+
+    
+</aside>
+<div id="toTop" class="fa fa-angle-up"></div>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 orzyt<br>
+            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+        </div>
+    </div>
+</footer>
+        
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        id: location.pathname,
+        clientID: '3628f46ff8965c297258', 
+        clientSecret: 'da2ef51d9fe687db577e834867d253a697f19a9f',
+        repo: 'comments',
+        owner: 'orzyt',
+        admin: ['orzyt'],
+        distractionFreeMode: false,
+        perPage: 20,
+        createIssueManually: false,
+        language: 'zh-CN', 
+    })
+    gitalk.render('gitalkContainer')
+</script>
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ 
+        tex2jax: { 
+            inlineMath: [['$','$'], ['\\(','\\)']] }, 
+            displayMath: [["$$","$$"]],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+            showProcessingMessages: false,
+            messageStyle: "none",
+        }
+    );
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+    <!-- page.__post !== true --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
+
