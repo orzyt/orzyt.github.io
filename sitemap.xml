@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
+    
+    <lastmod>2019-03-28T11:32:27.773Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/deep-domain-confusion/</loc>
     
     <lastmod>2019-03-28T09:36:20.960Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>https://orzyt.cn/posts/introduction-to-rl/</loc>
     
     <lastmod>2019-03-13T12:07:23.473Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
-    
-    <lastmod>2019-03-13T12:07:14.581Z</lastmod>
     
   </url>
   
