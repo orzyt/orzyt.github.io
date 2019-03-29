@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
+    
+    <lastmod>2019-03-28T13:00:20.612Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
+    
+    <lastmod>2019-03-28T12:51:03.619Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
     
     <lastmod>2019-03-28T11:32:27.773Z</lastmod>
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
-    
-    <lastmod>2019-03-28T06:47:33.975Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/about/index.html</loc>
     
     <lastmod>2019-03-25T12:54:56.974Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
-    
-    <lastmod>2019-03-25T12:35:52.538Z</lastmod>
     
   </url>
   

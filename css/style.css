@@ -1293,6 +1293,20 @@ a.article-title:hover {
 #toc .toc li {
   list-style-type: none;
 }
+#toc .toc-item i {
+  display: inline-block;
+  margin-left: -0.9em;
+  width: 0.9em;
+  color: #b3b3b3;
+  font-weight: bold;
+  cursor: pointer;
+}
+#toc .toc-item i:hover {
+  color: #000;
+}
+#toc .toc-item i.hide {
+  display: none;
+}
 #toc .toc-child {
   padding-left: 0em;
   padding-top: 0.5em;
@@ -1916,8 +1930,19 @@ a.article-title:hover {
 .widget-toc ol ol li:last-child {
   padding-bottom: 0px;
 }
+.widget-toc ul:not(#recent-post) li a,
+.widget-toc ol:not(#recent-post) li a {
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+}
 .widget-toc ul:not(#recent-post) li a:hover,
 .widget-toc ol:not(#recent-post) li a:hover {
+  color: #38b7ea;
+}
+.widget-toc ul:not(#recent-post) li a.active,
+.widget-toc ol:not(#recent-post) li a.active {
   color: #38b7ea;
 }
 #recent-post li {
