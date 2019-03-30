@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/about/index.html</loc>
+    
+    <lastmod>2019-03-30T06:38:35.128Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
     
     <lastmod>2019-03-28T13:00:20.612Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://orzyt.cn/posts/deep-domain-confusion/</loc>
     
     <lastmod>2019-03-28T09:36:20.960Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/about/index.html</loc>
-    
-    <lastmod>2019-03-25T12:54:56.974Z</lastmod>
     
   </url>
   
