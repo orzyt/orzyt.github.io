@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://orzyt.cn/posts/centering-matrix/</loc>
+    <lastmod>2019-03-30</lastmod>
+  </url>  <url>
     <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
     <lastmod>2019-03-28</lastmod>
   </url>  <url>
@@ -409,10 +412,10 @@
     <loc>https://orzyt.cn/posts/matlab-tutorial/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/trie-summary/</loc>
+    <loc>https://orzyt.cn/posts/use-hexo-on-coding-webIDE/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/use-hexo-on-coding-webIDE/</loc>
+    <loc>https://orzyt.cn/posts/trie-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/software-engineering-summary/</loc>
@@ -436,6 +439,9 @@
     <loc>https://orzyt.cn/posts/coursera-advice-for-applying-machine-learning/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
+    <loc>https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/</loc>
+    <lastmod>2018-11-10</lastmod>
+  </url>  <url>
     <loc>https://orzyt.cn/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
@@ -443,9 +449,6 @@
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/coursera-neural-networks-model/</loc>
-    <lastmod>2018-11-10</lastmod>
-  </url>  <url>
-    <loc>https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/generative-adversarial-nets/</loc>
@@ -469,10 +472,10 @@
     <loc>https://orzyt.cn/posts/2016-ccpc-hefei-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2017-cccc-final-summary/</loc>
+    <loc>https://orzyt.cn/posts/2017-fjpcpc-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2017-fjpcpc-summary/</loc>
+    <loc>https://orzyt.cn/posts/2017-cccc-final-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>
 </urlset>
