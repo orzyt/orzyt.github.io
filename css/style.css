@@ -280,10 +280,6 @@ code {
   font-size: 1em;
   color: #999;
 }
-.article-entry hr,
-.widget hr {
-  border: 1px dashed #eceff2;
-}
 .article-entry strong,
 .widget strong {
   font-weight: bold;
@@ -966,10 +962,10 @@ a.article-title:hover {
 .article-entry blockquote {
   position: static;
   font-family: Georgia, "Times New Roman", "Microsoft Yahei", serif;
-  font-size: 1.1em;
+  font-size: 1em;
   margin: 0 -20px;
   padding: 10px 20px 10px 54px;
-  background: #fcfcfc;
+  background: #fafafa;
   border-left: 4px solid #eee;
 }
 .article-entry blockquote:before {
@@ -1047,7 +1043,6 @@ a.article-title:hover {
   text-shadow: 0 1px #169cd2;
 }
 .article-footer {
-  font-size: 0.85em;
   line-height: 1.6em;
   border-top: 1px solid #eceff2;
   padding-top: 1.6em;
@@ -1066,7 +1061,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .article-footer a:hover {
-  color: #555;
+  color: #fff;
 }
 .article-comment-link {
   float: right;
@@ -1809,7 +1804,7 @@ a.article-title:hover {
   text-decoration: none;
 }
 .widget a:hover {
-  color: #333;
+  color: #38b7ea;
 }
 .widget ul ul,
 .widget ol ul,
@@ -1870,7 +1865,7 @@ a.article-title:hover {
 }
 .widget ul:not(#recent-post) li a:hover:before,
 .widget ol:not(#recent-post) li a:hover:before {
-  color: #333;
+  color: #38b7ea;
 }
 .toc-article {
   margin: 40px 10px;

@@ -168,9 +168,7 @@ var _hmt = _hmt || [];
         
             
 	
-    <!--   <a href="/posts/hands-on-ml-the-machine-learning-landscape/" itemprop="url">             -->
-    <!--          <img src="https://tuchuang001.com/images/2017/11/09/banner.png" class="article-banner" />  -->
-    <!--   </a>                                                            -->
+        
 	
 
 
@@ -211,11 +209,11 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><h2 id="什么是机器学习？"><a href="#什么是机器学习？" class="headerlink" title="什么是机器学习？"></a>什么是机器学习？</h2><p>在1959年， <a href="http://en.wikipedia.org/wiki/Arthur_Samuel" target="_blank" rel="noopener">Arthur Samuel</a> 给机器学习定义如下：</p>
 <blockquote>
@@ -223,90 +221,16 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>Arthur Samuel是美国计算机游戏和人工智能领域的先驱之一。在IBM的时候，他开发出的西洋跳棋程序被认为是世界上第一个自学习程序。Samuel让该程序自己和自己下棋，很快它就习得了在哪些情况下赢的机会比较大，从而可以不断提高自己的棋艺。最终，该程序的棋艺已经远远超过Samuel。</p>
 <p>Samuel这段话的意思是说，“<strong>机器学习是这样的一个研究领域，在没有显式编码的情况下赋予计算机学习的能力。</strong>”虽然这个定义看上去是挺不错的，但是却有点含糊不清。</p><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/hands-on-ml-the-machine-learning-landscape/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/hands-on-ml-the-machine-learning-landscape/" data-id="cjtxyv14w00p59usive1sg858" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/hands-on-ml-the-machine-learning-landscape/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/hands-on-ml-the-machine-learning-landscape/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>
@@ -351,97 +275,23 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><p>　　正式赛的开场比较顺利，第一题是鸡兔同笼解方程，第二题是SG函数博弈，第三题是kmp，一人敲一题，都是1A。第四题是高精度题，不知道为什么机器明明装了JDK环境，但是却不提供Eclipse。于是我们就只能用文本编辑器写Java代码，然后提交到OJ上在线编译（尝试在本地用命令行编译运行，不过没成功）。一开始用了BigDecimal类，但是有精度问题wa了一次，最后发现用BigInteger就行了，最终2A。第五题是错排问题，我把错排公式给了队友，不过他好像卡在了什么地方，最后也找到bug然后过了。</p><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/2017-fjpcpc-summary/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/2017-fjpcpc-summary/" data-id="cjtxyv0tg000d9usirpyfwnhg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/2017-fjpcpc-summary/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/2017-fjpcpc-summary/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>
@@ -486,97 +336,23 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><p>　　去年新出的赛事，中国高校计算机大赛(China Collegiate Computing Contest,简称C4)，其中有一个项目是团队程序设计天梯赛。每个学校出三支队伍，每支队伍十个人。在本校参加完初赛后，有幸去杭州参加决赛。<br></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/2017-cccc-final-summary/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/2017-cccc-final-summary/" data-id="cjtxyv0th000e9usiavqx4vaa" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/2017-cccc-final-summary/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/2017-cccc-final-summary/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>
@@ -621,11 +397,11 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><h2 id="下一步该怎么办"><a href="#下一步该怎么办" class="headerlink" title="下一步该怎么办"></a>下一步该怎么办</h2><p>当你实现了一个带有正则化的线性回归来预测房价之后，也许你会发现结果并不尽如人意。</p>
 <p>此时你可以试试以下一些方法：</p>
@@ -636,90 +412,16 @@ var _hmt = _hmt || [];
 <li>添加多项式特征</li>
 <li>增大或减小正则化参数$\lambda$</li>
 </ul><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/coursera-advice-for-applying-machine-learning/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/coursera-advice-for-applying-machine-learning/" data-id="cjtxyv0tv00119usindihvjpc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/coursera-advice-for-applying-machine-learning/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/coursera-advice-for-applying-machine-learning/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>
@@ -764,97 +466,23 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><h2 id="非线性假设函数"><a href="#非线性假设函数" class="headerlink" title="非线性假设函数"></a>非线性假设函数</h2><p>　　既然前面已经有效果不错的线性回归和逻辑回归模型了，那么我们为什么还需要神经网络模型呢？试想，在面对一个复杂庞大的数据集时，若使用线性回归我们势必要增加大量的特征才能够较好的拟合数据。比如说现在有$n$个特征，要生成所有的平方项，则其数量大约在$\mathcal{O}(n^2/2)$左右，显然次数越高其数量增长速度越快。举个例子，现在我们有一个50*50像素的黑白照片数据集，训练目标是判断图片中是否包含有车辆。若我们选取每个像素来作为特征的话，那么特征数量$n$则为2500（如果是RGB彩色图片的话，则是7500），则其所有的平方项特征大约在三百万左右! 显然这是不切实际的，因此我们必须另辟蹊径。幸运的是，神经网络能为我们提供更为复杂的模型表示。</p><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/coursera-neural-networks-model/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/coursera-neural-networks-model/" data-id="cjtxyv0tz001a9usitq1qf6s4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/coursera-neural-networks-model/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/coursera-neural-networks-model/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>
@@ -899,97 +527,23 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><h2 id="二元分类"><a href="#二元分类" class="headerlink" title="二元分类"></a>二元分类</h2><p>对于二元分类来说，其输出值 $y$ 不再是一个连续的值，而是属于 $\lbrace 0,1 \rbrace$，一般0代表<code>negative class</code>，而1代表<code>positive class</code>。想要实现二元分类，一种方法是在线性回归的基础上进行修改，比如说输出值$y$超过了某一阈值，则认为它属于1，否则属于0，但是这个效果通常来说不是很好。</p><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/coursera-logistic-regression-and-regularization/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/coursera-logistic-regression-and-regularization/" data-id="cjtxyv0u2001g9usi7n0buf05" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/coursera-logistic-regression-and-regularization/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/coursera-logistic-regression-and-regularization/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>
@@ -1034,97 +588,23 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><h2 id="Basic-Operations"><a href="#Basic-Operations" class="headerlink" title="Basic Operations"></a>Basic Operations</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 元素操作</span></span><br><span class="line"><span class="number">5</span>+<span class="number">6</span></span><br><span class="line"><span class="number">3</span><span class="number">-2</span></span><br><span class="line"><span class="number">5</span>*<span class="number">8</span></span><br><span class="line"><span class="number">1</span>/<span class="number">2</span></span><br><span class="line"><span class="number">2</span>^<span class="number">6</span> <span class="comment">% 次方，不是异或</span></span><br><span class="line"><span class="number">1</span> == <span class="number">2</span> <span class="comment">% 假</span></span><br><span class="line"><span class="number">1</span> ~= <span class="number">2</span> <span class="comment">% 真  注意，不是用 "!="</span></span><br><span class="line"><span class="number">1</span> &amp;&amp; <span class="number">0</span></span><br><span class="line"><span class="number">1</span> || <span class="number">0</span></span><br><span class="line">xor(<span class="number">1</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/matlab-tutorial/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/matlab-tutorial/" data-id="cjtxyv10900cq9usi7chktu4m" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/matlab-tutorial/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/matlab-tutorial/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>
@@ -1169,11 +649,11 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><h2 id="多变量线性回归"><a href="#多变量线性回归" class="headerlink" title="多变量线性回归"></a>多变量线性回归</h2><h3 id="多特征"><a href="#多特征" class="headerlink" title="多特征"></a>多特征</h3><ul>
 <li><p>$x^{(i)}$ ：第i个训练数据</p>
@@ -1186,90 +666,16 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 <script type="math/tex; mode=display">\begin{align*}h_\theta (x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_3 + \cdots + \theta_n x_n \newline =\begin{bmatrix}\theta_0 \hspace{2em} \theta_1 \hspace{2em} ... \hspace{2em} \theta_n\end{bmatrix}\begin{bmatrix}x_0 \newline x_1 \newline \vdots \newline x_n\end{bmatrix}= \theta^T x\end{align*}</script><p>若对整个数据集进行运算，有：$h_\theta(X) = X \theta$</p><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/" data-id="cjtxyv0tx00169usi0qd78bi1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>
@@ -1314,100 +720,26 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><p>有监督学习，即从标签化的数据中进行训练学习。</p>
 <blockquote>
 <p>In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.</p>
 </blockquote><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/" data-id="cjtxyv0tw00149usi8tap1qxa" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/coursera-linear-regression-with-one-variable-and-gradient-descent/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>
@@ -1452,97 +784,23 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 <p></p><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>　　早在10月份还在上软工实践课的时候，就立了一个Flag说要读完<a href="https://book.douban.com/subject/25965995/" target="_blank" rel="noopener">《构建之法》</a>。可惜当时并没有完整地将书读过一遍，而是在实践中要用什么内容就读什么内容。后来等有时间通读过一遍后，却没有记录成博客，等到邹欣老师给我留言的时候已临近期末，再加上自己的拖延症，导致该文静静地躺在草稿箱中不见天日。（这么看来，deadline真的是第一生产力…</p><p></p>
-                <p class="article-more-link" style="float: right;">
-                    <a href="/posts/learning-by-doing-notes/">查看更多</a>
-                </p>
             
         </div>
+        
+        
         <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/learning-by-doing-notes/" data-id="cjtxyv14z00p89usio9rpoy12" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/learning-by-doing-notes/#comments" class="article-comment-link">评论</a>
-    
-
+            <p class="article-more-link" style="float: right;">
+            <a href="/posts/learning-by-doing-notes/">查看更多</a>
+            </p>
         </footer>
+        
     </div>
     
 </article>

@@ -201,11 +201,11 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 
                     <h2 id="非线性假设函数"><a href="#非线性假设函数" class="headerlink" title="非线性假设函数"></a>非线性假设函数</h2><p>　　既然前面已经有效果不错的线性回归和逻辑回归模型了，那么我们为什么还需要神经网络模型呢？试想，在面对一个复杂庞大的数据集时，若使用线性回归我们势必要增加大量的特征才能够较好的拟合数据。比如说现在有$n$个特征，要生成所有的平方项，则其数量大约在$\mathcal{O}(n^2/2)$左右，显然次数越高其数量增长速度越快。举个例子，现在我们有一个50*50像素的黑白照片数据集，训练目标是判断图片中是否包含有车辆。若我们选取每个像素来作为特征的话，那么特征数量$n$则为2500（如果是RGB彩色图片的话，则是7500），则其所有的平方项特征大约在三百万左右! 显然这是不切实际的，因此我们必须另辟蹊径。幸运的是，神经网络能为我们提供更为复杂的模型表示。</p>
@@ -237,85 +237,10 @@ var _hmt = _hmt || [];
                 
             
         </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/coursera-neural-networks-model/" data-id="cjtxyv0tz001a9usitq1qf6s4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/coursera-neural-networks-model/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+        
+        
+            <br>
+        
     </div>
     
         

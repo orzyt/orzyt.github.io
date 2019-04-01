@@ -201,11 +201,11 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 
                     <p>　　正式赛的开场比较顺利，第一题是鸡兔同笼解方程，第二题是SG函数博弈，第三题是kmp，一人敲一题，都是1A。第四题是高精度题，不知道为什么机器明明装了JDK环境，但是却不提供Eclipse。于是我们就只能用文本编辑器写Java代码，然后提交到OJ上在线编译（尝试在本地用命令行编译运行，不过没成功）。一开始用了BigDecimal类，但是有精度问题wa了一次，最后发现用BigInteger就行了，最终2A。第五题是错排问题，我把错排公式给了队友，不过他好像卡在了什么地方，最后也找到bug然后过了。</p>
@@ -219,85 +219,10 @@ var _hmt = _hmt || [];
                 
             
         </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/2017-fjpcpc-summary/" data-id="cjtxyv0tg000d9usirpyfwnhg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/2017-fjpcpc-summary/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+        
+        
+            <br>
+        
     </div>
     
         

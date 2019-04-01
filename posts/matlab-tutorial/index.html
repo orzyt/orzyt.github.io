@@ -201,11 +201,11 @@ var _hmt = _hmt || [];
 
                     </div>
                 
+                <hr>
             </header>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <hr>
             
                 
                     <h2 id="Basic-Operations"><a href="#Basic-Operations" class="headerlink" title="Basic Operations"></a>Basic Operations</h2><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 元素操作</span></span><br><span class="line"><span class="number">5</span>+<span class="number">6</span></span><br><span class="line"><span class="number">3</span><span class="number">-2</span></span><br><span class="line"><span class="number">5</span>*<span class="number">8</span></span><br><span class="line"><span class="number">1</span>/<span class="number">2</span></span><br><span class="line"><span class="number">2</span>^<span class="number">6</span> <span class="comment">% 次方，不是异或</span></span><br><span class="line"><span class="number">1</span> == <span class="number">2</span> <span class="comment">% 假</span></span><br><span class="line"><span class="number">1</span> ~= <span class="number">2</span> <span class="comment">% 真  注意，不是用 "!="</span></span><br><span class="line"><span class="number">1</span> &amp;&amp; <span class="number">0</span></span><br><span class="line"><span class="number">1</span> || <span class="number">0</span></span><br><span class="line">xor(<span class="number">1</span>,<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
@@ -230,85 +230,10 @@ var _hmt = _hmt || [];
                 
             
         </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://orzyt.cn/posts/matlab-tutorial/" data-id="cjtxyv10900cq9usi7chktu4m" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://orzyt.cn/posts/matlab-tutorial/#comments" class="article-comment-link">评论</a>
-    
-
-        </footer>
+        
+        
+            <br>
+        
     </div>
     
         
