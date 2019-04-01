@@ -2,23 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://orzyt.cn/posts/trie-summary/</loc>
+    <loc>https://orzyt.cn/posts/generative-adversarial-nets/</loc>
     
-    <lastmod>2019-04-01T04:52:50.670Z</lastmod>
+    <lastmod>2019-04-01T06:07:36.720Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/conditional-gan/</loc>
+    
+    <lastmod>2019-04-01T06:07:17.752Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/201903-summary/</loc>
+    
+    <lastmod>2019-04-01T05:33:35.117Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/centering-matrix/</loc>
+    
+    <lastmod>2019-04-01T05:33:15.341Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/deep-domain-confusion/</loc>
+    
+    <lastmod>2019-04-01T05:33:07.325Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
+    
+    <lastmod>2019-04-01T05:32:58.573Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
     
-    <lastmod>2019-04-01T04:52:42.610Z</lastmod>
+    <lastmod>2019-04-01T05:32:12.621Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
     
-    <lastmod>2019-04-01T04:52:36.566Z</lastmod>
+    <lastmod>2019-04-01T05:32:06.973Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/tic-tac-toe/</loc>
+    
+    <lastmod>2019-04-01T05:04:59.071Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/trie-summary/</loc>
+    
+    <lastmod>2019-04-01T04:52:50.670Z</lastmod>
     
   </url>
   
@@ -86,44 +135,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
-    
-    <lastmod>2019-04-01T04:51:00.978Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/deep-domain-confusion/</loc>
-    
-    <lastmod>2019-04-01T04:50:53.170Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/conditional-gan/</loc>
-    
-    <lastmod>2019-04-01T04:50:36.166Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/change-mirrors/</loc>
     
     <lastmod>2019-04-01T04:50:27.202Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/201903-summary/</loc>
-    
-    <lastmod>2019-04-01T04:18:13.251Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/centering-matrix/</loc>
-    
-    <lastmod>2019-03-31T04:28:16.475Z</lastmod>
     
   </url>
   
@@ -138,13 +152,6 @@
     <loc>https://orzyt.cn/study/index.html</loc>
     
     <lastmod>2019-03-25T05:42:52.671Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/tic-tac-toe/</loc>
-    
-    <lastmod>2019-03-08T13:29:43.661Z</lastmod>
     
   </url>
   
@@ -1034,13 +1041,6 @@
     <loc>https://orzyt.cn/posts/pair-programming-tutor-distribution/</loc>
     
     <lastmod>2018-11-10T11:47:16.931Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/generative-adversarial-nets/</loc>
-    
-    <lastmod>2018-11-10T11:47:16.927Z</lastmod>
     
   </url>
   
