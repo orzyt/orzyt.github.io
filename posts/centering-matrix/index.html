@@ -206,6 +206,7 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
+            <hr>
             
                 
                     <p>最近在看迁移学习的早期文章, 在求解优化问题时, 经常会涉及到<strong>中心矩阵</strong>(centering matrix). </p>
@@ -213,7 +214,7 @@ var _hmt = _hmt || [];
 <a id="more"></a>
 <hr>
 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>先从多维随机变量的协方差矩阵讲起.</p>
-<p>假设我们观察到 $n$ 个样本 $X=[\mathbf{x}_1,\mathbf{x}_2,\cdots,\mathbf{x}_n] \in \mathbf{R}^{p \times n}$，其中每个样本有 $p$ 维特征 (即 $p$ 个随机变量), $\mathbf{x}_i = [x_{i1}, \cdots, x_{ip}]^{\top} \in \mathbb{R}^{p \times 1}$. 我们往往需要计算各维度两两之间的协方差，这样各协方差组成了一个 $p*p$ 维的矩阵，称为协方差矩阵 $\Sigma$. 协方差矩阵是个对称矩阵, 对角线上的元素是各维度上随机变量的方差.</p>
+<p>假设我们观察到 $n$ 个样本 $X=[\mathbf{x}_1,\mathbf{x}_2,\cdots,\mathbf{x}_n] \in \mathbb{R}^{p \times n}$，其中每个样本有 $p$ 维特征 (即 $p$ 个随机变量), $\mathbf{x}_i = [x_{i1}, \cdots, x_{ip}]^{\top} \in \mathbb{R}^{p \times 1}$. 我们往往需要计算各维度两两之间的协方差，这样各协方差组成了一个 $p*p$ 维的矩阵，称为协方差矩阵 $\Sigma$. 协方差矩阵是个对称矩阵, 对角线上的元素是各维度上随机变量的方差.</p>
 <script type="math/tex; mode=display">
 \Sigma = \frac{1}{n} \sum^{n}_{i}(\mathbf{x}_i - \bar{\mathbf{x}})(\mathbf{x}_i - \bar{\mathbf{x}})^{\top}
 \tag{1}</script><p>其中, $\bar{\mathbf{x}} = \frac{1}{n} \sum^{n}_{i}\mathbf{x}_i \in \mathbb{R}^{p \times 1}$ 为 $p$ 个随机变量的均值.</p>
@@ -260,7 +261,7 @@ H^{2} &=\left(I_{n}-\frac1n \mathbf{1}_{n} \mathbf{1}_{n}^{\top}\right)\left(I_{
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/centering-matrix/" data-id="cjtwf86q4000m8jsiadxayi84" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/centering-matrix/" data-id="cjtxvpcim000o32siawws5ley" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -336,6 +337,15 @@ H^{2} &=\left(I_{n}-\frac1n \mathbf{1}_{n} \mathbf{1}_{n}^{\top}\right)\left(I_{
     
         
 <nav id="article-nav">
+    
+        <a href="/posts/201903-summary/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    【月度总结】2019年03月
+                
+            </div>
+        </a>
     
     
         <a href="/posts/deep-domain-confusion/" id="article-nav-older" class="article-nav-link-wrap">

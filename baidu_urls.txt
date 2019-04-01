@@ -1,3 +1,4 @@
+https://orzyt.cn/posts/201903-summary/
 https://orzyt.cn/posts/centering-matrix/
 https://orzyt.cn/posts/deep-domain-confusion/
 https://orzyt.cn/posts/transfer-component-analysis/

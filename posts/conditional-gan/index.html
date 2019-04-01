@@ -206,13 +206,16 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
+            <hr>
             
                 
                     <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在原始的生成对抗网络论文中，作者指出了一个可能的拓展:</p>
 <blockquote>
 <p>A conditional generative model $p(x|c)$ can be obtained by adding $c$ as input to both $G$ and $D$</p>
 </blockquote>
-<p>于是同年11月，Mirza等人便提出了<a href="https://arxiv.org/abs/1411.1784" target="_blank" rel="noopener">Conditional Generative Adversarial Networks</a>，这是一种带条件约束的生成模型。<br><a id="more"></a><br>它在生成器 $G$ 和 判别器 $D$ 中均引入了条件变量 $y$，这里 $y$ 可以是任何的辅助信息（比如说，类别标签、其它模态的数据等等）。使用这个额外的条件变量，对生成器数据的生成具有指导作用。因此，该项工作可以看成是把无监督的GAN变成有监督模型的一种改进。</p>
+<p>于是同年11月，Mirza等人便提出了<a href="https://arxiv.org/abs/1411.1784" target="_blank" rel="noopener">Conditional Generative Adversarial Networks</a>，这是一种带条件约束的生成模型。</p>
+<a id="more"></a>
+<p>它在生成器 $G$ 和 判别器 $D$ 中均引入了条件变量 $y$，这里 $y$ 可以是任何的辅助信息（比如说，类别标签、其它模态的数据等等）。使用这个额外的条件变量，对生成器数据的生成具有指导作用。因此，该项工作可以看成是把无监督的GAN变成有监督模型的一种改进。</p>
 <h2 id="基本框架"><a href="#基本框架" class="headerlink" title="基本框架"></a>基本框架</h2><p><img src="https://tuchuang001.com/images/2017/12/27/cgan.png" alt="Conditional GANs的基本框架" width="60%" height="60%"></p>
 <p><code>Conditional GANs</code>的基本框架非常地简单，只需在原始GAN的生成器和判别器的输入中，加入额外的条件信息即可。</p>
 <p>显然地，目标函数改为：</p>
@@ -241,7 +244,7 @@ var _hmt = _hmt || [];
 
 </div>
 
-    <a data-url="https://orzyt.cn/posts/conditional-gan/" data-id="cjtwf86q9000t8jsil1ykyoj0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://orzyt.cn/posts/conditional-gan/" data-id="cjtxvpcir000w32siajyrcahj" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
