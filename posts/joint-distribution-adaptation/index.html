@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>联合分布自适应 - 扬涛的博客</title>
+    <meta itemprop="name" content="联合分布自适应 - 扬涛的博客">
+    <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/libs/jquery/sort.js"></script>
+    
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?63f226f2212285cc30d6ffa0636da07a";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">扬涛的博客</span>
+            </a>
+            <nav id="main-nav">
+                <div>
+                    <ul class="nav navbar-nav">
+                    
+                        <a class="main-nav-link" href="/.">主页</a>
+                    
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    
+                        <a class="main-nav-link" href="/about">关于</a>
+                    
+                    
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            更多 
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            
+                                <li><a href="/study">学习资源汇总</a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                    </ul>
+                </div>
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/img/avatar.png">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <ul class="menu outer">
+            
+                <a class="main-nav-link" href="/.">主页</a>
+            
+                <a class="main-nav-link" href="/archives">归档</a>
+            
+                <a class="main-nav-link" href="/about">关于</a>
+            
+                           
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    更多 
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
+                    
+                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/img/avatar.png">
+            <h2 id="name">郑扬涛</h2>
+            <h3 id="title">M.S. Student @ Beihang Univ.</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/orzyt/activities">关注我</a>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/orzyt" target="_blank" title="github">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.linkedin.com/in/orzyt" target="_blank" title="linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/orzyt" target="_blank" title="weibo">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/atom.xml" target="_blank" title="rss">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+            
+            <section id="main"><article id="post-joint-distribution-adaptation" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner" \="">
+        
+        
+            <header class="article-header">
+                
+    
+        
+            <h1 class="article-title" itemprop="name">
+                联合分布自适应
+            </h1>
+        
+    
+
+                
+                    <div class="article-meta">
+                        
+    <span class="article-date">
+        <i class="fa fa-calendar"></i>
+        <time datetime="2019-03-28T12:51:46.000Z" itemprop="datePublished">2019-03-28</time>
+    </span>
+
+
+                        <span class="post-meta-divider">|</span>
+                        
+    <span class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/论文笔记/">论文笔记</a> & <a class="article-category-link" href="/categories/迁移学习/">迁移学习</a>
+    </span>
+
+                        <span class="post-meta-divider">|</span>
+                        
+    <span class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JDA/">JDA</a>, <a class="tag-link" href="/tags/迁移学习/">迁移学习</a>, <a class="tag-link" href="/tags/领域自适应/">领域自适应</a>
+    </span>
+
+                    </div>
+                
+                <hr>
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            
+                
+                    <hr>
+<p><strong>论文题目</strong>：Transfer Feature Learning with Joint Distribution Adaptation</p>
+<p><strong>论文作者</strong>：Mingsheng Long, Jianmin Wang, Guiguang Ding, Jiaguang Sun, and Philip S. Yu</p>
+<p><strong>会议期刊</strong>：ICCV 2013</p>
+<a id="more"></a>
+<hr>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在迁移成分分析方法中, 只对不同域的边缘分布进行匹配. 然而在真实情况下, 边缘分布和条件分布可能都是不匹配的, 如图1所示. 本文首次<strong>在无监督领域自适应</strong>条件下(即目标域中没有带标签数据), 对不同域之间的<strong>边缘分布</strong>和<strong>条件分布</strong>进行联合匹配.</p>
+<p><img src="https://wx4.sinaimg.cn/large/8662e3cely1g1iu5i9bdmj20pr0alt9j.jpg" alt="图1. 不同域的边缘分布和条件分布都不匹配" width="60%" height="60%"></p>
+<hr>
+<h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><blockquote>
+<p><strong>定义1 (领域, Domain)</strong><br>一个领域 $\mathcal{D}$ 由 $m$ 维的特征空间 $\mathcal{X}$ 和边缘概率分布 $P(x)$ 组成. 即 $\mathcal{D} = \{\mathcal{X}, P(x)\}$.</p>
+<p><strong>定义2 (任务, Task)</strong><br>给定领域 $\mathcal{D}$, 任务由 $C$ 类标签集 $\mathcal{Y}$ 和分类器 $f(x)$构成. 即 $\mathcal{T} = \{ \mathcal{Y}, f(x)\}$, 其中 $y \in \mathcal{Y}$ 且 $f(x) = Q(y|x)$ 可以解释为条件概率分布.</p>
+<p><strong>问题1 (联合分布自适应, Joint Distribution Adaptation)</strong><br>给定带标签源域 $\mathcal{D}_s = \{ (\mathrm{x}_1, y_1), \cdots, (\mathrm{x}_{n_s}, y_{n_s})\}$ 和无标签目标域 $\mathcal{D}_t = \{ \mathrm{x}_{n_{s}+1}, \cdots, \mathrm{x}_{n_s + n_t}\}$, 并设定源域和目标域的特征空间及类别空间相同 $\mathcal{X}_s = \mathcal{X}_t$, $\mathcal{Y}_s = \mathcal{Y}_t$, 但边缘分布和条件分布都不相同 $P_s(\mathrm{x}_s) \ne P_t(\mathrm{x}_t)$, $Q_s(y_s|\mathrm{x}_s) \ne Q_t(y_t|\mathrm{x}_t)$, JDA希望学习到减少边缘分布 $P_s(\mathrm{x}_s)$, $P_t(\mathrm{x}_t)$ 及条件分布 $Q_s(y_s|\mathrm{x}_s)$, $Q_t(y_t|\mathrm{x}_t)$之间差异的特征表示.</p>
+</blockquote>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>本文通过采用一个特征变换 $T$ 使得不同域之间的特征 $\mathcal{x}$ 和标签 $y$ 之间的联合概率期望相匹配.</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\min \limits_{T} & \Vert \mathbb{E}_{P(\mathrm{x}_s, y_s)}[T(\mathrm{x_s}), y_s] - \mathbb{E}_{P(\mathrm{x}_t, y_t)}[T(\mathrm{x_t}), y_t] \Vert^2 \\
+\approx & \Vert \mathbb{E}_{P(\mathrm{x}_s)}[T(\mathrm{x_s})] - \mathbb{E}_{P(\mathrm{x}_t)}[T(\mathrm{x_t})] \Vert^2 {\scriptsize // 边缘分布}\\
++ & \Vert \mathbb{E}_{Q_s(y_s|\mathrm{x}_s)}[y_s|T(\mathrm{x_s})] - \mathbb{E}_{Q_t(y_t|\mathrm{x}_t)}[y_t|T(\mathrm{x_t})] \Vert^2 \Vert^2 {\scriptsize // 后验分布}\\
+\end{aligned}
+\tag{1}</script><h3 id="特征变换"><a href="#特征变换" class="headerlink" title="特征变换"></a>特征变换</h3><p>本文采用<strong>主成分分析</strong>作为特征变换的方法.</p>
+<p>定义 $\mathbf{X}=\left[\mathbf{x}_{1}, \dots, \mathbf{x}_{n}\right] \in \mathbb{R}^{m \times n}$ 为输入数据, $\mathbf{H}$ 为<a href="/posts/centering-matrix/">中心矩阵</a>. PCA的优化目标为寻找一个正交变换矩阵 $\mathbf{A} \in \mathbb{R}^{m \times k}$ 使得变换后数据的方差最大化:</p>
+<script type="math/tex; mode=display">
+\max _{\mathbf{A}^{\mathrm{T}} \mathbf{A}=\mathbf{I}} \operatorname{tr}\left(\mathbf{A}^{\mathrm{T}} \mathbf{X} \mathbf{H} \mathbf{X}^{\mathrm{T}} \mathbf{A}\right)
+\tag{2}</script><p>该优化目标可以通过特征分解的方式高效地求解, 即 $\mathbf{A}$ 由协方差矩阵 $\mathbf{X} \mathbf{H} \mathbf{X}^{\mathrm{T}}$ 前 $k$ 大的特征值对应的特征向量构成.</p>
+<h3 id="边缘分布自适应"><a href="#边缘分布自适应" class="headerlink" title="边缘分布自适应"></a>边缘分布自适应</h3><p>类似于<a href="/posts/transfer-component-analysis/">迁移成分分析</a>, JDA中边缘分布自适应的优化目标为:</p>
+<script type="math/tex; mode=display">
+\left\|\frac{1}{n_{s}} \sum_{i=1}^{n_{s}} \mathbf{A}^{\mathrm{T}} \mathbf{x}_{i}-\frac{1}{n_{t}} \sum_{j=n_{s}+1}^{n_{s}+n_{t}} \mathbf{A}^{\mathrm{T}} \mathbf{x}_{j}\right\|^{2}=\operatorname{tr}\left(\mathbf{A}^{\mathrm{T}} \mathbf{X} \mathbf{M}_{0} \mathbf{X}^{\mathrm{T}} \mathbf{A}\right)
+\tag{3}</script><p>其中,</p>
+<script type="math/tex; mode=display">
+\left(M_{0}\right)_{i j}=\left\{\begin{array}{ll}{\frac{1}{n_{s} n_{s}},} & {\mathbf{x}_{i}, \mathbf{x}_{j} \in \mathcal{D}_{s}} \\ {\frac{1}{n_{t} n_{t}},} & {\mathbf{x}_{i}, \mathbf{x}_{j} \in \mathcal{D}_{t}} \\ {\frac{-1}{n_{s} n_{t}},} & {\text { otherwise }}\end{array}\right.
+\tag{4}</script><h3 id="条件分布自适应"><a href="#条件分布自适应" class="headerlink" title="条件分布自适应"></a>条件分布自适应</h3><p>由于目标域中的数据是无标签的, 从而无法估计目标域中的条件分布. 本文提出采用<strong>伪标签(pseudo label)</strong>的方式, 通过在带标签的源域数据中训练一个基分类器, 直接对目标域中的无标签数据进行预测. 由于存在分布差异, 基分类器的效果肯定是不好的, 因此只能得到一个大概的伪标签, 需要通过不断的迭代来调整.</p>
+<p>此外, 文中提到直接估计后验分布 $Q_{s}\left(y_{s} | \mathrm{x}_{s}\right)$ 和 $Q_{t}\left(y_{t} | \mathrm{x}_{t}\right)$ 是十分困难的. 因此, 采用类条件分布 $Q_{s}\left(\mathrm{x}_{s} | y_{s}\right)$ 和 $Q_{t}\left(\mathrm{x}_{t} | y_{t}\right)$ 的<strong>充分统计量(sufficient statistics)</strong>替代.</p>
+<blockquote>
+<p><strong>定义 (充分统计量, sufficient statistics)</strong><br>对于统计量 $t = T(X)$，若数据 $X$ 在已知 $t = T(X)$ 时的条件分布不依赖于参数 $\theta$，则称其是参数 $\theta$ 的充分统计量.</p>
+</blockquote>
+<p>首先, 为什么可以用类条件分布来近似后验分布?</p>
+<p>考虑使用贝叶斯公式 $Q(y|\mathrm{x}) = \frac{Q(\mathrm{x}|y)Q(y)}{Q(\mathrm{x})}$, 可以认为源域和目标域的边缘分布 $Q(\mathrm{x})$ 和类分布 $Q(y)$ 是相同的, 因此在衡量不同域间的后验分布差异时, 定值 $\frac{Q(y)}{Q(x)}$ 可以忽略, 从而可以直接用后验分布来代替.</p>
+<p>其次, 如何选择分布的充分统计量?</p>
+<p>本文采用最大均值差异MMD准则来度量分布差异, 本质上是使用再生希尔伯特空间中高维数据的均值来作为充分统计量.</p>
+<p>借助于类别伪标签和MMD准则, 从而可以衡量类条件分布 $Q_{s}\left(\mathbf{x}_{s} | y_{s}=c\right)$ 和 $Q_{t}\left(\mathbf{x}_{t} | y_{t}=c\right)$ 之间的差异.</p>
+<script type="math/tex; mode=display">
+\left\|\frac{1}{n_{S}^{(c)}} \sum_{\mathbf{x}_{i} \in \mathcal{D}_{s}^{(c)}} \mathbf{A}^{\mathrm{T}} \mathbf{x}_{i}-\frac{1}{n_{t}^{(c)}} \sum_{\mathbf{x}_{j} \in \mathcal{D}_{t}^{(c)}} \mathbf{A}^{\mathrm{T}} \mathbf{x}_{j}\right\|^{2}=\operatorname{tr}\left(\mathbf{A}^{\mathrm{T}} \mathbf{X} \mathbf{M}_{c} \mathbf{X}^{\mathrm{T}} \mathbf{A}\right)
+\tag{5}</script><p>其中, $\mathcal{D}_{s}^{(c)}=\left\{\mathbf{x}_{i} : \mathbf{x}_{i} \in \mathcal{D}_{s} \wedge y\left(\mathbf{x}_{i}\right)=c\right\}$ 是源域中属于类别 $c$ 的样本, $y\left(\mathbf{x}_{i}\right)$ 是样本 $\mathbf{x}_{i}$ 的标签, $n_{s}^{(c)}=\left|\mathcal{D}_{s}^{(c)}\right|$ 为源域的样本个数. 类似的, $\mathcal{D}_{t}^{(c)}=\left\{\mathbf{x}_{j} : \mathbf{x}_{j} \in \mathcal{D}_{t} \wedge \widehat{y}\left(\mathbf{x}_{j}\right)=c\right\}$ 为目标域中属于类别 $c$ 的数据, 其中 $\widehat{y}\left(\mathbf{x}_{j}\right)$ 是样本 $\mathbf{x}_{j}$ 的伪标签, $n_{t}^{(c)}=\left|\mathcal{D}_{t}^{(c)}\right|$ 为目标域的样本个数. </p>
+<p>包含类标签的MMD矩阵 $\mathbf{M}_{c}$ 定义如下:</p>
+<script type="math/tex; mode=display">
+\left(M_{c}\right)_{i j} = 
+\left\{
+  \begin{array}{ll}
+    {\frac{1}{n^{(c)}_{s} n^{(c)}_{s}},} & {\mathbf{x}_{i}, \mathbf{x}_{j} \in \mathcal{D}_{s}} \\
+    {\frac{1}{n^{(c)}_{t} n^{(c)}_{t}},} & {\mathbf{x}_{i}, \mathbf{x}_{j} \in \mathcal{D}_{t}} \\
+    {\frac{-1}{n^{(c)}_{s} n^{(c)}_{t}},} & {\left\{\begin{array}{l}{\mathbf{x}_{i} \in \mathcal{D}_{s}^{(c)}, \mathbf{x}_{j} \in \mathcal{D}_{t}^{(c)}} \\ {\mathbf{x}_{j} \in \mathcal{D}_{s}^{(c)}, \mathbf{x}_{i} \in \mathcal{D}_{t}^{(c)}}\end{array}\right.} \\
+    {0,} & {\text { otherwise }}
+  \end{array}
+\right.
+\tag{6}</script><h3 id="优化问题"><a href="#优化问题" class="headerlink" title="优化问题"></a>优化问题</h3><p>JDA的优化目标有三个:</p>
+<ul>
+<li>最大化投影后数据的方差, 即 $\max$ 公式$(2)$</li>
+<li>最小化边缘分布, 即 $\min$ 公式$(3)$</li>
+<li>最小化条件分布, 即 $\min$ 公式$(5)$</li>
+</ul>
+<p>根据<strong>广义瑞利商(generalized Rayleigh quotient)</strong>, JDA的优化目标可写为:</p>
+<script type="math/tex; mode=display">
+\min _{\mathbf{A}^{\mathrm{T}} \mathbf{X H X}^{T} \mathbf{A}=\mathbf{I}} \sum_{c=0}^{C} \operatorname{tr}\left(\mathbf{A}^{\mathrm{T}} \mathbf{X} \mathbf{M}_{c} \mathbf{X}^{\mathrm{T}} \mathbf{A}\right)+\lambda\|\mathbf{A}\|_{F}^{2}
+\tag{7}</script><p><strong>核化(Kernelization)</strong>: 对于非线性问题, 可以使用核函数映射 $\psi : \mathbf{x} \mapsto \psi(\mathbf{x})$, 或者 $\psi(\mathbf{X})=\left[\psi\left(\mathbf{x}_{1}\right), \ldots, \psi\left(\mathbf{x}_{n}\right)\right]$ 及核矩阵 $\mathbf{K}=\psi(\mathbf{X})^{\top}\psi(\mathbf{X})$, 从而得到kernel-JDA:</p>
+<script type="math/tex; mode=display">
+\min _{\mathbf{A}^{\mathrm{T}} \mathbf{K} \mathbf{H} \mathbf{K}^{\mathrm{T}} \mathbf{A}=\mathbf{I}} \sum_{c=0}^{C} \operatorname{tr}\left(\mathbf{A}^{\mathrm{T}} \mathbf{K} \mathbf{M}_{c} \mathbf{K}^{\mathrm{T}} \mathbf{A}\right)+\lambda\|\mathbf{A}\|_{F}^{2}
+\tag{8}</script><h2 id="学习算法"><a href="#学习算法" class="headerlink" title="学习算法"></a>学习算法</h2><p>根据拉格朗日乘子法, 公式$(7)$的拉格朗日函数为:</p>
+<script type="math/tex; mode=display">
+L = \operatorname{tr}\left(\mathbf{A}^{\mathrm{T}}\left(\mathbf{X} \sum_{c=0}^{C} \mathbf{M}_{c} \mathbf{X}^{\mathrm{T}}+\lambda \mathbf{I}\right) \mathbf{A}\right) + \operatorname{tr}\left(\left(\mathbf{I}-\mathbf{A}^{\mathrm{T}} \mathbf{X} \mathbf{H} \mathbf{X}^{\mathrm{T}} \mathbf{A}\right) \mathbf{\Phi}\right)
+\tag{9}</script><p>其中, $\mathbf{\Phi}=\operatorname{diag}\left(\phi_{1}, \dots, \phi_{k}\right) \in \mathbb{R}^{k \times k}$ 为拉格朗日乘子.</p>
+<p>令 $\frac{\partial L}{\partial \mathbf{A}}=0$, 从而得到<strong>广义特征分解(generalized eigendecomposition)</strong>问题:</p>
+<script type="math/tex; mode=display">
+\left(\mathbf{X} \sum_{c=0}^{C} \mathbf{M}_{c} \mathbf{X}^{\mathrm{T}}+\lambda \mathbf{I}\right) \mathbf{A}=\mathbf{X} \mathbf{H} \mathbf{X}^{\mathrm{T}} \mathbf{A} \boldsymbol{\Phi}
+\tag{10}</script><p>通过求解该广义特征分解问题, 可以得到变换矩阵 $A$ 的最优解.</p>
+<h2 id="联合分布自适应算法"><a href="#联合分布自适应算法" class="headerlink" title="联合分布自适应算法"></a>联合分布自适应算法</h2><p>联合分布自适应算法流程如下:</p>
+<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g1oo1qscnnj20q70gu0w2.jpg" alt="联合分布自适应算法" width="60%" height="60%"></p>
+<p>主要分为求解变换矩阵$A$, 训练分类器更新伪标签, 构造类MMD矩阵三部分. 注意算法需要不断迭代, 直到收敛.</p>
+
+                
+            
+        </div>
+        
+        
+            <br>
+        
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/posts/centering-matrix/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    中心矩阵
+                
+            </div>
+        </a>
+    
+    
+        <a href="/posts/deep-domain-confusion/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">深度域混淆</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+<div id="gitalkContainer"></div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar" style="position: sticky; top:-0.75rem;">
+   
+        
+<div class="toc-article" id="toc">
+    <h3 class="widget-title" style="font-size:14px;"><i class="fa fa-list-alt" style="color: #888;font-size: 14px;margin-right: 10px;"></i>文章目录</h3>
+    <div class="widget-toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题定义"><span class="toc-number">2.</span> <span class="toc-text">问题定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法"><span class="toc-number">3.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特征变换"><span class="toc-number">3.1.</span> <span class="toc-text">特征变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#边缘分布自适应"><span class="toc-number">3.2.</span> <span class="toc-text">边缘分布自适应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件分布自适应"><span class="toc-number">3.3.</span> <span class="toc-text">条件分布自适应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化问题"><span class="toc-number">3.4.</span> <span class="toc-text">优化问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#学习算法"><span class="toc-number">4.</span> <span class="toc-text">学习算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#联合分布自适应算法"><span class="toc-number">5.</span> <span class="toc-text">联合分布自适应算法</span></a></li></ol>
+    </div>
+</div>
+
+    
+        
+
+    
+        
+
+
+    
+</aside>
+<div id="toTop" class="fa fa-angle-up"></div>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 orzyt<br>
+            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+        </div>
+    </div>
+</footer>
+        
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        id: location.pathname,
+        clientID: '3628f46ff8965c297258', 
+        clientSecret: 'da2ef51d9fe687db577e834867d253a697f19a9f',
+        repo: 'comments',
+        owner: 'orzyt',
+        admin: ['orzyt'],
+        distractionFreeMode: false,
+        perPage: 20,
+        createIssueManually: false,
+        language: 'zh-CN', 
+    })
+    gitalk.render('gitalkContainer')
+</script>
+
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ 
+        tex2jax: { 
+            inlineMath: [['$','$'], ['\\(','\\)']] }, 
+            displayMath: [["$$","$$"]],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+            showProcessingMessages: false,
+            messageStyle: "none",
+        }
+    );
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+    <!-- page.__post !== true --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
+

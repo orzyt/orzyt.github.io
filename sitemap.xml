@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/posts/joint-distribution-adaptation/</loc>
+    
+    <lastmod>2019-04-02T14:49:22.350Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
+    
+    <lastmod>2019-04-02T13:00:17.720Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
+    
+    <lastmod>2019-04-02T12:58:37.264Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/about/index.html</loc>
+    
+    <lastmod>2019-04-02T11:37:21.800Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/generative-adversarial-nets/</loc>
     
     <lastmod>2019-04-01T06:07:36.720Z</lastmod>
@@ -40,20 +68,6 @@
     <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
     
     <lastmod>2019-04-01T05:32:58.573Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
-    
-    <lastmod>2019-04-01T05:32:12.621Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
-    
-    <lastmod>2019-04-01T05:32:06.973Z</lastmod>
     
   </url>
   
@@ -138,13 +152,6 @@
     <loc>https://orzyt.cn/posts/change-mirrors/</loc>
     
     <lastmod>2019-04-01T04:50:27.202Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/about/index.html</loc>
-    
-    <lastmod>2019-03-31T04:25:22.951Z</lastmod>
     
   </url>
   
