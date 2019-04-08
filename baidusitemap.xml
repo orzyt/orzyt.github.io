@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://orzyt.cn/posts/joint-distribution-adaptation/</loc>
-    <lastmod>2019-04-03</lastmod>
+    <lastmod>2019-04-08</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
     <lastmod>2019-04-02</lastmod>
@@ -469,19 +469,19 @@
     <loc>https://orzyt.cn/posts/hands-on-ml-up-and-running-tensorflow/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
+    <loc>https://orzyt.cn/posts/2015-acmicpc-beijing-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2015-acmicpc-beijing-summary/</loc>
+    <loc>https://orzyt.cn/posts/2016-acmicpc-qingdao-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
     <loc>https://orzyt.cn/posts/2016-ccpc-hefei-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2017-fjpcpc-summary/</loc>
+    <loc>https://orzyt.cn/posts/2017-cccc-final-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>  <url>
-    <loc>https://orzyt.cn/posts/2017-cccc-final-summary/</loc>
+    <loc>https://orzyt.cn/posts/2017-fjpcpc-summary/</loc>
     <lastmod>2018-11-10</lastmod>
   </url>
 </urlset>
