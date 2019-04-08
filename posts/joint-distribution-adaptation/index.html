@@ -181,7 +181,7 @@ var _hmt = _hmt || [];
                         
     <span class="article-date">
         <i class="fa fa-calendar"></i>
-        <time datetime="2019-03-28T12:51:46.000Z" itemprop="datePublished">2019-03-28</time>
+        <time datetime="2019-03-30T12:51:46.000Z" itemprop="datePublished">2019-03-30</time>
     </span>
 
 
@@ -246,7 +246,7 @@ var _hmt = _hmt || [];
 <p><strong>定义 (充分统计量, sufficient statistics)</strong><br>对于统计量 $t = T(X)$，若数据 $X$ 在已知 $t = T(X)$ 时的条件分布不依赖于参数 $\theta$，则称其是参数 $\theta$ 的充分统计量.</p>
 </blockquote>
 <p>首先, 为什么可以用类条件分布来近似后验分布?</p>
-<p>考虑使用贝叶斯公式 $Q(y|\mathrm{x}) = \frac{Q(\mathrm{x}|y)Q(y)}{Q(\mathrm{x})}$, 可以认为源域和目标域的边缘分布 $Q(\mathrm{x})$ 和类分布 $Q(y)$ 是相同的, 因此在衡量不同域间的后验分布差异时, 定值 $\frac{Q(y)}{Q(x)}$ 可以忽略, 从而可以直接用后验分布来代替.</p>
+<p>考虑使用贝叶斯公式 $Q(y|\mathrm{x}) = \frac{Q(\mathrm{x}|y)Q(y)}{Q(\mathrm{x})}$, 可以认为源域和目标域的边缘分布 $Q(\mathrm{x})$ 和类分布 $Q(y)$ 是相同的, 因此在衡量不同域间的后验分布差异时, 定值 $\frac{Q(y)}{Q(x)}$ 可以忽略, 从而可以直接用类条件分布来代替.</p>
 <p>其次, 如何选择分布的充分统计量?</p>
 <p>本文采用最大均值差异MMD准则来度量分布差异, 本质上是使用再生希尔伯特空间中高维数据的均值来作为充分统计量.</p>
 <p>借助于类别伪标签和MMD准则, 从而可以衡量类条件分布 $Q_{s}\left(\mathbf{x}_{s} | y_{s}=c\right)$ 和 $Q_{t}\left(\mathbf{x}_{t} | y_{t}=c\right)$ 之间的差异.</p>
@@ -300,19 +300,19 @@ L = \operatorname{tr}\left(\mathbf{A}^{\mathrm{T}}\left(\mathbf{X} \sum_{c=0}^{C
         
 <nav id="article-nav">
     
-        <a href="/posts/centering-matrix/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/posts/201903-summary/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
-                    中心矩阵
+                    2019年03月度总结
                 
             </div>
         </a>
     
     
-        <a href="/posts/deep-domain-confusion/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/posts/centering-matrix/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">深度域混淆</div>
+            <div class="article-nav-title">中心矩阵</div>
         </a>
     
 </nav>

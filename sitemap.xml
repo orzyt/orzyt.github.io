@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/about/index.html</loc>
+    
+    <lastmod>2019-04-08T06:11:33.361Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/posts/joint-distribution-adaptation/</loc>
     
-    <lastmod>2019-04-02T14:49:22.350Z</lastmod>
+    <lastmod>2019-04-03T04:59:56.790Z</lastmod>
     
   </url>
   
@@ -19,13 +26,6 @@
     <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
     
     <lastmod>2019-04-02T12:58:37.264Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/about/index.html</loc>
-    
-    <lastmod>2019-04-02T11:37:21.800Z</lastmod>
     
   </url>
   

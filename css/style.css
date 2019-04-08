@@ -116,7 +116,7 @@ body,
   height: 100%;
 }
 body {
-  color: #555;
+  color: #333;
   background: #f7f7f7;
   font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -222,7 +222,7 @@ code {
 .archive-article-header a:visited,
 .layout-wrap-inner.tag-cloud a:visited,
 .timeline-row .content h1 a:visited {
-  color: #555;
+  color: #333;
   transition: 0.2s ease;
 }
 .archive-article-header a:hover,
@@ -361,7 +361,7 @@ code {
 #header a:visited {
   white-space: nowrap;
   transition: 0.2s ease;
-  color: #555;
+  color: #333;
   font-weight: initial;
 }
 #header a:hover {
@@ -568,7 +568,7 @@ code {
   padding: 0;
   width: 200px;
   box-shadow: none;
-  color: #555;
+  color: #333;
   transition: 0.2s ease;
   box-sizing: border-box;
   height: auto !important;
@@ -685,7 +685,7 @@ code {
 #profile .inner .base-info #location {
   font-size: 12px;
   margin-top: 5px;
-  color: #999;
+  color: #777;
 }
 #profile .inner .base-info #location .fa {
   margin-right: 5px;
@@ -743,10 +743,10 @@ code {
 #profile .inner .social-links > table td a {
   position: relative;
   transition: 0.2s ease;
-  color: #888;
+  color: #666;
 }
 #profile .inner .social-links > table td a:hover {
-  color: #555;
+  color: #333;
 }
 #profile .inner .social-links > table td a.tooltip:hover:after {
   right: -50%;
@@ -820,12 +820,12 @@ code {
 }
 .article-title {
   font-size: 2em;
-  color: #555;
+  color: #333;
   text-decoration: none;
   line-height: 1.3em;
 }
 a.article-title:visited {
-  color: #555;
+  color: #333;
 }
 a.article-title:hover {
   color: #38b7ea;
@@ -877,7 +877,7 @@ a.article-title:hover {
   content: "#";
 }
 .article-entry {
-  color: #555;
+  color: #333;
   padding: 0 20px;
   line-height: 1.6em;
   font-size: 1.1em;
@@ -1107,7 +1107,7 @@ a.article-title:hover {
     margin-left: -4px;
     content: "";
     border-radius: 50%;
-    background: #777;
+    background: #555;
   }
 }
 .article-nav-link-wrap {
@@ -1119,7 +1119,7 @@ a.article-title:hover {
   display: block;
 }
 .article-nav-link-wrap:hover {
-  color: #555;
+  color: #333;
 }
 @media screen and (min-width: 1200px) {
   .article-nav-link-wrap {
@@ -1145,7 +1145,7 @@ a.article-title:hover {
   letter-spacing: 2px;
   line-height: 1em;
   font-weight: bold;
-  color: #555;
+  color: #333;
   text-transform: uppercase;
 }
 #article-nav-newer .article-nav-caption {
@@ -1154,7 +1154,7 @@ a.article-title:hover {
 .article-nav-title {
   font-size: 0.85em;
   margin-top: 0.5em;
-  color: #555;
+  color: #333;
   line-height: 1.6em;
 }
 .article-share-box {
@@ -1176,7 +1176,7 @@ a.article-title:hover {
   box-sizing: border-box;
   font: 14px "open sans", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
   padding: 0 10px;
-  color: #555;
+  color: #333;
   outline: none;
   border: 1px solid #eceff2;
   border-radius: 3px 3px 0 0;
@@ -1430,7 +1430,7 @@ a.article-title:hover {
 .archive-category-wrap .archive-year,
 .archive-tag-wrap .archive-year,
 .layout-title .archive-year {
-  color: #555;
+  color: #333;
 }
 .archive-year-wrap .archive-year:hover,
 .archive-category-wrap .archive-year:hover,
@@ -1609,7 +1609,7 @@ a.article-title:hover {
   }
 }
 #page-nav .current {
-  color: #555;
+  color: #333;
   font-weight: bold;
 }
 .timeline-wrap {
@@ -1687,7 +1687,7 @@ a.article-title:hover {
 }
 .timeline-row .content .article-meta {
   font-size: 12px;
-  color: #888;
+  color: #666;
   border-top: 1px solid #f7f7f7;
   background-color: rgba(244,246,247,0.2);
 }
@@ -1706,7 +1706,7 @@ a.article-title:hover {
 #footer {
   padding: 20px 0;
   border-top: 1px solid #eceff2;
-  color: #555;
+  color: #333;
   font-size: 16px;
   text-align: center;
 }
