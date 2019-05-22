@@ -216,7 +216,7 @@ var _hmt = _hmt || [];
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本文提出了一种新的卷积神经网络结构, 引入了<strong>自适应层</strong>(adaptation layer)和<strong>域混淆</strong>(domain confusion)损失函数, 从而可以学习到域不变(domain invariant)的特征表示.</p>
 <p>同时, 本文指出域混淆度量可以用来进行模型的选择, 即确定自适应层的维度及其在CNN中的位置.</p>
 <hr>
-<h2 id="基于CNN的域不变表示"><a href="#基于CNN的域不变表示" class="headerlink" title="基于CNN的域不变表示"></a>基于CNN的域不变表示</h2><div align="center"><img src="https://wx3.sinaimg.cn/large/8662e3cely1g1ikol7jozj20nz0ffgns.jpg" width="50%" height="50%"></div>
+<h2 id="基于CNN的域不变表示"><a href="#基于CNN的域不变表示" class="headerlink" title="基于CNN的域不变表示"></a>基于CNN的域不变表示</h2><div align="center"><img src="https://wx3.sinaimg.cn/large/8662e3cely1g1ikol7jozj20nz0ffgns.jpg" width="50%" height="50%" target="_blank" rel="noopener noreferrer"></div>
 
 <p>一个直观的想法是: <strong>学习可以最小化源域和目标域之间分布差异的特征表示, 使得可以在带标签的源域数据上训练分类器, 并直接应用在目标域的数据中.</strong></p>
 <p>为此, 作者考虑使用<strong>最大均值差异</strong>(Maximum Mean Discrepancy, MMD)作为分布距离的度量. </p>
@@ -226,23 +226,23 @@ MMD(X_S, X_T) = \left\Vert \frac{1}{|X_S|} \sum \limits_{x_s \in X_S} \phi(x_s) 
 <script type="math/tex; mode=display">
 \mathcal{L} = \mathcal{L}_{C}(X_L, y) + \lambda MMD^2(X_S, X_T)
 \tag{2}</script><p>其中, $\mathcal{L}_{C}(X_L, y)$ 为带标签数据的分类损失, $MMD$ 为源域与目标域之间的分布差异, $\lambda$ 为权衡参数.</p>
-<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><div align="center"><img src="https://wx1.sinaimg.cn/large/8662e3cely1g1im7vuuzaj20g50hbgmj.jpg" alt="网络结构" width="40%" height="“40%”"></div>
+<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><div align="center"><img rel="noreferrer" src="https://wx1.sinaimg.cn/large/8662e3cely1g1im7vuuzaj20g50hbgmj.jpg" alt="网络结构" width="40%" height="“40%”"></div>
 
 <p>本文所使用的网络基于<code>AlexNet</code>修改而来, 使用两个<strong>共享权重</strong>的CNN, 并在全连接层<code>fc7</code>之后添加了自适应层. 经过<code>fine-tuning</code>后, 作者认为自适应层可以同时学习到<strong>具有判别性</strong>且<strong>具有域不变性</strong>的特征表示.</p>
 <hr>
 <h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><p>本文采用<code>Office</code>数据集, 包含三个域: <code>Amazon</code>,<code>DSLR</code>和<code>Webcam</code>.</p>
 <p>迁移任务: <code>Amazon-&gt;Webcam</code>, <code>DSLR-&gt;Webcam</code>, <code>Webcam-&gt;DSLR</code></p>
-<h3 id="自适应层的位置"><a href="#自适应层的位置" class="headerlink" title="自适应层的位置"></a>自适应层的位置</h3><div align="center"><img src="https://wx3.sinaimg.cn/large/8662e3cely1g1imw2hsyvj20if0emdgw.jpg" width="40%" height="40%"></div>
+<h3 id="自适应层的位置"><a href="#自适应层的位置" class="headerlink" title="自适应层的位置"></a>自适应层的位置</h3><div align="center"><img rel="noreferrer" src="https://wx3.sinaimg.cn/large/8662e3cely1g1imw2hsyvj20if0emdgw.jpg" width="40%" height="40%"></div>
 
 <p>作者测试了将自适应层放置在不同的全连接层后面, 根据MMD准则, 发现放置在<code>fc7</code>后效果最好.</p>
-<h3 id="自适应层的维度"><a href="#自适应层的维度" class="headerlink" title="自适应层的维度"></a>自适应层的维度</h3><div align="center"><img src="https://wx1.sinaimg.cn/large/8662e3cely1g1imx3kkifj20io0ekab8.jpg" width="40%" height="40%"></div>
+<h3 id="自适应层的维度"><a href="#自适应层的维度" class="headerlink" title="自适应层的维度"></a>自适应层的维度</h3><div align="center"><img rel="noreferrer" src="https://wx1.sinaimg.cn/large/8662e3cely1g1imx3kkifj20io0ekab8.jpg" width="40%" height="40%"></div>
 
 <p>同时, 作者也测试了不同的自适应层维度, 根据MMD准则, 选择了<code>256</code>维.</p>
-<h3 id="迁移效果"><a href="#迁移效果" class="headerlink" title="迁移效果"></a>迁移效果</h3><div align="center"><img src="https://ws4.sinaimg.cn/large/8662e3cely1g1in4274mpj20dd05imxh.jpg" alt="有监督条件下的多分类精度" width="50%" height="50%"></div>
+<h3 id="迁移效果"><a href="#迁移效果" class="headerlink" title="迁移效果"></a>迁移效果</h3><div align="center"><img rel="noreferrer" src="https://ws4.sinaimg.cn/large/8662e3cely1g1in4274mpj20dd05imxh.jpg" alt="有监督条件下的多分类精度" width="50%" height="50%"></div>
 
-<div align="center"><img src="https://ws3.sinaimg.cn/large/8662e3cely1g1in55orc2j20dk05ot91.jpg" alt="无监督条件下的多分类精度" width="50%" height="50%"></div>
+<div align="center"><img rel="noreferrer" src="https://ws3.sinaimg.cn/large/8662e3cely1g1in55orc2j20dk05ot91.jpg" alt="无监督条件下的多分类精度" width="50%" height="50%"></div>
 
-<h3 id="正则化效果"><a href="#正则化效果" class="headerlink" title="正则化效果"></a>正则化效果</h3><div align="center"><img src="https://wx2.sinaimg.cn/large/8662e3cely1g1in768my6j20ii0b53yx.jpg" alt="有无正则化的测试精度" width="50%" height="50%"></div>
+<h3 id="正则化效果"><a href="#正则化效果" class="headerlink" title="正则化效果"></a>正则化效果</h3><div align="center"><img rel="noreferrer" src="https://wx2.sinaimg.cn/large/8662e3cely1g1in768my6j20ii0b53yx.jpg" alt="有无正则化的测试精度" width="50%" height="50%"></div>
                 
             
         </div>

@@ -236,7 +236,7 @@ var _hmt = _hmt || [];
 <li>牺牲立即回报可能会获得更多的长期回报.</li>
 </ul>
 <hr>
-<h3 id="智能体和环境"><a href="#智能体和环境" class="headerlink" title="智能体和环境"></a>智能体和环境</h3><p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k2ozf0lzj20aq0bxtb1.jpg" alt="Agent和环境" width="35%" height="35%"></p>
+<h3 id="智能体和环境"><a href="#智能体和环境" class="headerlink" title="智能体和环境"></a>智能体和环境</h3><p><img rel="noreferrer" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k2ozf0lzj20aq0bxtb1.jpg" alt="Agent和环境" width="35%" height="35%"></p>
 <p>智能体(Agent)在每个时刻$t$会:</p>
 <ul>
 <li>执行动作(Action)$A_t$;</li>
@@ -265,20 +265,20 @@ H_t = O_1, R_1, A_1, \dots, A_{t-1}, O_t, R_t</script><p>下一步将发生什�
 <p><strong>状态是历史的函数:</strong></p>
 <script type="math/tex; mode=display">
 S_t = f(H_t)</script><hr>
-<h4 id="环境状态"><a href="#环境状态" class="headerlink" title="环境状态"></a>环境状态</h4><p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k3akygqpj20b20cptb5.jpg" alt="环境状态" width="35%" height="35%"></p>
+<h4 id="环境状态"><a href="#环境状态" class="headerlink" title="环境状态"></a>环境状态</h4><p><img rel="noreferrer" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k3akygqpj20b20cptb5.jpg" alt="环境状态" width="35%" height="35%"></p>
 <p>环境状态 $S_{t}^{e}$ 是环境的私有表示,通常对于智能体来说该状态不可见.</p>
 <p>即使$S_{t}^{e}$可见,也可能包含不相关信息.</p>
 <hr>
-<h4 id="智能体状态"><a href="#智能体状态" class="headerlink" title="智能体状态"></a>智能体状态</h4><p><img src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k3e8bw4aj20b00cx419.jpg" alt="智能体状态" width="35%" height="35%"></p>
+<h4 id="智能体状态"><a href="#智能体状态" class="headerlink" title="智能体状态"></a>智能体状态</h4><p><img rel="noreferrer" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k3e8bw4aj20b00cx419.jpg" alt="智能体状态" width="35%" height="35%"></p>
 <p>智能体状态 $S_{t}^{a}$ 是智能体的内部表示,包含其用来决定下一步动作的信息,也是强化学习算法使用的信息.</p>
 <p>可以写成历史的函数: $S_{t}^{a} = f(H_t)$</p>
 <hr>
 <h4 id="信息状态"><a href="#信息状态" class="headerlink" title="信息状态"></a>信息状态</h4><p><strong>信息状态(也称为马尔科夫状态)</strong>: 包含历史中所有有用的信息.</p>
-<p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k3nzaa8yj20mn0593ym.jpg" alt="马尔科夫状态定义" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k3nzaa8yj20mn0593ym.jpg" alt="马尔科夫状态定义" width="60%" height="60%"></p>
 <p>马尔科夫状态表明: <strong>未来只与现在有关,而与过去无关.</strong></p>
 <p>其中,<strong>环境状态$S_t^e$</strong>和<strong>历史$H_t$</strong>具有马尔科夫性质.</p>
 <hr>
-<h4 id="Rat-Example"><a href="#Rat-Example" class="headerlink" title="Rat Example"></a>Rat Example</h4><p><img src="https://wx2.sinaimg.cn/large/8662e3cegy1g0k3trc5qxj20ny0doq88.jpg" alt="Rat Example" width="60%" height="60%"></p>
+<h4 id="Rat-Example"><a href="#Rat-Example" class="headerlink" title="Rat Example"></a>Rat Example</h4><p><img rel="noreferrer" src="https://wx2.sinaimg.cn/large/8662e3cegy1g0k3trc5qxj20ny0doq88.jpg" alt="Rat Example" width="60%" height="60%"></p>
 <ul>
 <li><p>假如个体状态=序列中的后三个事件(不包括电击、获得奶酪，下同),事件序列3的结果会是什么? (答案是：电击)</p>
 </li>
@@ -337,15 +337,15 @@ v_{\pi}(s) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}
 \mathcal{R}_{s}^{a} = \mathbb{E} \left[ R_{t+1} | S_{t} = s, A_{t} = a\right]</script></li>
 </ul>
 <hr>
-<h3 id="Maze-Example"><a href="#Maze-Example" class="headerlink" title="Maze Example"></a>Maze Example</h3><p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k4norup9j20mj092dg5.jpg" alt="Maze Example" width="60%" height="60%"></p>
+<h3 id="Maze-Example"><a href="#Maze-Example" class="headerlink" title="Maze Example"></a>Maze Example</h3><p><img rel="noreferrer" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k4norup9j20mj092dg5.jpg" alt="Maze Example" width="60%" height="60%"></p>
 <hr>
 <p><strong>策略表示:</strong></p>
 <p>箭头表示每个状态的策略 $\pi(s)$.</p>
-<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0k4u9pdcdj20f10c5q38.jpg" alt="Maze Example: Policy" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://wx1.sinaimg.cn/large/8662e3cegy1g0k4u9pdcdj20f10c5q38.jpg" alt="Maze Example: Policy" width="40%" height="40%"></p>
 <hr>
 <p><strong>值函数表示:</strong></p>
 <p>数值表示每个状态的值 $v_{\pi}(s)$.</p>
-<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k4w9vn7wj20f60cct8y.jpg" alt="Maze Example: Value Function" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k4w9vn7wj20f60cct8y.jpg" alt="Maze Example: Value Function" width="40%" height="40%"></p>
 <hr>
 <p><strong>模型表示:</strong></p>
 <p>智能体可能对环境建立内部模型</p>
@@ -353,7 +353,7 @@ v_{\pi}(s) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}
 <li>网格布局表示转移模型 $\mathcal{P}_{ss’}^{a}$;</li>
 <li>数值表示每个状态的立即奖励 $\mathcal{R}_{s}^{a}$.</li>
 </ul>
-<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0k51h023dj20c109kt8o.jpg" alt="Maze Example: Value Function" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://wx1.sinaimg.cn/large/8662e3cegy1g0k51h023dj20c109kt8o.jpg" alt="Maze Example: Value Function" width="40%" height="40%"></p>
 <hr>
 <h3 id="智能体的分类"><a href="#智能体的分类" class="headerlink" title="智能体的分类"></a>智能体的分类</h3><p>按智能体的成分分类:</p>
 <ul>
@@ -366,7 +366,7 @@ v_{\pi}(s) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}
 <li>无模型(Model Free)</li>
 <li>基于模型(Model Based)</li>
 </ul>
-<p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k55tidg0j20f30eaab9.jpg" alt="智能体分类" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k55tidg0j20f30eaab9.jpg" alt="智能体分类" width="40%" height="40%"></p>
 <hr>
 <h2 id="强化学习的问题"><a href="#强化学习的问题" class="headerlink" title="强化学习的问题"></a>强化学习的问题</h2><h3 id="学习与规划"><a href="#学习与规划" class="headerlink" title="学习与规划"></a>学习与规划</h3><p><strong>强化学习</strong></p>
 <ul>
@@ -374,14 +374,14 @@ v_{\pi}(s) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}
 <li>智能体与环境进行交互;</li>
 <li>智能体提升其策略.</li>
 </ul>
-<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0k5dprnn4j20p80ejn0q.jpg" alt="学习" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://ws4.sinaimg.cn/large/8662e3cegy1g0k5dprnn4j20p80ejn0q.jpg" alt="学习" width="60%" height="60%"></p>
 <p><strong>规划</strong></p>
 <ul>
 <li>环境的模型已知;</li>
 <li>智能体通过模型进行计算,无须与外部进行交互;</li>
 <li>智能体提升其策略</li>
 </ul>
-<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k5eleerwj20ok0df0u3.jpg" alt="规划" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k5eleerwj20ok0df0u3.jpg" alt="规划" width="60%" height="60%"></p>
 <hr>
 <h3 id="探索和利用"><a href="#探索和利用" class="headerlink" title="探索和利用"></a>探索和利用</h3><p>强化学习是一种试错(trial-and-error)学习.</p>
 <p>智能体需要从与环境的交互中找到一种好的策略,同时不损失过多的奖励.</p>
@@ -394,12 +394,12 @@ v_{\pi}(s) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}
 <h3 id="预测和控制"><a href="#预测和控制" class="headerlink" title="预测和控制"></a>预测和控制</h3><ul>
 <li><strong>预测(Prediction):</strong> 对未来进行评估.</li>
 </ul>
-<p><img src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k5ryo676j20nz0ds0tn.jpg" alt="Gridworld Example: Prediction" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k5ryo676j20nz0ds0tn.jpg" alt="Gridworld Example: Prediction" width="60%" height="60%"></p>
 <hr>
 <ul>
 <li><strong>控制(Control):</strong> 最优化未来的结果.</li>
 </ul>
-<p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k5r6vdmgj20nv0eot9w.jpg" alt="Gridworld Example: Control" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k5r6vdmgj20nv0eot9w.jpg" alt="Gridworld Example: Control" width="60%" height="60%"></p>
 <hr>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="http://www.incompleteideas.net/book/the-book-2nd.html" target="_blank" rel="noopener">Reinforcement learning: An introduction (second edition)</a> 第一章</li>

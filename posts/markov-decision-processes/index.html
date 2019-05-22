@@ -220,7 +220,7 @@ var _hmt = _hmt || [];
 <li>赌博机问题是只有一个状态的MDPs.</li>
 </ul>
 <hr>
-<h3 id="马尔可夫性质"><a href="#马尔可夫性质" class="headerlink" title="马尔可夫性质"></a>马尔可夫性质</h3><p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k3nzaa8yj20mn0593ym.jpg" alt="马尔科夫性质" width="60%" height="60%"></p>
+<h3 id="马尔可夫性质"><a href="#马尔可夫性质" class="headerlink" title="马尔可夫性质"></a>马尔可夫性质</h3><p><img rel="noreferrer" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k3nzaa8yj20mn0593ym.jpg" alt="马尔科夫性质" width="60%" height="60%"></p>
 <p>马尔科夫性质(Markov Property)表明: <strong>未来只与现在有关,而与过去无关.</strong></p>
 <hr>
 <h3 id="状态转移矩阵"><a href="#状态转移矩阵" class="headerlink" title="状态转移矩阵"></a>状态转移矩阵</h3><p>对于一个马尔可夫状态$S$及其后继状态$S’$,其状态转移概率由下式定义:</p>
@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
 <li>$\mathcal{P}$: 状态转移概率矩阵, $\mathcal { P } _ { s s ^ { \prime } } = \mathbb { P } \left[ S _ { t + 1 } = s ^ { \prime } | S _ { t } = s \right]$</li>
 </ul>
 </blockquote>
-<p><img src="https://wx2.sinaimg.cn/large/8662e3cegy1g0l1vm9xkzj20c80act96.jpg" alt="Example: Student Markov Chain" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://wx2.sinaimg.cn/large/8662e3cegy1g0l1vm9xkzj20c80act96.jpg" alt="Example: Student Markov Chain" width="50%" height="50%"></p>
 <p>圆圈代表状态, 箭头代表状态之间的转移, 数值代表转移概率.</p>
 <p>状态转移矩阵$\mathcal{P}$如下:</p>
 <script type="math/tex; mode=display">
@@ -255,7 +255,7 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 </blockquote>
-<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0l2klvnixj20cf0aowf0.jpg" alt="Example: Student MRP" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://wx1.sinaimg.cn/large/8662e3cegy1g0l2klvnixj20cf0aowf0.jpg" alt="Example: Student MRP" width="50%" height="50%"></p>
 <h3 id="回报"><a href="#回报" class="headerlink" title="回报"></a>回报</h3><blockquote>
 <p><strong>回报(Return)</strong> $G_t$ 是从时间 $t$ 开始的总折扣奖励.</p>
 <script type="math/tex; mode=display">G _ { t } = R _ { t + 1 } + \gamma R _ { t + 2 } + \ldots = \sum _ { k = 0 } ^ { \infty } \gamma ^ { k } R _ { t + k + 1 }</script></blockquote>
@@ -288,13 +288,13 @@ v ( s ) & = \mathbb { E } \left[ G _ { t } | S _ { t } = s \right] \\
 \tag{1}
 \label{eq:mrp-bellman-equation}</script><p>上式表明, $t$ 时刻的状态 $S_t$ 和 $t+1$ 时刻的状态 $S_{t+1}$ 的值函数之间满足递推关系. </p>
 <p>该递推式也称为<strong>贝尔曼方程(Bellman Equation)</strong>.</p>
-<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0l3fh3jb3j207802zglh.jpg" alt="Bellman Equation for MRPs" width="30%" height="30%"></p>
+<p><img rel="noreferrer" src="https://ws4.sinaimg.cn/large/8662e3cegy1g0l3fh3jb3j207802zglh.jpg" alt="Bellman Equation for MRPs" width="30%" height="30%"></p>
 <p>如果已知概率转移矩阵 $\mathcal{P}$, 则可将公式\eqref{eq:mrp-bellman-equation}变形为:</p>
 <script type="math/tex; mode=display">
 v ( s ) = \mathcal { R } _ { s } + \gamma \sum _ { s ^ { \prime } \in \mathcal { S } } \mathcal { P } _ { s s ^ { \prime } } v \left( s ^ { \prime } \right)
 \tag{2}
 \label{eq:mrp-bellman-equation-2}</script><p>例子:</p>
-<p><img src="https://wx2.sinaimg.cn/large/8662e3cegy1g0l3pbm9ixj20c30b5mxp.jpg" alt="Example: Bellman Equation for Student MRP" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://wx2.sinaimg.cn/large/8662e3cegy1g0l3pbm9ixj20c30b5mxp.jpg" alt="Example: Bellman Equation for Student MRP" width="40%" height="40%"></p>
 <p><strong>贝尔曼方程的矩阵形式:</strong></p>
 <p>可将公式\eqref{eq:mrp-bellman-equation-2}改写为矩阵形式:</p>
 <script type="math/tex; mode=display">
@@ -326,7 +326,7 @@ v & = ( I - \gamma \mathcal { P } ) ^ { - 1 } \mathcal { R }
 </ul>
 </blockquote>
 <p>例子:</p>
-<p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0l47drh0vj20g30d93zc.jpg" alt="Example: Student MDP" width="45%" height="45%"></p>
+<p><img rel="noreferrer" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0l47drh0vj20g30d93zc.jpg" alt="Example: Student MDP" width="45%" height="45%"></p>
 <hr>
 <h3 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h3><blockquote>
 <p><strong>策略(Policy) $\pi$</strong> 是给定状态的动作分布.</p>
@@ -358,31 +358,31 @@ v & = ( I - \gamma \mathcal { P } ) ^ { - 1 } \mathcal { R }
 v_{\pi}(s) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma v_{\pi}(S_{t+1}) | S_t = s \right]</script><p>动作值函数也可以类似地分解.</p>
 <script type="math/tex; mode=display">
 q_{\pi}(s, a) = \mathbb{E}_{\pi} \left[ R_{t+1} + \gamma q_{\pi}(S_{t+1}, A_{t+1}) | S_t = s, A_t = a \right]</script><hr>
-<p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0ldl141fkj20bb04xq2x.jpg" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0ldl141fkj20bb04xq2x.jpg" width="40%" height="40%"></p>
 <p>上图中, 空心圆圈代表状态, 实心圆圈代表动作.</p>
 <p>在已知策略 $\pi$ 的情况下, 状态值函数 $v_{\pi}(s)$ 可以用动作值函数 $q_{\pi}(s, a)$ 进行表示:</p>
 <script type="math/tex; mode=display">
 v_{\pi}(s) = \sum \limits_{a \in \mathcal{A}} \pi(a | s) q_{\pi}(s, a) 
 \tag{3}
 \label{eq:mdp-state-value-function}</script><hr>
-<p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0lds6jc80j20b004rmx6.jpg" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0lds6jc80j20b004rmx6.jpg" width="40%" height="40%"></p>
 <p>同理, 动作值函数 $q_{\pi}(s, a)$ 也可以用状态值函数 $v_{\pi}(s)$ 进行表示:</p>
 <script type="math/tex; mode=display">
 q_{\pi}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum \limits_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^{a}v_{\pi}(s') 
 \tag{4}
 \label{eq:mdp-action-value-function}</script><hr>
 <p><strong>状态值函数的贝尔曼期望方程:</strong></p>
-<p><img src="https://wx2.sinaimg.cn/large/8662e3cegy1g0le5yxgeij20b706hdfx.jpg" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://wx2.sinaimg.cn/large/8662e3cegy1g0le5yxgeij20b706hdfx.jpg" width="40%" height="40%"></p>
 <p>将公式\eqref{eq:mdp-action-value-function}代入公式\eqref{eq:mdp-state-value-function}中, 可得状态值函数的贝尔曼期望方程:</p>
 <script type="math/tex; mode=display">
 v_{\pi}(s) = \sum \limits_{a \in \mathcal{A}} \pi (a | s) \left( \mathcal{R}_{s}^{a} + \gamma \sum \limits_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^{a} v_{\pi}(s')  \right)</script><hr>
 <p><strong>动作值函数的贝尔曼期望方程:</strong></p>
-<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0le9cf2u7j20bd05wwek.jpg" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://ws4.sinaimg.cn/large/8662e3cegy1g0le9cf2u7j20bd05wwek.jpg" width="40%" height="40%"></p>
 <p>将公式\eqref{eq:mdp-state-value-function}代入公式\eqref{eq:mdp-action-value-function}中, 可得动作值函数的贝尔曼期望方程:</p>
 <script type="math/tex; mode=display">
 q_{\pi}(s, a) = \mathcal{R}_{s}^{a} + \gamma \sum \limits_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^{a} \sum \limits_{a' \in \mathcal{A}} \pi (a' | s') q_{\pi}(s', a')</script><hr>
 <p>例子:</p>
-<p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0lecy0oxgj20h90dcwfj.jpg" alt="状态值函数的贝尔曼期望方程示例" width="55%" height="55%"></p>
+<p><img rel="noreferrer" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0lecy0oxgj20h90dcwfj.jpg" alt="状态值函数的贝尔曼期望方程示例" width="55%" height="55%"></p>
 <hr>
 <p><strong>贝尔曼期望方程的矩阵形式:</strong></p>
 <script type="math/tex; mode=display">
@@ -399,10 +399,10 @@ v_{\pi} = (I - \gamma \mathcal{P}^{\pi})^{-1} \mathcal{R}^{\pi}</script><hr>
 </ul>
 <hr>
 <p>例子: </p>
-<p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0leoxfaylj20h70ee75c.jpg" alt="Student MDP中的最优状态值函数" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0leoxfaylj20h70ee75c.jpg" alt="Student MDP中的最优状态值函数" width="50%" height="50%"></p>
 <hr>
 <p>例子:</p>
-<p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0leqk38l4j20hh0eg75i.jpg" alt="Student MDP中的最优动作值函数" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0leqk38l4j20hh0eg75i.jpg" alt="Student MDP中的最优动作值函数" width="50%" height="50%"></p>
 <p>注: 根据公式\eqref{eq:mdp-state-value-function}, Pub动作的最优值应为 $q_{*} = +1 + (0.2 \times 6 + 0.4 \times 8 + 0.4 \times 10) = 9.4$.</p>
 <hr>
 <h3 id="最优策略"><a href="#最优策略" class="headerlink" title="最优策略"></a>最优策略</h3><p>首先定义策略之间的偏序关系, 使得策略之间可以进行比较:</p>
@@ -427,34 +427,34 @@ v_{\pi} = (I - \gamma \mathcal{P}^{\pi})^{-1} \mathcal{R}^{\pi}</script><hr>
 </ul>
 <hr>
 <p>例子:</p>
-<p><img src="https://wx4.sinaimg.cn/large/8662e3cegy1g0lfhg0710j20hn0ehjsl.jpg" alt="Student MDP的最优策略" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0lfhg0710j20hn0ehjsl.jpg" alt="Student MDP的最优策略" width="50%" height="50%"></p>
 <p>图中红色弧线表示每个状态的最优决策.</p>
 <hr>
 <h3 id="贝尔曼最优方程"><a href="#贝尔曼最优方程" class="headerlink" title="贝尔曼最优方程"></a>贝尔曼最优方程</h3><p>$v_{*}$可以通过贝尔曼最优方程递归得到:</p>
-<p><img src="https://ws1.sinaimg.cn/large/8662e3cegy1g0lfkujh38j20b804uaa2.jpg" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://ws1.sinaimg.cn/large/8662e3cegy1g0lfkujh38j20b804uaa2.jpg" width="40%" height="40%"></p>
 <script type="math/tex; mode=display">
 v_{*}(s) = \max \limits_{a} q_{*}(s, a)
 \tag{5}
 \label{eq:state-bellman-optimal-equation}</script><p>与公式\eqref{eq:mdp-state-value-function}的贝尔曼期望方程进行比较, 此时不再取均值, 而是取最大值.</p>
 <hr>
 <p>$q_{*}$与公式\eqref{eq:mdp-action-value-function}类似:</p>
-<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0m10t6s7vj208003a747.jpg" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://ws4.sinaimg.cn/large/8662e3cegy1g0m10t6s7vj208003a747.jpg" width="40%" height="40%"></p>
 <script type="math/tex; mode=display">
 q _ { * } ( s , a ) = \mathcal { R } _ { s } ^ { a } + \gamma \sum _ { s ^ { \prime } \in \mathcal { S } } \mathcal { P } _ { s s ^ { \prime } } ^ { a } v _ { * } \left( s ^ { \prime } \right)
 \tag{6}
 \label{eq:action-bellman-optimal-equation}</script><hr>
 <p><strong>状态值函数的贝尔曼最优方程</strong></p>
-<p><img src="https://wx3.sinaimg.cn/large/8662e3cegy1g0m14a2fenj208m04xq2x.jpg" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0m14a2fenj208m04xq2x.jpg" width="40%" height="40%"></p>
 <p>将公式\eqref{eq:action-bellman-optimal-equation}代入公式\eqref{eq:state-bellman-optimal-equation}可得 $v_{*}$ 的贝尔曼最优方程:</p>
 <script type="math/tex; mode=display">
 v _ { * } ( s ) = \max _ { a } \mathcal { R } _ { s } ^ { a } + \gamma \sum _ { s ^ { \prime } \in \mathcal { S } } \mathcal { P } _ { s s ^ { \prime } } ^ { a } v _ { * } \left( s ^ { \prime } \right)</script><hr>
 <p><strong>动作值函数的贝尔曼最优方程</strong></p>
-<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0m18irqg7j208804bgll.jpg" width="40%" height="40%"></p>
+<p><img rel="noreferrer" src="https://wx1.sinaimg.cn/large/8662e3cegy1g0m18irqg7j208804bgll.jpg" width="40%" height="40%"></p>
 <p>将公式\eqref{eq:state-bellman-optimal-equation}代入公式\eqref{eq:action-bellman-optimal-equation}可得 $q_{*}$ 的贝尔曼最优方程:</p>
 <script type="math/tex; mode=display">
 q _ { * } ( s , a ) = \mathcal { R } _ { s } ^ { a } + \gamma \sum _ { s ^ { \prime } \in \mathcal { S } } \mathcal { P } _ { s s ^ { \prime } } ^ { a } \max _ { a ^ { \prime } } q _ { * } \left( s ^ { \prime } , a ^ { \prime } \right)</script><hr>
 <p>例子:</p>
-<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0m1ato6q2j20d70atjs3.jpg" alt="Student MDP贝尔曼最优方程" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://ws4.sinaimg.cn/large/8662e3cegy1g0m1ato6q2j20d70atjs3.jpg" alt="Student MDP贝尔曼最优方程" width="50%" height="50%"></p>
 <hr>
 <h3 id="贝尔曼最优方程的求解"><a href="#贝尔曼最优方程的求解" class="headerlink" title="贝尔曼最优方程的求解"></a>贝尔曼最优方程的求解</h3><p>贝尔曼最优方程<strong>不是线性的</strong>(因为有取$max$操作), 因此没有封闭解(Closed-form solution).</p>
 <p>通常采用迭代求解方法:</p>

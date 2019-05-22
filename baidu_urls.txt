@@ -119,8 +119,8 @@ https://orzyt.cn/posts/matlab-tutorial/
 https://orzyt.cn/posts/coursera-linear-regression-with-multiple-variables-and-polynomial-regression/
 https://orzyt.cn/posts/leetcode100-same-tree/
 https://orzyt.cn/posts/leetcode122-best-time-to-buy-and-sell-stock-ii/
-https://orzyt.cn/posts/leetcode171-excel-sheet-column-number/
 https://orzyt.cn/posts/leetcode169-majority-element/
+https://orzyt.cn/posts/leetcode171-excel-sheet-column-number/
 https://orzyt.cn/posts/leetcode237-delete-node-in-a-linked-list/
 https://orzyt.cn/posts/leetcode242-valid-anagram/
 https://orzyt.cn/posts/leetcode258-add-digits/

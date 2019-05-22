@@ -2,16 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://orzyt.cn/posts/joint-distribution-adaptation/</loc>
+    <loc>https://orzyt.cn/about/index.html</loc>
     
-    <lastmod>2019-04-08T06:17:19.877Z</lastmod>
+    <lastmod>2019-05-22T04:48:11.770Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://orzyt.cn/about/index.html</loc>
+    <loc>https://orzyt.cn/posts/deep-domain-confusion/</loc>
     
-    <lastmod>2019-04-08T06:11:33.361Z</lastmod>
+    <lastmod>2019-04-29T12:21:19.891Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
+    
+    <lastmod>2019-04-29T08:21:35.060Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/tic-tac-toe/</loc>
+    
+    <lastmod>2019-04-29T08:21:13.104Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/planning-by-dp/</loc>
+    
+    <lastmod>2019-04-29T08:20:57.872Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
+    
+    <lastmod>2019-04-29T08:20:45.468Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/introduction-to-rl/</loc>
+    
+    <lastmod>2019-04-29T08:20:19.693Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/gridworld/</loc>
+    
+    <lastmod>2019-04-29T08:20:05.991Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
+    
+    <lastmod>2019-04-29T08:19:54.651Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/joint-distribution-adaptation/</loc>
+    
+    <lastmod>2019-04-29T08:18:53.411Z</lastmod>
     
   </url>
   
@@ -19,13 +75,6 @@
     <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
     
     <lastmod>2019-04-02T13:00:17.720Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
-    
-    <lastmod>2019-04-02T12:58:37.264Z</lastmod>
     
   </url>
   
@@ -58,27 +107,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/deep-domain-confusion/</loc>
-    
-    <lastmod>2019-04-01T05:33:07.325Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
-    
-    <lastmod>2019-04-01T05:32:58.573Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/tic-tac-toe/</loc>
-    
-    <lastmod>2019-04-01T05:04:59.071Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/trie-summary/</loc>
     
     <lastmod>2019-04-01T04:52:50.670Z</lastmod>
@@ -107,13 +135,6 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/planning-by-dp/</loc>
-    
-    <lastmod>2019-04-01T04:52:09.158Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/manacher-algorithm/</loc>
     
     <lastmod>2019-04-01T04:51:48.370Z</lastmod>
@@ -121,30 +142,9 @@
   </url>
   
   <url>
-    <loc>https://orzyt.cn/posts/markov-decision-processes/</loc>
-    
-    <lastmod>2019-04-01T04:51:44.274Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://orzyt.cn/posts/leetcode-algorithms-solutions/</loc>
     
     <lastmod>2019-04-01T04:51:29.666Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/introduction-to-rl/</loc>
-    
-    <lastmod>2019-04-01T04:51:21.698Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/gridworld/</loc>
-    
-    <lastmod>2019-04-01T04:51:09.846Z</lastmod>
     
   </url>
   

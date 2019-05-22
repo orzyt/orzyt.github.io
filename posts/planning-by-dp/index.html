@@ -271,7 +271,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>通常使用<strong>同步备份(synchronous backups)</strong>方法:</p>
 <p>对于第 $k+1$ 次迭代, 所有状态 $s$ 在第 $k+1$ 时刻的价值 $v_{k+1}(s)$ 用 $v_k(s’)$ 进行更新, 其中 $s’$ 是 $s$ 的后继状态.</p>
-<p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0nb9rn3v4j20ar06eq31.jpg" alt="迭代策略评估" width="30%" height="30%"></p>
+<p><img rel="noreferrer" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0nb9rn3v4j20ar06eq31.jpg" alt="迭代策略评估" width="30%" height="30%"></p>
 <script type="math/tex; mode=display">
 \begin{aligned} 
 v _ { k + 1 } ( s ) & = \sum _ { a \in \mathcal { A } } \pi ( a | s ) \left( \mathcal { R } _ { s } ^ { a } + \gamma \sum _ { s ^ { \prime } \in \mathcal { S } } \mathcal { P } _ { s s ^ { \prime } } ^ { a } v _ { k } \left( s ^ { \prime } \right) \right) \\
@@ -282,11 +282,11 @@ v _ { k + 1 } ( s ) & = \sum _ { a \in \mathcal { A } } \pi ( a | s ) \left( \ma
 <p>这里使用<code>in-place</code>版本, 即只保留一份 $v$ 数组, 没有新旧之分. </p>
 <p>通常来说, 该方法也能收敛到 $v_{\pi}$, 而且收敛速度可能更快.</p>
 <p>终止条件: $\max \limits_ { s \in \mathcal{S} } \left| v _ { k + 1 } ( s ) - v _ { k } ( s ) \right|$ 小于给定的误差 $\Delta$</p>
-<p><img src="https://ws1.sinaimg.cn/large/8662e3cegy1g0nj071hc6j20km08hq3t.jpg" alt="迭代策略评估伪代码" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://ws1.sinaimg.cn/large/8662e3cegy1g0nj071hc6j20km08hq3t.jpg" alt="迭代策略评估伪代码" width="60%" height="60%"></p>
 <hr>
 <p>例子: <strong>Small Gridworld</strong> <a href="https://github.com/orzyt/reinforcement-learning-an-introduction/blob/master/chapter04/grid_world.py" target="_blank" rel="noopener">[代码]</a></p>
-<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0nbvkvvotj20k00dkdgx.jpg" alt="Small Gridworld" width="50%" height="50%"></p>
-<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0nc5gkmd8j20e30lkwgd.jpg" alt="Small Gridworld Solution" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://ws4.sinaimg.cn/large/8662e3cegy1g0nbvkvvotj20k00dkdgx.jpg" alt="Small Gridworld" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://wx1.sinaimg.cn/large/8662e3cegy1g0nc5gkmd8j20e30lkwgd.jpg" alt="Small Gridworld Solution" width="50%" height="50%"></p>
 <hr>
 <h2 id="策略改进"><a href="#策略改进" class="headerlink" title="策略改进"></a>策略改进</h2><p>让我们考虑一个<strong>确定性策略</strong>(即对于一个状态来说, 其采取的动作是确定的, 而不是考虑每个动作的概率) $a = \pi(s)$.</p>
 <blockquote>
@@ -336,17 +336,17 @@ v _ { \pi } ( s ) = \mathbb { E } \left[ R _ { t + 1 } + \gamma R _ { t + 2 } + 
 </ul>
 <p>由于每个策略都比前一个策略更优, 同时一个有限状态的马尔可夫决策过程(finite MDP)仅有有限个策略, 因此该过程一定能够在有限次的迭代中收敛到最优策略 $\pi_{*}$ 和最优值函数 $v_{*}$.</p>
 <hr>
-<p><img src="https://ws4.sinaimg.cn/large/8662e3cegy1g0ncddk93hj20ni0cc0uq.jpg" alt="策略迭代" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://ws4.sinaimg.cn/large/8662e3cegy1g0ncddk93hj20ni0cc0uq.jpg" alt="策略迭代" width="50%" height="50%"></p>
 <hr>
 <p><strong>策略迭代算法:</strong></p>
 <p>策略迭代算法分为: <strong>初始化</strong>, <strong>策略评估</strong> 以及 <strong>策略改进</strong> 三部分.</p>
 <p>其中, 策略改进部分的终止条件为: <strong>是否所有状态的策略不再发生变化</strong>.</p>
-<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0njmn8jy5j20kq0e3760.jpg" alt="策略迭代算法" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://wx1.sinaimg.cn/large/8662e3cegy1g0njmn8jy5j20kq0e3760.jpg" alt="策略迭代算法" width="60%" height="60%"></p>
 <hr>
 <p>例子: <strong>Jack’s Car Rental</strong> <a href="https://github.com/orzyt/reinforcement-learning-an-introduction/blob/master/chapter04/car_rental.py" target="_blank" rel="noopener">[代码]</a>  (<em>先占个坑 , 等有时间把这个例子详细写下</em>)</p>
-<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0ncjvapk8j20ke0ebn32.jpg" alt="Jack’s Car Rental" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0ncjvapk8j20ke0ebn32.jpg" alt="Jack’s Car Rental" width="50%" height="50%"></p>
 <p>策略迭代求解结果:</p>
-<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0nclbnxl1j20jw0dgtam.jpg" alt="Jack’s Car Rental Solution" width="50%" height="50%"></p>
+<p><img rel="noreferrer" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0nclbnxl1j20jw0dgtam.jpg" alt="Jack’s Car Rental Solution" width="50%" height="50%"></p>
 <p>图中纵坐标是位置 $1$ 的汽车数量, 横坐标是位置 $2$ 的汽车数量, 该问题共有 $21 \times 21$ 个状态. </p>
 <p>图中的等高线将状态划分为不同的区域, 区域内的数值代表相应的策略(正数代表从位置 $1$ 移往位置 $2$ 的汽车数量, 负数则往反方向移动).</p>
 <hr>
@@ -360,7 +360,7 @@ v _ { \pi } ( s ) = \mathbb { E } \left[ R _ { t + 1 } + \gamma R _ { t + 2 } + 
 <hr>
 <h4 id="广义策略迭代"><a href="#广义策略迭代" class="headerlink" title="广义策略迭代"></a>广义策略迭代</h4><p><strong>广义策略迭代</strong>(Generalized Policy iteration，GPI)指代让策略评估(policy-evaluation)和策略改进(policyimprovement)过程进行交互的一般概念, 其不依赖于两个过程的粒度(granularity)和其他细节.</p>
 <p>几乎所有强化学习方法都可以很好地被描述为GPI. 也就是说, 它们都具有可辨识的策略与值函数. 其中, 策略 $\pi$ 通过相应的值函数 $v$ 进行改进, 而值函数 $V$ 总是趋向策略 $\pi$ 的值函数 $v^{\pi}$. 如下图所示,</p>
-<p><img src="https://ws3.sinaimg.cn/large/8662e3cegy1g0nik26512j206y0a5dfz.jpg" alt="广义策略迭代" width="20%" height="20%"></p>
+<p><img rel="noreferrer" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0nik26512j206y0a5dfz.jpg" alt="广义策略迭代" width="20%" height="20%"></p>
 <hr>
 <h2 id="值迭代"><a href="#值迭代" class="headerlink" title="值迭代"></a>值迭代</h2><p>策略迭代的一个缺点是它的每次迭代都涉及策略评估, 这本身就是一个需要对状态集进行多次扫描的耗时迭代计算. </p>
 <p>而在值迭代的过程中, 并没有出现显式的策略, 并且中间过程的值函数可能也不和任何策略对应.</p>
@@ -370,7 +370,7 @@ v _ { \pi } ( s ) = \mathbb { E } \left[ R _ { t + 1 } + \gamma R _ { t + 2 } + 
 <li>当前状态的最优动作 $A_{*}$</li>
 <li>后继状态 $S^{\prime}$ 的最优策略</li>
 </ul>
-<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g0nk02i8apj20mi06v75b.jpg" alt="最优性原则" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0nk02i8apj20mi06v75b.jpg" alt="最优性原则" width="60%" height="60%"></p>
 <p>该原则的意思是说, 一个策略 $\pi(a|s)$ 在状态 $s$ 取到最优值函数 $v_{\pi}(s) = v_{*}(s)$ <strong>当且仅当</strong> 对于所有从状态 $s$ 出发可到达的状态 $s^{\prime}$, 策略 $\pi$ 也能够在状态 $s^{\prime}$ 取到最优值函数.</p>
 <hr>
 <h3 id="确定性值迭代"><a href="#确定性值迭代" class="headerlink" title="确定性值迭代"></a>确定性值迭代</h3><p>如果我们已经知道子问题的最优解 $v_{*}(s^{\prime})$, 那么状态 $s$ 的最优解可以通过向前看(lookahead)一步得到, 这称为<strong>值迭代(Value Iteration)</strong>:</p>
@@ -378,7 +378,7 @@ v _ { \pi } ( s ) = \mathbb { E } \left[ R _ { t + 1 } + \gamma R _ { t + 2 } + 
 v_{*}(s) \gets \max \limits_{a \in \mathcal{A}} \left( \mathcal{R}_{s}^{a} + \gamma \sum \limits_{s' \in \mathcal{S}} \mathcal{P}_{ss'}^{a} v_{*}(s') \right)</script><hr>
 <p><strong>值迭代算法:</strong></p>
 <p>值迭代算法和策略迭代算法一样, 是用来估计最优策略 $\pi_{*}$ 的, 它将策略评估和策略改进有效地结合在了一起.</p>
-<p><img src="https://wx1.sinaimg.cn/large/8662e3cegy1g0nkt7xfz0j20kn09k0ts.jpg" alt="值迭代算法" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://wx1.sinaimg.cn/large/8662e3cegy1g0nkt7xfz0j20kn09k0ts.jpg" alt="值迭代算法" width="60%" height="60%"></p>
 <hr>
 <h2 id="同步动态规划算法总结"><a href="#同步动态规划算法总结" class="headerlink" title="同步动态规划算法总结"></a>同步动态规划算法总结</h2><div class="table-container">
 <table>

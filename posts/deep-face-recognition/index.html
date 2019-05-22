@@ -223,7 +223,7 @@ var _hmt = _hmt || [];
 <li><p><strong>人脸识别（face recognition</strong>）：包括人脸处理、人脸表示和人脸匹配部分。</p>
 </li>
 </ul>
-<p><img alt="人脸系统示意图" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k1j4up5oj21cb0ik489.jpg" width="100%" height="100%"></p>
+<p><img rel="noreferrer" alt="人脸系统示意图" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k1j4up5oj21cb0ik489.jpg" width="100%" height="100%"></p>
 <ul>
 <li><p><strong>训练集（training set）</strong>：用于训练系统的人脸集；</p>
 </li>
@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
 </ul>
 <h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><h3 id="主流结构"><a href="#主流结构" class="headerlink" title="主流结构"></a>主流结构</h3><p>在人脸识别问题中，主流的网络结构基本上都借鉴于物体分类问题，一直从AlexNet到SENet。</p>
 <p>在2014年，DeepFace<sup><a href="#fn_1" id="reffn_1">1</a></sup>首次使用九层的卷积神经网络，经过3D人脸对齐处理，在LFW上达到了97.35%的准确率。在2015年，FaceNet<sup><a href="#fn_9" id="reffn_9">9</a></sup>在一个很大的私人数据集上训练GoogLeNet，采用triplet loss，得到99.63%的准确率。同年，VGGface<sup><a href="#fn_10" id="reffn_10">10</a></sup>从互联网中收集了一个大的数据集，并在其上训练VGGNet，得到了98.95%的准确率。在2017年，SphereFace<sup><a href="#fn_11" id="reffn_11">11</a></sup>使用64层的ResNet结构，采用angular softmax（A-softmax）loss，得到99.42%的准确率。在2017年末，VGGFace2<sup><a href="#fn_12" id="reffn_12">12</a></sup>作为一个新人脸的数据集被引入，同时使用SENet进行训练，在IJB-A和IJB-B上都取得SOTA。</p>
-<p><img alt="主流网络结构的演变" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1jnv2szj210109oacr.jpg" width="90%" height="90%"></p>
+<p><img rel="noreferrer" alt="主流网络结构的演变" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1jnv2szj210109oacr.jpg" width="90%" height="90%"></p>
 <ul>
 <li><p><code>AlexNet</code><sup><a href="#fn_2" id="reffn_2">2</a></sup>：AlexNet包括五个卷积层和三个全连接层，并且集成了如ReLU、dropout、数据增强等技术；</p>
 </li>
@@ -254,7 +254,7 @@ var _hmt = _hmt || [];
 <li><p><code>SENet</code><sup><a href="#fn_6" id="reffn_6">6</a></sup>：提出了Squeeze-and-Excitation操作，通过显式建模channel之间的相互依赖性，自适应地重新校准channel间的特征响应。</p>
 </li>
 </ul>
-<p><img alt="主流网络结构示意图" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1jytblsj20of0kgwhp.jpg" width="60%" height="60%"></p>
+<p><img rel="noreferrer" alt="主流网络结构示意图" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1jytblsj20of0kgwhp.jpg" width="60%" height="60%"></p>
 <h3 id="特殊结构"><a href="#特殊结构" class="headerlink" title="特殊结构"></a>特殊结构</h3><ul>
 <li><p><code>Light CNN</code><sup><a href="#fn_7" id="reffn_7">7</a></sup></p>
 </li>
@@ -264,8 +264,8 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 <h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><p>在一开始，人们使用和物体分类同样的基于交叉熵的softmax loss，后来发现其不适用于人脸特征的学习，于是开始探索更具有判别性的loss。</p>
-<p><img alt="人脸损失函数的演变" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1kfbt7kj217u0e8dlk.jpg" width="90%" height="90%"></p>
-<p><img alt="不同方法在LFW数据集上的准确率" src="https://wx2.sinaimg.cn/large/8662e3cegy1g0k1kr4sx8j215r0k9wlm.jpg" width="90%" height="90%"></p>
+<p><img rel="noreferrer" alt="人脸损失函数的演变" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1kfbt7kj217u0e8dlk.jpg" width="90%" height="90%"></p>
+<p><img rel="noreferrer" alt="不同方法在LFW数据集上的准确率" src="https://wx2.sinaimg.cn/large/8662e3cegy1g0k1kr4sx8j215r0k9wlm.jpg" width="90%" height="90%"></p>
 <h3 id="基于欧几里德距离"><a href="#基于欧几里德距离" class="headerlink" title="基于欧几里德距离"></a>基于欧几里德距离</h3><hr>
 <h4 id="contrastive-loss"><a href="#contrastive-loss" class="headerlink" title="contrastive loss"></a>contrastive loss</h4><p>相关文献：</p>
 <ul>
@@ -280,14 +280,14 @@ var _hmt = _hmt || [];
 <li><strong>《Facenet: A unified embedding for face recognition and clustering》</strong></li>
 </ul>
 <script type="math/tex; mode=display">
-\mathcal{L} = \sum _ { i } ^ { N } \left[ \left\| f \left( x _ { i } ^ { a } \right) - f \left( x _ { i } ^ { p } \right) \right\| _ { 2 } ^ { 2 } - \left\| f \left( x _ { i } ^ { a } \right) - f \left( x _ { i } ^ { n } \right) \right\| _ { 2 } ^ { 2 } + \alpha \right] _ { + }</script><p><img alt="triplet loss示意图" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k1l9pm84j20x007ht9n.jpg" width="70%" height="70%"></p>
+\mathcal{L} = \sum _ { i } ^ { N } \left[ \left\| f \left( x _ { i } ^ { a } \right) - f \left( x _ { i } ^ { p } \right) \right\| _ { 2 } ^ { 2 } - \left\| f \left( x _ { i } ^ { a } \right) - f \left( x _ { i } ^ { n } \right) \right\| _ { 2 } ^ { 2 } + \alpha \right] _ { + }</script><p><img rel="noreferrer" alt="triplet loss示意图" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k1l9pm84j20x007ht9n.jpg" width="70%" height="70%"></p>
 <hr>
 <h4 id="center-loss"><a href="#center-loss" class="headerlink" title="center loss"></a>center loss</h4><p>相关文献：</p>
 <ul>
 <li><strong>《A Discriminative Feature Learning Approach for Deep Face Recognition》</strong></li>
 </ul>
 <script type="math/tex; mode=display">
-\begin{aligned} \mathcal { L } & = \mathcal { L } _ { S } + \lambda \mathcal { L } _ { C } \\ & = - \sum _ { i = 1 } ^ { m } \log \frac { e ^ { W _ { y _ { i } } ^ { T } \boldsymbol { x } _ { i } + b _ { y _ { i } } } } { \sum _ { j = 1 } ^ { n } e ^ { W _ { j } ^ { T } \boldsymbol { x } _ { i } + b _ { j } } } + \frac { \lambda } { 2 } \sum _ { i = 1 } ^ { m } \left\| \boldsymbol { x } _ { i } - \boldsymbol { c } _ { y _ { i } } \right\| _ { 2 } ^ { 2 } \end{aligned}</script><p><img alt="center loss示意图" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k1lnsllgj20tr0m1qdq.jpg" width="60%" height="60%"></p>
+\begin{aligned} \mathcal { L } & = \mathcal { L } _ { S } + \lambda \mathcal { L } _ { C } \\ & = - \sum _ { i = 1 } ^ { m } \log \frac { e ^ { W _ { y _ { i } } ^ { T } \boldsymbol { x } _ { i } + b _ { y _ { i } } } } { \sum _ { j = 1 } ^ { n } e ^ { W _ { j } ^ { T } \boldsymbol { x } _ { i } + b _ { j } } } + \frac { \lambda } { 2 } \sum _ { i = 1 } ^ { m } \left\| \boldsymbol { x } _ { i } - \boldsymbol { c } _ { y _ { i } } \right\| _ { 2 } ^ { 2 } \end{aligned}</script><p><img rel="noreferrer" alt="center loss示意图" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k1lnsllgj20tr0m1qdq.jpg" width="60%" height="60%"></p>
 <hr>
 <h4 id="range-loss"><a href="#range-loss" class="headerlink" title="range loss"></a>range loss</h4><p>相关文献：</p>
 <ul>
@@ -303,7 +303,7 @@ var _hmt = _hmt || [];
 <li><strong>《Deep face recognition with center invariant loss》</strong></li>
 </ul>
 <script type="math/tex; mode=display">
-\begin{aligned} L = & L _ { s } + \gamma L _ { I } + \lambda L _ { c } \\ = & - \log \left( \frac { e ^ { \mathbf { w } _ { y } ^ { T } \mathbf { x } _ { i } + b _ { y } } } { \sum _ { j = 1 } ^ { m } e ^ { \mathbf { w } _ { j } ^ { T } \mathbf { x } _ { i } + b _ { j } } } \right) + \frac { \gamma } { 4 } \left( \left\| \mathbf { c } _ { y } \right\| _ { 2 } ^ { 2 } - \frac { 1 } { m } \sum _ { k = 1 } ^ { m } \left\| \mathbf { c } _ { k } \right\| _ { 2 } ^ { 2 } \right) ^ { 2 } \\ & + \frac { \lambda } { 2 } \left\| \mathbf { x } _ { i } - \mathbf { c } _ { y } \right\| ^ { 2 } \end{aligned}</script><p><img alt="center invariant loss示意图" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k1lvxp55j20zt0i4n3g.jpg" width="60%" height="60%"></p>
+\begin{aligned} L = & L _ { s } + \gamma L _ { I } + \lambda L _ { c } \\ = & - \log \left( \frac { e ^ { \mathbf { w } _ { y } ^ { T } \mathbf { x } _ { i } + b _ { y } } } { \sum _ { j = 1 } ^ { m } e ^ { \mathbf { w } _ { j } ^ { T } \mathbf { x } _ { i } + b _ { j } } } \right) + \frac { \gamma } { 4 } \left( \left\| \mathbf { c } _ { y } \right\| _ { 2 } ^ { 2 } - \frac { 1 } { m } \sum _ { k = 1 } ^ { m } \left\| \mathbf { c } _ { k } \right\| _ { 2 } ^ { 2 } \right) ^ { 2 } \\ & + \frac { \lambda } { 2 } \left\| \mathbf { x } _ { i } - \mathbf { c } _ { y } \right\| ^ { 2 } \end{aligned}</script><p><img rel="noreferrer" alt="center invariant loss示意图" src="https://ws3.sinaimg.cn/large/8662e3cegy1g0k1lvxp55j20zt0i4n3g.jpg" width="60%" height="60%"></p>
 <hr>
 <h3 id="基于角度-余弦间隔"><a href="#基于角度-余弦间隔" class="headerlink" title="基于角度/余弦间隔"></a>基于角度/余弦间隔</h3><hr>
 <h4 id="L-Softmax-loss"><a href="#L-Softmax-loss" class="headerlink" title="L-Softmax loss"></a>L-Softmax loss</h4><p>相关文献：</p>
@@ -313,7 +313,7 @@ var _hmt = _hmt || [];
 <script type="math/tex; mode=display">
 L _ { i } = - \log \left( \frac { e ^ { \left\| \boldsymbol { W } _ { y _ { i } } \right\| \left\| \boldsymbol { x } _ { i } \right\| \psi \left( \theta _ { y _ { i } } \right) } } { e ^ { \left\| \boldsymbol { W } _ { y _ { i } } \right\| \boldsymbol { w } \left( \theta _ { \boldsymbol { y } _ { i } } \right) } + \sum _ { j \neq y _ { i } } e ^ { \left\| \boldsymbol { W } _ { j } \right\| \left\| \boldsymbol { x } _ { i } \right\| \cos \left( \theta _ { j } \right) } } \right)</script><script type="math/tex; mode=display">
 \psi ( \theta ) = ( - 1 ) ^ { k } \cos ( m \theta ) - 2 k , \quad \theta \in \left[ \frac { k \pi } { m } , \frac { ( k + 1 ) \pi } { m } \right]</script><script type="math/tex; mode=display">
-f _ { y _ { i } } = \frac { \lambda \left\| \boldsymbol { W } _ { y _ { i } } \right\| \left\| \boldsymbol { x } _ { i } \right\| \cos \left( \theta _ { y _ { i } } \right) + \left\| \boldsymbol { W } _ { y _ { i } } \right\| \left\| \boldsymbol { x } _ { i } \right\| \psi \left( \theta _ { \boldsymbol { y } _ { i } } \right) } { 1 + \lambda }</script><p><img alt="L-Softmax loss二分类示意图" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k1m4b63ij20fv0ib40x.jpg" width="50%" height="50%"></p>
+f _ { y _ { i } } = \frac { \lambda \left\| \boldsymbol { W } _ { y _ { i } } \right\| \left\| \boldsymbol { x } _ { i } \right\| \cos \left( \theta _ { y _ { i } } \right) + \left\| \boldsymbol { W } _ { y _ { i } } \right\| \left\| \boldsymbol { x } _ { i } \right\| \psi \left( \theta _ { \boldsymbol { y } _ { i } } \right) } { 1 + \lambda }</script><p><img rel="noreferrer" alt="L-Softmax loss二分类示意图" src="https://ws2.sinaimg.cn/large/8662e3cegy1g0k1m4b63ij20fv0ib40x.jpg" width="50%" height="50%"></p>
 <hr>
 <h4 id="A-Softmax-loss"><a href="#A-Softmax-loss" class="headerlink" title="A-Softmax loss"></a>A-Softmax loss</h4><p>相关文献：</p>
 <ul>
@@ -322,14 +322,14 @@ f _ { y _ { i } } = \frac { \lambda \left\| \boldsymbol { W } _ { y _ { i } } \r
 <script type="math/tex; mode=display">
 L _ { \mathrm { ang } } = \frac { 1 } { N } \sum _ { i } - \log \left( \frac { e ^ { \left\| \boldsymbol { x } _ { i } \right\| \psi \left( \theta _ { y _ { i } , i } \right) } } { e ^ { \left\| \boldsymbol { x } _ { i } \right\| \psi \left( \theta _ { y _ { i } } , i \right) } + \sum _ { j \neq y _ { i } } e ^ { \left\| \boldsymbol { x } _ { i } \right\| \cos \left( \theta _ { j , i } \right) } } \right)</script><script type="math/tex; mode=display">
 \psi \left( \theta _ { y _ { i } , i } \right) = ( - 1 ) ^ { k } \cos \left( m \theta _ { y _ { i } , i } \right) - 2 k</script><script type="math/tex; mode=display">
-\theta _ { y _ { i } , i } \in \left[ \frac { k \pi } { m } , \frac { ( k + 1 ) \pi } { m } \right] \text { and } k \in [ 0 , m - 1 ]</script><p><img alt="A-Softmax loss示意图" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k1mg2yrlj20hk0ca0v4.jpg" width="50%" height="50%"></p>
+\theta _ { y _ { i } , i } \in \left[ \frac { k \pi } { m } , \frac { ( k + 1 ) \pi } { m } \right] \text { and } k \in [ 0 , m - 1 ]</script><p><img rel="noreferrer" alt="A-Softmax loss示意图" src="https://wx4.sinaimg.cn/large/8662e3cegy1g0k1mg2yrlj20hk0ca0v4.jpg" width="50%" height="50%"></p>
 <hr>
 <h4 id="AM-Softmax-loss"><a href="#AM-Softmax-loss" class="headerlink" title="AM-Softmax loss"></a>AM-Softmax loss</h4><p>相关文献：</p>
 <ul>
 <li><strong>《Additive margin softmax for face verification》</strong></li>
 </ul>
 <script type="math/tex; mode=display">
-\begin{aligned} \mathcal { L } _ { A M S } & = - \frac { 1 } { n } \sum _ { i = 1 } ^ { n } \log \frac { e ^ { s \cdot \left( \cos \theta _ { y _ { i } } - m \right) } } { e ^ { s \cdot \left( \cos \theta _ { y _ { i } } - m \right) } + \sum _ { j = 1 , j \neq y _ { i } } ^ { c } e ^ { s \cdot c o s \theta _ { j } } } \\ & = - \frac { 1 } { n } \sum _ { i = 1 } ^ { n } \log \frac { e ^ { s \cdot \left( W _ { y _ { i } } ^ { T } f _ { i } - m \right) } } { e ^ { s \cdot \left( W _ { y _ { i } } ^ { T } \boldsymbol { f } _ { i } - m \right) } + \sum _ { j = 1 , j \neq y _ { i } } ^ { c } e ^ { S W _ { j } ^ { T } \boldsymbol { f } _ { i } } } \end{aligned}</script><p><img alt="AM-Softmax loss示意图" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1mmsrz1j20n808dwfx.jpg" width="60%" height="60%"></p>
+\begin{aligned} \mathcal { L } _ { A M S } & = - \frac { 1 } { n } \sum _ { i = 1 } ^ { n } \log \frac { e ^ { s \cdot \left( \cos \theta _ { y _ { i } } - m \right) } } { e ^ { s \cdot \left( \cos \theta _ { y _ { i } } - m \right) } + \sum _ { j = 1 , j \neq y _ { i } } ^ { c } e ^ { s \cdot c o s \theta _ { j } } } \\ & = - \frac { 1 } { n } \sum _ { i = 1 } ^ { n } \log \frac { e ^ { s \cdot \left( W _ { y _ { i } } ^ { T } f _ { i } - m \right) } } { e ^ { s \cdot \left( W _ { y _ { i } } ^ { T } \boldsymbol { f } _ { i } - m \right) } + \sum _ { j = 1 , j \neq y _ { i } } ^ { c } e ^ { S W _ { j } ^ { T } \boldsymbol { f } _ { i } } } \end{aligned}</script><p><img rel="noreferrer" alt="AM-Softmax loss示意图" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1mmsrz1j20n808dwfx.jpg" width="60%" height="60%"></p>
 <hr>
 <h4 id="CosFace"><a href="#CosFace" class="headerlink" title="CosFace"></a>CosFace</h4><p>相关文献：</p>
 <ul>
@@ -337,14 +337,14 @@ L _ { \mathrm { ang } } = \frac { 1 } { N } \sum _ { i } - \log \left( \frac { e
 </ul>
 <script type="math/tex; mode=display">
 L _ { l m c } = \frac { 1 } { N } \sum _ { i } - \log \frac { e ^ { s \left( \cos \left( \theta _ { y _ { i } , i } \right) - m \right) } } { e ^ { s \left( \cos \left( \theta _ { y _ { i } } , i \right) - m \right) } + \sum _ { j \neq y _ { i } } e ^ { s \cos \left( \theta _ { j , i } \right) } }</script><script type="math/tex; mode=display">
-\begin{aligned} \text { subject to } \\  W & = \frac { W ^ { * } } { \left\| W ^ { * } \right\| } \\  x & = \frac { x ^ { * } } { \left\| x ^ { * } \right\| } \\ \cos \left( \theta _ { j } , i \right) & = W _ { j } ^ { T } x _ { i } \end{aligned}</script><p><img alt="CosFace示意图" src="https://wx1.sinaimg.cn/large/8662e3cegy1g0k1mtlmpmj20ck04sq3j.jpg" width="60%" height="60%"></p>
+\begin{aligned} \text { subject to } \\  W & = \frac { W ^ { * } } { \left\| W ^ { * } \right\| } \\  x & = \frac { x ^ { * } } { \left\| x ^ { * } \right\| } \\ \cos \left( \theta _ { j } , i \right) & = W _ { j } ^ { T } x _ { i } \end{aligned}</script><p><img rel="noreferrer" alt="CosFace示意图" src="https://wx1.sinaimg.cn/large/8662e3cegy1g0k1mtlmpmj20ck04sq3j.jpg" width="60%" height="60%"></p>
 <hr>
 <h4 id="ArcFace"><a href="#ArcFace" class="headerlink" title="ArcFace"></a>ArcFace</h4><p>相关文献：</p>
 <ul>
 <li><strong>《Arcface: Additive angular margin loss for deep face recognition》</strong></li>
 </ul>
 <script type="math/tex; mode=display">
-L  = - \frac { 1 } { N } \sum _ { i = 1 } ^ { N } \log \frac { e ^ { s \left( \cos \left( \theta _ { y _ { i } } + m \right) \right) } } { e ^ { s \left( \cos \left( \theta _ { y _ { i } } + m \right) \right) } + \sum _ { j = 1 , j \neq y _ { i } } ^ { n } e ^ { s \cos \theta _ { j } } }</script><p><img alt="ArcFace示意图" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1mz40h8j21640ad0wf.jpg" width="100%" height="100%"></p>
+L  = - \frac { 1 } { N } \sum _ { i = 1 } ^ { N } \log \frac { e ^ { s \left( \cos \left( \theta _ { y _ { i } } + m \right) \right) } } { e ^ { s \left( \cos \left( \theta _ { y _ { i } } + m \right) \right) } + \sum _ { j = 1 , j \neq y _ { i } } ^ { n } e ^ { s \cos \theta _ { j } } }</script><p><img rel="noreferrer" alt="ArcFace示意图" src="https://wx3.sinaimg.cn/large/8662e3cegy1g0k1mz40h8j21640ad0wf.jpg" width="100%" height="100%"></p>
 <hr>
 <h3 id="Softmax及其变种"><a href="#Softmax及其变种" class="headerlink" title="Softmax及其变种"></a>Softmax及其变种</h3><hr>
 <h4 id="L2-Softmax"><a href="#L2-Softmax" class="headerlink" title="L2-Softmax"></a>L2-Softmax</h4><p>相关文献：</p>
@@ -372,7 +372,7 @@ L  = - \frac { 1 } { N } \sum _ { i = 1 } ^ { N } \log \frac { e ^ { s \left( \c
 <li><strong>《Ring loss: Convex feature normalization for face recognition》</strong></li>
 </ul>
 <script type="math/tex; mode=display">
-L _ { R } = \frac { \lambda } { 2 m } \sum _ { i = 1 } ^ { m } \left( \left\| \mathcal { F } \left( \mathbf { x } _ { i } \right) \right\| _ { 2 } - R \right) ^ { 2 }</script><p><img alt="Ring loss示意图" src="https://ws1.sinaimg.cn/large/8662e3cegy1g0k1n6hmq9j20lo09g0wz.jpg" width="60%" height="60%"></p>
+L _ { R } = \frac { \lambda } { 2 m } \sum _ { i = 1 } ^ { m } \left( \left\| \mathcal { F } \left( \mathbf { x } _ { i } \right) \right\| _ { 2 } - R \right) ^ { 2 }</script><p><img rel="noreferrer" alt="Ring loss示意图" src="https://ws1.sinaimg.cn/large/8662e3cegy1g0k1n6hmq9j20lo09g0wz.jpg" width="60%" height="60%"></p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote id="fn_1">
 <sup>1</sup>. Y. Taigman, M. Yang, M. Ranzato, and L. Wolf. <strong>Deepface: Closing the gap to human-level performance in face verification</strong>. In CVPR, pages 1701–1708, 2014.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
 </blockquote>

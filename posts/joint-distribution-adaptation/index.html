@@ -214,7 +214,7 @@ var _hmt = _hmt || [];
 <a id="more"></a>
 <hr>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>在迁移成分分析方法中, 只对不同域的边缘分布进行匹配. 然而在真实情况下, 边缘分布和条件分布可能都是不匹配的, 如图1所示. 本文首次<strong>在无监督领域自适应</strong>条件下(即目标域中没有带标签数据), 对不同域之间的<strong>边缘分布</strong>和<strong>条件分布</strong>进行联合匹配.</p>
-<p><img src="https://wx4.sinaimg.cn/large/8662e3cely1g1iu5i9bdmj20pr0alt9j.jpg" alt="图1. 不同域的边缘分布和条件分布都不匹配" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://wx4.sinaimg.cn/large/8662e3cely1g1iu5i9bdmj20pr0alt9j.jpg" alt="图1. 不同域的边缘分布和条件分布都不匹配" width="60%" height="60%"></p>
 <hr>
 <h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><blockquote>
 <p><strong>定义1 (领域, Domain)</strong><br>一个领域 $\mathcal{D}$ 由 $m$ 维的特征空间 $\mathcal{X}$ 和边缘概率分布 $P(x)$ 组成. 即 $\mathcal{D} = \{\mathcal{X}, P(x)\}$.</p>
@@ -284,7 +284,7 @@ L = \operatorname{tr}\left(\mathbf{A}^{\mathrm{T}}\left(\mathbf{X} \sum_{c=0}^{C
 \left(\mathbf{X} \sum_{c=0}^{C} \mathbf{M}_{c} \mathbf{X}^{\mathrm{T}}+\lambda \mathbf{I}\right) \mathbf{A}=\mathbf{X} \mathbf{H} \mathbf{X}^{\mathrm{T}} \mathbf{A} \boldsymbol{\Phi}
 \tag{10}</script><p>通过求解该广义特征分解问题, 可以得到变换矩阵 $A$ 的最优解.</p>
 <h2 id="联合分布自适应算法"><a href="#联合分布自适应算法" class="headerlink" title="联合分布自适应算法"></a>联合分布自适应算法</h2><p>联合分布自适应算法流程如下:</p>
-<p><img src="https://ws2.sinaimg.cn/large/8662e3cegy1g1oo1qscnnj20q70gu0w2.jpg" alt="联合分布自适应算法" width="60%" height="60%"></p>
+<p><img rel="noreferrer" src="https://ws2.sinaimg.cn/large/8662e3cegy1g1oo1qscnnj20q70gu0w2.jpg" alt="联合分布自适应算法" width="60%" height="60%"></p>
 <p>主要分为求解变换矩阵$A$, 训练分类器更新伪标签, 构造类MMD矩阵三部分. 注意算法需要不断迭代, 直到收敛.</p>
 
                 
