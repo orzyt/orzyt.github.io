@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
+    
+    <lastmod>2019-07-06T13:26:19.595Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://orzyt.cn/about/index.html</loc>
     
-    <lastmod>2019-05-29T05:54:35.794Z</lastmod>
+    <lastmod>2019-07-06T13:24:12.311Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://orzyt.cn/posts/deep-domain-confusion/</loc>
     
-    <lastmod>2019-04-29T12:21:19.891Z</lastmod>
+    <lastmod>2019-06-28T13:09:05.136Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://orzyt.cn/posts/joint-distribution-adaptation/</loc>
+    
+    <lastmod>2019-06-28T13:08:41.996Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://orzyt.cn/posts/transfer-component-analysis/</loc>
     
-    <lastmod>2019-04-29T08:21:35.060Z</lastmod>
+    <lastmod>2019-06-28T13:07:52.196Z</lastmod>
     
   </url>
   
@@ -61,20 +75,6 @@
     <loc>https://orzyt.cn/posts/deep-face-recognition/</loc>
     
     <lastmod>2019-04-29T08:19:54.651Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/joint-distribution-adaptation/</loc>
-    
-    <lastmod>2019-04-29T08:18:53.411Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://orzyt.cn/posts/transfer-adaptation-learning/</loc>
-    
-    <lastmod>2019-04-02T13:00:17.720Z</lastmod>
     
   </url>
   

@@ -3,14 +3,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>深度域混淆 - 扬涛的博客</title>
-    <meta itemprop="name" content="深度域混淆 - 扬涛的博客">
+    <title>【论文笔记】Deep Domain Confusion: Maximizing for Domain Invariance - 扬涛的博客</title>
+    <meta itemprop="name" content="【论文笔记】Deep Domain Confusion: Maximizing for Domain Invariance - 扬涛的博客">
     <meta name="keywords" content="扬涛的博客, 郑扬涛, orzyt, leetcode">
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <link rel="alternate" href="/atom.xml" title="扬涛的博客" type="application/atom+xml">
     <link rel="icon" href="/favicon.ico">
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700itali&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/libs/open-sans/styles.css">
     <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
@@ -53,9 +54,9 @@ var _hmt = _hmt || [];
                     
                         <a class="main-nav-link" href="/.">主页</a>
                     
-                        <a class="main-nav-link" href="/archives">归档</a>
+                        <a class="main-nav-link" href="/archives/">归档</a>
                     
-                        <a class="main-nav-link" href="/about">关于</a>
+                        <a class="main-nav-link" href="/about/">关于</a>
                     
                     
                     <li class="dropdown">
@@ -65,7 +66,7 @@ var _hmt = _hmt || [];
                         </a>
                         <ul class="dropdown-menu">
                             
-                                <li><a href="/study">学习资源汇总</a></li>
+                                <li><a href="/study/">学习资源汇总</a></li>
                             
                         </ul>
                     </li>
@@ -91,9 +92,9 @@ var _hmt = _hmt || [];
             
                 <a class="main-nav-link" href="/.">主页</a>
             
-                <a class="main-nav-link" href="/archives">归档</a>
+                <a class="main-nav-link" href="/archives/">归档</a>
             
-                <a class="main-nav-link" href="/about">关于</a>
+                <a class="main-nav-link" href="/about/">关于</a>
             
                            
             <li class="dropdown">
@@ -103,7 +104,7 @@ var _hmt = _hmt || [];
                 </a>
                 <ul class="dropdown-menu" style="line-height:20px;min-width:120px;">
                     
-                        <li><a href="/study" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
+                        <li><a href="/study/" style="line-height:20px;padding:2px 2px;">学习资源汇总</a></li>
                     
                 </ul>
             </li>
@@ -116,7 +117,7 @@ var _hmt = _hmt || [];
             
                 
 
-<aside id="profile">
+<aside id="profile" style="visibility: hidden;">
     <div class="inner profile-inner">
         <div class="base-info profile-block">
             <img id="avatar" src="/img/avatar.png">
@@ -171,7 +172,7 @@ var _hmt = _hmt || [];
     
         
             <h1 class="article-title" itemprop="name">
-                深度域混淆
+                【论文笔记】Deep Domain Confusion: Maximizing for Domain Invariance
             </h1>
         
     
@@ -208,9 +209,9 @@ var _hmt = _hmt || [];
         <div class="article-entry" itemprop="articleBody">
             
                 
-                    <p><strong>论文题目</strong>：Deep Domain Confusion: Maximizing for Domain Invariance</p>
-<p><strong>论文作者</strong>：Eric Tzeng, Judy Hoffman, Ning Zhang, Kate Saenko, Trevor Darrell</p>
-<p><strong>会议期刊</strong>：arxiv 2014</p>
+                    <blockquote>
+<p><strong>论文题目</strong>：Deep Domain Confusion: Maximizing for Domain Invariance<br><strong>论文作者</strong>：Eric Tzeng, Judy Hoffman, Ning Zhang, Kate Saenko, Trevor Darrell<br><strong>会议期刊</strong>：arxiv 2014</p>
+</blockquote>
 <a id="more"></a>
 <hr>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本文提出了一种新的卷积神经网络结构, 引入了<strong>自适应层</strong>(adaptation layer)和<strong>域混淆</strong>(domain confusion)损失函数, 从而可以学习到域不变(domain invariant)的特征表示.</p>
@@ -267,7 +268,7 @@ MMD(X_S, X_T) = \left\Vert \frac{1}{|X_S|} \sum \limits_{x_s \in X_S} \phi(x_s) 
     
         <a href="/posts/transfer-component-analysis/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">迁移成分分析</div>
+            <div class="article-nav-title">【论文笔记】Domain Adaptation via Transfer Component Analysis</div>
         </a>
     
 </nav>
@@ -313,8 +314,8 @@ MMD(X_S, X_T) = \left\Vert \frac{1}{|X_S|} \sum \limits_{x_s \in X_S} \phi(x_s) 
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2019 orzyt<br>
-            Powered by <a rel="”nofollow”" href="http://hexo.io/" target="_blank">Hexo</a> | Hosted by <a rel="”nofollow”" href="https://pages.coding.me">Coding Pages</a>
+            &copy; 2019 orzyt <br>
+            Powered by Hexo | 闽ICP备19014517号<br>
         </div>
     </div>
 </footer>
